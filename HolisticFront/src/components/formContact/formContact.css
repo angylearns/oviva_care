@@ -1,0 +1,49 @@
+.field {
+    margin-bottom: 10px;
+
+  }
+  
+  .field label {
+    display: block;
+    font-size: 16px;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .field input {
+    display: block;
+    min-width: 250px;
+    line-height: 1.5;
+    font-size: 14px;
+    border: 0;
+    border-radius: 15px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    padding: 6px 30px;
+    font-size: 14px;
+    background-color: #D9ECEA;
+    color: #000000;
+    border: none;
+    border-radius: 15px;
+    
+  }
+
+  .field textarea{
+    display: block;
+    min-width: 250px;
+    line-height: 1.5;
+    font-size: 14px;
+    resize: none;
+    overflow-y: auto;
+    border: 0;
+    border-radius: 15px;
+  }
+
+  .container-form{
+    background-color: #00B6B9;
+    padding: 2%;
+    width: fit-content;
+    border-radius: 15px;
+  }
