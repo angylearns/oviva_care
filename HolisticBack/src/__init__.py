@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from src.routes import UserRouter, VideoRouter, RecipeRouter, AuthRouter
+from src.routes import UserRouter, VideoRouter, RecipeRouter, PersonRouter, AuthRouter
 from flask_cors import CORS
 
 
@@ -16,6 +16,7 @@ def init_app(config):
     app.register_blueprint(VideoRouter.mainVideo, url_prefix='/video')
     app.register_blueprint(RecipeRouter.mainRecipe, url_prefix='/recipe')
     app.register_blueprint(AuthRouter.main, url_prefix='/userL')
+    app.register_blueprint(PersonRouter.mainPerson, url_prefix='/person')
     
     
     return app
