@@ -87,7 +87,7 @@ const Recipe = () => {
   });
 
   const categorias = [
-    "Desayuno",
+    "Desayunos",
     "Almuerzos",
     "Meriendas",
     "Cenas",
