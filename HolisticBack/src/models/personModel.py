@@ -5,7 +5,7 @@ class Person():
        self.last_name=last_name
        self.birth_date=birth_date
        self.country=country
-       self.tdiagnosed=diagnosed
+       self.diagnosed=diagnosed
        self.email=email
 
     @classmethod
