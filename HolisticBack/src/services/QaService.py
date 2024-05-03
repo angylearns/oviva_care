@@ -5,7 +5,7 @@ from src.models.qaModel import Qa
 class QaService():
 
     @classmethod
-    def get_video(cls):
+    def get_qa(cls):
         try:
             connection=get_connection()
            

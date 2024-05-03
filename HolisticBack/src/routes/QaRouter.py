@@ -7,7 +7,7 @@ mainQa = Blueprint('Qa_blueprint', __name__)
 
 @mainQa.route('/',methods=['GET'])
 
-def get_video():
+def get_qa():
     list_qa=QaService.get_qa()
     print("Consola: Preguntas obtenidas.")
 
@@ -16,7 +16,7 @@ def get_video():
 
 @mainQa.route('/',methods=['POST'])
 
-def post_video():
+def post_qa():
 
     
     question = request.json ['question']
@@ -27,7 +27,7 @@ def post_video():
 
     if QaService.post_qa(qa):
         print('Consola:Pregunta insertada: ', qa)
-        return 'Video creado.'
+        return 'Pregunta creada.'
     
     return 'Página: Ok'
 
