@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { personService } from '../../services/personService'
 import "./addPerson.css";
 
-function AddPerson() {
-    
+function AddPerson({ onClose }) {
+
     const [customersGlobal, setCustomersGlobal] = useState([]);
-  
+
     const [formData, setFormData] = useState({
         id_person: "",
         first_name: "",
@@ -68,15 +68,10 @@ function AddPerson() {
         });
     };
 
- 
-
-
-
 
     return (
-
-
-        <div className="postContainer">
+        <div className="postContainer" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', padding: '20px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }} >
+             <img src="https://i.postimg.cc/6QBym64B/close-Green.png" alt="Cerrar" style={{ position: 'absolute', top: '10px', right: '10px', cursor: 'pointer'}} onClick={onClose} />
             <form onSubmit={handleSubmit}>
                 <div className="formContentA">
                     <div className="groupForm1">
@@ -110,28 +105,26 @@ function AddPerson() {
                                 required
                             />
                         </div>
-                    </div>
-                    <div className="smallDiv">
-                        <label className="labelStyle">País:</label>
-                        <input
-                            type="text"
-                            name="country"
-                            value={formData.country}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="smallDiv">
-                        <label className="labelStyle"> Diagnosticado: </label>
-                        <input
-                            type="text"
-                            name="diagnosed"
-                            value={formData.diagnosed}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-                    <div className="groupForm2">
+                        <div className="smallDiv">
+                            <label className="labelStyle">País:</label>
+                            <input
+                                type="text"
+                                name="country"
+                                value={formData.country}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
+                        <div className="smallDiv">
+                            <label className="labelStyle"> Diagnosticado: </label>
+                            <input
+                                type="text"
+                                name="diagnosed"
+                                value={formData.diagnosed}
+                                onChange={handleChange}
+                                required
+                            />
+                        </div>
                         <div className="smallDiv">
                             <label className="labelStyle">Email:</label>
                             <input
@@ -142,12 +135,11 @@ function AddPerson() {
                                 required
                             />
                         </div>
-                    </div>
-                    <br></br>
-                    <div className="buttonAdd">
-                        <button className="buttonAA" type="submit">
-                            Añadir Cliente
-                        </button>
+                        <div className="buttonAdd">
+                            <button className="buttonAA" type="submit">
+                                Añadir Cliente
+                            </button>
+                        </div>
                     </div>
                 </div>
             </form>

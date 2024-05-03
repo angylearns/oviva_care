@@ -13,7 +13,7 @@ function App() {
       {/* <Recipe/> */}
       {/* <FormContact/> */}
       <AdminPerson/>
-      <AddPerson/>
+      
     </>
   )
 }

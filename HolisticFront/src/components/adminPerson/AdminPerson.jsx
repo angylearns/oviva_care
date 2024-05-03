@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { personService } from '../../services/personService'
 import "./adminPerson.css";
+import AddPerson from "./AddPerson";
 
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
@@ -22,6 +23,17 @@ function AdminPerson() {
         email: "",
         // username: "",
     });
+
+    const [mostrarComponenteEmergente, setMostrarComponenteEmergente] = useState(false);
+
+    const toggleComponenteEmergente = () => {
+        setMostrarComponenteEmergente(!mostrarComponenteEmergente);
+    };
+
+    const cerrarComponenteEmergente = () => {
+        setMostrarComponenteEmergente(false);
+    };
+
 
     const handleEdit = (index) => {
         if (editableRows.includes(index)) {
@@ -129,11 +141,20 @@ function AdminPerson() {
     }
 
     return (
-        <div className="mainContainer">
+        <div className="mainContainer" >
             <div className="getContainer">
-                <h1>Lista de usuarios registrados</h1>
+                <div className="headerContent">
+                    <div>
+                        <h2>Lista de usuarios registrados</h2>
+                    </div>
+                    <div className="centerBtn">
+                        <button onClick={toggleComponenteEmergente} className="buttonAA">Agregar Usuario</button>
+                    </div>
+                </div>
+                {/* Renderizar el componente emergente solo si el estado es verdadero */}
+                {mostrarComponenteEmergente && <AddPerson onClose={cerrarComponenteEmergente} />}
                 <div className="tableOwerflow">
-                    <table>
+                    <table className="tableData">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -236,14 +257,16 @@ function AdminPerson() {
                                                 className="button1"
                                                 onClick={() => handleSave(index)}
                                             >
-                                                <img src="https://i.postimg.cc/jSD9KCSq/salvar.png"></img>
+                                                <span className="txtEditSave">Guardar</span>
+                                                {/* <img src="https://i.postimg.cc/jSD9KCSq/salvar.png"></img> */}
                                             </button>
                                         ) : (
                                             <button
                                                 className="button1"
                                                 onClick={() => handleEdit(index)}
                                             >
-                                                <img src="https://i.postimg.cc/HsQBd5Qt/editar.png"></img>
+                                                <span className="txtEditSave">Editar</span>
+                                                {/* <img src="https://i.postimg.cc/HsQBd5Qt/editar.png"></img> */}
                                             </button>
                                         )}
                                     </td>
@@ -252,7 +275,8 @@ function AdminPerson() {
                                             className="button1"
                                             onClick={() => handleDelete(index)}
                                         >
-                                            <img src="https://i.postimg.cc/mgspHVbq/eliminar-simbolo.png"></img>
+                                            <span className="txtDelete">Eliminar</span>
+                                            {/* <img src="https://i.postimg.cc/mgspHVbq/eliminar-simbolo.png"></img> */}
                                         </button>
                                     </td>
                                 </tr>
@@ -261,7 +285,7 @@ function AdminPerson() {
                     </table>
                 </div>
             </div>
-           
+
         </div>
     );
 }
