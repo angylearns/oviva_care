@@ -1,0 +1,36 @@
+nav {
+    background-color: #D9ECEA;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar_main_left {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar_main_logo {
+    width: 16%;
+}
+
+.navbar_main_center {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.navbar_main_right {
+    width: 20%;
+    height: 100%;
+    
+}
+
+.navbar_main_right img {
+    width: 15%;
+}
