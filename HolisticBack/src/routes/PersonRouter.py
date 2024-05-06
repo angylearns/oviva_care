@@ -17,8 +17,7 @@ def get_person():
 @mainPerson.route('/post',methods=['POST','OPTIONS'])
 
 def post_person():
-    print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-        
+
     if request.method == 'OPTIONS':
         print("tutututututututututututuut")
         response = jsonify({'message': 'Preflight request success'})
@@ -27,7 +26,6 @@ def post_person():
         response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE,OPTIONS')
         return response
     else:
-        print("aaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbaaaaaaaa")
         id_person = ""
         first_name = request.json["first_name"]
         last_name = request.json["last_name"]
@@ -44,10 +42,10 @@ def post_person():
     
         return 'Página: Ok'
 
-@mainPerson.route('/<int:id_person>', methods=['PUT'])
+@mainPerson.route('/put', methods=['PUT'])
 
-def put_person(id_person):
-    
+def put_person():
+    id_person = request.json["id_person"]
     first_name = request.json["first_name"]
     last_name = request.json["last_name"]
     birth_date = request.json["birth_date"]
@@ -62,9 +60,11 @@ def put_person(id_person):
     return 'Página: persona actualizada.'
    
        
-@mainPerson.route('/<int:id_person>', methods=['DELETE'])
-def delete_person(id_person):       
-    PersonService.delete_person(id_person)
+@mainPerson.route('/delete', methods=['DELETE'])
+def delete_person():       
+   
+    idPerson = request.json["id_person"]
+    PersonService.delete_person(idPerson)
     print('Consola: persona eliminada.')
     return 'Página: persona eliminada.'
 
