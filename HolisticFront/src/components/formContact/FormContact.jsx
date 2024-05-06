@@ -44,12 +44,13 @@ function FormContact() {
                 <form id="form" onSubmit={handleSubmit}>
                     <div className="field">
                         <label htmlFor="emailjs_name">Nombre</label>
-                        <input type="text" name="emailjs_name" id="emailjs_name" required />
+                        <input type="text" className="inputField" name="emailjs_name" id="emailjs_name" required />
                     </div>
                     <div className="field">
                         <label htmlFor="emailjs_email">Email</label>
                         <input
                             type="text"
+                            className="inputField" 
                             name="emailjs_email"
                             id="emailjs_email"
                             value={email}
@@ -60,7 +61,7 @@ function FormContact() {
                     </div>
                     <div className="field">
                         <label htmlFor="emailjs_message">Mensaje</label>
-                        <textarea id="emailjs_message" name="emailjs_message" maxLength="300"></textarea>
+                        <textarea id="emailjs_message" className="inputField" name="emailjs_message" maxLength="300"></textarea>
                     </div>
 
                     <input type="submit" id="button" value="Send Email" />

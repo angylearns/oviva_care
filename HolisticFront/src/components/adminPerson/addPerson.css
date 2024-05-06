@@ -11,7 +11,7 @@
     background-color:white;
   }
   
-  input {
+  .inputF {
     background-color: rgb(255, 255, 255);
     border: 1px solid #00B6B9;
     padding: 8px;
@@ -19,11 +19,11 @@
     margin: 5px;
   }
   
-  input:hover {
+  .inputF:hover {
     background-color: #00B6B9;
   }
   
-  input:focus {
+  .inputF:focus {
     background-color: #00b6b92d;
   }
   

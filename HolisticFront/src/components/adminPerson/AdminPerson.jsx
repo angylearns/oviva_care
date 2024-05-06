@@ -3,6 +3,7 @@ import { personService } from '../../services/personService'
 import "./adminPerson.css";
 import AddPerson from "./AddPerson";
 
+
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
     const [customersGlobal, setCustomersGlobal] = useState([]);
@@ -99,10 +100,7 @@ function AdminPerson() {
         });
     };
 
-    //   useEffect(() => {
-    //     setCustomersGlobal(customers);
-    //     setFila(customers);
-    //   }, []);
+
     useEffect(() => {
         async function fetchUsers() {
             try {

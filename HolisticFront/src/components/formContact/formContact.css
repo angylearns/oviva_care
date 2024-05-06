@@ -23,11 +23,15 @@
     display: block;
     padding: 6px 30px;
     font-size: 14px;
-    background-color: #D9ECEA;
+    background-color: #ffffff;
     color: #000000;
     border: none;
     border-radius: 15px;
     
+  }
+
+  .inputField{
+    background-color: white;
   }
 
   .field textarea{

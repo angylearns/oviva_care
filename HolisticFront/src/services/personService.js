@@ -21,10 +21,10 @@ export const personService = {
         }
     },
 
-    async postUser(userPerson) {
+    async postPerson(userPerson) {
         try {
             let user2 = JSON.stringify(userPerson)
-            let response = await apiClient.post("/person", user2);
+            let response = await apiClient.post("/person/post", user2);
             return response.data;
         } catch (error) {
             console.error("Error al insertar datos:", error);
