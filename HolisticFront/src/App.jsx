@@ -4,6 +4,7 @@ import Recipe from './components/recipe/Recipe';
 import FormContact from './components/formContact/FormContact';
 import AdminPerson from './components/adminPerson/AdminPerson';
 import AddPerson from './components/adminPerson/AddPerson';
+import Question from './components/question/Question';
 
 function App() {
 
@@ -12,8 +13,9 @@ function App() {
     <>
       {/* <Recipe/> */}
       {/* <FormContact/> */}
-      <AdminPerson/>
-      
+      {/* <AdminPerson/> */}
+      <Question/>
+
     </>
   )
 }

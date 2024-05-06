@@ -14,11 +14,10 @@ def get_qa():
     return jsonify([qa.__dict__ for qa in list_qa])
     
 
-@mainQa.route('/',methods=['POST'])
+@mainQa.route('/post',methods=['POST'])
 
 def post_qa():
 
-    
     question = request.json ['question']
     answer= request.json ['answer']
     
@@ -31,25 +30,24 @@ def post_qa():
     
     return 'Página: Ok'
 
-@mainQa.route('/<int:id_qa>', methods=['PUT'])
+@mainQa.route('/put', methods=['PUT'])
 
-def put_qa(id_qa):
+def put_qa():
     
-    
+    id_qa = request.json['id_qa']
     question = request.json ['question']
     answer= request.json ['answer']
     
-
     updateqa= Qa(id_qa,question,answer)
     
-   
     QaService.put_qa(id_qa, updateqa)
     print('Consola: Pregunta actualizada: ')
     return 'Página: Pregunta actualizada.'
    
        
-@mainQa.route('/<int:id_qa>', methods=['DELETE'])
-def delete_qa(id_qa):       
+@mainQa.route('/delete', methods=['DELETE'])
+def delete_qa():     
+    id_qa = request.json['id_qa']
     QaService.delete_qa(id_qa)
     print('Consola: Pregunta eliminada.')
     return 'Página: Pregunta eliminada.'
