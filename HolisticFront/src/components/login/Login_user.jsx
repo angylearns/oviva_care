@@ -16,8 +16,8 @@ function Login_user() {
             <h1 >Miembro Oviva</h1>
             <p className="text-user">Usuario</p>
             <input className="field-user"
-                type="text"
-                placeholder="Nombre de Usuario o Correo Electrónico"
+                type="email"
+                placeholder="Correo Electrónico"
                 required
             />
 
@@ -28,8 +28,8 @@ function Login_user() {
                 required
             />
             <button type="submit" className="login-button">Ingresar</button>
-
-            <p>¿No eres miembro?, regístrate</p>
+            <button  className="goregister-button">¿No eres miembro?, regístrate</button>
+          
         </form>
 
     );

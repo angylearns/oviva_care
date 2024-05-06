@@ -1,0 +1,108 @@
+.fieldsblock{
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+    justify-content: space-around;
+}
+
+.field-regname{
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+}
+
+.field-regcountry{
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+}
+
+.field-regemail {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+}
+
+.field-regdiagnose{
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+}
+
+.field-regpassword{
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+}
+
+.login-regbutton {
+    width: 490px;
+    height: 78px;
+    border-radius: 0 20px 0 30px;
+    margin-top: 48px;
+    background-color: #008F8B;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+    border: none;
+}
+
+.text-regname{
+    font-size: 24px;
+    margin-right: 70%;
+}
+
+.text-regemail{
+    font-size: 24px;
+    margin-right: 55%;
+}
+
+.text-regdiagnose{
+    font-size: 24px;
+    margin-right: 53%;
+}
+
+.text-regcountry{
+    font-size: 24px;
+    margin-right: 78%;
+}
+
+.text-regpassword{
+    font-size: 24px;
+    margin-right: 68%;
+}
+
+input::placeholder {
+    color: rgba(0, 143, 139, 0.50);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.gologin-button{
+    background-color: transparent;
+    border: none;
+    margin-top: 48px;
+    color: rgba(0, 0, 0, 0.50);
+}

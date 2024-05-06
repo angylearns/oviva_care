@@ -31,11 +31,7 @@
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
 }
 
-input[type="text"]::placeholder {
-    color: rgba(0, 143, 139, 0.50);
-}
-
-input[type="password"]::placeholder {
+input::placeholder {
     color: rgba(0, 143, 139, 0.50);
 }
 
@@ -49,9 +45,17 @@ input[type="password"]::placeholder {
     border: none;
 }
 
+.goregister-button{
+    background-color: transparent;
+    border: none;
+    margin-top: 48px;
+    color: rgba(0, 0, 0, 0.50);
+}
+
 .text-user {
     font-size: 24px;
     margin-right: 38%;
+    
  
 }
 
