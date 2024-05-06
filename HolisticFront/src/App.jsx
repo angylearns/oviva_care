@@ -3,14 +3,14 @@ import './App.css'
 import Recipe from './components/recipe/Recipe';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
-import Login from './components/login/Login';
+import Login_user from './components/login/Login_user';
 
 function App() {
 
 
   return (
     <>
-    <Login />
+    <Login_user />
       {/* <Recipe/> */}
     </>
   )

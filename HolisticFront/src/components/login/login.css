@@ -1,0 +1,62 @@
+.formulary{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.login-icon{
+    width: 176px;
+}
+
+.field-user{
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+
+}
+
+.field-password{
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color:  rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+}
+
+input[type="text"]::placeholder {
+    color: rgba(0, 143, 139, 0.50);
+}
+
+input[type="password"]::placeholder {
+    color: rgba(0, 143, 139, 0.50);
+}
+
+.login-button{
+    width: 490px;
+    height: 78px;
+    border-radius: 0 20px 0 30px;
+    margin-top: 48px;
+    background-color: #008F8B;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+    border: none;
+}
+
+.text-user {
+    font-size: 24px;
+    margin-right: 38%;
+ 
+}
+
+.text-password {
+    font-size: 24px;
+    margin-right: 35%;
+    
+}
