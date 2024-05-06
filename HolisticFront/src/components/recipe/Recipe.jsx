@@ -21,6 +21,7 @@ const Recipe = () => {
 
   const [isEditing, setIsEditing] = useState(false);
   const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
+  const [recipeToDelete, setRecipeToDelete] = useState(null); // Estado para almacenar la receta a eliminar
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -51,7 +52,6 @@ const Recipe = () => {
         image: "",
         description: "",
         category: "",
-    
       });
       setIsEditing(false);
     } catch (error) {
@@ -64,7 +64,21 @@ const Recipe = () => {
   };
 
   const handleDelete = async (recipeId) => {
-    await deleteRecipe(recipeId, fetchData);
+    // Establecer la receta a eliminar
+    setRecipeToDelete(recipeId);
+  };
+
+  const confirmDelete = async () => {
+    // Eliminar la receta si el usuario confirma
+    if (recipeToDelete) {
+      await deleteRecipe(recipeToDelete, fetchData);
+      setRecipeToDelete(null); // Reiniciar el estado
+    }
+  };
+
+  const handleCancelDelete = () => {
+    // Cancelar la eliminación
+    setRecipeToDelete(null); // Reiniciar el estado
   };
 
   const handleCheckboxChange = (categoria) => {
@@ -133,21 +147,21 @@ const Recipe = () => {
             </label>
             <br />
             <label htmlFor="title">Copie la URL de su imagen:</label>
-          <input
-            type="text"
-            id="title"
-            value={newRecipe.image}
-            onChange={(e) =>
-              setNewRecipe({ ...newRecipe, image: e.target.value })
-            }
-            required
-          />
-          {newRecipe.image && (
-            <img
-              src={newRecipe.image}
-              alt="Previsualización de la imagen"
-              style={{ width: "200px", height: "200px" }}
+            <input
+              type="text"
+              id="title"
+              value={newRecipe.image}
+              onChange={(e) =>
+                setNewRecipe({ ...newRecipe, image: e.target.value })
+              }
+              required
             />
+            {newRecipe.image && (
+              <img
+                src={newRecipe.image}
+                alt="Previsualización de la imagen"
+                style={{ width: "200px", height: "200px" }}
+              />
             )}
             <br />
             <label>
@@ -188,8 +202,8 @@ const Recipe = () => {
             <img
               src={recipe.image}
               alt={recipe.title}
-              width={100}
-              height={100}
+              width={300}
+              height={300}
             ></img>
             <p>Description: {recipe.description}</p>
             <p>Category: {recipe.category}</p>
@@ -210,6 +224,18 @@ const Recipe = () => {
           </div>
         ))}
       </div>
+
+      {/* Cuadro de diálogo de confirmación para eliminar */}
+      {recipeToDelete && (
+        <div className="confirmation-dialog">
+          <p>¿Está seguro de que quiere eliminar esta receta?</p>
+          <p>Todos los datos serán borrados y no podrá volver a recuperarla.</p>
+          <div>
+            <button className= "button-delete" onClick={confirmDelete}>Sí, quiero borrarla</button>
+            <button className="button-no-delete" onClick={handleCancelDelete}>No, quiero volver atrás</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
