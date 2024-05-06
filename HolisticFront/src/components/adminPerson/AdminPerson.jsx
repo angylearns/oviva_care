@@ -33,7 +33,38 @@ function AdminPerson() {
 
     const cerrarComponenteEmergente = () => {
         setMostrarComponenteEmergente(false);
+        setUpdatePage((prevState) => !prevState);
     };
+
+    
+        const [sortBy, setSortBy] = useState({ field: null, order: "asc" });
+    
+        const handleSort = (field) => {
+            if (sortBy.field === field) {
+                // Si el campo actualmente seleccionado es el mismo que el último ordenado,
+                // invertimos el orden.
+                setSortBy({ field, order: sortBy.order === "asc" ? "desc" : "asc" });
+            } else {
+                // Si el campo actualmente seleccionado es diferente del último ordenado,
+                // establecemos el nuevo campo y ordenamos de forma ascendente.
+                setSortBy({ field, order: "asc" });
+            }
+        };
+    
+        const sortedCustomers = [...customersGlobal].sort((a, b) => {
+            // Función de comparación para ordenar según el campo seleccionado.
+            const fieldA = a[sortBy.field];
+            const fieldB = b[sortBy.field];
+    
+            if (fieldA < fieldB) {
+                return sortBy.order === "asc" ? -1 : 1;
+            }
+            if (fieldA > fieldB) {
+                return sortBy.order === "asc" ? 1 : -1;
+            }
+            return 0;
+        });
+    
 
 
     const handleEdit = (index) => {
@@ -45,7 +76,7 @@ function AdminPerson() {
     };
 
     const handleSave = (index) => {
-        adminServiceF.patchPerson(customersGlobal[index]);
+        personService.putPerson(customersGlobal[index]);
         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
     };
 
@@ -64,67 +95,23 @@ function AdminPerson() {
         setFormData({ ...formData, [name]: value });
     };
 
-    async function postPerson(formData) {
-        const user1 = {
-            id_person: "",
-            user_name: formData.username,
-            first_name: formData.first_name,
-            last_name: formData.last_name,
-            birth_date: formData.birth_date,
-            country: formData.country,
-            diagnosed: formData.diagnosed,
-            email: formData.email,
-        };
 
+    async function fetchUsers() {
         try {
-            const newUser = await personService.postPerson(user1);
+            const allPersons = await personService.getAllPersons();
+
+            setCustomersGlobal(allPersons);
         } catch (error) {
-            console.error("Error al insertar datos:", error);
+            console.error("Error al obtener datos:", error);
         }
     }
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        console.log(formData);
-        await postUsers(formData);
-        setUpdatePage((prevState) => !prevState);
-        setFormData({
-            id_person: "",
-            first_name: "",
-            last_name: "",
-            birth_date: "",
-            country: "",
-            diagnosed: "",
-            email: ""
-            //   username: "",
-        });
-    };
-
-
     useEffect(() => {
-        async function fetchUsers() {
-            try {
-                const allPersons = await personService.getAllPersons();
-
-                setCustomersGlobal(allPersons);
-            } catch (error) {
-                console.error("Error al obtener datos:", error);
-            }
-        }
         fetchUsers();
         setFila(customersGlobal);
     }, []);
 
     useEffect(() => {
-        async function fetchUsers() {
-            try {
-                const allPersons = await personService.getAllPersons();
-
-                setCustomersGlobal(allPersons);
-            } catch (error) {
-                console.error("Error al obtener datos:", error);
-            }
-        }
         fetchUsers();
         setFila(customersGlobal);
     }, [updatePage]);
@@ -134,7 +121,7 @@ function AdminPerson() {
     };
 
     async function deletePerson(index) {
-        adminServiceF.DeletePerson(customersGlobal[index]);
+        personService.DeletePerson(customersGlobal[index]);
         setUpdatePage((prevState) => !prevState);
     }
 
@@ -149,23 +136,22 @@ function AdminPerson() {
                         <button onClick={toggleComponenteEmergente} className="buttonAA">Agregar Usuario</button>
                     </div>
                 </div>
-                {/* Renderizar el componente emergente solo si el estado es verdadero */}
                 {mostrarComponenteEmergente && <AddPerson onClose={cerrarComponenteEmergente} />}
                 <div className="tableOwerflow">
                     <table className="tableData">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>Apellidos</th>
-                                <th>Fecha de Nacimiento</th>
-                                <th>País</th>
-                                <th>Diagnosticado</th>
-                                <th>Email</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
-                            </tr>
-                        </thead>
+                    <thead>
+                    <tr>
+                        <th onClick={() => handleSort("id_person")}>ID</th>
+                        <th onClick={() => handleSort("first_name")}>Nombre</th>
+                        <th onClick={() => handleSort("last_name")}>Apellidos</th>
+                        <th onClick={() => handleSort("birth_date")}>Fecha de Nacimiento</th>
+                        <th onClick={() => handleSort("country")}>País</th>
+                        <th onClick={() => handleSort("diagnosed")}>Diagnosticado</th>
+                        <th onClick={() => handleSort("email")}>Email</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
                         <tbody>
                             {customersGlobal.map((user, index) => (
                                 <tr key={index}>
@@ -233,7 +219,7 @@ function AdminPerson() {
                                                 }
                                             />
                                         ) : (
-                                            user.diagnosed
+                                            customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
                                         )}
                                     </td>
                                     <td>
@@ -256,7 +242,6 @@ function AdminPerson() {
                                                 onClick={() => handleSave(index)}
                                             >
                                                 <span className="txtEditSave">Guardar</span>
-                                                {/* <img src="https://i.postimg.cc/jSD9KCSq/salvar.png"></img> */}
                                             </button>
                                         ) : (
                                             <button
@@ -264,7 +249,6 @@ function AdminPerson() {
                                                 onClick={() => handleEdit(index)}
                                             >
                                                 <span className="txtEditSave">Editar</span>
-                                                {/* <img src="https://i.postimg.cc/HsQBd5Qt/editar.png"></img> */}
                                             </button>
                                         )}
                                     </td>
@@ -274,7 +258,6 @@ function AdminPerson() {
                                             onClick={() => handleDelete(index)}
                                         >
                                             <span className="txtDelete">Eliminar</span>
-                                            {/* <img src="https://i.postimg.cc/mgspHVbq/eliminar-simbolo.png"></img> */}
                                         </button>
                                     </td>
                                 </tr>

@@ -15,18 +15,8 @@ function AddPerson({ onClose }) {
         country: "",
         diagnosed: "",
         email: "",
-        // username: "",
     });
 
-    // const handleFieldChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFila(customers[index]);
-    //     setFormData({ ...formData, [name]: value });
-    // };
-
-    // const handleInputChange = (newValue, index, field) => {
-    //     customersGlobal[index][field] = newValue;
-    // };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -54,9 +44,7 @@ function AddPerson({ onClose }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(formData);
-        // await postUsers(formData);
         postPerson(formData);
-
 
         setUpdatePage((prevState) => !prevState);
         setFormData({
@@ -67,7 +55,6 @@ function AddPerson({ onClose }) {
             country: "",
             diagnosed: "",
             email: ""
-            //   username: "",
         });
     };
 
@@ -124,14 +111,6 @@ function AddPerson({ onClose }) {
                         </div>
                         <div className="smallDiv">
                             <label className="labelStyle"> Diagnosticado: </label>
-                            {/* <input
-                                type="text"
-                                name="diagnosed"
-                                value={formData.diagnosed}
-                                onChange={handleChange}
-                                required
-                                className="inputF"
-                            /> */}
                             <select
                                 name="diagnosed"
                                 value={formData.diagnosed}
@@ -139,9 +118,9 @@ function AddPerson({ onClose }) {
                                 required
                                 className="inputF"
                             >
-                                <option value="">Selecciona una opción </option>
-                                <option value="option1">si</option>
-                                <option value="option2">No</option>
+                                <option value="">Selecciona una opción</option>
+                                <option value="1">si</option>
+                                <option value="0">No</option>
                             </select>
                         </div>
                         <div className="smallDiv">

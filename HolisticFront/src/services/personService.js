@@ -32,10 +32,10 @@ export const personService = {
         }
     },
 
-    async patchPerson(person) {
+    async putPerson(person) {
         try {
             let person2 = JSON.stringify(person)
-            let response = await apiClient.patch("/person", person2);
+            let response = await apiClient.put("/person/put", person2);
             return response.data;
         } catch (error) {
             console.error("Error al actualiar datos:", error);
@@ -46,7 +46,7 @@ export const personService = {
     async DeletePerson(person) {
         try {
             let person2 = JSON.stringify(person)
-            let response = await apiClient.delete("/person", { data: person });
+            let response = await apiClient.delete("/person/delete", { data: person });
             return response.data;
         } catch (error) {
             console.error("Error al eliminar datosssssssss:", error);
