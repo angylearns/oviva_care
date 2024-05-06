@@ -5,6 +5,7 @@ import FormContact from './components/formContact/FormContact';
 import AdminPerson from './components/adminPerson/AdminPerson';
 import AddPerson from './components/adminPerson/AddPerson';
 import Question from './components/question/Question';
+import QuestionContact from './views/QuestionContact';
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
       {/* <Recipe/> */}
       {/* <FormContact/> */}
       {/* <AdminPerson/> */}
-      <Question/>
+      {/* <Question/> */}
+      <QuestionContact/>
 
     </>
   )

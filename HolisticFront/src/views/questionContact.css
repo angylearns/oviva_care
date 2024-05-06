@@ -1,0 +1,10 @@
+.containerGroup{
+    display:flex;
+    flex-direction: row;
+    background-color: pink;
+    gap:5%;
+}
+
+.containerQuestion{
+    width: 50%;
+}
