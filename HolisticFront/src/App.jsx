@@ -1,13 +1,15 @@
 import { useState } from 'react'
 import './App.css'
-import Recipe from './components/recipe/Recipe';
+import VideoList from './components/video/VideoList';
+// import Recipe from './components/recipe/Recipe';
 
 function App() {
 
 
   return (
     <>
-      <Recipe/>
+      {/* <Recipe/> */}
+      <VideoList/>
     </>
   )
 }
