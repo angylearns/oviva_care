@@ -10,7 +10,7 @@ CORS(app,resources={"*":{"origins": "http://localhost:5173"}})
 
 def init_app(config):
     app.config.from_object(config)
-    
+  
     
     app.register_blueprint(UserRouter.mainUser, url_prefix='/user')
     app.register_blueprint(VideoRouter.mainVideo, url_prefix='/video')
