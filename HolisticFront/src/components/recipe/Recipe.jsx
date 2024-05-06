@@ -31,7 +31,9 @@ const Recipe = () => {
   const fetchData = async () => {
     try {
       const recipesData = await recipeService.getAllRecipes();
-      console.log(recipesData)
+      recipesData.sort((a, b) => {
+        return a.title.localeCompare(b.title);
+      });
       setRecipes(recipesData);
     } catch (error) {
       console.error("Error fetching recipes:", error);
