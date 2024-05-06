@@ -16,7 +16,7 @@ function Navbar() {
                 <section>Videos</section>
             </section>
             <section className="navbar_main_right">
-                <img src="/images/icon_profile_female.svg" alt="User icon" />
+                <img src="/images/icons/icon_profile_female.svg" alt="User icon" />
             </section>
         </nav>
     )

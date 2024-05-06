@@ -15,8 +15,8 @@ function Footer() {
                 <section>Oviva © 2024</section>
             </section>
             <section className="footer_right">
-                <img src="/images/icon_facebook.svg" alt="Facebook logo" />
-                <img src="images/icon_instagram.svg" alt="Instagram logo" />
+                <img src="/images/icons/icon_facebook.svg" alt="Facebook logo" />
+                <img src="images/icons/icon_instagram.svg" alt="Instagram logo" />
             </section>
         </footer>
     );
