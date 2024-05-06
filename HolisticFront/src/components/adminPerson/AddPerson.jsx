@@ -126,11 +126,13 @@ function AddPerson({ onClose }) {
                         <div className="smallDiv">
                             <label className="labelStyle">Email:</label>
                             <input
-                                type="text"
+                                type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 required
+                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                                title="Ingrese un correo electrónico válido"
                                 className="inputF"
                             />
                         </div>

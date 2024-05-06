@@ -127,13 +127,6 @@ function AdminPerson() {
         setFila(customersGlobal);
     }, [updatePage]);
 
-    // useEffect(() => {
-    //     if(sortedCustomers.length == customersGlobal.length){
-    //         setCustomersGlobal(sortedCustomers)
-    //         setFila(customersGlobal);
-    //     }
-      
-    // }, [sortedCustomers]);
 
 
 
@@ -231,7 +224,6 @@ function AdminPerson() {
                                                 }
                                             />
                                         ) : (
-                                            // customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
                                             customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
                                         )}
                                     </td>
