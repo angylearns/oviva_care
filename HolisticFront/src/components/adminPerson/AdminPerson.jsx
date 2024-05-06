@@ -51,7 +51,7 @@ function AdminPerson() {
             }
         };
     
-        const sortedCustomers = [...customersGlobal].sort((a, b) => {
+        customersGlobal.sort((a, b) => {
             // Función de comparación para ordenar según el campo seleccionado.
             const fieldA = a[sortBy.field];
             const fieldB = b[sortBy.field];
@@ -80,6 +80,16 @@ function AdminPerson() {
         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
     };
 
+
+    const handleDelete = async (index) => {
+        await deletePerson(index);
+        setUpdatePage((prevState) => !prevState);
+    };
+
+    async function deletePerson(index) {
+        personService.DeletePerson(customersGlobal[index]);
+        
+    }
     const handleFieldChange = (e) => {
         const { name, value } = e.target;
         setFila(customers[index]);
@@ -109,6 +119,7 @@ function AdminPerson() {
     useEffect(() => {
         fetchUsers();
         setFila(customersGlobal);
+       
     }, []);
 
     useEffect(() => {
@@ -116,14 +127,15 @@ function AdminPerson() {
         setFila(customersGlobal);
     }, [updatePage]);
 
-    const handleDelete = async (index) => {
-        await deletePerson(index);
-    };
+    // useEffect(() => {
+    //     if(sortedCustomers.length == customersGlobal.length){
+    //         setCustomersGlobal(sortedCustomers)
+    //         setFila(customersGlobal);
+    //     }
+      
+    // }, [sortedCustomers]);
 
-    async function deletePerson(index) {
-        personService.DeletePerson(customersGlobal[index]);
-        setUpdatePage((prevState) => !prevState);
-    }
+
 
     return (
         <div className="mainContainer" >
@@ -141,13 +153,13 @@ function AdminPerson() {
                     <table className="tableData">
                     <thead>
                     <tr>
-                        <th onClick={() => handleSort("id_person")}>ID</th>
-                        <th onClick={() => handleSort("first_name")}>Nombre</th>
-                        <th onClick={() => handleSort("last_name")}>Apellidos</th>
-                        <th onClick={() => handleSort("birth_date")}>Fecha de Nacimiento</th>
-                        <th onClick={() => handleSort("country")}>País</th>
-                        <th onClick={() => handleSort("diagnosed")}>Diagnosticado</th>
-                        <th onClick={() => handleSort("email")}>Email</th>
+                        <th onClick={() => handleSort("id_person")} className="headField">ID</th>
+                        <th onClick={() => handleSort("first_name")} className="headField">Nombre</th>
+                        <th onClick={() => handleSort("last_name")} className="headField">Apellidos</th>
+                        <th onClick={() => handleSort("birth_date")} className="headField">Fecha de Nacimiento</th>
+                        <th onClick={() => handleSort("country")} className="headField">País</th>
+                        <th onClick={() => handleSort("diagnosed")} className="headField">Diagnosticado</th>
+                        <th onClick={() => handleSort("email")} className="headField">Email</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -219,6 +231,7 @@ function AdminPerson() {
                                                 }
                                             />
                                         ) : (
+                                            // customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
                                             customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
                                         )}
                                     </td>
