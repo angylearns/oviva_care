@@ -25,7 +25,7 @@ class PersonService():
         try:
             connection=get_connection()
             with connection.cursor() as cursor:
-                id_person = ""
+                
                 first_name = person.first_name
                 last_name = person.last_name
                 birth_date = person.birth_date
@@ -33,7 +33,7 @@ class PersonService():
                 diagnosed = person.diagnosed
                 email = person.email
                 
-                cursor.callproc("InsertPerson", (id_person, first_name, last_name, birth_date, country,diagnosed, email))
+                cursor.callproc("InsertPerson", ( first_name, last_name, birth_date, country,diagnosed, email))
                 connection.commit()
                 connection.close()
                 return 'Persona agregada correctamente'

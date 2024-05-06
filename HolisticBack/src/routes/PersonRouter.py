@@ -18,7 +18,7 @@ def get_person():
 
 def post_person():
 
-        id_person = ""
+        
         first_name = request.json["first_name"]
         last_name = request.json["last_name"]
         birth_date = request.json["birth_date"]
@@ -27,7 +27,7 @@ def post_person():
         email = request.json["email"]
     
        
-        person= Person(None,first_name,last_name,birth_date,country,diagnosed,email)
+        person= Person(0,first_name,last_name,birth_date,country,diagnosed,email)
 
 
         if PersonService.post_person(person):
