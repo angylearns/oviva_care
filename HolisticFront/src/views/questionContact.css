@@ -1,10 +1,11 @@
 .containerGroup{
     display:flex;
     flex-direction: row;
-    background-color: pink;
-    gap:5%;
+    /* gap:5%; */
+    background-color: blue;
 }
 
-.containerQuestion{
-    width: 50%;
+.inner-div {
+    width: 50%; /* Cada div interior ocupa el 50% del ancho del padre */
+    box-sizing:
 }

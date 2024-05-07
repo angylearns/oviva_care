@@ -40,10 +40,10 @@ function FormContact() {
         <div className="questionsContainer">
             {questionList.map((question, index) => (
                 <div key={question.id_qa}>
-                    <h2 onClick={() => toggleQuestion(index)}>
+                    <p onClick={() => toggleQuestion(index)}>
                         {question.question} 
                         <img src="https://i.postimg.cc/7hKhM85r/abajo.png" alt="Expandir" style={{ transform: rotatedQuestions[index] ? "rotate(180deg)" : "rotate(0deg)" }} />
-                    </h2>
+                    </p>
                     {expandedQuestions[index] && 
                         <div className="answer">
                             <p>{question.answer}</p>
