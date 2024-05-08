@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+// import { BrowserRouter as Router, Link } from 'react-router-dom';
 import "./navbar.css";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Estado para controlar si el usuario ha iniciado sesión
+  const [isLoggedIn, setIsLoggedIn] = useState(true); 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -52,28 +52,7 @@ function Navbar() {
           </section>
         </section>
       </nav>
-      {/* <nav className="navbar_mobile navbar_user">
-            <section className="navbar_mobile_left">
-                <img src="/images/logo_no_words.png" alt="Logo Oviva" />
-            </section>
-            <section className="navbar_mobile_right">
-                <img src="/images/icons/icon_profile_female.svg" alt="User icon" className='navbar_mobile_profile_icon'/>
-                <input type="checkbox" className="toggle_menu" id="toggle_menu" />
-                <label for="toggle_menu" className="navbar_mobile_hamburger_icon">&#9776;</label> 
-            </section>
-            <section className="modal_menu">
-                <ul>
-                    <li className='navbar_mobile_language'>
-                        ES <span className='language_span'>|</span> EN
-                        </li>
-                    <li>Preguntas</li>
-                    <li>Expertos</li>
-                    <li>Blog</li>
-                    {isLoggedIn && <li>Recetas</li>} 
-                    {isLoggedIn && <li>Videos</li>}
-                </ul>
-            </section>
-        </nav> */}
+
       <nav className="navbar_mobile navbar_user">
       <section className="navbar_mobile_left">
         <img src="/images/logo_no_words.png" alt="Logo Oviva" />
@@ -94,6 +73,18 @@ function Navbar() {
           {isLoggedIn && <li>Recetas</li>}
           {isLoggedIn && <li>Videos</li>}
         </ul>
+        {/* <Router>
+            <ul>
+                <li className="navbar_mobile_language">
+                <Link to="/">ES</Link> <span className="language_span">|</span> <Link to="/">EN</Link>
+                </li>
+                <li><Link to="/preguntas">Preguntas</Link></li>
+                <li><Link to="/expertos">Expertos</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
+                {isLoggedIn && <li><Link to="/recetas">Recetas</Link></li>}
+                {isLoggedIn && <li><Link to="/videos">Videos</Link></li>}
+            </ul>
+        </Router> */}
       </section>
     </nav>
     </>
