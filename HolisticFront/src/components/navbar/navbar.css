@@ -73,11 +73,6 @@
 }
 
 @media (max-width: 660px) {
-    /* .navbar_desktop_left,
-    .navbar_desktop_right {
-        padding: 1%;
-    } */
-
     .navbar_desktop_logo {
         height: 80%;
     }
@@ -102,7 +97,8 @@
 }
 
 @media (max-width: 430px) {
-    .navbar_desktop {
+    .navbar_desktop,
+    .toggle_menu {
         display: none;
     }
 
@@ -111,6 +107,7 @@
         height: 10vh;
         width: 100%;
         display: flex;
+        position: relative; 
     }
     
     .navbar_mobile_left,
@@ -141,30 +138,43 @@
     }
 
     .navbar_mobile_hamburger_icon {
-        font-size: 34px;
-    }
-    
-    .toggle_menu:checked~.modal_menu {
-        background-color: #EE7214;
-        border-radius: 50px;
-        display: block;
-        position: absolute;
-        top: 115px;
-        right: 50px;
-        height: 200px;
-        min-width: fit-content;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        font-size: 24px; 
+        cursor: pointer;
     }
 
-    .toggle_menu:checked~.modal_menu ul {
-        display: flex;
-        flex-direction: column;
-        align-content: space-around;
-        margin: 0;
-        height: 70%;
-        min-width: auto;
+    .modal_menu {
+        display: none;
+        position: absolute;
+        top: calc(100% - 10px);
+        right: 20px; 
+        background-color: #00B6B9;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1; 
+        width: 120px; 
     }
-    
+
+    .modal_menu.open {
+        display: block;
+    }
+
+    .navbar_mobile_language {
+        font-size: smaller;
+    }
+
+    .navbar_mobile_language .language_span {
+        color: #D9ECEA;
+    }
+    .modal_menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .modal_menu li {
+        margin: 20px 0;
+        text-align: center;
+        color: #000000; 
+    }
 }
