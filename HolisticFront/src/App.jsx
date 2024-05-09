@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-    {/* <Register /> */}
-      <Login_user />
+    <Register />
+      {/* <Login_user /> */}
       {/* <Recipe/> */}
     </>
   )

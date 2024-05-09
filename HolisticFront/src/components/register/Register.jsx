@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from 'react-hook-form';
 import '../register/register.css'
 import login_icon from "../../../public/images/icons/login_icon.svg"
@@ -8,12 +8,15 @@ import { handleRegister } from "../../handlers/registerHandle"
 function Register() {
     // maneja el estado del formulario, la validación y el envío del formulario.
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
+
 
     //Verifica que se etá conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
-        handleRegister(data);
+        handleRegister(data, setErrorMessage);
     }
+
 
     return (
 
@@ -57,7 +60,8 @@ function Register() {
                 <button type="submit" className="login-regbutton">Registrar</button>
                 <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
             </div>
-
+            {/* Mostrar mensaje de error si está presente */}
+            {errorMessage && <p>{errorMessage}</p>}
 
         </form>
 
