@@ -1,20 +1,13 @@
+import loginService from '../../src/handlers/loginHandle'
 
-
-export const handleRegister = async (data) => {
-    console.log('handler' + JSON.stringify(data));
-
-
-try {
-
-    await loginService.addUser(password, user_type, email);
-
-    const id_user_fk = await loginService.getLastUserId();
-
-    await loginService.addPerson(data, id_user_fk);
-
-    console.log('Detalles de la persona registrados');
-} catch (error) {
-
-    setErrorMessage(`Ocurrió un error al registrar la persona: ${error.message}`);
-}
+export const handleLogin = async ({  password, user_type, email }, setErrorMessage) => {
+    try {
+        const users = await loginService.postUser(password, user_type, email);
+        console.log(users);
+        return users;
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        setErrorMessage('Ocurrió un error al iniciar sesión');
+        throw error;
+    }
 };

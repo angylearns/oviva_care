@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import '../login/login.css'
 import login_icon from "../../../public/images/icons/login_icon.svg"
+import { handleLogin } from "../../handlers/loginHandle"
 
 
 function Login_user() {
@@ -11,7 +12,7 @@ function Login_user() {
     const onSubmit = data => {
         console.log('Login data:', data);
         // Aquí llamarías a tu función handleLogin con los datos del formulario
-        // handleLogin(data);
+        handleLogin(data);
     };
 
     return (
