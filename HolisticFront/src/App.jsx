@@ -3,6 +3,7 @@ import './App.css'
 import Recipe from './components/recipe/Recipe';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
+import Navbar_admin from './components/navbar/Navbar_admin';
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <Navbar_admin />
       <Recipe/>
       <Footer/>
     </>

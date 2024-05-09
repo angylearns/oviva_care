@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./navbar.css";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -13,7 +13,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar_desktop navbar_user">
+      <nav className="navbar_user_desktop">
         {/* <section className="navbar_desktop_left">
                 <Link to="/">
                     <img src="/images/logo_words.png" alt="Oviva Logo" className='navbar_desktop_logo' />
@@ -31,21 +31,21 @@ function Navbar() {
                     <img src="/images/icons/icon_profile_female.svg" alt="User icon" />
                 </Link>
                 <section>ES <span className='language_span'>|</span> EN</section> */}
-        <section className="navbar_desktop_left">
+        <section className="navbar_user_desktop--left">
           <img
             src="/images/logo_words.png"
             alt="Oviva Logo"
             className="navbar_desktop_logo"
           />
         </section>
-        <section className="navbar_desktop_center">
+        <section className="navbar_user_desktop--center">
           <section>Preguntas</section>
           <section>Expertos</section>
           <section>Blog</section>
           {isLoggedIn && <section>Recetas</section>}
           {isLoggedIn && <section>Videos</section>}
         </section>
-        <section className="navbar_desktop_right">
+        <section className="navbar_user_desktop--right">
           <img src="/images/icons/icon_profile_female.svg" alt="User icon" />
           <section className="navbar_desktop_language">
             ES <span className="language_span">|</span> EN
@@ -53,11 +53,11 @@ function Navbar() {
         </section>
       </nav>
 
-      <nav className="navbar_mobile navbar_user">
-      <section className="navbar_mobile_left">
+      <nav className="navbar_user_mobile">
+      <section className="navbar_user_mobile--left">
         <img src="/images/logo_no_words.png" alt="Logo Oviva" />
       </section>
-      <section className="navbar_mobile_right">
+      <section className="navbar_user_mobile--right">
         <img src="/images/icons/icon_profile_female.svg" alt="User icon" className="navbar_mobile_profile_icon" />
         <input type="checkbox" className="toggle_menu" id="toggle_menu" checked={isOpen} onChange={toggleMenu} />
         <label htmlFor="toggle_menu" className="navbar_mobile_hamburger_icon">&#9776;</label>
