@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, } from "react";
 import { useForm } from 'react-hook-form';
-import '../register/register.css'
-import login_icon from "../../../public/images/icons/login_icon.svg"
-import { handleRegister } from "../../handlers/registerHandle"
+import '../register/register.css';
+import login_icon from "../../../public/images/icons/login_icon.svg";
+import { handleRegister } from "../../handlers/registerHandle";
 
 
 function Register() {
@@ -58,7 +58,9 @@ function Register() {
             </div>
             <div className="buttons">
                 <button type="submit" className="login-regbutton">Registrar</button>
+                {/* <Link to="/Login_user"> */}
                 <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
+                {/* </Link> */}
             </div>
             {/* Mostrar mensaje de error si está presente */}
             {errorMessage && <p>{errorMessage}</p>}
