@@ -38,6 +38,7 @@ function FormContact() {
 
     return (
         <div className="questionsContainer">
+            <h2>Preguntas frecuentes</h2>
             {questionList.map((question, index) => (
                 <div key={question.id_qa}>
                     <p onClick={() => toggleQuestion(index)}>

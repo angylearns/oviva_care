@@ -41,7 +41,7 @@ function FormContact() {
     return (
         <div className="container-form">
             <div>
-            <p>¿Tienes más dudas? Pregunta sin compromiso y te ayudo a resolver la duda que tengas.</p>
+            <h2>Contacto</h2>
                 <form id="form" onSubmit={handleSubmit}>
                     <div className="field">
                         <label htmlFor="emailjs_name">Nombre</label>
