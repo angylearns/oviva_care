@@ -1,6 +1,6 @@
-import loginService from '../../src/handlers/loginHandle'
+import loginService from "../services/loginService";
 
-export const handleLogin = async ({  password, user_type, email }, setErrorMessage) => {
+export const handleLogin = async ({ password, user_type, email }, setErrorMessage) => {
     try {
         const users = await loginService.postUser(password, user_type, email);
         console.log(users);

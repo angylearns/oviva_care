@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import '../register/register.css'
 import login_icon from "../../../public/images/icons/login_icon.svg"
-import { handleRegister } from "../../handlers/loginHandle"
+import { handleRegister } from "../../handlers/registerHandle"
 
 
 function Register() {

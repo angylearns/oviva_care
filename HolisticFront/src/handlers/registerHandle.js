@@ -1,5 +1,4 @@
-import registerService from '../../src/services/registerService'
-
+import registerService from "../services/registerService";
 
 export const handleRegister = async (e, setErrorMessage) => {
     e.preventDefault();
@@ -16,7 +15,7 @@ export const handleRegister = async (e, setErrorMessage) => {
 
     try {
 
-        await registerService.addUser( password, user_type, email);
+        await loginService.addUser( password, user_type, email);
 
         const id_user_fk = await loginService.getLastUserId();
 
