@@ -3,6 +3,7 @@ import emailjs from 'emailjs-com';
 import { useEffect, useState } from "react";
 import "./formContact.css";
 
+
 function FormContact() {
     const [email, setEmail] = useState("");
 
@@ -17,7 +18,8 @@ function FormContact() {
 
 
         if (!emailRegex.test(email)) {
-            alert("Por favor, ingresa un correo electrónico válido.");
+             alert("Por favor, ingresa un correo electrónico válido.");
+            
         } else {
 
             const btn = event.target.querySelector('#button');
@@ -29,11 +31,14 @@ function FormContact() {
             emailjs.sendForm(serviceID, templateID, event.target)
                 .then(() => {
                     btn.value = 'Send Email';
-                    alert('Enviado!');
+                     alert('Enviado!');
+                   
+                    
                 })
                 .catch((err) => {
                     btn.value = 'Send Email';
-                    alert(JSON.stringify(err));
+                     alert(JSON.stringify(err));
+                   
                 });
         }
     };
@@ -71,7 +76,9 @@ function FormContact() {
 
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
             </div>
+          
         </div>
+        
     );
 }
 
