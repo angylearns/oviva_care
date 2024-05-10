@@ -37,7 +37,7 @@ function Register() {
                         {...register("name", {
                             required: "Este campo es requerido",
                             pattern: {
-                                value: /^[A-Za-z\s]+$/i,
+                                value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
                                 message: "Solo se permiten letras"
                             }
                         })}
@@ -83,7 +83,7 @@ function Register() {
                         {...register("country", {
                             required: "Este campo es requerido",
                             pattern: {
-                                value: /^[A-Za-z\s]+$/i,
+                                value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
                                 message: "Solo se permiten letras"
                             }
                         })}
@@ -116,7 +116,7 @@ function Register() {
                 </div>
 
             </div>
-            
+
             <div className="buttons">
                 <button type="submit" className="login-regbutton">Registrar</button>
                 {/* <Link to="/Login_user"> */}
