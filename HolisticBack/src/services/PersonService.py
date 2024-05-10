@@ -32,8 +32,7 @@ class PersonService():
                 country = person.country
                 diagnosed = person.diagnosed
                 email = person.email
-                print("eoeoeoeoeooeoeoe")
-                print(person)
+                
                 cursor.callproc("InsertPerson", (first_name, last_name, birth_date, country,diagnosed, email))
                 connection.commit()
                 connection.close()
