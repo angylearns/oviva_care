@@ -11,7 +11,7 @@ function Register() {
     const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
 
 
-    //Verifica que se etá conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
+    //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
         handleRegister(data, setErrorMessage);
@@ -31,31 +31,92 @@ function Register() {
                 <div className="groupfields1">
 
                     <p className="text-regname">Nombre</p>
-                    <input className="field-regname" {...register("name", { required: true })} placeholder="Nombre completo" />
-                    {errors.name && <p>Este campo es requerido</p>}
+
+                    <input
+                        className="field-regname"
+                        {...register("name", {
+                            required: "Este campo es requerido",
+                            pattern: {
+                                value: /^[A-Za-z\s]+$/i,
+                                message: "Solo se permiten letras"
+                            }
+                        })}
+                        placeholder="Nombre completo"
+                    />
+                    {errors.name && <p>{errors.name.message}</p>}
+
 
                     <p className="text-regemail">Correo Electrónico</p>
-                    <input className="field-regemail" {...register("email", { required: true })} placeholder="Correo Electrónico" />
-                    {errors.email && <p>Este campo es requerido</p>}
+                    <input
+                        className="field-regemail"
+                        {...register("email", {
+                            required: "Este campo es requerido",
+                            pattern: {
+                                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                                message: "Correo electrónico no válido"
+                            }
+                        })}
+                        placeholder="Correo Electrónico"
+                    />
+                    {errors.email && <p>{errors.email.message}</p>}
+
 
                     <p className="text-regdiagnose">¿Estás diagnosticada?</p>
-                    <input className="field-regdiagnose"{...register("diagnosed", { required: true })} placeholder="Sí / No" />
-                    {errors.diagnosed && <p>Este campo es requerido</p>}
-
+                    <select
+                        className="field-regdiagnose"
+                        {...register("diagnosed", { required: "Este campo es requerido" })}
+                    >
+                        <option value="">Selecciona una opción</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                    {errors.diagnosed && <p>{errors.diagnosed.message}</p>}
 
                 </div>
 
+
                 <div className="groupfields2">
+
                     <p className="text-regcountry">País</p>
-                    <input className="field-regcountry" {...register("country", { required: true })} placeholder="País" />
-                    {errors.country && <p>Este campo es requerido</p>}
+                    <input
+                        className="field-regcountry"
+                        {...register("country", {
+                            required: "Este campo es requerido",
+                            pattern: {
+                                value: /^[A-Za-z\s]+$/i,
+                                message: "Solo se permiten letras"
+                            }
+                        })}
+                        placeholder="País"
+                    />
+                    {errors.country && <p>{errors.country.message}</p>}
+
 
                     <p className="text-regpassword">Contraseña</p>
-                    <input className="field-regpassword" {...register("password", { required: true })} placeholder="Contraseña" />
-                    {errors.password && <p>Este campo es requerido</p>}
+                    <input
+                        className="field-regpassword"
+                        {...register("password", {
+                            required: "Este campo es requerido",
+                            minLength: {
+                                value: 8,
+                                message: "La contraseña debe tener al menos 8 caracteres"
+                            },
+                            maxLength: {
+                                value: 8,
+                                message: "La contraseña no debe tener más de 8 caracteres"
+                            },
+                            pattern: {
+                                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/,
+                                message: "La contraseña debe incluir números, letras minúsculas y mayúsculas y símbolos"
+                            }
+                        })}
+                        placeholder="Contraseña"
+                    />
+                    {errors.password && <p>{errors.password.message}</p>}
                 </div>
 
             </div>
+            
             <div className="buttons">
                 <button type="submit" className="login-regbutton">Registrar</button>
                 {/* <Link to="/Login_user"> */}
