@@ -10,14 +10,28 @@ function Login_user() {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
 
+    // const onSubmit = data => {
+    //     console.log('Login data:', data);
+    //     // Aquí llamarías a tu función handleLogin con los datos del formulario
+
+    //     handleLogin(data, setErrorMessage);
+
+    // };
+
     const onSubmit = data => {
         console.log('Login data:', data);
         // Aquí llamarías a tu función handleLogin con los datos del formulario
-
-        handleLogin(data, setErrorMessage);
-
+        handleLogin(data)
+            .then(() => {
+                // Si el login es exitoso, resetea los campos del formulario
+                reset();
+                // Aquí también podrías redirigir al usuario a otra página o cambiar el estado de la aplicación
+            })
+            .catch(error => {
+                // Si hay un error en el login, establece el mensaje de error
+                setErrorMessage(error.message);
+            });
     };
-
     return (
 
 
@@ -43,7 +57,7 @@ function Login_user() {
             {errors.email && <p>{errors.email.message}</p>}
 
             <p className="text-password">Contraseña</p>
-            
+
 
             <input
                 className="field-password"
