@@ -12,10 +12,22 @@ function Register() {
 
 
     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
+    // const onSubmit = data => {
+    //     console.log('jsx ' + JSON.stringify(data));
+    //     handleRegister(data, setErrorMessage);
+    // }
+
+     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
-        handleRegister(data, setErrorMessage);
-    }
+        handleRegister(data, setErrorMessage)
+            .then(() => {
+                reset(); // Esto limpiará todos los campos después del registro exitoso
+            })
+            .catch(error => {
+                // Manejar el error aquí si es necesario
+            });
+    };
 
 
     return (
