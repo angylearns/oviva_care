@@ -1,0 +1,92 @@
+h1 {
+    display: flex;
+    font: bold;
+    color: #000000; /* Verde oscuro */
+    justify-content: center;
+  }
+  
+  .style {
+    background-color: #ffffff; /* Verde claro */
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c5e1a5; /* Verde claro */
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 25px;
+  }
+  
+  .add-recipe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Form-add-recipe {
+    align-items: center;
+    background-color: #c5e1a5; /* Verde claro */
+    flex-direction: column;
+    display: flex;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 25px;
+    max-width: 700px;
+    min-width: 300px;
+    align-self: center;
+  }
+  
+  .recipe-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .recipe-card {
+    width: 200px;
+    background-color: #c5e1a5; /* Verde claro */
+    padding: 15px;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  
+  .recipe-image {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    display: flex;
+    padding: 8px;
+  }
+  
+  .recipe-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 8px;
+  }
+  
+  .btn-cardForm-edit,
+  .btn-cardForm-delete {
+    border-radius: 5px;
+    background-color: #1df3cf; /* Verde */
+    color: #fff;
+    border: none;
+    width: 100px;
+    margin: 3px;
+    padding: 6px;
+    transition: background-color 0.5s;
+  }
+  
+  .btn-cardForm-edit:hover,
+  .btn-cardForm-delete:hover {
+    background-color: #1df3cf; /* Verde oscuro */
+  }
+  
+  .button-add-recipe {
+    margin: 10px;
+  }

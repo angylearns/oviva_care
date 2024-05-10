@@ -33,7 +33,7 @@ class PersonService():
                 diagnosed = person.diagnosed
                 email = person.email
                 
-                cursor.callproc("InsertPerson", ( first_name, last_name, birth_date, country,diagnosed, email))
+                cursor.callproc("InsertPerson", (first_name, last_name, birth_date, country,diagnosed, email))
                 connection.commit()
                 connection.close()
                 return 'Persona agregada correctamente'
