@@ -37,7 +37,7 @@ function Register() {
 
             <div>
                 <img src={login_icon} className="login-icon" alt="imagen login" />
-                <h1>Registro Miembro Oviva</h1>
+                <h1 className="main-text-register">Registro Miembro Oviva</h1>
             </div>
             <div className="fieldsblock">
                 <div className="groupfields1">
@@ -130,7 +130,7 @@ function Register() {
             </div>
 
             <div className="buttons">
-                <button type="submit" className="login-regbutton">Registrar</button>
+                <button type="submit" className="register-regbutton">Registrar</button>
                 {/* <Link to="/Login_user"> */}
                 <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
                 {/* </Link> */}
