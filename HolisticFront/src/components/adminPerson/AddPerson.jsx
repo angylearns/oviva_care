@@ -96,6 +96,7 @@ function AddPerson({ onClose }) {
                                 onChange={handleChange}
                                 required
                                 className="inputF"
+                                placeholder="YYYY-MM-DD"
                             />
                         </div>
                         <div className="smallDiv">

@@ -11,6 +11,13 @@ function FormContact() {
         emailjs.init('rr6KB5IASJYA2ls3i');
     }, []);
 
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+      };
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -31,8 +38,8 @@ function FormContact() {
             emailjs.sendForm(serviceID, templateID, event.target)
                 .then(() => {
                     btn.value = 'Send Email';
-                     alert('Enviado!');
-                   
+                    //   alert('Enviado!');
+                    setShowAlert(true);
                     
                 })
                 .catch((err) => {
@@ -76,7 +83,18 @@ function FormContact() {
 
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
             </div>
-          
+           {/* Ventana emergente de alerta */}
+      {showAlert && (
+        <div className="custom-alert">
+          <div className="custom-alert-content">
+            <span>Mensaje enviado</span><br></br>
+            <button onClick={handleCloseAlert}>Cerrar</button>
+          </div>
+        </div>
+      )}
+
+
+
         </div>
         
     );
