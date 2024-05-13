@@ -21,7 +21,7 @@ export const handleRegister = async (data, setErrorMessage) => {
 
         const id_user_fk = await registerService.getLastUserId();
 
-        await registerService.addPerson(data.first_name, data.last_name, data.birth_date, data.country, data.diagnosed, id_user_fk);
+        await registerService.addPerson(data.first_name, data.last_name, data.birth_date, data.country, data.diagnosed, data.email);
 
         console.log('Detalles de la persona registrados');
     } catch (error) {

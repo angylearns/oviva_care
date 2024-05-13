@@ -31,7 +31,7 @@ const registerService = {
           throw new Error('Ocurrió un error al obtener el último ID de usuario');
         }
     },
-    addPerson: async (first_name, last_name, birth_date,country, diagnosed, id_user_fk) => {
+    addPerson: async (first_name, last_name, birth_date,country, diagnosed, email) => {
         console.log('registerService 1');
         try {
           const response = await fetch(`${API_URL}/person/`, {
@@ -40,7 +40,7 @@ const registerService = {
               'Content-Type': 'application/json',
             },
     
-            body: JSON.stringify({ first_name, last_name, birth_date,country, diagnosed, id_user_fk}),
+            body: JSON.stringify({ first_name, last_name, birth_date,country, diagnosed, email}),
           });
           if (!response.ok) {
             throw new Error('Error al registrar el usuario');
