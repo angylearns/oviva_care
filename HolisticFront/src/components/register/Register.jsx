@@ -75,7 +75,7 @@ function Register() {
 
                     <p className="text-regdiagnose">¿Estás diagnosticada?</p>
                     <select
-                        className="field-regdiagnose"
+                        className="field-regdiagnose custom-select"
                         {...register("diagnosed", { required: "Este campo es requerido" })}
                     >
                         <option value="">Selecciona una opción</option>

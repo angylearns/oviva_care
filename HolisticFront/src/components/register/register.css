@@ -150,11 +150,11 @@ input::placeholder {
     .text-regpassword {
         font-size: 20px;
     }
-    .text-regdiagnose{
+    .text-regdiagnose {
         margin-right: 51%;
     }
 
-    .gologin-button{
+    .gologin-button {
         font-size: 20px;
     }
 }
@@ -174,15 +174,15 @@ input::placeholder {
         height: 69px;
     }
 
-    .text-regdiagnose{
+    .text-regdiagnose {
         margin-right: 45%;
     }
 
-    .text-regemail{
+    .text-regemail {
         margin-right: 51%;
     }
 
-    .gologin-button{
+    .gologin-button {
         font-size: 18px;
     }
 
@@ -201,11 +201,11 @@ input::placeholder {
         height: 64px;
     }
 
-    .text-regdiagnose{
+    .text-regdiagnose {
         margin-right: 38%;
     }
 
-    .text-regemail{
+    .text-regemail {
         margin-right: 45%;
     }
 
@@ -213,7 +213,7 @@ input::placeholder {
         margin-right: 64%;
     }
 
-    .gologin-button{
+    .gologin-button {
         font-size: 16px;
     }
     }

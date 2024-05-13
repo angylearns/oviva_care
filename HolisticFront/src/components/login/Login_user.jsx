@@ -39,25 +39,27 @@ function Login_user() {
         <form className="formulary" onSubmit={handleSubmit(onSubmit)}>
 
             <img src={login_icon} className="login-icon" alt="imagen login" />
-            <h1 >Miembro Oviva</h1>
-            <p className="text-user">Usuario</p>
+            <h1 classname="main-text-login">Miembro Oviva</h1>
+            <div>
+                <p className="text-user">Usuario</p>
 
-            <input
-                className="field-user"
-                type="email"
-                placeholder="Correo Electrónico"
-                {...register("email", {
-                    required: "Este campo es requerido",
-                    pattern: {
-                        value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
-                        message: "Por favor ingresa un correo electrónico válido"
-                    }
-                })}
-            />
-            {errors.email && <p>{errors.email.message}</p>}
+                <input
+                    className="field-user"
+                    type="email"
+                    placeholder="Correo Electrónico"
+                    {...register("email", {
+                        required: "Este campo es requerido",
+                        pattern: {
+                            value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                            message: "Por favor ingresa un correo electrónico válido"
+                        }
+                    })}
+                />
+                {errors.email && <p>{errors.email.message}</p>}
+            </div>
 
+            <div>
             <p className="text-password">Contraseña</p>
-
 
             <input
                 className="field-password"
@@ -80,7 +82,7 @@ function Login_user() {
                 })}
             />
             {errors.password && <p>{errors.password.message}</p>}
-
+            </div>
             <button type="submit" className="login-button">Ingresar</button>
             {errorMessage && <p>{errorMessage}</p>} {/* Muestra el mensaje de error si existe */}
             <button className="goregister-button">¿No eres miembro?, regístrate</button>
