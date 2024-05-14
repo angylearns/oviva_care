@@ -40,6 +40,14 @@ footer {
     padding-right: 5%;
 }
 
+.link_facebook,
+.link_instagram {
+    height: 100%;
+    width: fit-content;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;}
+
 .footer_right img {
     height: 50%;
     /* para cambiarles el color se tiene que cambiar en el .svg directamente, porque con css, a un .svg dentro de una etiqueta img es complejo */
