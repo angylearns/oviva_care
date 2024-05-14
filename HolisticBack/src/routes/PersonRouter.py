@@ -18,7 +18,7 @@ def get_person():
 
 def post_person():
 
-        id_person = ""
+        print (request.json)
         first_name = request.json["first_name"]
         last_name = request.json["last_name"]
         birth_date = request.json["birth_date"]
