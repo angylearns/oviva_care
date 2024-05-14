@@ -25,13 +25,12 @@ class UserService():
         try:
             connection=get_connection()
             with connection.cursor() as cursor:
-                id_user = user.id_user
                 passwordunic = user.password
                 user_type = user.user_type
                 email=user.email
                 print("por buen camino")
                 password = generate_password_hash (passwordunic,  'pbkdf2:sha256', 30)
-                cursor.callproc("InsertUser", (id_user, password, user_type, email))
+                cursor.callproc("InsertUser", ( password, user_type, email))
                 connection.commit()
                 connection.close()
                 return 'Usuario agregado correctamente'

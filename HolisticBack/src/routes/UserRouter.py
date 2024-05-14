@@ -18,9 +18,11 @@ def get_user():
 
 def post_user():
 
-    
+    print (request.json)
     password = request.json ['password']
+    
     user_type = request.json ['user_type']
+  
     email=request.json ['email']
     
     user= User(None,password,user_type, email)
