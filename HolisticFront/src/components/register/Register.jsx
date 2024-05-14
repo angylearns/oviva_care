@@ -17,7 +17,7 @@ function Register() {
     //     handleRegister(data, setErrorMessage);
     // }
 
-     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
+    //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
         handleRegister(data, setErrorMessage)
@@ -46,7 +46,7 @@ function Register() {
 
                     <input
                         className="field-regname"
-                        {...register("name", {
+                        {...register("first_name", {
                             required: "Este campo es requerido",
                             pattern: {
                                 value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
@@ -57,6 +57,36 @@ function Register() {
                     />
                     {errors.name && <p>{errors.name.message}</p>}
 
+
+                    <p className="text-reglastname">Apellidos</p>
+
+                    <input
+                        className="field-reglastname"
+                        {...register("last_name", {
+                            required: "Este campo es requerido",
+                            pattern: {
+                                value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
+                                message: "Solo se permiten letras"
+                            }
+                        })}
+                        placeholder="Apellido completo"
+                    />
+                    {errors.last_name && <p>{errors.last_name.message}</p>}
+
+                    <p className="text-regbirthdate">Fecha Nacimiento</p>
+
+                    <input
+                        className="field-regbirthdate"
+                        {...register("birth_date", {
+                            required: "Este campo es requerido",
+                            pattern: {
+                                
+                                message: "Solo se permiten letras"
+                            }
+                        })}
+                        placeholder="Fecha nacimiento"
+                    />
+                    {errors.birthdate && <p>{errors.birthdate.message}</p>}
 
                     <p className="text-regemail">Correo Electrónico</p>
                     <input

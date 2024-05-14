@@ -1,6 +1,6 @@
 const API_URL = 'http://127.0.0.1:5001';
 const loginService = {
-    /*
+  
     //ESTE METODO HA PASADO A registerService
     postUser: async ( password, user_type, email) => {
       try {
@@ -23,7 +23,7 @@ const loginService = {
         console.error('Error al iniciar sesión:', error);
         throw error;
       }
-    },*/
+    },
   
     /*
     //ESTE METODO HA PASADO A registerService
