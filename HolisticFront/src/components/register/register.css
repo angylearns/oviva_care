@@ -37,10 +37,11 @@
     margin-right: 70%;
 }
 
-.text-regbirthdate{
+.text-regbirthdate {
     font-size: 24px;
     margin-right: 56%;
 }
+
 .text-regemail {
     font-size: 24px;
     margin-right: 55%;
@@ -51,10 +52,11 @@
     margin-right: 53%;
 }
 
-.text-reglastname{
+.text-reglastname {
     font-size: 24px;
     margin-right: 70%;
 }
+
 .text-regcountry {
     font-size: 24px;
     margin-right: 78%;
@@ -100,7 +102,9 @@ input::placeholder {
     .field-regcountry,
     .field-regemail,
     .field-regdiagnose,
-    .field-regpassword {
+    .field-regpassword,
+    .field-regbirthdate,
+    .field-reglastname {
         width: 450px;
     }
 
@@ -121,9 +125,12 @@ input::placeholder {
     .text-regemail,
     .text-regdiagnose,
     .text-regcountry,
-    .text-regpassword {
+    .text-regpassword,
+    .text-regbirthdate,
+    .text-reglastname {
         font-size: 20px;
     }
+
     .text-regdiagnose {
         margin-right: 51%;
     }
@@ -139,7 +146,9 @@ input::placeholder {
     .field-regcountry,
     .field-regemail,
     .field-regdiagnose,
-    .field-regpassword {
+    .field-regpassword,
+    .field-regbirthdate,
+    .field-reglastname {
         width: 380px;
     }
 
@@ -162,34 +171,36 @@ input::placeholder {
 
     @media screen and (max-width: 450px) {
 
-  .field-regname,
-    .field-regcountry,
-    .field-regemail,
-    .field-regdiagnose,
-    .field-regpassword {
-        width: 327px;
-    }
+        .f.field-regname,
+        .field-regcountry,
+        .field-regemail,
+        .field-regdiagnose,
+        .field-regpassword,
+        .field-regbirthdate,
+        .field-reglastname {
+            width: 327px;
+        }
 
-    .register-regbutton {
-        width: 263px;
-        height: 64px;
-    }
+        .register-regbutton {
+            width: 263px;
+            height: 64px;
+        }
 
-    .text-regdiagnose {
-        margin-right: 38%;
-    }
+        .text-regdiagnose {
+            margin-right: 38%;
+        }
 
-    .text-regemail {
-        margin-right: 45%;
-    }
+        .text-regemail {
+            margin-right: 45%;
+        }
 
-    .text-regpassword {
-        margin-right: 64%;
-    }
+        .text-regpassword {
+            margin-right: 64%;
+        }
 
-    .gologin-button {
-        font-size: 16px;
-    }
+        .gologin-button {
+            font-size: 16px;
+        }
     }
 
 }
