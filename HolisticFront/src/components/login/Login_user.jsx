@@ -50,7 +50,7 @@ function Login_user() {
                     {...register("email", {
                         required: "Este campo es requerido",
                         pattern: {
-                            value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                            value: /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$$/,
                             message: "Por favor ingresa un correo electrónico válido"
                         }
                     })}

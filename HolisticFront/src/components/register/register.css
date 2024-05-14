@@ -5,47 +5,12 @@
     justify-content: space-around;
 }
 
-.field-regname {
-    border-radius: 0 20px 0 30px;
-    width: 587px;
-    height: 67px;
-    background-color: rgba(0, 143, 139, 0.25);
-    padding-left: 10px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-}
-
-.field-regcountry {
-    border-radius: 0 20px 0 30px;
-    width: 587px;
-    height: 67px;
-    background-color: rgba(0, 143, 139, 0.25);
-    padding-left: 10px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-}
-
-.field-regemail {
-    border-radius: 0 20px 0 30px;
-    width: 587px;
-    height: 67px;
-    background-color: rgba(0, 143, 139, 0.25);
-    padding-left: 10px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-}
-
-.field-regdiagnose {
-    border-radius: 0 20px 0 30px;
-    width: 587px;
-    height: 67px;
-    background-color: rgba(0, 143, 139, 0.25);
-    padding-left: 10px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-    color: rgba(0, 143, 139, 0.50);
-}
-
+.field-regname,
+.field-regbirthdate,
+.field-regcountry,
+.field-regemail,
+.field-regdiagnose,
+.field-reglastname,
 .field-regpassword {
     border-radius: 0 20px 0 30px;
     width: 587px;
@@ -54,6 +19,7 @@
     padding-left: 10px;
     border: none;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    color: rgba(0, 143, 139, 0.50);
 }
 
 .register-regbutton {
@@ -71,6 +37,10 @@
     margin-right: 70%;
 }
 
+.text-regbirthdate{
+    font-size: 24px;
+    margin-right: 56%;
+}
 .text-regemail {
     font-size: 24px;
     margin-right: 55%;
@@ -81,6 +51,10 @@
     margin-right: 53%;
 }
 
+.text-reglastname{
+    font-size: 24px;
+    margin-right: 70%;
+}
 .text-regcountry {
     font-size: 24px;
     margin-right: 78%;

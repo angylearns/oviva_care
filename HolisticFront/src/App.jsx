@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Register />
-      <Login_user />
+      {/* <Login_user /> */}
       {/* <Recipe/> */}
     </>
   )

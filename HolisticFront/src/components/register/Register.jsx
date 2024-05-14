@@ -57,22 +57,6 @@ function Register() {
                     />
                     {errors.name && <p>{errors.name.message}</p>}
 
-
-                    <p className="text-reglastname">Apellidos</p>
-
-                    <input
-                        className="field-reglastname"
-                        {...register("last_name", {
-                            required: "Este campo es requerido",
-                            pattern: {
-                                value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
-                                message: "Solo se permiten letras"
-                            }
-                        })}
-                        placeholder="Apellido completo"
-                    />
-                    {errors.last_name && <p>{errors.last_name.message}</p>}
-
                     <p className="text-regbirthdate">Fecha Nacimiento</p>
 
                     <input
@@ -80,13 +64,13 @@ function Register() {
                         {...register("birth_date", {
                             required: "Este campo es requerido",
                             pattern: {
-                                
-                                message: "Solo se permiten letras"
+                                value: /^\d{4}-\d{2}-\d{2}$/,
+                                message: "Formato de fecha no válido. Utilice el formato AAAA-MM-DD."
                             }
                         })}
                         placeholder="Fecha nacimiento"
                     />
-                    {errors.birthdate && <p>{errors.birthdate.message}</p>}
+                    {errors.birth_date && <p>{errors.birth_date.message}</p>}
 
                     <p className="text-regemail">Correo Electrónico</p>
                     <input
@@ -94,7 +78,7 @@ function Register() {
                         {...register("email", {
                             required: "Este campo es requerido",
                             pattern: {
-                                value: /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/,
+                                value: /^[^\s@]+@[^\s@]+\.[^\s@.]{2,}$$/,
                                 message: "Correo electrónico no válido"
                             }
                         })}
@@ -119,20 +103,20 @@ function Register() {
 
                 <div className="groupfields2">
 
-                    <p className="text-regcountry">País</p>
+                    <p className="text-reglastname">Apellidos</p>
+
                     <input
-                        className="field-regcountry"
-                        {...register("country", {
+                        className="field-reglastname"
+                        {...register("last_name", {
                             required: "Este campo es requerido",
                             pattern: {
                                 value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
                                 message: "Solo se permiten letras"
                             }
                         })}
-                        placeholder="País"
+                        placeholder="Apellido completo"
                     />
-                    {errors.country && <p>{errors.country.message}</p>}
-
+                    {errors.last_name && <p>{errors.last_name.message}</p>}
 
                     <p className="text-regpassword">Contraseña</p>
                     <input
@@ -155,6 +139,23 @@ function Register() {
                         placeholder="Contraseña"
                     />
                     {errors.password && <p>{errors.password.message}</p>}
+
+                    <p className="text-regcountry">País</p>
+                    <input
+                        className="field-regcountry"
+                        {...register("country", {
+                            required: "Este campo es requerido",
+                            pattern: {
+                                value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
+                                message: "Solo se permiten letras"
+                            }
+                        })}
+                        placeholder="País"
+                    />
+                    {errors.country && <p>{errors.country.message}</p>}
+
+
+                    
                 </div>
 
             </div>
