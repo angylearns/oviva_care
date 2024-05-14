@@ -114,6 +114,8 @@
 
     .navbar_user_desktop--center {
         flex-wrap: wrap;
+        gap: 3%;
+        padding: 0 1%;
     }
 
     .navbar_desktop_language {
@@ -122,12 +124,17 @@
 }
 
 @media (max-width: 520px) {
-    .navbar_desktop_logo {
-        height: 70%;
+    .navbar_user_desktop--left,
+    .navbar_user_desktop--right {
+        width: 15%;
     }
 
-    .navbar_user_desktop--right img {
-        height: 40%;
+    .navbar_user_desktop--center {
+        width: 70%;
+    }
+    
+    .navbar_desktop_logo {
+        height: 70%;
     }
 }
 

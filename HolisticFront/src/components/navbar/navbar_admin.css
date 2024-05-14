@@ -47,7 +47,6 @@
     .navbar_admin {
         display: flex;
         justify-content: space-evenly;
-        /* padding: 0 2%; */
         box-sizing: border-box;
         gap:1%;
     }
