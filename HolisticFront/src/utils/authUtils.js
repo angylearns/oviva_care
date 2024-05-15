@@ -8,11 +8,12 @@ export const saveTokenToCookies = (token, setCookie) => {
   const decodedToken = jwtDecode(token);
 
   // Guardar cada parte del token como una cookie separada
-  setCookie("id_user", decodedToken.id_user, { path: "/" });
-  setCookie("email", decodedToken.email, { path: "/" });
-  setCookie("first_name", decodedToken.first_name, { path: "/" });
-  setCookie("id_person", decodedToken.id_person, { path: "/" });
-  setCookie(TOKEN_COOKIE_NAME, token, { path: "/" });
+  setCookie("id_user", decodedToken.id_user, { path: "/", sameSite: 'strict' });
+  setCookie("email", decodedToken.email, { path: "/", sameSite: 'strict' });
+  setCookie("first_name", decodedToken.first_name, { path: "/", sameSite: 'strict' });
+  setCookie("id_person", decodedToken.id_person, { path: "/", sameSite: 'strict' });
+  setCookie(TOKEN_COOKIE_NAME, token, { path: "/", sameSite: 'strict' });
+
 };
 
 // Función para obtener el token de las cookies
@@ -43,4 +44,13 @@ export const isAdmin = (cookies) => {
     return decodedToken.user_type === "admin";
   }
   return false;
+};
+
+export const logOut = (removeCookie) => {
+  // Eliminar todas las cookies relacionadas con la sesión del usuario
+  removeCookie("id_user", { path: "/" });
+  removeCookie("email", { path: "/" });
+  removeCookie("first_name", { path: "/" });
+  removeCookie("id_person", { path: "/" });
+  removeCookie(TOKEN_COOKIE_NAME, { path: "/" });
 };

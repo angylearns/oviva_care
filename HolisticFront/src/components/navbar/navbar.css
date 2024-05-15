@@ -62,8 +62,10 @@
     text-align: center;
 }
 
-.link_logout {
+.button_logout {
     height: 30%;
+    border: none;
+    background-color: transparent;
 }
 
 .link_profile {
@@ -159,12 +161,12 @@
         width: 50%;
     }
 
-    .link_logout {
+    .button_logout {
         height: 40%;
         width: 30px;
     }
 
-    .link_logout img {
+    .button_logout img {
         height: 100%;
     }
 
