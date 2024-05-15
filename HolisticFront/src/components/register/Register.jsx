@@ -7,7 +7,7 @@ import { handleRegister } from "../../handlers/registerHandle";
 
 function Register() {
     // maneja el estado del formulario, la validación y el envío del formulario.
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
 
 

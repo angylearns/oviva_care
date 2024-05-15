@@ -7,7 +7,7 @@ import { handleLogin } from "../../handlers/loginHandle"
 
 function Login_user() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
 
     // const onSubmit = data => {
