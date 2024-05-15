@@ -1,0 +1,41 @@
+footer {
+    background-color: #D9ECEA;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 10vh;
+}
+
+.footer_left {
+    height: 100%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer_center {
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer_logo {
+    height: 70%;
+}
+
+.footer_right {
+    height: 100%;
+    width: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer_right img {
+    height: 50%;
+    /* para cambiarles el color se tiene que cambiar en el .svg directamente, porque con css, a un .svg dentro de una etiqueta img es complejo */
+}
