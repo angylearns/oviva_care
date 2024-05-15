@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Juan",
+      "edad": 25,
+      "correo": "juan@example.com"
+    },
+    {
+      "id": 2,
+      "nombre": "María",
+      "edad": 30,
+      "correo": "maria@example.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Pedro",
+      "edad": 28,
+      "correo": "pedro@example.com"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Camiseta",
+      "precio": 20.99,
+      "stock": 50
+    },
+    {
+      "id": 2,
+      "nombre": "Pantalón",
+      "precio": 35.50,
+      "stock": 30
+    },
+    {
+      "id": 3,
+      "nombre": "Zapatos",
+      "precio": 55.00,
+      "stock": 20
+    }
+  ]
+}
