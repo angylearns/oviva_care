@@ -14,11 +14,12 @@ const formatDate = (dateString) => {
 
 
 
+
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
     const [customersGlobal, setCustomersGlobal] = useState([]);
     const [updatePage, setUpdatePage] = useState(false);
-
+    const [indexToDelete, setIndexToDelete] = useState(null);
     const [fila, setFila] = useState([]);
     const [users, setUsers] = useState([]);
     const [persons, setPersons] = useState([]);
@@ -35,16 +36,40 @@ function AdminPerson() {
         // username: "",
     });
 
-    const [mostrarComponenteEmergente, setMostrarComponenteEmergente] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
+    const [confirmDelete, setConfirmDelete] = useState(false);
 
-    const toggleComponenteEmergente = () => {
-        setMostrarComponenteEmergente(!mostrarComponenteEmergente);
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+        setIndexToDelete(null);
     };
 
-    const cerrarComponenteEmergente = () => {
-        setMostrarComponenteEmergente(false);
-        setUpdatePage((prevState) => !prevState);
+    const handleConfirmAlert = async () => {
+        if (indexToDelete !== null) {
+            await deletePerson(indexToDelete);
+            // setUpdatePage((prevState) => !prevState);
+        }
+        handleCloseAlert();
+        // setUpdatePage((prevState) => !prevState);
     };
+
+    const handleDelete = (index) => {
+        setIndexToDelete(index);
+        setShowAlert(true);
+    };
+
+ 
+
+    // const [mostrarComponenteEmergente, setMostrarComponenteEmergente] = useState(false);
+
+    // const toggleComponenteEmergente = () => {
+    //     setMostrarComponenteEmergente(!mostrarComponenteEmergente);
+    // };
+
+    // const cerrarComponenteEmergente = () => {
+    //     setMostrarComponenteEmergente(false);
+    //     setUpdatePage((prevState) => !prevState);
+    // };
 
 
     const [sortBy, setSortBy] = useState({ field: null, order: "asc" });
@@ -66,7 +91,7 @@ function AdminPerson() {
         if (!dateString) {
             return ''; // O maneja el caso de cadena vacía según tu lógica
         }
-        
+
         const parts = dateString.split('/');
         return `${parts[2]}-${parts[1]}-${parts[0]}`;
     };
@@ -74,7 +99,7 @@ function AdminPerson() {
     customersGlobal.sort((a, b) => {
         // Función de comparación para ordenar según el campo seleccionado.
         let fieldA, fieldB;
-    
+
         if (sortBy.field === "birth_date") {
             fieldA = new Date(convertDateToISOFormat(a[sortBy.field]));
             fieldB = new Date(convertDateToISOFormat(b[sortBy.field]));
@@ -82,7 +107,7 @@ function AdminPerson() {
             fieldA = a[sortBy.field];
             fieldB = b[sortBy.field];
         }
-    
+
         // Comparación basada en el tipo de campo
         if (typeof fieldA === 'string' && typeof fieldB === 'string') {
             // Si ambos campos son cadenas, realizar una comparación de cadenas
@@ -98,9 +123,9 @@ function AdminPerson() {
             return 0;
         }
     });
-    
 
-    
+
+
 
 
     const handleEdit = (index) => {
@@ -116,16 +141,31 @@ function AdminPerson() {
         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
     };
 
+    // const handleConfirmAlert = () => {
+    //     setShowAlert(false);
+    //     setConfirmDelete(true);
+    // };
 
-    const handleDelete = async (index) => {
-        await deletePerson(index);
-        setUpdatePage((prevState) => !prevState);
-    };
+    // const handleDelete = async (index) => {
+    //     // setConfirmDelete(false);
+    //     setShowAlert(true);
+    //     if (confirmDelete) {
+    //         await deletePerson(index);
+    //         setUpdatePage((prevState) => !prevState);
+    //         alert("se ha borrado")
+    //     }else{
+    //         alert("no se borra nadaaaa");
+    //     }
+    // };
 
     async function deletePerson(index) {
-        personService.DeletePerson(customersGlobal[index]);
-
+        //borramos persona y luego borramos usuario de esa persona
+        await personService.DeletePerson(customersGlobal[index]);
+        
+        setUpdatePage((prevState) => !prevState);
     }
+    
+
     const handleFieldChange = (e) => {
         const { name, value } = e.target;
         setFila(customers[index]);
@@ -183,11 +223,11 @@ function AdminPerson() {
                     <div>
                         <h2>Lista de usuarios registrados</h2>
                     </div>
-                    <div className="centerBtn">
+                    {/* <div className="centerBtn">
                         <button onClick={toggleComponenteEmergente} className="buttonAA">Agregar Usuario</button>
-                    </div>
+                    </div> */}
                 </div>
-                {mostrarComponenteEmergente && <AddPerson onClose={cerrarComponenteEmergente} />}
+                {/* {mostrarComponenteEmergente && <AddPerson onClose={cerrarComponenteEmergente} />} */}
                 <div className="tableOwerflow">
                     <table className="tableData">
                         <thead>
@@ -317,7 +357,15 @@ function AdminPerson() {
                     </table>
                 </div>
             </div>
-
+            {showAlert && (
+                <div className="custom-alert">
+                    <div className="custom-alert-content">
+                        <span>¿Seguro deseas eliminar?</span><br></br>
+                        <button onClick={handleCloseAlert}>No</button>
+                        <button onClick={handleConfirmAlert}>si</button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
