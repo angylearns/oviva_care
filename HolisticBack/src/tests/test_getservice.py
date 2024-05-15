@@ -24,7 +24,7 @@ class TestQaService(unittest.TestCase):
         self.assertEqual(result[1].question, '¿Qué cambios debo hacer para sentirme mejor?')
         self.assertEqual(result[1].answer, 'Para mejorar el síndrome de ovario poliquístico (SOP), enfócate en mantener un peso saludable, seguir una dieta balanceada, hacer ejercicio regularmente, manejar el estrés y tener consultas regulares con un médico. Estos cambios pueden ayudar a regular los niveles hormonales y mejorar los síntomas.')
 
-    # Puedes agregar más pruebas para los otros métodos 
+    # más pruebas para los otros métodos 
 
 if __name__ == '__main__':
     unittest.main()

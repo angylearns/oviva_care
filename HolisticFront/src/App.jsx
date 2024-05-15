@@ -6,6 +6,7 @@ import AdminPerson from './components/adminPerson/AdminPerson';
 import AddPerson from './components/adminPerson/AddPerson';
 import Question from './components/question/Question';
 import QuestionContact from './views/QuestionContact';
+import QaAdmin from './components/qaadmin/QaAdmin';
 
 function App() {
 
@@ -14,9 +15,10 @@ function App() {
     <>
       {/* <Recipe/> */}
       {/* <FormContact/> */}
-      {/* <AdminPerson/> */}
+       {/*<AdminPerson/>*/} 
       {/* <Question/> */}
-      <QuestionContact/>
+      {/*<QuestionContact/>*/}
+      <QaAdmin/> 
 
     </>
   )

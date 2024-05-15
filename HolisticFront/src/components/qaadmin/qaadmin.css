@@ -1,0 +1,180 @@
+.headerContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .tableOwerflow {
+    overflow-x: auto;
+    width: 100%;
+    border: 0;
+  }
+  
+  .tableData{
+    width: 100%;
+  }
+  
+  /* Estilos para las filas impares */
+  .tableOwerflow table tbody tr:nth-child(odd) {
+    background-color: #d9ecea83;
+  }
+  
+  /* Estilos para las filas pares */
+  .tableOwerflow table tbody tr:nth-child(even) {
+    background-color: #d9eceaf3;
+  }
+  
+  /* Estilos para la cabecera de la tabla */
+  .tableOwerflow table thead {
+    background-color: #00B6B9;
+    color: white;
+    padding: 15px;
+  }
+  
+  .tableOwerflow table td {
+    padding: 10px;
+  }
+  
+  .tableOwerflow table th {
+    padding: 10px;
+  }
+  
+  .tableOwerflow table {
+    border-collapse: collapse;
+  }
+  
+  .tableOwerflow table, .tableOwerflow table th, .tableOwerflow table td {
+    border: none;
+  }
+  .getContainer {
+    max-height: 400px;
+  }
+  
+  .mainContainer {
+    width: 100%;
+  }
+  
+  .postContainer {
+    overflow-x: auto;
+    width: auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  
+  .button1 {
+    background-color: white;
+    border: 0;
+    width: fit-content;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  img {
+    width: 35px;
+    height: 35px;
+    border: 0;
+  }
+  
+  .qatext {
+    background-color: rgb(242, 242, 242);
+    border: 1px solid #abc2d2;
+    padding: 8px;
+    width: 500px;
+    height: 100px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .qatext:hover {
+    background-color: white;
+  }
+  
+ .qatext:focus {
+    background-color: rgb(255, 255, 209);
+  }
+  
+  label {
+    margin: 2px;
+  }
+  
+  .formContentA {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .groupForm1 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  
+  .groupForm2 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+  
+  .smallDiv {
+    text-align: center;
+  }
+  
+  .labelStyle {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* .buttonAdd {
+    margin-left: 5px;
+  } */
+  
+  @media screen and (max-width: 600px) {
+    .formContentA {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  .buttonAA {
+  
+    background-color: white;
+    color: #00B6B9;
+    border: 1px solid #00B6B9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    padding: 8px;
+  
+  }
+  
+  .buttonAA:hover {
+    background-color:#00B6B9;
+    color: white;
+  }
+  
+  .button1 {
+    background-color: transparent;
+    border: none;
+  }
+  
+  .txtEditSave{
+    color:#00B6B9;
+  }
+  .txtDelete{
+    color:rgb(210, 38, 38)
+  }
+  
+  .centerBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .headField:hover{
+    background-color: #84dedf;;
+  }
