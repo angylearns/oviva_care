@@ -12,6 +12,7 @@ export const saveTokenToCookies = (token, setCookie) => {
   setCookie("email", decodedToken.email, { path: "/", sameSite: 'strict' });
   setCookie("first_name", decodedToken.first_name, { path: "/", sameSite: 'strict' });
   setCookie("id_person", decodedToken.id_person, { path: "/", sameSite: 'strict' });
+  setCookie("user_type", decodedToken.user_type, { path: "/", sameSite: 'strict' });
   setCookie(TOKEN_COOKIE_NAME, token, { path: "/", sameSite: 'strict' });
 
 };
@@ -41,7 +42,7 @@ export const isAdmin = (cookies) => {
   const token = getTokenFromCookies(cookies);
   if (token) {
     const decodedToken = decodeToken(token);
-    return decodedToken.user_type === "admin";
+    return decodedToken.user_type === "Admin";
   }
   return false;
 };

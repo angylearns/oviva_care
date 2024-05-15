@@ -7,7 +7,7 @@ import { saveTokenToCookies, TOKEN_COOKIE_NAME } from "../../utils/authUtils"; /
 import { useCookies } from "react-cookie";
 
 function Login_user() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
   const [cookies, setCookie] = useCookies([TOKEN_COOKIE_NAME]); // Uso de useCookies
 
@@ -16,6 +16,7 @@ function Login_user() {
       .then((token) => {
         saveTokenToCookies(token, setCookie); // Pasar setCookie como argumento
         // Si el login es exitoso, puedes redirigir al usuario a otra página o cambiar el estado de la aplicación
+        reset();
       })
       .catch(error => {
         setErrorMessage(error.message);
