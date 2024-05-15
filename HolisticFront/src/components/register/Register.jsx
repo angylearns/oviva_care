@@ -10,6 +10,11 @@ function Register() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
 
+    const [showAlert, setShowAlert] = useState(false);
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+      };
 
     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     // const onSubmit = data => {
@@ -21,8 +26,11 @@ function Register() {
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
         handleRegister(data, setErrorMessage)
+        
             .then(() => {
                 reset(); // Esto limpiará todos los campos después del registro exitoso
+                 //   alert('Enviado!');
+                 setShowAlert(true);
             })
             .catch(error => {
                 // Manejar el error aquí si es necesario
@@ -34,6 +42,16 @@ function Register() {
 
         //  handleSubmit se pasa como manejador del evento onSubmit del formulario. Esto asegura que la validación se ejecute antes de que se envíe el formulario. 
         <form onSubmit={handleSubmit(onSubmit)}>
+
+            {/* Ventana emergente de alerta */}
+            {showAlert && (
+                <div className="register-alert">
+                    <div className="register-alert-content">
+                        <span>Se ha registrado correctamente</span><br></br>
+                        <button onClick={handleCloseAlert}>Cerrar</button>
+                    </div>
+                </div>
+            )}
 
             <div>
                 <img src={login_icon} className="login-icon" alt="imagen login" />
@@ -143,7 +161,7 @@ function Register() {
                     </select>
                     {errors.diagnosed && <p>{errors.diagnosed.message}</p>}
 
-              
+
 
                     <p className="text-regcountry">País</p>
                     <input
