@@ -11,10 +11,14 @@ function Register() {
     const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
 
     const [showAlert, setShowAlert] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const handleError = (message) => {
+        setErrorMessage(message);
+    };
 
     const handleCloseAlert = () => {
         setShowAlert(false);
-      };
+    };
 
     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     // const onSubmit = data => {
@@ -25,15 +29,16 @@ function Register() {
     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
-        handleRegister(data, setErrorMessage)
-        
+        handleRegister(data, handleError, setShowAlert, setSuccessMessage)
+
             .then(() => {
                 reset(); // Esto limpiará todos los campos después del registro exitoso
-                 //   alert('Enviado!');
-                 setShowAlert(true);
+                //   alert('Enviado!');
+                setShowAlert(true);
             })
             .catch(error => {
-                // Manejar el error aquí si es necesario
+                setErrorMessage('Ocurrió un error al registrar la persona'); // Actualiza el mensaje de error
+                setShowAlert(true); // Muestra la ventana emergente de alerta
             });
     };
 
@@ -47,7 +52,7 @@ function Register() {
             {showAlert && (
                 <div className="register-alert">
                     <div className="register-alert-content">
-                        <span>Se ha registrado correctamente</span><br></br>
+                        <span>{successMessage || errorMessage}</span> {/* Muestra el mensaje de éxito o de error */}
                         <button onClick={handleCloseAlert}>Cerrar</button>
                     </div>
                 </div>
@@ -190,7 +195,7 @@ function Register() {
                 {/* </Link> */}
             </div>
             {/* Mostrar mensaje de error si está presente */}
-            {errorMessage && <p>{errorMessage}</p>}
+            {/* {errorMessage && <p>{errorMessage}</p>} */}
 
         </form>
 
