@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import "./navbar.css";
+import Navbar_admin from "./Navbar_admin";
+import { isAuthenticated, isAdmin, TOKEN_COOKIE_NAME, saveTokenToCookies } from "../../utils/authUtils";
+import { useCookies } from "react-cookie";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [cookies, setCookie] = useCookies([TOKEN_COOKIE_NAME]);
+  const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated(cookies));
+  
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -31,16 +36,16 @@ function Navbar() {
         </section>
         <section className="navbar_user_desktop--right">
           {isLoggedIn ? (
-              <section className="navbar_user_desktop--right-left">
-                <section className="navbar_desktop_greeting">¡Hola,<br></br> NOMBRE!</section>
+            <section className="navbar_user_desktop--right-left">
+              <section className="navbar_desktop_greeting">¡Hola,<br />NOMBRE!</section>
               <Link to="/logout" className="link_logout">
                 <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
               </Link>
-              </section>
-              ) : (
-              <Link to="/profile" className="link_profile">
-                <img src="/images/icons/icon_profile_female.svg" alt="User icon" />
-              </Link>
+            </section>
+          ) : (
+            <Link to="/profile" className="link_profile">
+              <img src="/images/icons/icon_profile_female.svg" alt="User icon" />
+            </Link>
           )}
         </section>
       </nav>
@@ -50,17 +55,20 @@ function Navbar() {
           <img src="/images/logo_no_words.png" alt="Logo Oviva" />
         </section>
         <section className="navbar_user_mobile--right">
-          {isLoggedIn ? ( 
-          <React.Fragment>
-            <section className="navbar_mobile_greeting">¡Hola,<br></br> Nombre!</section> 
-            <Link to="/logout" className="link_logout">
-            <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
-            </Link> 
-          </React.Fragment>) : ( <img
-            src="/images/icons/icon_profile_female.svg"
-            alt="User icon"
-            className="navbar_mobile_profile_icon"
-          /> )}
+          {isLoggedIn ? (
+            <React.Fragment>
+              <section className="navbar_mobile_greeting">¡Hola,<br />Nombre!</section>
+              <Link to="/logout" className="link_logout">
+                <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
+              </Link>
+            </React.Fragment>
+          ) : (
+            <img
+              src="/images/icons/icon_profile_female.svg"
+              alt="User icon"
+              className="navbar_mobile_profile_icon"
+            />
+          )}
           <input
             type="checkbox"
             className="toggle_menu"
@@ -82,6 +90,8 @@ function Navbar() {
           </ul>
         </section>
       </nav>
+
+      {isAdmin && <Navbar_admin />}
     </Router>
   );
 }

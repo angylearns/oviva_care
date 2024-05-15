@@ -13,10 +13,9 @@ function App() {
 
   return (
     <>
-    <Register />
-    <Navbar />
-      <Navbar_admin />
-      {/* <Login_user /> */}
+      <Navbar />
+      <Register />
+      <Login_user />
       {/* <Recipe/> */}
       <Footer />
     </>

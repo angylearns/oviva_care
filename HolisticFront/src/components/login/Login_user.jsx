@@ -1,37 +1,27 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import '../login/login.css'
-import login_icon from "../../../public/images/icons/login_icon.svg"
-import { handleLogin } from "../../handlers/loginHandle"
-
+import '../login/login.css';
+import login_icon from "../../../public/images/icons/login_icon.svg";
+import { handleLogin } from "../../handlers/loginHandle";
+import { saveTokenToCookies, TOKEN_COOKIE_NAME } from "../../utils/authUtils"; // Importar TOKEN_COOKIE_NAME
+import { useCookies } from "react-cookie";
 
 function Login_user() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
+  const [cookies, setCookie] = useCookies([TOKEN_COOKIE_NAME]); // Uso de useCookies
 
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
+  const onSubmit = data => {
+    handleLogin(data, setErrorMessage)
+      .then((token) => {
+        saveTokenToCookies(token, setCookie); // Pasar setCookie como argumento
+        // Si el login es exitoso, puedes redirigir al usuario a otra página o cambiar el estado de la aplicación
+      })
+      .catch(error => {
+        setErrorMessage(error.message);
+      });
+  };
 
-    // const onSubmit = data => {
-    //     console.log('Login data:', data);
-    //     // Aquí llamarías a tu función handleLogin con los datos del formulario
-
-    //     handleLogin(data, setErrorMessage);
-
-    // };
-
-    const onSubmit = data => {
-        console.log('Login data:', data);
-        // Aquí llamarías a tu función handleLogin con los datos del formulario
-        handleLogin(data)
-            .then(() => {
-                // Si el login es exitoso, resetea los campos del formulario
-                reset();
-                // Aquí también podrías redirigir al usuario a otra página o cambiar el estado de la aplicación
-            })
-            .catch(error => {
-                // Si hay un error en el login, establece el mensaje de error
-                setErrorMessage(error.message);
-            });
-    };
     return (
 
 
@@ -39,7 +29,7 @@ function Login_user() {
         <form className="formulary" onSubmit={handleSubmit(onSubmit)}>
 
             <img src={login_icon} className="login-icon" alt="imagen login" />
-            <h1 classname="main-text-login">Miembro Oviva</h1>
+            <h1 className="main-text-login">Miembro Oviva</h1>
             <div>
                 <p className="text-user">Usuario</p>
 
