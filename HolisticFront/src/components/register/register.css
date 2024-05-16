@@ -47,37 +47,37 @@
 }
 
 .text-regname {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 70%;
 }
 
 .text-regbirthdate {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 56%;
 }
 
 .text-regemail {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 55%;
 }
 
 .text-regdiagnose {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 53%;
 }
 
 .text-reglastname {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 70%;
 }
 
 .text-regcountry {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 78%;
 }
 
 .text-regpassword {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 68%;
 }
 
@@ -93,7 +93,7 @@ input::placeholder {
 }
 
 .gologin-button {
-    font-size: 24px;
+    font-size: 18px;
     background-color: transparent;
     border: none;
     margin-top: 48px;

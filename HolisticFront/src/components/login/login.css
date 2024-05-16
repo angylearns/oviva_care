@@ -49,17 +49,18 @@ input::placeholder {
     border: none;
     margin-top: 48px;
     color: rgba(0, 0, 0, 0.50);
+    font-size: 18px;
 }
 
 .text-user {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 80%;
 
 
 }
 
 .text-password {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 75%;
 
 }
