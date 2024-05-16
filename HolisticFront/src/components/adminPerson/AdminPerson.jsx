@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { personService } from '../../services/personService'
 import "./adminPerson.css";
 import AddPerson from "./AddPerson";
+import { userService } from "../../services/userService";
 
 // Función para formatear la fecha justo antes de mostrarla
 const formatDate = (dateString) => {
@@ -46,8 +47,10 @@ function AdminPerson() {
 
     const handleConfirmAlert = async () => {
         if (indexToDelete !== null) {
+            console.log("handle confirmar borrar")
             await deletePerson(indexToDelete);
             // setUpdatePage((prevState) => !prevState);
+            
         }
         handleCloseAlert();
         // setUpdatePage((prevState) => !prevState);
@@ -159,9 +162,10 @@ function AdminPerson() {
     // };
 
     async function deletePerson(index) {
-        //borramos persona y luego borramos usuario de esa persona
+        //borramos usuario y luego borramos persona
+        await userService.deleteUser(customersGlobal[index].email)
         await personService.DeletePerson(customersGlobal[index]);
-        
+        console.log("borrar usuarios y personas");
         setUpdatePage((prevState) => !prevState);
     }
     
