@@ -19,7 +19,15 @@
     padding-left: 10px;
     border: none;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+
+}
+
+.field-regdiagnose {
     color: rgba(0, 143, 139, 0.50);
+}
+
+.field-regdiagnose:focus {
+    color: black;
 }
 
 .register-regbutton {
@@ -85,6 +93,36 @@ input::placeholder {
     margin-top: 48px;
     color: rgba(0, 0, 0, 0.50);
 }
+.register-alert{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    /* border: 2px solid #333;
+    border-radius: 5px; */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    border-radius: 0 20px 0 30px;
+}
+.register-alert-content{
+    text-align: center;
+}
+
+.register-alert button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #008F8B;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .register-alert button:hover {
+    background-color:#03f3eb;
+  }
 
 @media screen and (max-width: 1350px) {
 
