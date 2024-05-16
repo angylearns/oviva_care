@@ -19,7 +19,15 @@
     padding-left: 10px;
     border: none;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+
+}
+
+.field-regdiagnose {
     color: rgba(0, 143, 139, 0.50);
+}
+
+.field-regdiagnose:focus {
+    color: black;
 }
 
 .register-regbutton {
