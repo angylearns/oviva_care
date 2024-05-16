@@ -16,7 +16,6 @@ class UserService():
                 connection.close()
                 return list_user
                 
-               
         except Exception as ex: 
             print(ex)
 
@@ -54,9 +53,6 @@ class UserService():
     @classmethod
     def delete_userByEmail(cls, email):
         try:
-            print("borrrararararararar")
-            print(email)
-            print("..................................................")
             connection = get_connection()
             with connection.cursor() as cursor:
                 # cursor.callproc("DeleteUser", (id_user,))
@@ -70,9 +66,6 @@ class UserService():
                 connection.close()
         return 'Usuario eliminado correctamente'
       
-
-
-
     @classmethod
     def put_user(cls, id_user, user: User):
         try:

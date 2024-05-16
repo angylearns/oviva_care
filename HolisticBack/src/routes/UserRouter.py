@@ -18,13 +18,11 @@ def get_user():
 
 def post_user():
 
-    
     password = request.json ['password']
     user_type = request.json ['user_type']
     email=request.json ['email']
     
     user= User(None,password,user_type, email)
-
 
     if UserService.post_user(user):
         print('Consola:Usuario insertada: ', user)
@@ -36,14 +34,11 @@ def post_user():
 
 def put_user(id_user):
     
-    
     password = request.json ['password']
     user_type = request.json ['user_type']
     email=request.json ['email']
     
-
     updateuser= User(id_user,password,user_type, email)
-    
    
     UserService.put_user(id_user, updateuser)
     print('Consola: Usuario actualizado: ')
@@ -53,11 +48,8 @@ def put_user(id_user):
 @mainUser.route('/delete/<userEmail>', methods=['DELETE'])
 def delete_user(userEmail):
     try:
-        print("Deleting user with email:", userEmail)
-        
         
         UserService.delete_userByEmail(userEmail)
-        
         return jsonify({"message": "User deleted successfully", "email": userEmail}), 200
     except Exception as e:
         print("Error:", e)

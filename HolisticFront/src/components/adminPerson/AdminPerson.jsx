@@ -14,8 +14,6 @@ const formatDate = (dateString) => {
 };
 
 
-
-
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
     const [customersGlobal, setCustomersGlobal] = useState([]);
@@ -34,7 +32,6 @@ function AdminPerson() {
         country: "",
         diagnosed: "",
         email: "",
-        // username: "",
     });
 
     const [showAlert, setShowAlert] = useState(false);
@@ -49,11 +46,8 @@ function AdminPerson() {
         if (indexToDelete !== null) {
             console.log("handle confirmar borrar")
             await deletePerson(indexToDelete);
-            // setUpdatePage((prevState) => !prevState);
-            
         }
         handleCloseAlert();
-        // setUpdatePage((prevState) => !prevState);
     };
 
     const handleDelete = (index) => {
@@ -62,19 +56,6 @@ function AdminPerson() {
     };
 
  
-
-    // const [mostrarComponenteEmergente, setMostrarComponenteEmergente] = useState(false);
-
-    // const toggleComponenteEmergente = () => {
-    //     setMostrarComponenteEmergente(!mostrarComponenteEmergente);
-    // };
-
-    // const cerrarComponenteEmergente = () => {
-    //     setMostrarComponenteEmergente(false);
-    //     setUpdatePage((prevState) => !prevState);
-    // };
-
-
     const [sortBy, setSortBy] = useState({ field: null, order: "asc" });
 
     const handleSort = (field) => {
@@ -128,9 +109,6 @@ function AdminPerson() {
     });
 
 
-
-
-
     const handleEdit = (index) => {
         if (editableRows.includes(index)) {
             setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
@@ -144,23 +122,6 @@ function AdminPerson() {
         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
     };
 
-    // const handleConfirmAlert = () => {
-    //     setShowAlert(false);
-    //     setConfirmDelete(true);
-    // };
-
-    // const handleDelete = async (index) => {
-    //     // setConfirmDelete(false);
-    //     setShowAlert(true);
-    //     if (confirmDelete) {
-    //         await deletePerson(index);
-    //         setUpdatePage((prevState) => !prevState);
-    //         alert("se ha borrado")
-    //     }else{
-    //         alert("no se borra nadaaaa");
-    //     }
-    // };
-
     async function deletePerson(index) {
         //borramos usuario y luego borramos persona
         await userService.deleteUser(customersGlobal[index].email)
@@ -169,7 +130,6 @@ function AdminPerson() {
         setUpdatePage((prevState) => !prevState);
     }
     
-
     const handleFieldChange = (e) => {
         const { name, value } = e.target;
         setFila(customers[index]);
@@ -216,7 +176,6 @@ function AdminPerson() {
         fetchUsers();
         setFila(customersGlobal);
     }, [updatePage]);
-
 
 
 
