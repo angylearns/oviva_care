@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { personService } from '../../services/personService'
+import { personService } from '../../services/personService';
+import { userService } from "../../services/userService";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./adminPerson.css";
 import AddPerson from "./AddPerson";
-import { userService } from "../../services/userService";
+import abajo from '../../assets/abajo.png';
+import arriba from '../../assets/arriba.png';
+import basura from '../../assets/basura.png';
+import lapiz from '../../assets/lapiz.png';
 
-// Función para formatear la fecha justo antes de mostrarla
 const formatDate = (dateString) => {
     const date = new Date(dateString);
     const day = date.getDate();
@@ -12,7 +16,6 @@ const formatDate = (dateString) => {
     const year = date.getFullYear();
     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
 };
-
 
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
@@ -23,7 +26,6 @@ function AdminPerson() {
     const [users, setUsers] = useState([]);
     const [persons, setPersons] = useState([]);
     const [editableRows, setEditableRows] = useState([]);
-
     const [formData, setFormData] = useState({
         id_person: "",
         first_name: "",
@@ -33,9 +35,9 @@ function AdminPerson() {
         diagnosed: "",
         email: "",
     });
-
     const [showAlert, setShowAlert] = useState(false);
     const [confirmDelete, setConfirmDelete] = useState(false);
+    const [firstOrder, setFirstOrder] = useState(true);
 
     const handleCloseAlert = () => {
         setShowAlert(false);
@@ -44,7 +46,6 @@ function AdminPerson() {
 
     const handleConfirmAlert = async () => {
         if (indexToDelete !== null) {
-            console.log("handle confirmar borrar")
             await deletePerson(indexToDelete);
         }
         handleCloseAlert();
@@ -55,35 +56,29 @@ function AdminPerson() {
         setShowAlert(true);
     };
 
- 
     const [sortBy, setSortBy] = useState({ field: null, order: "asc" });
 
     const handleSort = (field) => {
         if (sortBy.field === field) {
-            // Si el campo actualmente seleccionado es el mismo que el último ordenado,
-            // invertimos el orden.
             setSortBy({ field, order: sortBy.order === "asc" ? "desc" : "asc" });
+            setFirstOrder(false); // La primera vez que se ordena por este campo ya no será la primera ordenación
         } else {
-            // Si el campo actualmente seleccionado es diferente del último ordenado,
-            // establecemos el nuevo campo y ordenamos de forma ascendente.
             setSortBy({ field, order: "asc" });
+            setFirstOrder(field === "id_person"); // Verificar si el campo seleccionado es id_person
         }
     };
 
     const convertDateToISOFormat = (dateString) => {
-        // Verificar si la cadena es undefined
         if (!dateString) {
-            return ''; // O maneja el caso de cadena vacía según tu lógica
+            return '';
         }
-
         const parts = dateString.split('/');
         return `${parts[2]}-${parts[1]}-${parts[0]}`;
     };
 
     customersGlobal.sort((a, b) => {
-        // Función de comparación para ordenar según el campo seleccionado.
         let fieldA, fieldB;
-
+        
         if (sortBy.field === "birth_date") {
             fieldA = new Date(convertDateToISOFormat(a[sortBy.field]));
             fieldB = new Date(convertDateToISOFormat(b[sortBy.field]));
@@ -91,13 +86,9 @@ function AdminPerson() {
             fieldA = a[sortBy.field];
             fieldB = b[sortBy.field];
         }
-
-        // Comparación basada en el tipo de campo
         if (typeof fieldA === 'string' && typeof fieldB === 'string') {
-            // Si ambos campos son cadenas, realizar una comparación de cadenas
             return sortBy.order === "asc" ? fieldA.localeCompare(fieldB) : fieldB.localeCompare(fieldA);
         } else {
-            // De lo contrario, realizar una comparación normal
             if (fieldA < fieldB) {
                 return sortBy.order === "asc" ? -1 : 1;
             }
@@ -107,7 +98,6 @@ function AdminPerson() {
             return 0;
         }
     });
-
 
     const handleEdit = (index) => {
         if (editableRows.includes(index)) {
@@ -123,13 +113,11 @@ function AdminPerson() {
     };
 
     async function deletePerson(index) {
-        //borramos usuario y luego borramos persona
-        await userService.deleteUser(customersGlobal[index].email)
+        await userService.deleteUser(customersGlobal[index].email);
         await personService.DeletePerson(customersGlobal[index]);
-        console.log("borrar usuarios y personas");
         setUpdatePage((prevState) => !prevState);
     }
-    
+
     const handleFieldChange = (e) => {
         const { name, value } = e.target;
         setFila(customers[index]);
@@ -145,22 +133,14 @@ function AdminPerson() {
         setFormData({ ...formData, [name]: value });
     };
 
-
     async function fetchUsers() {
         try {
             const allPersons = await personService.getAllPersons();
-
-            // Modificar las fechas al recibirlas
-            const modifiedPersons = allPersons.map(person => {
-                return {
-                    ...person,
-                    // Modificar la propiedad de fecha según sea necesario
-                    birth_date: formatDate(person.birth_date)
-                };
-            });
-
+            const modifiedPersons = allPersons.map(person => ({
+                ...person,
+                birth_date: formatDate(person.birth_date)
+            }));
             setCustomersGlobal(modifiedPersons);
-
         } catch (error) {
             console.error("Error al obtener datos:", error);
         }
@@ -169,7 +149,6 @@ function AdminPerson() {
     useEffect(() => {
         fetchUsers();
         setFila(customersGlobal);
-
     }, []);
 
     useEffect(() => {
@@ -178,154 +157,183 @@ function AdminPerson() {
     }, [updatePage]);
 
 
+    const renderSortIcon = (field) => {
+        if (sortBy.field === field) {
+            return sortBy.order === "asc" ? (
+                <img src={abajo} alt="Flecha abajo" className="sortIcon" />
+            ) : (
+                <img src={arriba} alt="Flecha arriba" className="sortIcon" />
+            );
+        } else if (field === "id_person" && firstOrder) {
+           
+            // Mostrar la flecha hacia abajo solo en la primera ordenación por id_person
+            return <img src={abajo} alt="Flecha abajo" className="sortIcon" />;
+        }
+        return null;
+    };
+
+
 
     return (
-        <div className="mainContainer" >
+        <div className="mainContainer">
             <div className="getContainer">
                 <div className="headerContent">
                     <div>
                         <h2>Lista de usuarios registrados</h2>
                     </div>
-                    {/* <div className="centerBtn">
-                        <button onClick={toggleComponenteEmergente} className="buttonAA">Agregar Usuario</button>
-                    </div> */}
                 </div>
-                {/* {mostrarComponenteEmergente && <AddPerson onClose={cerrarComponenteEmergente} />} */}
                 <div className="tableOwerflow">
                     <table className="tableData">
                         <thead>
                             <tr>
-                                <th onClick={() => handleSort("id_person")} className="headField">ID</th>
-                                <th onClick={() => handleSort("first_name")} className="headField">Nombre</th>
-                                <th onClick={() => handleSort("last_name")} className="headField">Apellidos</th>
-                                <th onClick={() => handleSort("birth_date")} className="headField">Fecha de Nacimiento</th>
-                                <th onClick={() => handleSort("country")} className="headField">País</th>
-                                <th onClick={() => handleSort("diagnosed")} className="headField">Diagnosticado</th>
-                                <th onClick={() => handleSort("email")} className="headField">Email</th>
-                                <th>Editar</th>
-                                <th>Eliminar</th>
+                                <th onClick={() => handleSort("id_person")} className="headField">
+                                    ID {renderSortIcon("id_person")}
+                                </th>
+                                <th onClick={() => handleSort("first_name")} className="headField">
+                                    Nombre {renderSortIcon("first_name")}
+                                </th>
+                                <th onClick={() => handleSort("last_name")} className="headField">
+                                    Apellidos {renderSortIcon("last_name")}
+                                </th>
+                                <th onClick={() => handleSort("birth_date")} className="headField">
+                                    Fecha de Nacimiento {renderSortIcon("birth_date")}
+                                </th>
+                                <th onClick={() => handleSort("country")} className="headField">
+                                    País {renderSortIcon("country")}
+                                </th>
+                                <th onClick={() => handleSort("diagnosed")} className="headField">
+                                    Diagnosticado {renderSortIcon("diagnosed")}
+                                </th>
+                                <th onClick={() => handleSort("email")} className="headField">
+                                    Email {renderSortIcon("email")}
+                                </th>
+                                {/* <th className="headField specialHeader">Editar</th>
+                                <th className="headField specialHeader">Eliminar</th> */}
+                                <th className="headField specialHeader"><img src={lapiz} className="sortIcon"/></th>
+                                <th className="headField specialHeader"><img src={basura} className="sortIcon"/></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <TransitionGroup component="tbody">
                             {customersGlobal.map((user, index) => (
-                                <tr key={index}>
-                                    <td>{user.id_person}</td>
-                                    <td>
-                                        {editableRows.includes(index) ? (
-                                            <input
-                                                type="text"
-                                                defaultValue={customersGlobal[index]["first_name"]}
-                                                onChange={(e) =>
-                                                    handleInputChange(e.target.value, index, "first_name")
-                                                }
-                                            />
-                                        ) : (
-                                            user.first_name
-                                        )}
-                                    </td>
-                                    <td>
-                                        {editableRows.includes(index) ? (
-                                            <input
-                                                type="text"
-                                                defaultValue={customersGlobal[index]["last_name"]}
-                                                onChange={(e) =>
-                                                    handleInputChange(e.target.value, index, "last_name")
-                                                }
-                                            />
-                                        ) : (
-                                            user.last_name
-                                        )}
-                                    </td>
-
-                                    <td>
-                                        {editableRows.includes(index) ? (
-                                            <input
-                                                type="text"
-                                                defaultValue={customersGlobal[index]["birth_date"]}
-                                                onChange={(e) =>
-                                                    handleInputChange(e.target.value, index, "birth_date")
-                                                }
-                                            />
-                                        ) : (
-                                            user.birth_date
-                                        )}
-                                    </td>
-                                    <td>
-                                        {editableRows.includes(index) ? (
-                                            <input
-                                                type="text"
-                                                defaultValue={customersGlobal[index]["country"]}
-                                                onChange={(e) =>
-                                                    handleInputChange(e.target.value, index, "country")
-                                                }
-                                            />
-                                        ) : (
-                                            user.country
-                                        )}
-                                    </td>
-                                    <td>
-                                        {editableRows.includes(index) ? (
-                                            <input
-                                                type="text"
-                                                defaultValue={customersGlobal[index]["diagnosed"]}
-                                                onChange={(e) =>
-                                                    handleInputChange(e.target.value, index, "diagnosed")
-                                                }
-                                            />
-                                        ) : (
-                                            customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
-                                        )}
-                                    </td>
-                                    <td>
-                                        {editableRows.includes(index) ? (
-                                            <input
-                                                type="text"
-                                                defaultValue={customersGlobal[index]["email"]}
-                                                onChange={(e) =>
-                                                    handleInputChange(e.target.value, index, "email")
-                                                }
-                                            />
-                                        ) : (
-                                            user.email
-                                        )}
-                                    </td>
-                                    <td>
-                                        {editableRows.includes(index) ? (
+                                <CSSTransition key={user.id_person} timeout={500} classNames="row">
+                                    <tr>
+                                        <td>{user.id_person}</td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <input
+                                                    type="text"
+                                                    defaultValue={customersGlobal[index]["first_name"]}
+                                                    onChange={(e) =>
+                                                        handleInputChange(e.target.value, index, "first_name")
+                                                    }
+                                                />
+                                            ) : (
+                                                user.first_name
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <input
+                                                    type="text"
+                                                    defaultValue={customersGlobal[index]["last_name"]}
+                                                    onChange={(e) =>
+                                                        handleInputChange(e.target.value, index, "last_name")
+                                                    }
+                                                />
+                                            ) : (
+                                                user.last_name
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <input
+                                                    type="text"
+                                                    defaultValue={customersGlobal[index]["birth_date"]}
+                                                    onChange={(e) =>
+                                                        handleInputChange(e.target.value, index, "birth_date")
+                                                    }
+                                                />
+                                            ) : (
+                                                user.birth_date
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <input
+                                                    type="text"
+                                                    defaultValue={customersGlobal[index]["country"]}
+                                                    onChange={(e) =>
+                                                        handleInputChange(e.target.value, index, "country")
+                                                    }
+                                                />
+                                            ) : (
+                                                user.country
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <input
+                                                    type="text"
+                                                    defaultValue={customersGlobal[index]["diagnosed"]}
+                                                    onChange={(e) =>
+                                                        handleInputChange(e.target.value, index, "diagnosed")
+                                                    }
+                                                />
+                                            ) : (
+                                                customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <input
+                                                    type="text"
+                                                    defaultValue={customersGlobal[index]["email"]}
+                                                    onChange={(e) =>
+                                                        handleInputChange(e.target.value, index, "email")
+                                                    }
+                                                />
+                                            ) : (
+                                                user.email
+                                            )}
+                                        </td>
+                                        <td>
+                                            {editableRows.includes(index) ? (
+                                                <button
+                                                    className="button1"
+                                                    onClick={() => handleSave(index)}
+                                                >
+                                                    <span className="txtEditSave">Guardar</span>
+                                                </button>
+                                            ) : (
+                                                <button
+                                                    className="button1"
+                                                    onClick={() => handleEdit(index)}
+                                                >
+                                                    <span className="txtEditSave">Editar</span>
+                                                </button>
+                                            )}
+                                        </td>
+                                        <td>
                                             <button
                                                 className="button1"
-                                                onClick={() => handleSave(index)}
+                                                onClick={() => handleDelete(index)}
                                             >
-                                                <span className="txtEditSave">Guardar</span>
+                                                <span className="txtDelete">Eliminar</span>
                                             </button>
-                                        ) : (
-                                            <button
-                                                className="button1"
-                                                onClick={() => handleEdit(index)}
-                                            >
-                                                <span className="txtEditSave">Editar</span>
-                                            </button>
-                                        )}
-                                    </td>
-                                    <td>
-                                        <button
-                                            className="button1"
-                                            onClick={() => handleDelete(index)}
-                                        >
-                                            <span className="txtDelete">Eliminar</span>
-                                        </button>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </CSSTransition>
                             ))}
-                        </tbody>
+                        </TransitionGroup>
                     </table>
                 </div>
             </div>
             {showAlert && (
                 <div className="custom-alert">
                     <div className="custom-alert-content">
-                        <span>¿Seguro deseas eliminar?</span><br></br>
+                        <span>¿Seguro deseas eliminar?</span><br />
                         <button onClick={handleCloseAlert}>No</button>
-                        <button onClick={handleConfirmAlert}>si</button>
+                        <button onClick={handleConfirmAlert}>Sí</button>
                     </div>
                 </div>
             )}
