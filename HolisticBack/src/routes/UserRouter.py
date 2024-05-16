@@ -50,9 +50,15 @@ def put_user(id_user):
     return 'Página: Usuario actualizado.'
    
        
-@mainUser.route('/<int:id_user>', methods=['DELETE'])
-def delete_user(id_user):       
-    UserService.delete_user(id_user)
-    print('Consola: Usuaro eliminado.')
-    return 'Página: Usuario eliminado.'
-
+@mainUser.route('/delete/<userEmail>', methods=['DELETE'])
+def delete_user(userEmail):
+    try:
+        print("Deleting user with email:", userEmail)
+        
+        
+        UserService.delete_userByEmail(userEmail)
+        
+        return jsonify({"message": "User deleted successfully", "email": userEmail}), 200
+    except Exception as e:
+        print("Error:", e)
+        return jsonify({"error": "An error occurred"}), 500
