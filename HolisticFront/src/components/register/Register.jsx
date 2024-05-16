@@ -58,7 +58,7 @@ function Register() {
                 </div>
             )}
 
-            <div>
+            <div className="logo-and-text">
                 <img src={login_icon} className="login-icon" alt="imagen login" />
                 <h1 className="main-text-register">Registro Miembro Oviva</h1>
             </div>
