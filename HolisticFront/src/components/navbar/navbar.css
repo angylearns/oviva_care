@@ -140,7 +140,7 @@
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
     .navbar_user_desktop,
     .toggle_menu {
         display: none;

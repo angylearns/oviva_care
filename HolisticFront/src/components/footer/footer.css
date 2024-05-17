@@ -65,12 +65,12 @@ footer {
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 480px) {
     footer {
-      height: 25vh; /* No es necesario cambiar la altura */
+      height: 25vh; 
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto; /* Utilizamos auto en lugar de porcentajes */
+      grid-template-rows: auto auto auto;
       background-color: #D9ECEA;
       place-items: center;
     }
@@ -88,7 +88,7 @@ footer {
     }
   
     .footer_logo {
-      height: 40px; /* Cambiamos a un valor fijo en lugar de un porcentaje */
+      height: 40px;
     }
   
     .footer_center {
@@ -103,7 +103,7 @@ footer {
     }
   
     .footer_right img {
-      height: 30px; /* Cambiamos a un valor fijo en lugar de un porcentaje */
+      height: 30px; 
     }
   }
   
