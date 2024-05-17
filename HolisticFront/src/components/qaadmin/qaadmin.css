@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
+
   
   .tableOwerflow {
     overflow-x: auto;
@@ -78,6 +79,7 @@
   }
   
   .qatext {
+    font-family: 'Montserrat', sans-serif;
     background-color: rgb(242, 242, 242);
     border: 1px solid #abc2d2;
     padding: 8px;
@@ -128,9 +130,10 @@
     margin-bottom: 5px;
   }
   
-  /* .buttonAdd {
-    margin-left: 5px;
-  } */
+  .headField{
+
+    font-family: 'Montserrat', sans-serif;
+  }
   
   @media screen and (max-width: 600px) {
     .formContentA {
@@ -141,7 +144,7 @@
   }
   
   .buttonAA {
-  
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     color: #00B6B9;
     border: 1px solid #00B6B9;
@@ -164,9 +167,11 @@
   
   .txtEditSave{
     color:#00B6B9;
+    font-family: 'Montserrat', sans-serif;
   }
   .txtDelete{
-    color:rgb(210, 38, 38)
+    color:rgb(210, 38, 38);
+    font-family: 'Montserrat', sans-serif;
   }
   
   .centerBtn{

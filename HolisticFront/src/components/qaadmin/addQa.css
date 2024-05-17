@@ -50,6 +50,7 @@
   }
   
   .labelStyle {
+    font-family: 'Montserrat', sans-serif;
     display: block;
     margin-bottom: 5px;
   }
@@ -65,6 +66,7 @@
   }
   
   .buttonAdd{
+    font-family: 'Montserrat', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,6 +74,7 @@
   }
 
   .buttonAA {
+    font-family: 'Montserrat', sans-serif;
     background-color: white;
     color: #00B6B9;
     border: 1px solid #00B6B9;

@@ -19,7 +19,7 @@ function App() {
        {/*<AdminPerson/>*/} 
       {/* <Question/> */}
       {/*<QuestionContact/>*/}
-      {/*<QaAdmin/> */}
+      <QaAdmin/> 
       <Calendar/> 
 
     </>

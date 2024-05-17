@@ -129,7 +129,7 @@ function QaAdmin() {
             <div className="getContainer">
                 <div className="headerContent">
                     <div>
-                        <h2>Lista de Preguntas y Respuestas</h2>
+                        <h2 className="qatxt">Lista de Preguntas y Respuestas</h2>
                     </div>
                     <div className="centerBtn">
                         <button onClick={toggleComponenteEmergente} className="buttonAA">Agregar Pregunta</button>
@@ -144,8 +144,8 @@ function QaAdmin() {
                         <th onClick={() => handleSort("question")} className="headField">Pregunta</th>
                         <th onClick={() => handleSort("answer")} className="headField">Respuesta</th>
                         
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th className="headField">Editar</th>
+                        <th className="headField">Eliminar</th>
                     </tr>
                 </thead>
                         <tbody>
