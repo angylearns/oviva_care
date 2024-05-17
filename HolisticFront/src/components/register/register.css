@@ -1,16 +1,29 @@
+* {
+    background-color: white;
+  }
+  
+
 .fieldsblock {
     display: flex;
     flex-direction: row;
     align-items: baseline;
     justify-content: space-around;
 }
-.logo-and-text
-{
+
+.login-icon {
+    width: 72px;
+    padding-right: 2%;
+}
+
+.logo-and-text {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    justify-items: center;
     padding-top: 2%;
 }
+
 .field-regname,
 .field-regbirthdate,
 .field-regcountry,
@@ -81,6 +94,10 @@
     margin-right: 68%;
 }
 
+input:focus {
+    outline: none;
+}
+
 input::placeholder {
     color: rgba(0, 143, 139, 0.50);
 }
@@ -99,7 +116,8 @@ input::placeholder {
     margin-top: 48px;
     color: rgba(0, 0, 0, 0.50);
 }
-.register-alert{
+
+.register-alert {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -112,7 +130,8 @@ input::placeholder {
     z-index: 9999;
     border-radius: 0 20px 0 30px;
 }
-.register-alert-content{
+
+.register-alert-content {
     text-align: center;
 }
 
@@ -124,11 +143,11 @@ input::placeholder {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-  }
-  
-  .register-alert button:hover {
-    background-color:#03f3eb;
-  }
+}
+
+.register-alert button:hover {
+    background-color: #03f3eb;
+}
 
 @media screen and (max-width: 1350px) {
 
@@ -159,7 +178,7 @@ input::placeholder {
 
     .login-icon {
         width: 77px;
-        
+
     }
 
     .main-text-register {

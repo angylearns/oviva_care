@@ -115,6 +115,7 @@ function Register() {
                     <p className="text-regpassword">Contraseña</p>
                     <input
                         className="field-regpassword"
+                        type="password"
                         {...register("password", {
                             required: "Este campo es requerido",
                             minLength: {

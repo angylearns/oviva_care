@@ -5,8 +5,22 @@
     align-items: center;
 }
 
+.loginlogo-and-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 2%;
+    width: 400px;
+}
+
 .login-icon {
     width: 176px;
+}
+
+.main-text-login {
+    padding-left: 5%;
 }
 
 .field-user {
@@ -104,6 +118,7 @@ input::placeholder {
 }
 
 @media screen and (max-width: 540px) {
+
     .field-user,
     .field-password {
         width: 380px;
@@ -124,12 +139,12 @@ input::placeholder {
     }
 
     .text-user {
-       
+
         margin-right: 75%;
     }
 
     .text-password {
-      
+
         margin-right: 70%;
     }
 
@@ -142,25 +157,23 @@ input::placeholder {
 
     .field-user,
     .field-password {
-          width: 327px;
-      }
-  
-      .login-button {
-          width: 263px;
-          height: 64px;
-      }
-    
-      .text-user {
-          margin-right: 75%;
-      }
-  
-      .text-password {
-          margin-right: 66%;
-      }
-  
-      .goregister-button {
-          font-size: 16px;
-      }
-      }
-  
-  
+        width: 327px;
+    }
+
+    .login-button {
+        width: 263px;
+        height: 64px;
+    }
+
+    .text-user {
+        margin-right: 75%;
+    }
+
+    .text-password {
+        margin-right: 66%;
+    }
+
+    .goregister-button {
+        font-size: 16px;
+    }
+}
