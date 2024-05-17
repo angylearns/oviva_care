@@ -64,3 +64,30 @@
     width: 40%;
 
 }
+
+@media (max-width: 600px) {
+    .calendar {
+      width: 100%;
+      padding: 0 10px; /* Padding para ajustar el calendario dentro de la pantalla */
+    }
+  
+    .header {
+      flex-direction: column; /* Cambia la dirección del layout a columna */
+      text-align: center;
+    }
+  
+    .month-label {
+      font-size: 1.5em; /* Reduce el tamaño de la fuente para móviles */
+      margin-bottom: 10px;
+    }
+  
+    .day-name, .date {
+      padding: 10px; /* Reduce el padding para móviles */
+      font-size: 0.80em; /* Reduce el tamaño de la fuente para móviles */
+    }
+  
+    .date.selected {
+      border-radius: 10%; /* Cambia el borde redondeado */
+    }
+  }
+  
