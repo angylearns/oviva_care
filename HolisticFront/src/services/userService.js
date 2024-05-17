@@ -20,5 +20,43 @@ export const userService = {
         } catch (error) {
             console.error("Error deleting user:", error);
         }
+    },
+
+
+
+    async putUserEmail(email,id) {
+        try {
+            //let email2 = JSON.stringify(email)
+            console.log("burger")
+            console.log(email)
+            let response = await apiClient.put(`/user/putUserEmail`, { email: email, id: id });
+            
+
+            return response.data;
+        } catch (error) {
+            console.error("Error al actualiar datos:", error);
+            throw error;
+        }
+    },
+
+    async get_idUserbyEmail(email) {
+        try {
+            //let email2 = JSON.stringify(email)
+            console.log(email)
+            console.log("patata")
+            let response = await apiClient.get(`/user/getUserByEmail/${email}`);
+            const id = response.data; 
+            console.log("resoponsseee dataa")// The response should contain the user ID as a string
+            console.log(response.data)
+            //return id;
+            return response.data;
+        } catch (error) {
+            console.error("Error al actualiar datos:", error);
+            throw error;
+        }
     }
 };
+
+
+
+

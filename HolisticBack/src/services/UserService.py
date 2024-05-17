@@ -20,6 +20,28 @@ class UserService():
             print(ex)
 
     @classmethod
+    def get_idUserbyEmail(cls,email):
+        print("wowowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+        print(email)
+        try:
+            connection=get_connection()
+           
+            with connection.cursor() as cursor:
+                cursor.execute('SELECT id_user FROM user WHERE email = %s', (email,))
+
+                result= cursor.fetchone()
+                if result:
+                    numero = result[0]
+                print("resulttttt")
+                print(numero)
+                connection.close()
+                return numero
+                
+        except Exception as ex: 
+            print(ex)
+
+
+    @classmethod
     def post_user(cls, user: User):
         try:
             connection=get_connection()
@@ -83,3 +105,24 @@ class UserService():
                print(ex)
      
    
+    @classmethod
+    def put_user_Email(cls, email, id_user):
+        try:
+            connection = get_connection()
+            with connection.cursor() as cursor:
+                # Actualizar el email en la tabla `person`
+                query_person = 'UPDATE person SET email = %s WHERE email = %s'
+                cursor.execute(query_person, (email, email))
+            
+                # Actualizar el email en la tabla `user`
+                query_user = 'UPDATE user SET email = %s WHERE id_user = %s'
+                cursor.execute(query_user, (email, id_user))
+            
+                connection.commit()
+            connection.close()
+            return 'Usuario actualizado correctamente'
+        except Exception as ex:
+            print(ex)
+            return 'Error al actualizar el usuario'
+
+     
