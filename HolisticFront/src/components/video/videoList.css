@@ -1,0 +1,4 @@
+.video {
+    width: 100%; /* Ancho del video */
+    height: auto; /* Altura se ajustará automáticamente */
+  }

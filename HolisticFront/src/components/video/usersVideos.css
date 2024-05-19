@@ -1,0 +1,46 @@
+.users-videos {
+    padding: 20px;
+  }
+  
+  .categories {
+    margin-bottom: 20px;
+  }
+  
+  .category {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .videos {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .video-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .video-thumbnail {
+    width: 100%;
+    height: auto;
+  }
+  
+  button {
+    background-color: #35e9c2;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #8af1e9;
+  }
+  

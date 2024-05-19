@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import VideoList from './components/video/VideoList';
-// import Recipe from './components/recipe/Recipe';
+ import Recipe from './components/recipe/Recipe';
+import UsersVideos from './components/video/UsersVideos';
 
 function App() {
 
@@ -9,7 +10,8 @@ function App() {
   return (
     <>
       {/* <Recipe/> */}
-      <VideoList/>
+      {/* <VideoList/> */}
+      <UsersVideos/>
     </>
   )
 }
