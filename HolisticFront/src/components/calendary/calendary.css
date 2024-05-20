@@ -1,0 +1,93 @@
+/* src/Calendar.css */
+.calendar {
+    width: 900px;
+    /* Aumenta el tamaño del calendario */
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cal {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 143, 139, 1);
+    /* Color de fondo de la parte del mes */
+    color: white;
+    /* Color del texto en la parte del mes */
+    padding: 10px;
+    /* Padding para la parte del mes */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    margin-bottom: 10px;
+}
+
+.month-label {
+    font-size: 2em;
+    /* Aumenta el tamaño de la fuente para el mes */
+    text-transform: uppercase;
+    /* Aumenta el tamaño de la fuente para el mes */
+}
+
+.day-names,
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-name,
+.date {
+    padding: 15px;
+    /* Aumenta el padding para hacer los días más grandes */
+    text-align: center;
+    font-size: 1.2em;
+    /* Aumenta el tamaño de la fuente para los días */
+}
+
+.date {
+    cursor: pointer;
+}
+
+.date.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.date.selected {
+    background-color: #84dedf;
+    color: white;
+    border-radius: 70%;
+    width: 40%;
+
+}
+
+@media (max-width: 600px) {
+    .calendar {
+      width: 100%;
+      padding: 0 10px; /* Padding para ajustar el calendario dentro de la pantalla */
+    }
+  
+    .header {
+      flex-direction: column; /* Cambia la dirección del layout a columna */
+      text-align: center;
+    }
+  
+    .month-label {
+      font-size: 1.5em; /* Reduce el tamaño de la fuente para móviles */
+      margin-bottom: 10px;
+    }
+  
+    .day-name, .date {
+      padding: 10px; /* Reduce el padding para móviles */
+      font-size: 0.80em; /* Reduce el tamaño de la fuente para móviles */
+    }
+  
+    .date.selected {
+      border-radius: 10%; /* Cambia el borde redondeado */
+    }
+  }
+  

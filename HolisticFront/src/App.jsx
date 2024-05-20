@@ -1,21 +1,27 @@
 import { useState } from 'react'
 import './App.css'
 import Recipe from './components/recipe/Recipe';
-import Footer from './components/footer/Footer';
-import Navbar from './components/navbar/Navbar';
-import Login_user from './components/login/Login_user';
-import Register from './components/register/Register';
+import FormContact from './components/formContact/FormContact';
+import AdminPerson from './components/adminPerson/AdminPerson';
+import AddPerson from './components/adminPerson/AddPerson';
+import Question from './components/question/Question';
+import QuestionContact from './views/QuestionContact';
+import QaAdmin from './components/qaadmin/QaAdmin';
+import Calendar from './components/calendary/calendary';
 
 function App() {
 
 
   return (
     <>
-      <Navbar />
-      <Register />
-      <Login_user />
       {/* <Recipe/> */}
-      <Footer />
+      {/* <FormContact/> */}
+       {/*<AdminPerson/>*/} 
+      {/* <Question/> */}
+      {/*<QuestionContact/>*/}
+      {/*<QaAdmin/>*/} 
+      <Calendar/> 
+
     </>
   )
 }

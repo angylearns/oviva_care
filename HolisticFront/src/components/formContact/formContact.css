@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nombre+de+la+Fuente');
+
+.field {
+  margin-bottom: 10px;
+
+}
+
+.field label {
+  display: block;
+  font-size: 16px;
+  text-align: left;
+}
+
+.field input {
+  display: block;
+  /* min-width: 250px; */
+  line-height: 1.5;
+  font-size: 16px;
+  border-radius: 0 20px 0 30px;
+  background-color: rgba(0, 143, 139, 0.25);
+  border: none;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  width: 90%;
+}
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #008F8B;
+  border: none;
+  border-radius: 0 20px 0 30px;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.inputField {
+  padding: 3%;
+  border-radius: 0 20px 0 30px;
+  background-color: rgba(0, 143, 139, 0.25);
+  border: none;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  overflow-y: auto;
+  overflow-y: auto;
+  display: block;
+  line-height: 1.5;
+  font-size: 14px;
+  resize: none;
+  margin: 2%;
+}
+
+.inputField:hover {
+  background-color: white;
+}
+
+.inputField:focus {
+  background-color: white;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.textAreaField {
+  height: 150px;
+  border-radius: 0 0px 0 30px;
+  font-family: 'Montserrat', sans-serif;
+  width: 90%;
+}
+
+.container-form {
+  padding: 2%;
+  width: 100%;
+  border-radius: 15px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+  margin-top: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #008F8B;
+  border-radius: 0 20px 0 30px;
+  scroll-behavior: smooth;
+  overflow-anchor: none;
+}
