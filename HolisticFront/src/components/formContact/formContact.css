@@ -53,13 +53,15 @@ input[type="submit"] {
   background-color: white;
 }
 
-.inputField:focus {
-  background-color: white !important;
-}
 
 .inputField:valid {
   background-color:  rgba(0, 143, 139, 0.25) !important;
 }
+
+.inputField:focus {
+  background-color: white !important;
+}
+
 
 /* Estilo para el campo de texto con autocompletado */
 .inputField:-webkit-autofill {

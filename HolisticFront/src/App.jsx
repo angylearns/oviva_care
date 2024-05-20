@@ -14,9 +14,9 @@ function App() {
     <>
       {/* <Recipe/> */}
       {/* <FormContact/> */}
-      <AdminPerson/>
+      {/* <AdminPerson/> */}
       {/* <Question/> */}
-      {/* <QuestionContact/> */}
+      <QuestionContact/>
 
     </>
   )
