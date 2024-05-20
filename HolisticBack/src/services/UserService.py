@@ -19,26 +19,26 @@ class UserService():
         except Exception as ex: 
             print(ex)
 
-    @classmethod
-    def get_idUserbyEmail(cls,email):
-        print("wowowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
-        print(email)
-        try:
-            connection=get_connection()
+    # @classmethod
+    # def get_idUserbyEmail(cls,email):
+    #     print("wowowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+    #     print(email)
+    #     try:
+    #         connection=get_connection()
            
-            with connection.cursor() as cursor:
-                cursor.execute('SELECT id_user FROM user WHERE email = %s', (email,))
+    #         with connection.cursor() as cursor:
+    #             cursor.execute('SELECT id_user FROM user WHERE email = %s', (email,))
 
-                result= cursor.fetchone()
-                if result:
-                    numero = result[0]
-                print("resulttttt")
-                print(numero)
-                connection.close()
-                return numero
+    #             result= cursor.fetchone()
+    #             if result:
+    #                 numero = result[0]
+    #             print("resulttttt")
+    #             print(numero)
+    #             connection.close()
+    #             return numero
                 
-        except Exception as ex: 
-            print(ex)
+    #     except Exception as ex: 
+    #         print(ex)
 
 
     @classmethod
@@ -105,24 +105,35 @@ class UserService():
                print(ex)
      
    
-    @classmethod
-    def put_user_Email(cls, email, id_user):
-        try:
-            connection = get_connection()
-            with connection.cursor() as cursor:
-                # Actualizar el email en la tabla `person`
-                query_person = 'UPDATE person SET email = %s WHERE email = %s'
-                cursor.execute(query_person, (email, email))
-            
-                # Actualizar el email en la tabla `user`
-                query_user = 'UPDATE user SET email = %s WHERE id_user = %s'
-                cursor.execute(query_user, (email, id_user))
-            
-                connection.commit()
-            connection.close()
-            return 'Usuario actualizado correctamente'
-        except Exception as ex:
-            print(ex)
-            return 'Error al actualizar el usuario'
+    # @classmethod
+    # def put_user_Email(cls, new_email, id_user, old_email):
+    #     try:
+    #         print("datitosssss: ")
+    #         print(new_email)
+    #         print(id_user)
+    #         print(old_email)
+    #         connection = get_connection()
+    #         with connection.cursor() as cursor:
+    #             # Iniciar una transacción
+    #             connection.begin()
 
-     
+    #             # Actualizar el email en la tabla `person`
+    #             query_person = 'UPDATE person SET email = %s WHERE email = %s'
+    #             cursor.execute(query_person, (new_email, old_email))
+
+    #             # Luego actualizar el email en la tabla `user`
+    #             query_user = 'UPDATE user SET email = %s WHERE id_user = %s'
+    #             cursor.execute(query_user, (new_email, id_user))
+
+    #             # Confirmar la transacción
+    #             connection.commit()
+
+    #     except Exception as e:
+    #         # Revertir la transacción en caso de error
+    #         connection.rollback()
+    #         print(f"Error: {e}")
+    #         print("errorrrrrrrrrrrrrrrrrrrrrrrrrr..........................................")
+    #         raise
+    #     finally:
+    #         # Cerrar la conexión
+    #         connection.close()

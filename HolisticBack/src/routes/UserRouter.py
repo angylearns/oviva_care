@@ -45,52 +45,54 @@ def post_user():
 #     return 'Página: Usuario actualizado.'
    
        
-@mainUser.route('/putUserEmail', methods=['PUT'])
-def putUserEmail():
-    try:
-        print("pipipipipp")
+# @mainUser.route('/putUserEmail', methods=['PUT'])
+# def putUserEmail():
+#     try:
+#         print("pipipipipp")
 
-        # Obtén el ID del usuario desde el cuerpo de la solicitud
-        data = request.get_json()
-        print("dataaaaa")
-        print(data)
-        email = data.get('email')
-        user_id = data.get('id')
+#         # Obtén el ID del usuario desde el cuerpo de la solicitud
+#         data = request.get_json()
+#         print("dataaaaa")
+#         print(data)
+#         email = data.get('email')
+#         user_id = data.get('id')
 
-        # Verifica si se proporcionó un ID válido
-        if user_id is None:
-            return "No se proporcionó un ID de usuario", 400  # Bad request
+#         originalEmail = data.get('originalEmail')
 
-        # print("Correo electrónico:", userEmail)
-        print("ID de usuario:", user_id)
+#         # Verifica si se proporcionó un ID válido
+#         if user_id is None:
+#             return "No se proporcionó un ID de usuario", 400  # Bad request
 
-        # Lógica para actualizar el correo electrónico del usuario utilizando el userEmail y el user_id
-        result = UserService.put_user_Email(email, user_id)
-        print("Consola:", result)
-        print("Consola: Usuario actualizado")
+#         # print("Correo electrónico:", userEmail)
+#         print("ID de usuario:", user_id)
 
-        return 'Página: Usuario actualizado.'
-    except Exception as e:
-        print("Error:", str(e))
-        return "Error interno del servidor", 500  # Internal Server Error
+#         # Lógica para actualizar el correo electrónico del usuario utilizando el userEmail y el user_id
+#         result = UserService.put_user_Email(email, user_id, originalEmail)
+#         print("Consola:", result)
+#         print("Consola: Usuario actualizado")
+
+#         return 'Página: Usuario actualizado.'
+#     except Exception as e:
+#         print("Error:", str(e))
+#         return "Error interno del servidor", 500  # Internal Server Error
 
    
-@mainUser.route('/getUserByEmail/<userEmail>', methods=['GET'])
+# @mainUser.route('/getUserByEmail/<userEmail>', methods=['GET'])
 
-def getUserByEmail(userEmail):
-    print("popoipopopop")
+# def getUserByEmail(userEmail):
+#     print("popoipopopop")
     
-    # email=request.json ['email']
-    print(userEmail)
-    print("...................sdfsdfsfsfsfsf.............................")
-    id = UserService.get_idUserbyEmail(userEmail)
-    # updateuser= User(id_user,password,user_type, email)
+#     # email=request.json ['email']
+#     print(userEmail)
+#     print("...................sdfsdfsfsfsfsf.............................")
+#     id = UserService.get_idUserbyEmail(userEmail)
+#     # updateuser= User(id_user,password,user_type, email)
    
-    # UserService.put_user_Email(email,id)
-    print(id)
-    print("..................fsdfsdfsdfsf..............................")
-    print('Consola: id del usuario recuperado ')
-    return str(id)
+#     # UserService.put_user_Email(email,id)
+#     print(id)
+#     print("..................fsdfsdfsdfsf..............................")
+#     print('Consola: id del usuario recuperado ')
+#     return str(id)
 
 @mainUser.route('/delete/<userEmail>', methods=['DELETE'])
 def delete_user(userEmail):
