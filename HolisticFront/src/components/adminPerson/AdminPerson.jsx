@@ -45,6 +45,7 @@ function AdminPerson() {
         email: "",
     });
     const [showAlert, setShowAlert] = useState(false);
+    const [showAlert2, setShowAlert2] = useState(false);
     const [confirmDelete, setConfirmDelete] = useState(false);
     const [firstOrder, setFirstOrder] = useState(true);
 
@@ -52,6 +53,10 @@ function AdminPerson() {
         setShowAlert(false);
         setIndexToDelete(null);
     };
+    const handleCloseAlert2 = () => {
+        setShowAlert2(false);
+    };
+
 
     const handleConfirmAlert = async () => {
         if (indexToDelete !== null) {
@@ -113,7 +118,7 @@ function AdminPerson() {
             setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
         } else {
             const updatedCustomers = [...customersGlobal];
-            // Guarda el correo electrónico original en el formData
+
             setFormData({ ...formData, email: updatedCustomers[index].email });
             setEditableRows([...editableRows, index]);
         }
@@ -121,9 +126,9 @@ function AdminPerson() {
 
     const handleSave = (index) => {
 
-        //
+        
         if (!validateDate(customersGlobal[index].birth_date)) {
-            alert("fecha no valida")
+            setShowAlert2(true)
         } else {
             // tenemos la fecha en formato 'DD/MM/YYYY' 
             const fechaDB = formatDateToDB(customersGlobal[index].birth_date);
@@ -140,37 +145,12 @@ function AdminPerson() {
         }
 
     }
-    // const handleSave = async (index) => {
-    //     const updatedCustomers = [...customersGlobal];
-
-    //     try {
-    //         // Crear una copia de los datos de la persona excluyendo el campo de email
-    //         const personDataToUpdate = { ...updatedCustomers[index] };
-    //         delete personDataToUpdate.email;
-
-    //         // Actualizar los datos de la persona (excluyendo el campo de email)
-    //         await personService.putPerson(personDataToUpdate);
-
-    //         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
-    //     } catch (error) {
-    //         console.error("Error al actualizar datos:", error);
-    //     }
-    // };
-
-
 
     async function deletePerson(index) {
         await userService.deleteUser(customersGlobal[index].email);
         await personService.DeletePerson(customersGlobal[index]);
         setUpdatePage((prevState) => !prevState);
     }
-
-    // const handleFieldChange = (e) => {
-    //     const { name, value } = e.target;
-    //     setFila(customers[index]);
-    //     setFormData({ ...formData,
-    //         {name]: value });
-    //     };
 
     const handleInputChange = (newValue, index, field) => {
         const updatedCustomers = [...customersGlobal];
@@ -444,6 +424,14 @@ function AdminPerson() {
                         <span>¿Seguro deseas eliminar?</span><br />
                         <button onClick={handleCloseAlert}>No</button>
                         <button onClick={handleConfirmAlert}>Sí</button>
+                    </div>
+                </div>
+            )}
+             {showAlert2 && (
+                <div className="custom-alert">
+                    <div className="custom-alert-content">
+                        <span>Fecha incorrecta</span><br />
+                        <button onClick={handleCloseAlert2}>ok</button>
                     </div>
                 </div>
             )}
