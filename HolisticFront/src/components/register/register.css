@@ -1,7 +1,7 @@
 * {
     background-color: white;
-  }
-  
+}
+
 
 .fieldsblock {
     display: flex;
@@ -50,6 +50,38 @@
     color: black;
     outline: none;
     background-color: rgba(0, 143, 139, 0.25);
+}
+
+.field-regname:hover,
+.field-regbirthdate:hover,
+.field-regcountry:hover,
+.field-regemail:hover,
+.field-regdiagnose:hover,
+.field-reglastname:hover,
+.field-regpassword:hover {
+    background-color: white !important;
+}
+
+.field-regname:valid,
+.field-regbirthdate:valid,
+.field-regcountry:valid,
+.field-regemail:valid,
+.field-regdiagnose:valid,
+.field-reglastname:valid,
+.field-regpassword:valid {
+    background-color: rgba(0, 143, 139, 0.25) !important;
+}
+
+.field-regname,
+.field-regbirthdate,
+.field-regcountry,
+.field-regemail,
+.field-regdiagnose,
+.field-reglastname,
+.field-regpassword {
+    -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
+    box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset; /* Propiedad estándar */
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 .register-regbutton {
@@ -151,6 +183,9 @@ input::placeholder {
 .register-alert button:hover {
     background-color: #03f3eb;
 }
+
+
+
 
 @media screen and (max-width: 1350px) {
 
