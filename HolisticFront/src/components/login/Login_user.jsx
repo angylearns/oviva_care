@@ -11,23 +11,48 @@ function Login_user() {
     const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
     const [cookies, setCookie] = useCookies([TOKEN_COOKIE_NAME]); // Uso de useCookies
 
+    const [showAlert, setShowAlert] = useState(false);
+    const [successMessage, setSuccessMessage] = useState("");
+    const handleError = (message) => {
+        setErrorMessage(message);
+    };
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+    };
+
+
     const onSubmit = data => {
-        handleLogin(data, setErrorMessage)
+        handleLogin(data, handleError, setShowAlert, setSuccessMessage)
             .then((token) => {
                 saveTokenToCookies(token, setCookie); // Pasar setCookie como argumento
                 // Si el login es exitoso, puedes redirigir al usuario a otra página o cambiar el estado de la aplicación
                 reset();
+                setShowAlert(true);
             })
             .catch(error => {
-                setErrorMessage(error.message);
+                setErrorMessage('Ocurrió un error al registrar la persona'); // Actualiza el mensaje de error
+                setShowAlert(true); // Muestra la ventana emergente de alerta
             });
     };
+
 
     return (
 
 
 
         <form className="formulary" onSubmit={handleSubmit(onSubmit)}>
+
+            {/* Ventana emergente de alerta */}
+            {showAlert && (
+                <div className="register-alert">
+                    <div className="register-alert-content">
+                        <span>{successMessage || errorMessage}</span> {/* Muestra el mensaje de éxito o de error */}
+                        <button onClick={handleCloseAlert}>Cerrar</button>
+                    </div>
+                </div>
+            )}
+
             <div className='loginlogo-and-text'>
                 <img src={login_icon} className="login-icon" alt="imagen login" />
                 <h1 className="main-text-login">Miembro Oviva</h1>
@@ -76,8 +101,10 @@ function Login_user() {
                 />
                 {errors.password && <p>{errors.password.message}</p>}
             </div>
+            
             <button type="submit" className="login-button">Ingresar</button>
-            {errorMessage && <p>{errorMessage}</p>} {/* Muestra el mensaje de error si existe */}
+            {/* {errorMessage && <p>{errorMessage}</p>}  */}
+            {/* Muestra el mensaje de error si existe */}
             <button className="goregister-button">¿No eres miembro?, regístrate</button>
 
         </form>

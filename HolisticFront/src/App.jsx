@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Register />
+      {/* <Register /> */}
       <Login_user />
       {/* <Recipe/> */}
       <Footer />
