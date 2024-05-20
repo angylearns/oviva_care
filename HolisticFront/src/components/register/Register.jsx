@@ -7,7 +7,7 @@ import { handleRegister } from "../../handlers/registerHandle";
 
 function Register() {
     // maneja el estado del formulario, la validación y el envío del formulario.
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
 
     const [showAlert, setShowAlert] = useState(false);
@@ -29,6 +29,13 @@ function Register() {
     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
+          // Convertir la fecha ingresada por el usuario al formato YYYY-MM-DD
+          if (data.birth_date) {
+            const birthDateParts = data.birth_date.split('-');
+            const convertedBirthDate = `${birthDateParts[2]}-${birthDateParts[1]}-${birthDateParts[0]}`;
+            data.birth_date = convertedBirthDate;
+        }
+
         handleRegister(data, handleError, setShowAlert, setSuccessMessage)
 
             .then(() => {
@@ -148,13 +155,18 @@ function Register() {
                         {...register("birth_date", {
                             required: "Este campo es requerido",
                             pattern: {
-                                value: /^\d{4}-\d{2}-\d{2}$/,
-                                message: "Formato de fecha no válido. Utilice el formato AAAA-MM-DD."
+                                value: /^\d{2}-\d{2}-\d{4}$/, // Permitir el formato DD-MM-YYYY
+                                message: "Formato de fecha no válido. Utilice el formato DD-MM-YYYY."
                             }
                         })}
+                        onChange={(e) => {
+                            // Guardar la fecha ingresada por el usuario en el estado local
+                            setValue("birth_date", e.target.value);
+                        }}
                         placeholder="Fecha nacimiento"
                     />
                     {errors.birth_date && <p>{errors.birth_date.message}</p>}
+
 
                     <p className="text-regdiagnose">¿Estás diagnosticada?</p>
                     <select
