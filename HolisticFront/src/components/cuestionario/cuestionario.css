@@ -191,7 +191,7 @@ input[type="radio"] {
   
     .boton-resultado:hover {
       color: black;
-      background-color: #92f1ea; 
+      background-color: #00B6B9; 
       box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); 
     }
   }

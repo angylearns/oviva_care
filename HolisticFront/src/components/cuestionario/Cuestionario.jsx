@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import logo from "../../../../public/ImagenCuestionario/logoOvaries.png";
+import logo from "../../../public/ImagenCuestionario/logoOvaries.png";
 import './cuestionario.css';
+
 
 function Cuestionario() {
   const [preguntas, setPreguntas] = useState([
@@ -16,7 +17,7 @@ function Cuestionario() {
     {
       pregunta: "2. ¿Has notado un crecimiento excesivo de vello, especialmente en tu cara?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -24,7 +25,7 @@ function Cuestionario() {
     {
       pregunta: "3. ¿Has notado piel excesivamente grasa o aumento del acné de adulto?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 }
 
 
@@ -35,7 +36,7 @@ function Cuestionario() {
     {
       pregunta: "4. ¿Ha experimentado un aumento de peso inexplicable, especialmente en el abdomen?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -44,7 +45,7 @@ function Cuestionario() {
     {
       pregunta: "5. ¿Ha notado una caída o adelgazamiento significativo del cabello, especialmente en la coronilla, ( parte superior o la cima de la cabeza )?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -53,7 +54,7 @@ function Cuestionario() {
     {
       pregunta: "6. ¿Tiene zonas de piel oscura, especialmente alrededor del cuello, la ingle o las axilas?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -62,7 +63,7 @@ function Cuestionario() {
     {
       pregunta: "7. ¿Llevas más de 6 meses intentando concebir sin éxito?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 },
         { texto: "c) No aplicable", correcta: false, puntaje: 0 }
       ],
@@ -72,10 +73,10 @@ function Cuestionario() {
     {
       pregunta: "8. ¿Tiene antecedentes familiares de síndrome de ovario poliquístico?",
       respuestas: [
-        { texto: "a) Si, mi mamá", correcta: true, puntaje: 3 },
-        { texto: "b) Si, mi hermana", correcta: true, puntaje: 3 },
-        { texto: "c) Si, otro familiar", correcta: true, puntaje: 1 },
-        { texto: "d) No", correcta: false, puntaje: 0 }
+        { texto: "a) Sí, mi mamá", correcta: true, puntaje: 3 },
+        { texto: "b) Sí, mi hermana", correcta: true, puntaje: 3 },
+        { texto: "c) Sí, otro familiar", correcta: true, puntaje: 1 },
+        { texto: "d) No" , correcta: false, puntaje: 0 }
       ],
       seleccionada: null
     },
@@ -83,7 +84,7 @@ function Cuestionario() {
     {
       pregunta: "9. ¿Siente antojos de azúcar, especialmente después de una comida?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 1 },
+        { texto: "a) Sí", correcta: true, puntaje: 1 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -92,7 +93,7 @@ function Cuestionario() {
     {
       pregunta: "10. ¿Le han diagnosticado resistencia a la insulina o tiene niveles elevados de azúcar en sangre?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 3 },
+        { texto: "a) Sí", correcta: true, puntaje: 3 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -111,7 +112,7 @@ function Cuestionario() {
     {
       pregunta: "12. ¿Se siente fatigado con frecuencia, incluso después de un descanso adecuado?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 1 },
+        { texto: "a) Sí", correcta: true, puntaje: 1 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -120,7 +121,7 @@ function Cuestionario() {
     {
       pregunta: "13. ¿Experimenta con frecuencia problemas digestivos como hinchazón, estreñimiento o diarrea?",
       respuestas: [
-        { texto: "a) Si", correcta: true, puntaje: 1 },
+        { texto: "a) Sí", correcta: true, puntaje: 1 },
         { texto: "b) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
@@ -135,6 +136,28 @@ const manejarSeleccion = (preguntaIndex, respuestaIndex) => {
   setPreguntas(nuevasPreguntas);
 };
 
+// const obtenerResultado = () => {
+//   // Verificar si todas las preguntas han sido respondidas
+//   const todasRespondidas = preguntas.every(pregunta => pregunta.seleccionada !== null);
+
+//   // Si todas las preguntas han sido respondidas, calcular la puntuación y mostrar el resultado
+//   if (todasRespondidas) {
+//     let puntos = 0;
+//     preguntas.forEach(pregunta => {
+//       if (
+//         pregunta.respuestas[pregunta.seleccionada] &&
+//         pregunta.respuestas[pregunta.seleccionada].correcta
+//       ) {
+//         puntos += pregunta.respuestas[pregunta.seleccionada].puntaje;
+//       }
+//     });
+//     setPuntuacion(puntos);
+//   } else {
+//     // Si no todas las preguntas han sido respondidas, mostrar una alerta o mensaje indicando al usuario que complete todas las preguntas
+//     alert("Por favor, complete todas las preguntas antes de obtener el resultado.");
+//   }
+// };
+
 const obtenerResultado = () => {
   // Verificar si todas las preguntas han sido respondidas
   const todasRespondidas = preguntas.every(pregunta => pregunta.seleccionada !== null);
@@ -143,19 +166,17 @@ const obtenerResultado = () => {
   if (todasRespondidas) {
     let puntos = 0;
     preguntas.forEach(pregunta => {
-      if (
-        pregunta.respuestas[pregunta.seleccionada] &&
-        pregunta.respuestas[pregunta.seleccionada].correcta
-      ) {
+      if (pregunta.respuestas[pregunta.seleccionada].correcta) {
         puntos += pregunta.respuestas[pregunta.seleccionada].puntaje;
       }
     });
     setPuntuacion(puntos);
   } else {
     // Si no todas las preguntas han sido respondidas, mostrar una alerta o mensaje indicando al usuario que complete todas las preguntas
-    alert("Por favor, complete todas las preguntas antes de obtener el resultado.");
+    alert("Por favor, revisa y responde todas las preguntas pendientes para obtener tu resultado.");
   }
 };
+
 
 
 return (
