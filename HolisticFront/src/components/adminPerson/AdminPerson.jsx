@@ -110,68 +110,30 @@ function AdminPerson() {
         }
     };
 
-    // const handleSave = (index) => {
-    //     personService.putPerson(customersGlobal[index]);
-    //     setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
+    const handleSave = (index) => {
+        personService.putPerson(customersGlobal[index]);
+        setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
+
+    }
 
 
-    // };
-
-    // const handleSave = (index) => {
-    //     const email = customersGlobal[index].email;
-    //     if (!isValidEmail(email)) {
-    //         alert("Por favor, introduce un correo electrónico válido.");
-    //         return;
+    // const handleSave = async (index) => {
+    //     const updatedCustomers = [...customersGlobal];
+    
+    //     try {
+    //         // Crear una copia de los datos de la persona excluyendo el campo de email
+    //         const personDataToUpdate = { ...updatedCustomers[index] };
+    //         delete personDataToUpdate.email;
+    
+    //         // Actualizar los datos de la persona (excluyendo el campo de email)
+    //         await personService.putPerson(personDataToUpdate);
+    
+    //         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
+    //     } catch (error) {
+    //         console.error("Error al actualizar datos:", error);
     //     }
-    //     id = userService.get_idUserbyEmail(customersGlobal[index].email);
-    //     userService.putUserEmail(customersGlobal[index].email,id);
-    //     personService.putPerson(customersGlobal[index]);
-    //     setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
     // };
     
-    // const handleSave = (index) => {
-    //     const email = customersGlobal[index].email;
-    //     console.log("email original")
-    //     const originalEmail = formData.email; // Obtiene el correo electrónico original
-    //     console.log(originalEmail)
-    //     console.log("eeeeeeeeee")
-    //     if (!isValidEmail(email)) {
-    //         alert("Por favor, introduce un correo electrónico válido.");
-    //         return;
-    //     }
-    //     id = userService.get_idUserbyEmail(originalEmail);
-    //     console.log("iddddddd: ")
-    //     console.log(id)
-    //     userService.putUserEmail(customersGlobal[index].email,int(id));
-    //     personService.putPerson(customersGlobal[index]);
-    //     setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
-    // };
-
-    const handleSave = async (index) => {
-        const email = customersGlobal[index].email;
-        const originalEmail = formData.email;
-        if (!isValidEmail(email)) {
-            alert("Por favor, introduce un correo electrónico válido.");
-            return;
-        }
-    
-        try {
-            // Obtener el ID del usuario por su email
-            // let response = await userService.get_idUserbyEmail(`/user/getUserByEmail/${email}`);
-            let id = await userService.get_idUserbyEmail(originalEmail);
-            // const id = response.data;
-            console.log("User ID:", id); // Imprimir el ID para verificar que se obtuvo correctamente
-            // Realizar la solicitud PUT para actualizar el email
-            await userService.putUserEmail(customersGlobal[index].email,id);
-    
-            // Actualizar la información de la persona
-            await personService.putPerson(customersGlobal[index]);
-    
-            setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
-        } catch (error) {
-            console.error("Error al actualizar datos:", error);
-        }
-    };
     
 
     async function deletePerson(index) {
@@ -351,17 +313,7 @@ function AdminPerson() {
                                                 )}
                                             </td>
                                             <td>
-                                                {editableRows.includes(index) ? (
-                                                    <input
-                                                        type="text"
-                                                        defaultValue={customersGlobal[index]["email"]}
-                                                        onChange={(e) =>
-                                                            handleInputChange(e.target.value, index, "email")
-                                                        }
-                                                    />
-                                                ) : (
-                                                    user.email
-                                                )}
+                                                {user.email}
                                             </td>
                                             <td>
                                                 {editableRows.includes(index) ? (
