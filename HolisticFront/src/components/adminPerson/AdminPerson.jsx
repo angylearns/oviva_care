@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { personService } from '../../services/personService';
-import { userService } from "../../services/userService";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./adminPerson.css";
-import AddPerson from "./AddPerson";
 import abajo from '../../assets/abajo.png';
 import arriba from '../../assets/arriba.png';
 import basura from '../../assets/basura.png';
 import lapiz from '../../assets/lapiz.png';
+
+import { personHandle } from "../../handlers/personHandle";  
 
 const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -18,9 +17,7 @@ const formatDate = (dateString) => {
 };
 
 const formatDateToDB = (dateString) => {
-    // Dividir la cadena en día, mes y año
     const parts = dateString.split('/');
-    // Reorganizar los elementos en formato YYYY-MM-DD
     const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
     return formattedDate;
 };
@@ -46,7 +43,6 @@ function AdminPerson() {
     });
     const [showAlert, setShowAlert] = useState(false);
     const [showAlert2, setShowAlert2] = useState(false);
-    const [confirmDelete, setConfirmDelete] = useState(false);
     const [firstOrder, setFirstOrder] = useState(true);
 
     const handleCloseAlert = () => {
@@ -75,10 +71,10 @@ function AdminPerson() {
     const handleSort = (field) => {
         if (sortBy.field === field) {
             setSortBy({ field, order: sortBy.order === "asc" ? "desc" : "asc" });
-            setFirstOrder(false); // La primera vez que se ordena por este campo ya no será la primera ordenación
+            setFirstOrder(false); 
         } else {
             setSortBy({ field, order: "asc" });
-            setFirstOrder(field === "id_person"); // Verificar si el campo seleccionado es id_person
+            setFirstOrder(field === "id_person"); 
         }
     };
 
@@ -124,32 +120,26 @@ function AdminPerson() {
         }
     };
 
+
     const handleSave = (index) => {
-
-        
         if (!validateDate(customersGlobal[index].birth_date)) {
-            setShowAlert2(true)
+            setShowAlert2(true);
         } else {
-            // tenemos la fecha en formato 'DD/MM/YYYY' 
             const fechaDB = formatDateToDB(customersGlobal[index].birth_date);
-            // Ahora podemos usar 'fechaDB' para guardarla en la base de datos en el formato 'YYYY-MM-DD'
-            // Crear una copia del objeto customersGlobal[index]
             const updatedCustomer = { ...customersGlobal[index] };
-
-            // Actualizar el campo birth_date en la copia con la fecha formateada
             updatedCustomer.birth_date = fechaDB;
-
-            // personService.putPerson(customersGlobal[index]);
-            personService.putPerson(updatedCustomer);
+            personHandle.updatePerson(updatedCustomer);  
             setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
         }
+    };
 
-    }
-
-    async function deletePerson(index) {
-        await userService.deleteUser(customersGlobal[index].email);
-        await personService.DeletePerson(customersGlobal[index]);
-        setUpdatePage((prevState) => !prevState);
+     async function deletePerson(index) {
+        try {
+            await personHandle.deletePerson(customersGlobal[index]); 
+            setUpdatePage((prevState) => !prevState);
+        } catch (error) {
+            console.error("Error al eliminar persona:", error);
+        }
     }
 
     const handleInputChange = (newValue, index, field) => {
@@ -163,12 +153,13 @@ function AdminPerson() {
         setFormData({ ...formData, [name]: value });
     };
 
+
     async function fetchUsers() {
         try {
-            const allPersons = await personService.getAllPersons();
-            const modifiedPersons = allPersons.map(person => ({
+            const allPersons = await personHandle.getAllPersons();  
+            const modifiedPersons = allPersons.map((person) => ({
                 ...person,
-                birth_date: formatDate(person.birth_date)
+                birth_date: formatDate(person.birth_date),
             }));
             setCustomersGlobal(modifiedPersons);
         } catch (error) {
@@ -199,16 +190,10 @@ function AdminPerson() {
         return null;
     };
 
-    const isValidEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
-
     const validateDate = (date) => {
         const regex = /^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/\d{4}$/;
         return regex.test(date);
     }
-
 
 
     return (
