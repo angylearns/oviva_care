@@ -2,7 +2,6 @@
     background-color: white;
 }
 
-
 .fieldsblock {
     display: flex;
     flex-direction: row;
@@ -43,6 +42,10 @@
 .field-regdiagnose,
 .field-regcountry {
     color: rgba(0, 143, 139, 0.50);
+    box-sizing: border-box;
+    /* Asegura que el relleno y los bordes sean parte del tamaño total */
+    width: 597px;
+
 }
 
 .field-regdiagnose:focus,
@@ -80,7 +83,8 @@
 .field-reglastname,
 .field-regpassword {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
-    box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset; /* Propiedad estándar */
+    box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
+    /* Propiedad estándar */
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -209,6 +213,11 @@ input::placeholder {
         width: 450px;
     }
 
+    .field-regdiagnose,
+    .field-regcountry {
+        width: 460px;
+    }
+
     .register-regbutton {
         width: 300px;
         height: 74px;
@@ -216,7 +225,6 @@ input::placeholder {
 
     .login-icon {
         width: 77px;
-
     }
 
     .main-text-register {
@@ -254,6 +262,29 @@ input::placeholder {
         width: 380px;
     }
 
+    .main-text-register {
+        font-size: 18px;
+    }
+
+    .text-regname,
+    .text-reglastname,
+    .text-regemail,
+    .text-regpassword,
+    .text-regbirthdate,
+    .text-regdiagnose,
+    .text-regcountry {
+        font-size: 16px;
+    }
+    
+    .login-icon {
+        width: 60px;
+    }
+
+    .field-regdiagnose,
+    .field-regcountry {
+        width: 390px;
+    }
+
     .register-regbutton {
         width: 283px;
         height: 69px;
@@ -273,7 +304,7 @@ input::placeholder {
 
     @media screen and (max-width: 450px) {
 
-        .f.field-regname,
+        .field-regname,
         .field-regcountry,
         .field-regemail,
         .field-regdiagnose,
@@ -281,6 +312,25 @@ input::placeholder {
         .field-regbirthdate,
         .field-reglastname {
             width: 327px;
+        }
+
+        .main-text-register {
+            font-size: 16px;
+        }
+
+        .text-regname,
+        .text-reglastname,
+        .text-regemail,
+        .text-regpassword,
+        .text-regbirthdate,
+        .text-regdiagnose,
+        .text-regcountry {
+            font-size: 14px;
+        }
+
+        .field-regdiagnose,
+        .field-regcountry {
+            width: 337px;
         }
 
         .register-regbutton {
@@ -305,4 +355,52 @@ input::placeholder {
         }
     }
 
+    @media screen and (max-width: 430px) {
+
+        .field-regname,
+        .field-regcountry,
+        .field-regemail,
+        .field-regdiagnose,
+        .field-regpassword,
+        .field-regbirthdate,
+        .field-reglastname {
+            width: 300px;
+        }
+
+        .field-regdiagnose,
+        .field-regcountry {
+            width: 310px;
+        }
+
+        .register-regbutton {
+            width: 263px;
+            height: 64px;
+        }
+
+        .text-regname,
+        .text-reglastname,
+        .text-regemail,
+        .text-regpassword,
+        .text-regbirthdate,
+        .text-regdiagnose,
+        .text-regcountry {
+            font-size: 14px;
+        }
+
+        .text-regdiagnose {
+            margin-right: 38%;
+        }
+
+        .text-regemail {
+            margin-right: 45%;
+        }
+
+        .text-regpassword {
+            margin-right: 64%;
+        }
+
+        .gologin-button {
+            font-size: 16px;
+        }
+    }
 }
