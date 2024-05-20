@@ -27,6 +27,7 @@
 
 .navbar_desktop_logo {
     height: 90%;
+    width: auto;
 }
 
 .navbar_user_desktop--center {
@@ -62,7 +63,8 @@
     text-align: center;
 }
 
-.button_logout {
+.button_logout,
+.button_calendar {
     height: 30%;
     border: none;
     background-color: transparent;
@@ -80,8 +82,15 @@
     height: 100%;
 }
 
+.navbar_desktop_greeting_logout {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1000px) {
-    .navbar_user_desktop--right-left {
+    .navbar_desktop_greeting_and_logout {
         height: 100%;
         width: fit-content;
         display: flex;
@@ -210,12 +219,12 @@
         right: 20px; 
         padding: 10px;
         z-index: 1; 
-        background: rgba(0, 182, 185, 0.75);
+        background: #00b6b9bf;
         border-radius: 16px;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(6.3px);
         -webkit-backdrop-filter: blur(6.3px);
-        border: 1px solid rgba(0, 182, 185, 0.35);
+        border: 1px solid #00b6b959;
     }
 
     .modal_menu.open {

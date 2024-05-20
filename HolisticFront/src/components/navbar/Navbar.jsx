@@ -59,15 +59,20 @@ function Navbar() {
           {" "}
           {isLoggedIn ? (
             <section className="navbar_user_desktop--right-left">
-              {token && token.first_name && (
-              <section className="navbar_desktop_greeting">
-                ¡Hola,
-                <br />
-                {token.first_name}!
-              </section>)}
-              <button onClick={handleLogout} className="button_logout">
-                <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
+              <button className="button_calendar">
+                <img src="/images/icons/icon_calendar.svg" alt="Calendar icon" />
               </button>
+              <section className="navbar_desktop_greeting_and_logout">
+                {token && token.first_name && (
+                <section className="navbar_desktop_greeting">
+                  ¡Hola,
+                  <br />
+                  {token.first_name}!
+                </section>)}
+                <button onClick={handleLogout} className="button_logout">
+                  <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
+                </button>
+              </section>
             </section>
           ) : (
             <Link to="/profile" className="link_profile">
