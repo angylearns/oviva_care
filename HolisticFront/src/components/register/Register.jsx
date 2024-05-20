@@ -53,7 +53,7 @@ function Register() {
     return (
 
         //  handleSubmit se pasa como manejador del evento onSubmit del formulario. Esto asegura que la validación se ejecute antes de que se envíe el formulario. 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className="formulary-all-reg" onSubmit={handleSubmit(onSubmit)}>
 
             {/* Ventana emergente de alerta */}
             {showAlert && (
