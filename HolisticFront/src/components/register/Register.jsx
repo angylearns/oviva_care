@@ -29,8 +29,8 @@ function Register() {
     //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
-          // Convertir la fecha ingresada por el usuario al formato YYYY-MM-DD
-          if (data.birth_date) {
+        // Convertir la fecha ingresada por el usuario al formato YYYY-MM-DD
+        if (data.birth_date) {
             const birthDateParts = data.birth_date.split('-');
             const convertedBirthDate = `${birthDateParts[2]}-${birthDateParts[1]}-${birthDateParts[0]}`;
             data.birth_date = convertedBirthDate;
@@ -170,7 +170,7 @@ function Register() {
 
                     <p className="text-regdiagnose">¿Estás diagnosticada?</p>
                     <select
-                        className="field-regdiagnose custom-select"
+                        className="field-regdiagnose"
                         {...register("diagnosed", { required: "Este campo es requerido" })}
                     >
                         <option value="">Selecciona una opción</option>
@@ -180,22 +180,77 @@ function Register() {
                     {errors.diagnosed && <p>{errors.diagnosed.message}</p>}
 
 
-
                     <p className="text-regcountry">País</p>
-                    <input
+                    <select
                         className="field-regcountry"
-                        {...register("country", {
-                            required: "Este campo es requerido",
-                            pattern: {
-                                value: /^[A-Za-z\u00C0-\u00FF\s]+$/i,
-                                message: "Solo se permiten letras"
-                            }
-                        })}
-                        placeholder="País"
-                    />
+                        {...register("country", { required: "Este campo es requerido" })}
+                    >
+                        <option value="">Elige una opción</option>
+                        <option value="al">Albania</option>
+                        <option value="de">Alemania</option>
+                        <option value="ad">Andorra</option>
+                        <option value="am">Armenia</option>
+                        <option value="at">Austria</option>
+                        <option value="az">Azerbaiyán</option>
+                        <option value="ar">Argentina</option>
+                        <option value="be">Bélgica</option>
+                        <option value="bo">Bolivia</option>
+                        <option value="ba">Bosnia y Herzegovina</option>
+                        <option value="br">Brasil</option>
+                        <option value="bg">Bulgaria</option>
+                        <option value="by">Bielorrusia</option>
+                        <option value="cl">Chile</option>
+                        <option value="co">Colombia</option>
+                        <option value="cy">Chipre</option>
+                        <option value="hr">Croacia</option>
+                        <option value="dk">Dinamarca</option>
+                        <option value="ec">Ecuador</option>
+                        <option value="sk">Eslovaquia</option>
+                        <option value="si">Eslovenia</option>
+                        <option value="es">España</option>
+                        <option value="ee">Estonia</option>
+                        <option value="fi">Finlandia</option>
+                        <option value="fr">Francia</option>
+                        <option value="gy">Guyana</option>
+                        <option value="gr">Grecia</option>
+                        <option value="hu">Hungría</option>
+                        <option value="ie">Irlanda</option>
+                        <option value="is">Islandia</option>
+                        <option value="it">Italia</option>
+                        <option value="xk">Kosovo</option>
+                        <option value="lv">Letonia</option>
+                        <option value="li">Liechtenstein</option>
+                        <option value="lt">Lituania</option>
+                        <option value="lu">Luxemburgo</option>
+                        <option value="mt">Malta</option>
+                        <option value="md">Moldavia</option>
+                        <option value="mc">Mónaco</option>
+                        <option value="me">Montenegro</option>
+                        <option value="no">Noruega</option>
+                        <option value="nl">Países Bajos</option>
+                        <option value="py">Paraguay</option>
+                        <option value="pe">Perú</option>
+                        <option value="pl">Polonia</option>
+                        <option value="pt">Portugal</option>
+                        <option value="cz">República Checa</option>
+                        <option value="uk-eng">Inglaterra</option>
+                        <option value="uk-nir">Irlanda del Norte</option>
+                        <option value="uk-sct">Escocia</option>
+                        <option value="uk-wls">Gales</option>
+                        <option value="ro">Rumanía</option>
+                        <option value="ru">Rusia</option>
+                        <option value="sm">San Marino</option>
+                        <option value="se">Suecia</option>
+                        <option value="ch">Suiza</option>
+                        <option value="sr">Surinam</option>
+                        <option value="tr">Turquía</option>
+                        <option value="ua">Ucrania</option>
+                        <option value="uy">Uruguay</option>
+                        <option value="va">Vaticano</option>
+                        <option value="ve">Venezuela</option>
+                    </select>
+
                     {errors.country && <p>{errors.country.message}</p>}
-
-
 
                 </div>
 

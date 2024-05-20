@@ -38,15 +38,17 @@
     padding-left: 10px;
     border: none;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-
 }
 
-.field-regdiagnose {
+.field-regdiagnose,
+.field-regcountry {
     color: rgba(0, 143, 139, 0.50);
 }
 
-.field-regdiagnose:focus {
+.field-regdiagnose:focus,
+.field-regcountry:focus {
     color: black;
+    outline: none;
 }
 
 .register-regbutton {
