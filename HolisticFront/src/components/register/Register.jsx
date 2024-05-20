@@ -186,68 +186,68 @@ function Register() {
                         {...register("country", { required: "Este campo es requerido" })}
                     >
                         <option value="">Elige una opción</option>
-                        <option value="al">Albania</option>
-                        <option value="de">Alemania</option>
-                        <option value="ad">Andorra</option>
-                        <option value="am">Armenia</option>
-                        <option value="at">Austria</option>
-                        <option value="az">Azerbaiyán</option>
-                        <option value="ar">Argentina</option>
-                        <option value="be">Bélgica</option>
-                        <option value="bo">Bolivia</option>
-                        <option value="ba">Bosnia y Herzegovina</option>
-                        <option value="br">Brasil</option>
-                        <option value="bg">Bulgaria</option>
-                        <option value="by">Bielorrusia</option>
-                        <option value="cl">Chile</option>
-                        <option value="co">Colombia</option>
-                        <option value="cy">Chipre</option>
-                        <option value="hr">Croacia</option>
-                        <option value="dk">Dinamarca</option>
-                        <option value="ec">Ecuador</option>
-                        <option value="sk">Eslovaquia</option>
-                        <option value="si">Eslovenia</option>
-                        <option value="es">España</option>
-                        <option value="ee">Estonia</option>
-                        <option value="fi">Finlandia</option>
-                        <option value="fr">Francia</option>
-                        <option value="gy">Guyana</option>
-                        <option value="gr">Grecia</option>
-                        <option value="hu">Hungría</option>
-                        <option value="ie">Irlanda</option>
-                        <option value="is">Islandia</option>
-                        <option value="it">Italia</option>
-                        <option value="xk">Kosovo</option>
-                        <option value="lv">Letonia</option>
-                        <option value="li">Liechtenstein</option>
-                        <option value="lt">Lituania</option>
-                        <option value="lu">Luxemburgo</option>
-                        <option value="mt">Malta</option>
-                        <option value="md">Moldavia</option>
-                        <option value="mc">Mónaco</option>
-                        <option value="me">Montenegro</option>
-                        <option value="no">Noruega</option>
-                        <option value="nl">Países Bajos</option>
-                        <option value="py">Paraguay</option>
-                        <option value="pe">Perú</option>
-                        <option value="pl">Polonia</option>
-                        <option value="pt">Portugal</option>
-                        <option value="cz">República Checa</option>
-                        <option value="uk-eng">Inglaterra</option>
-                        <option value="uk-nir">Irlanda del Norte</option>
-                        <option value="uk-sct">Escocia</option>
-                        <option value="uk-wls">Gales</option>
-                        <option value="ro">Rumanía</option>
-                        <option value="ru">Rusia</option>
-                        <option value="sm">San Marino</option>
-                        <option value="se">Suecia</option>
-                        <option value="ch">Suiza</option>
-                        <option value="sr">Surinam</option>
-                        <option value="tr">Turquía</option>
-                        <option value="ua">Ucrania</option>
-                        <option value="uy">Uruguay</option>
-                        <option value="va">Vaticano</option>
-                        <option value="ve">Venezuela</option>
+                        <option >Albania</option>
+                        <option >Alemania</option>
+                        <option >Andorra</option>
+                        <option >Armenia</option>
+                        <option >Austria</option>
+                        <option >Azerbaiyán</option>
+                        <option >Argentina</option>
+                        <option >Bélgica</option>
+                        <option >Bolivia</option>
+                        <option >Bosnia y Herzegovina</option>
+                        <option >Brasil</option>
+                        <option >Bulgaria</option>
+                        <option >Bielorrusia</option>
+                        <option >Chile</option>
+                        <option >Colombia</option>
+                        <option >Chipre</option>
+                        <option >Croacia</option>
+                        <option >Dinamarca</option>
+                        <option >Ecuador</option>
+                        <option >Eslovaquia</option>
+                        <option >Eslovenia</option>
+                        <option >España</option>
+                        <option >Estonia</option>
+                        <option >Finlandia</option>
+                        <option >Francia</option>
+                        <option >Guyana</option>
+                        <option >Grecia</option>
+                        <option >Hungría</option>
+                        <option >Irlanda</option>
+                        <option >Islandia</option>
+                        <option >Italia</option>
+                        <option >Kosovo</option>
+                        <option >Letonia</option>
+                        <option >Liechtenstein</option>
+                        <option >Lituania</option>
+                        <option >Luxemburgo</option>
+                        <option >Malta</option>
+                        <option >Moldavia</option>
+                        <option >Mónaco</option>
+                        <option >Montenegro</option>
+                        <option >Noruega</option>
+                        <option >Países Bajos</option>
+                        <option >Paraguay</option>
+                        <option >Perú</option>
+                        <option >Polonia</option>
+                        <option >Portugal</option>
+                        <option >República Checa</option>
+                        <option >Inglaterra</option>
+                        <option >Irlanda del Norte</option>
+                        <option >Escocia</option>
+                        <option >Gales</option>
+                        <option >Rumanía</option>
+                        <option >Rusia</option>
+                        <option >San Marino</option>
+                        <option >Suecia</option>
+                        <option >Suiza</option>
+                        <option >Surinam</option>
+                        <option >Turquía</option>
+                        <option >Ucrania</option>
+                        <option >Uruguay</option>
+                        <option >Vaticano</option>
+                        <option >Venezuela</option>
                     </select>
 
                     {errors.country && <p>{errors.country.message}</p>}

@@ -49,6 +49,7 @@
 .field-regcountry:focus {
     color: black;
     outline: none;
+    background-color: rgba(0, 143, 139, 0.25);
 }
 
 .register-regbutton {
