@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./question.css";
-import { questionService } from '../../services/questionService'
+import { questionService } from '../../services/questionService';
+import { CSSTransition } from 'react-transition-group';
 
 function FormContact() {
     const [questionList, setQuestionList] = useState([]);
@@ -37,23 +38,33 @@ function FormContact() {
     };
 
     return (
+        <div className="questionsContainerWrapper">
         <div className="questionsContainer">
             <h2>Preguntas frecuentes</h2>
             {questionList.map((question, index) => (
                 <div key={question.id_qa}>
-                    <p onClick={() => toggleQuestion(index)}>
-                        {question.question} 
-                        <img src="https://i.postimg.cc/7hKhM85r/abajo.png" alt="Expandir" style={{ transform: rotatedQuestions[index] ? "rotate(180deg)" : "rotate(0deg)" }} />
-                    </p>
-                    {expandedQuestions[index] && 
-                        <div className="answer">
-                            <p>{question.answer}</p>
-                        </div>
-                    }
+                    <div className="questionWrapper">
+                        <p onClick={() => toggleQuestion(index)}>
+                            {question.question} 
+                            <img src="https://i.postimg.cc/7hKhM85r/abajo.png" alt="Expandir" style={{ transform: rotatedQuestions[index] ? "rotate(180deg)" : "rotate(0deg)" }} />
+                        </p>
+                        <CSSTransition
+                            in={expandedQuestions[index]}
+                            timeout={300}
+                            classNames="fade"
+                            unmountOnExit
+                        >
+                            <div className="answer">
+                                <p>{question.answer}</p>
+                            </div>
+                        </CSSTransition>
+                    </div>
                 </div>
             ))}
         </div>
+        </div>
     );
+    
 }
 
 export default FormContact;
