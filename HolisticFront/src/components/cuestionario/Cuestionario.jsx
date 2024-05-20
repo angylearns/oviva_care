@@ -69,14 +69,14 @@ function Cuestionario() {
       ],
       seleccionada: null
     },
-    
+
     {
       pregunta: "8. ¿Tiene antecedentes familiares de síndrome de ovario poliquístico?",
       respuestas: [
         { texto: "a) Sí, mi mamá", correcta: true, puntaje: 3 },
         { texto: "b) Sí, mi hermana", correcta: true, puntaje: 3 },
         { texto: "c) Sí, otro familiar", correcta: true, puntaje: 1 },
-        { texto: "d) No" , correcta: false, puntaje: 0 }
+        { texto: "d) No", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
     },
@@ -128,103 +128,81 @@ function Cuestionario() {
     },
   ]);
 
-const [puntuacion, setPuntuacion] = useState(0);
+  const [puntuacion, setPuntuacion] = useState(0);
 
-const manejarSeleccion = (preguntaIndex, respuestaIndex) => {
-  const nuevasPreguntas = [...preguntas];
-  nuevasPreguntas[preguntaIndex].seleccionada = respuestaIndex;
-  setPreguntas(nuevasPreguntas);
-};
+  const manejarSeleccion = (preguntaIndex, respuestaIndex) => {
+    const nuevasPreguntas = [...preguntas];
+    nuevasPreguntas[preguntaIndex].seleccionada = respuestaIndex;
+    setPreguntas(nuevasPreguntas);
+  };
 
-// const obtenerResultado = () => {
-//   // Verificar si todas las preguntas han sido respondidas
-//   const todasRespondidas = preguntas.every(pregunta => pregunta.seleccionada !== null);
+ const obtenerResultado = () => {
+    // Verificar si todas las preguntas han sido respondidas
+    const todasRespondidas = preguntas.every(pregunta => pregunta.seleccionada !== null);
 
-//   // Si todas las preguntas han sido respondidas, calcular la puntuación y mostrar el resultado
-//   if (todasRespondidas) {
-//     let puntos = 0;
-//     preguntas.forEach(pregunta => {
-//       if (
-//         pregunta.respuestas[pregunta.seleccionada] &&
-//         pregunta.respuestas[pregunta.seleccionada].correcta
-//       ) {
-//         puntos += pregunta.respuestas[pregunta.seleccionada].puntaje;
-//       }
-//     });
-//     setPuntuacion(puntos);
-//   } else {
-//     // Si no todas las preguntas han sido respondidas, mostrar una alerta o mensaje indicando al usuario que complete todas las preguntas
-//     alert("Por favor, complete todas las preguntas antes de obtener el resultado.");
-//   }
-// };
-
-const obtenerResultado = () => {
-  // Verificar si todas las preguntas han sido respondidas
-  const todasRespondidas = preguntas.every(pregunta => pregunta.seleccionada !== null);
-
-  // Si todas las preguntas han sido respondidas, calcular la puntuación y mostrar el resultado
-  if (todasRespondidas) {
-    let puntos = 0;
-    preguntas.forEach(pregunta => {
-      if (pregunta.respuestas[pregunta.seleccionada].correcta) {
-        puntos += pregunta.respuestas[pregunta.seleccionada].puntaje;
-      }
-    });
-    setPuntuacion(puntos);
-  } else {
-    // Si no todas las preguntas han sido respondidas, mostrar una alerta o mensaje indicando al usuario que complete todas las preguntas
-    alert("Por favor, revisa y responde todas las preguntas pendientes para obtener tu resultado.");
-  }
-};
+    // Si todas las preguntas han sido respondidas, calcular la puntuación y mostrar el resultado
+    if (todasRespondidas) {
+      let puntos = 0;
+      preguntas.forEach(pregunta => {
+        if (pregunta.respuestas[pregunta.seleccionada].correcta) {
+          puntos += pregunta.respuestas[pregunta.seleccionada].puntaje;
+        }
+      });
+      setPuntuacion(puntos);
+    } else {
+      // Si no todas las preguntas han sido respondidas, mostrar una alerta o mensaje indicando al usuario que complete todas las preguntas
+      alert("Por favor, revisa y responde todas las preguntas pendientes para obtener tu resultado.");
+    }
+  };
 
 
 
-return (
-  <div>
-    <h1 className="cuestionario">Cuestionario de autoevaluación del SOP</h1>
-    <div class="logo-container">
-  <img class="logoimag" src={logo} alt="Logo de cuestionario" />
-</div>
-
-    {preguntas.map((pregunta, preguntaIndex) => (
-      <div key={preguntaIndex}>
-        <h3 className= "questions">{pregunta.pregunta}</h3>
-        {pregunta.respuestas.map((respuesta, respuestaIndex) => (
-          <div key={respuestaIndex}>
-            <input
-              type="radio"
-              name={`pregunta${preguntaIndex}`}
-              checked={pregunta.seleccionada === respuestaIndex}
-              onChange={() => manejarSeleccion(preguntaIndex, respuestaIndex)}
-            />
-            <label className="abcd">{respuesta.texto}</label>
-            
-
-          </div>
-        ))}
+  return (
+    <div>
+      <h1 className="cuestionario">Cuestionario de autoevaluación del SOP</h1>
+      <div class="logo-container">
+        <img class="logoimag" src={logo} alt="Logo de cuestionario" />
       </div>
-    ))}
-    <button onClick={obtenerResultado} className="boton-resultado">Obtener resultado</button>
-    {puntuacion !== null && (
-      <div className="puntuaciones">
 
-        <h2 className= "result">Resultado:</h2>
+      {preguntas.map((pregunta, preguntaIndex) => (
+        <div key={preguntaIndex}>
+          <h3 className="questions">{pregunta.pregunta}</h3>
+          {pregunta.respuestas.map((respuesta, respuestaIndex) => (
+            <div key={respuestaIndex}>
+              <input
+                type="radio"
+                name={`pregunta${preguntaIndex}`}
+                checked={pregunta.seleccionada === respuestaIndex}
+                onChange={() => manejarSeleccion(preguntaIndex, respuestaIndex)}
+              />
+              <label className="abcd">{respuesta.texto}</label>
 
-        <p className="punts">Puntuación: {puntuacion}</p>
 
-        {puntuacion >= 0 && puntuacion <= 7 && (
-          <p>Menor probabilidad de sufrir síndrome de ovario poliquístico. Si bien pueden presentarse algunos síntomas, el riesgo general es relativamente bajo. Aún así es recomendable controlar los síntomas y consultar con un proveedor de atención médica si surge alguna inquietud.</p>
-        )}
-        {puntuacion >= 8 && puntuacion <= 20 && (
-          <p>Probabilidad moderada de síndrome de ovario poliquístico. Este rango de puntuación sugiere que hay varios síntomas presentes que pueden ser indicativos de síndrome de ovario poliquístico. Se recomienda una evaluación adicional por parte de un proveedor de atención médica para el diagnóstico y tratamiento.</p>
-        )}
-        {puntuacion >= 21 && (
-          <p>Mayor probabilidad de sufrir síndrome de ovario poliquístico. Una puntuación en este rango indica una presencia significativa de síntomas asociados con el síndrome de ovario poliquístico. Se recomienda encarecidamente consultar inmediatamente con un proveedor de atención médica para el diagnóstico y tratamiento.</p>
-        )}
-      </div>
-    )}
-  </div>
-);
+            </div>
+          ))}
+        </div>
+      ))}
+      <button onClick={obtenerResultado} className="boton-resultado">Obtener resultado</button>
+      {puntuacion !== null && (
+        <div className="puntuaciones">
+
+          <h2 className="result">Resultado:</h2>
+
+          <p className="punts">Puntuación: {puntuacion}</p>
+
+          {puntuacion >= 0 && puntuacion <= 7 && (
+            <p>Menor probabilidad de sufrir síndrome de ovario poliquístico. Si bien pueden presentarse algunos síntomas, el riesgo general es relativamente bajo. Aún así es recomendable controlar los síntomas y consultar con un proveedor de atención médica si surge alguna inquietud.</p>
+          )}
+          {puntuacion >= 8 && puntuacion <= 20 && (
+            <p>Probabilidad moderada de síndrome de ovario poliquístico. Este rango de puntuación sugiere que hay varios síntomas presentes que pueden ser indicativos de síndrome de ovario poliquístico. Se recomienda una evaluación adicional por parte de un proveedor de atención médica para el diagnóstico y tratamiento.</p>
+          )}
+          {puntuacion >= 21 && (
+            <p>Mayor probabilidad de sufrir síndrome de ovario poliquístico. Una puntuación en este rango indica una presencia significativa de síntomas asociados con el síndrome de ovario poliquístico. Se recomienda encarecidamente consultar inmediatamente con un proveedor de atención médica para el diagnóstico y tratamiento.</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default Cuestionario;
