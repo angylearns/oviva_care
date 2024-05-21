@@ -1,0 +1,36 @@
+.hero-container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8%;
+}
+
+.youtube-icon {
+    width: 404px;
+}
+
+.hero-youtube {
+    display: flex;
+    align-items: center;
+    width: 30%;
+
+}
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    width: 50%;
+    padding-left: 15%;
+}
+
+.text-title {
+    font-size: 30px;
+}
+
+.hero-introduction{
+    font-size: 18px;
+}

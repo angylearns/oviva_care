@@ -5,6 +5,7 @@ import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Login_user from './components/login/Login_user';
 import Register from './components/register/Register';
+import Hero from './components/hero/Hero'
 
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <Register />
+      <Hero />
+      {/* <Register /> */}
       {/* <Login_user /> */}
       {/* <Recipe/> */}
       <Footer />
