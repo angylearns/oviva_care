@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     justify-items: center;
-    padding-top: 2%;
+    padding-top: 5%;
     width: 400px;
 }
 
@@ -46,12 +46,13 @@
 }
 
 .field-user,
-.field-password{
+.field-password {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
     /* Propiedad estándar */
     transition: background-color 5000s ease-in-out 0s;
 }
+
 input::placeholder {
     color: rgba(0, 143, 139, 0.50);
 }
@@ -72,6 +73,7 @@ input::placeholder {
     margin-top: 48px;
     color: rgba(0, 0, 0, 0.50);
     font-size: 18px;
+    margin-bottom: 5%;
 }
 
 .text-user {
@@ -176,6 +178,23 @@ input::placeholder {
 
     .text-password {
         margin-right: 66%;
+    }
+
+    .goregister-button {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .field-user,
+    .field-password {
+        width: 280px;
+    }
+
+    .text-user,
+    .text-password {
+        font-size: 14px;
     }
 
     .goregister-button {

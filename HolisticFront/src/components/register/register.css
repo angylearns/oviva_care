@@ -20,7 +20,7 @@
     align-items: center;
     justify-content: center;
     justify-items: center;
-    padding-top: 2%;
+    padding-top: 5%;
 }
 
 .field-regname,
@@ -154,6 +154,7 @@ input::placeholder {
     border: none;
     margin-top: 48px;
     color: rgba(0, 0, 0, 0.50);
+    margin-bottom: 5%;
 }
 
 .register-alert {
