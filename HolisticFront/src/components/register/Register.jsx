@@ -1,8 +1,10 @@
 import React, { useState, } from "react";
 import { useForm } from 'react-hook-form';
 import '../register/register.css';
-import login_icon from "../../../public/images/icons/login_icon.svg";
 import { handleRegister } from "../../handlers/registerHandle";
+import login_icon from "../../../public/images/icons/login_icon.svg";
+import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
+import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
 
 
 function Register() {
@@ -49,6 +51,7 @@ function Register() {
             });
     };
 
+    const [showPassword, setShowPassword] = useState(false);
 
     return (
 
@@ -120,9 +123,10 @@ function Register() {
                     {errors.email && <p>{errors.email.message}</p>}
 
                     <p className="text-regpassword">Contraseña</p>
+
                     <input
+                        type={showPassword ? "text" : "password"}
                         className="field-regpassword"
-                        type="password"
                         {...register("password", {
                             required: "Este campo es requerido",
                             minLength: {
@@ -140,10 +144,12 @@ function Register() {
                         })}
                         placeholder="Contraseña"
                     />
+                    <button type="button" className="icons-buttons-password" onClick={() => setShowPassword(!showPassword)}>
+                        {showPassword ? <img className="icon-close-eye" src={icon_close_eye} /> : <img className="icon-open-eye" src={icon_open_eye} />}
+                    </button>
                     {errors.password && <p>{errors.password.message}</p>}
 
                 </div>
-
 
                 <div className="groupfields2">
 
@@ -254,17 +260,17 @@ function Register() {
 
                 </div>
 
-            </div>
+                </div>
 
-            <div className="buttons">
-                <button type="submit" className="register-regbutton">Registrar</button>
-                {/* <Link to="/Login_user"> */}
-                <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
-                {/* </Link> */}
-            </div>
-            {/* Mostrar mensaje de error si está presente */}
-            {/* {errorMessage && <p>{errorMessage}</p>} */}
-
+                <div className="buttons">
+                    <button type="submit" className="register-regbutton">Registrar</button>
+                    {/* <Link to="/Login_user"> */}
+                    <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
+                    {/* </Link> */}
+                </div>
+                {/* Mostrar mensaje de error si está presente */}
+                {/* {errorMessage && <p>{errorMessage}</p>} */}
+            
         </form>
 
 

@@ -1,4 +1,4 @@
-.formulary-all-reg{
+.formulary-all-reg {
     background-color: white;
 }
 
@@ -22,7 +22,11 @@
     justify-items: center;
     padding-top: 5%;
 }
-
+.groupfields2{
+    display: flex;
+   flex-direction: column;
+    margin-right: 5%;
+}
 .field-regname,
 .field-regbirthdate,
 .field-regcountry,
@@ -42,10 +46,7 @@
 .field-regdiagnose,
 .field-regcountry {
     color: rgba(0, 143, 139, 0.50);
-    box-sizing: border-box;
-    /* Asegura que el relleno y los bordes sean parte del tamaño total */
     width: 597px;
-
 }
 
 .field-regdiagnose:focus,
@@ -83,10 +84,29 @@
 .field-reglastname,
 .field-regpassword {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6); 
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
     /* Propiedad estándar */
     transition: background-color 5000s ease-in-out 0s;
 }
+
+.icons-buttons-password{
+    background-color: transparent;
+    border: none;
+}
+
+/* Estilo para el botón de abrir ojo */
+.icon-open-eye,
+.icon-close-eye {
+    width: 45px;
+    background-color: transparent;
+    border: none;
+    transform: translate(-70px, 17px);
+}
+
+/* Opcional: Ajustar el posicionamiento de los botones si están dentro de un contenedor */
+/* .icons-buttons-password {
+    position: relative;
+} */
 
 .register-regbutton {
     width: 490px;
@@ -96,6 +116,11 @@
     background-color: #008F8B;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
     border: none;
+}
+
+.register-regbutton:hover {
+    background-color: #D9ECEA;
+    color: #008F8B;
 }
 
 .text-regname {

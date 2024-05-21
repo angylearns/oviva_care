@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      {/* <Register /> */}
+      {/* <Hero /> */}
+      <Register />
       {/* <Login_user /> */}
       {/* <Recipe/> */}
       <Footer />
