@@ -5,58 +5,51 @@ const UsersVideos = () => {
   const videos = [
     {
       id: 1,
-      title: "Video 1",
-      description: "Descripción del Video 1",
+      description: "DAY 1 - PCOS WORKOUT",
       link: "https://www.youtube.com/watch?v=-wR20fVNlKg",
-      thumbnail: "https://img.youtube.com/vi/example1/0.jpg",
+      thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193560/b3ZpdmEvbXRrd3hucXNxb2E0M3hoYWtvb24=/drilldown",
       category: "Pilates"
     },
     {
       id: 2,
-      title: "Video 2",
-      description: "Descripción del Video 2",
-      link: "https://www.youtube.com/watch?v=example2",
-      thumbnail: "https://img.youtube.com/vi/example2/0.jpg",
+      description: "DAY 2 - PCOS WORKOUT",
+      link: "https://www.youtube.com/watch?v=NPww7dqI53Y",
+      thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193559/b3ZpdmEvYjg3cXJkajRyeG4zdjZxbmpyanE=/drilldown",
       category: "Yoga"
     },
     {
         id: 3,
-        title: "Video 1",
-        description: "Descripción del Video 1",
-        link: "https://www.youtube.com/watch?v=example1",
-        thumbnail: "https://img.youtube.com/vi/example1/0.jpg",
+        description: "DAY 3 - PCOS WORKOUT",
+        link: "https://www.youtube.com/watch?v=P7NFZ26NWuA",
+        thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193559/b3ZpdmEvdzBxaHZiZW54M3hqYWdhcnZtMGI=/drilldown",
         category: "Pilates"
       },
       {
         id: 4,
-        title: "Video 1",
-        description: "Descripción del Video 1",
-        link: "https://www.youtube.com/watch?v=example1",
-        thumbnail: "https://img.youtube.com/vi/example1/0.jpg",
+        description: "DAY 4 - PCOS WORKOUT",
+        link: "https://www.youtube.com/watch?v=nj7CILDBpqc",
+        thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193559/b3ZpdmEvbzFybGQ2YzVkYXRpY3Azb29jbmM=/drilldown",
         category: "Pilates"
       },
       {
         id: 5,
-        title: "Video 1",
-        description: "Descripción del Video 1",
-        link: "https://www.youtube.com/watch?v=example1",
-        thumbnail: "https://img.youtube.com/vi/example1/0.jpg",
+        description: "DAY 5 - PCOS WORKOUT",
+        link: "https://www.youtube.com/watch?v=4CSs8sZaHzo",
+        thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193559/b3ZpdmEvZnlpY2kzd2JtOHFqazd2a3BiaGU=/drilldown",
         category: "Pilates"
       },
       {
         id: 6,
-        title: "Video 1",
-        description: "Descripción del Video 1",
-        link: "https://www.youtube.com/watch?v=example1",
-        thumbnail: "https://img.youtube.com/vi/example1/0.jpg",
+        description: "DAY 6 - PCOS WORKOUT",
+        link: "https://www.youtube.com/watch?v=p6cY5Wejx1o",
+        thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193559/b3ZpdmEvdTJoYW9maW5iNHdkY3dobDdvNGw=/drilldown",
         category: "Pilates"
       },
       {
         id: 7,
-        title: "Video 1",
-        description: "Descripción del Video 1",
-        link: "https://www.youtube.com/watch?v=example1",
-        thumbnail: "https://img.youtube.com/vi/example1/0.jpg",
+        description: "DAY 7 - PCOS WORKOUT",
+        link: "https://www.youtube.com/watch?v=lW6TvSeWfnk&t=391s",
+        thumbnail: "https://res-console.cloudinary.com/dxvsn6u72/thumbnails/v1/image/upload/v1716193559/b3ZpdmEvbGFhd2U5dm52Ynhua2pzcXZqYWI=/drilldown",
         category: "Pilates"
       }
 
@@ -84,7 +77,7 @@ const UsersVideos = () => {
 
   return (
     <div className="users-videos">
-      <h1>Rutinas de Ejercicios</h1>
+      <h1>Vídeos</h1>
       <div className="categories">
         {categories.map((category) => (
           <div key={category} className="category">
