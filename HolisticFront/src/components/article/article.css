@@ -1,7 +1,7 @@
 .containertitle{
   background-color: rgba(0, 143, 139, 1);
   height: 9%;
-  justify-content: center; /* Centrar horizontalmente */
+  justify-content: center; 
   align-items: center;  
   display: flex;
 }
