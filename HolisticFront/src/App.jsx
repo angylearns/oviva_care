@@ -7,7 +7,7 @@ import AddPerson from './components/adminPerson/AddPerson';
 import Question from './components/question/Question';
 import QuestionContact from './views/QuestionContact';
 import QaAdmin from './components/qaadmin/QaAdmin';
-import Calendar from './components/calendary/calendary';
+import Calendar from './components/calendary/Calendary';
 import Article from './components/article/Article';
 
 function App() {
