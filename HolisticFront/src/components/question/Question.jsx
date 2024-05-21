@@ -44,10 +44,18 @@ function FormContact() {
             {questionList.map((question, index) => (
                 <div key={question.id_qa}>
                     <div className="questionWrapper">
-                        <p onClick={() => toggleQuestion(index)}>
-                            {question.question} 
-                            <img src="https://i.postimg.cc/7hKhM85r/abajo.png" alt="Expandir" style={{ transform: rotatedQuestions[index] ? "rotate(180deg)" : "rotate(0deg)" }} />
-                        </p>
+                    <p 
+  onClick={() => toggleQuestion(index)} 
+  className="imgExpand"
+>
+  {question.question} 
+  <img 
+    src='src/assets/flechaAbajo.png' 
+    alt="Expandir" 
+    className={`arrow ${rotatedQuestions[index] ? 'rotated' : ''}`} 
+  />
+</p>
+
                         <CSSTransition
                             in={expandedQuestions[index]}
                             timeout={300}

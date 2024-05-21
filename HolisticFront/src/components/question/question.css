@@ -83,3 +83,17 @@
   max-height: 500px; /* Ajusta este valor según sea necesario */
   overflow-y: auto;
 }
+
+.imgExpand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotated {
+  transform: rotate(180deg);
+}
