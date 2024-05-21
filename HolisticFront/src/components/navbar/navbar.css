@@ -84,6 +84,7 @@
 
 .navbar_desktop_greeting_logout {
     height: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,8 +92,6 @@
 
 @media (max-width: 1000px) {
     .navbar_desktop_greeting_and_logout {
-        height: 100%;
-        width: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
