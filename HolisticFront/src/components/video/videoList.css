@@ -1,4 +1,169 @@
-.video {
-    width: 100%; /* Ancho del video */
-    height: auto; /* Altura se ajustará automáticamente */
+.video-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 2%;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.category {
+  margin: 0 10px;
+}
+
+.add-video-form {
+  width: 60%;
+  background-color: rgba(0, 143, 139, 0.25);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  margin-bottom: 30px;
+}
+
+.add-video-form h2 {
+  text-align: center;
+}
+
+.add-video-form label {
+  display: block;
+  margin-right: 10px;
+  font-size: 18px;
+  padding: 5px;
+}
+
+.add-video-form input,
+.add-video-form select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.add-video-form button {
+  width: 100%;
+  padding: 15px;
+  background-color: #008F8B;
+  color: white;
+  border: none;
+  
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.video-card{
+  
+}
+
+
+.video-card h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.video-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.video-actions button {
+  width: 48%;
+  padding: 10px;
+  background-color: #008F8B;
+  color: white;
+  border: none;
+  border-radius: 0 20px 0 30px;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  font-size: 16px;
+}
+
+.confirmation-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  z-index: 1000;
+}
+
+.confirmation-dialog p {
+  font-size: 18px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.confirmation-dialog div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.confirmation-dialog button {
+  width: 45%;
+  padding: 10px;
+  background-color: #008F8B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  font-size: 16px;
+}
+
+
+@media screen and (max-width: 1350px) {
+  .add-video-form {
+      width: 80%;
   }
+
+  .video-card {
+      width: 250px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .add-video-form {
+      width: 90%;
+  }
+
+  .video-card {
+      width: 220px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .add-video-form {
+      width: 100%;
+  }
+
+  .video-card {
+      width: 200px;
+  }
+
+  .add-video-form button,
+  .video-actions button,
+  .confirmation-dialog button {
+      font-size: 14px;
+  }
+}

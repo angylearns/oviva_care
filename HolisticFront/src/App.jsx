@@ -11,8 +11,8 @@ function App() {
   return (
     <>
       {/* <Recipe/> */}
-      {/* <VideoList/> */}
-      <UsersVideos/>
+      <VideoList/>
+      {/* <UsersVideos/> */}
       {/* <UsersRecipe/> */}
     </>
   )
