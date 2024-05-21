@@ -19,14 +19,12 @@ const Hero = () => {
                     </div>
                     <div className='hero-introduction'>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident, sunt in culpa qui
-                            officia deserunt mollit anim id est laborum
+                        El síndrome de ovario poliquístico (SOP) 
+                        es una afección endocrina común en mujeres en edad reproductiva. 
+                        Se caracteriza por desequilibrios hormonales que pueden provocar 
+                        síntomas como períodos menstruales irregulares, exceso de vello corporal, 
+                        acné, problemas de fertilidad y quistes en los ovarios. El tratamiento 
+                        suele implicar una combinación de cambios en el estilo de vida
                         </p>
                     </div>
                 </div>
