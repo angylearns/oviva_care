@@ -22,11 +22,13 @@
     justify-items: center;
     padding-top: 5%;
 }
-.groupfields2{
+
+.groupfields2 {
     display: flex;
-   flex-direction: column;
-    margin-right: 5%;
+    flex-direction: column;
+    margin-right: 6%;
 }
+
 .field-regname,
 .field-regbirthdate,
 .field-regcountry,
@@ -89,7 +91,7 @@
     transition: background-color 5000s ease-in-out 0s;
 }
 
-.icons-buttons-password{
+.icons-buttons-password {
     background-color: transparent;
     border: none;
 }
@@ -274,6 +276,10 @@ input::placeholder {
     .gologin-button {
         font-size: 20px;
     }
+
+    .groupfields2 {
+        margin-right: 7%;
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -328,6 +334,10 @@ input::placeholder {
         font-size: 18px;
     }
 
+    .groupfields2 {
+        margin-right: 9%;
+    }
+
     @media screen and (max-width: 450px) {
 
         .field-regname,
@@ -379,6 +389,10 @@ input::placeholder {
         .gologin-button {
             font-size: 16px;
         }
+
+        .groupfields2 {
+            margin-right: 10%;
+        }
     }
 
     @media screen and (max-width: 430px) {
@@ -428,5 +442,13 @@ input::placeholder {
         .gologin-button {
             font-size: 16px;
         }
+
+        .groupfields2 {
+            margin-right: 11%;
+        }
+
+        .icon-open-eye,
+        .icon-close-eye {
+            width: 35px;
+        }
     }
-}
