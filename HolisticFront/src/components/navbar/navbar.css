@@ -25,7 +25,7 @@
     box-sizing: content-box;
 }
 
-.navbar_desktop_logo {
+.navbar_desktop--logo {
     height: 90%;
     width: auto;
 }
@@ -36,7 +36,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10%;
+    gap: 7%;
 }
 
 .navbar_user_desktop--right {
@@ -50,24 +50,55 @@
     margin-right: 5%;
 }
 
-.navbar_user_desktop--right-left {
+.navbar_user_desktop--right__left {
     height: 100%;
-    width: fit-content;
+    width: 100%;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: flex-end;
+    gap: 15%;
 }
 
-.navbar_desktop_greeting {
+.navbar_desktop--greeting {
     font-size: 13px;
     text-align: center;
+    width: fit-content;
 }
 
 .button_logout,
 .button_calendar {
-    height: 30%;
+    height: fit-content;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.navbar_desktop--icon_logout {
+    height: 30px;
+}
+
+.modal_calendar {
+    display: none;
+}
+
+.modal_calendar.open {
+    display: none;
+    position: absolute;
+    width: 120px; 
+    top: calc(100% - 10px);
+    right: 20px; 
+    padding: 10px;
+    z-index: 1; 
+    background: #00b6b9bf;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid #00b6b959;
 }
 
 .link_profile {
@@ -78,20 +109,21 @@
     justify-content: flex-end;
 }
 
-.navbar_user_desktop--right img {
-    height: 100%;
+.navbar_user_desktop--icon_calendar {
+    height: 30px;
 }
 
-.navbar_desktop_greeting_logout {
+.navbar_desktop--greeting_and_logout {
     height: 100%;
     width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 25%;
 }
 
 @media (max-width: 1000px) {
-    .navbar_desktop_greeting_and_logout {
+    .navbar_desktop--greeting_and_logout {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -99,12 +131,20 @@
     }
 }
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .navbar_user_desktop--left,
     .navbar_user_desktop--right {
         width: 10%;
     }
 
+    .navbar_user_desktop--left {
+        margin-left: 5%;    
+    }
+
+    .navbar_user_desktop--right {
+        margin-right: 5%;
+    }
+    
     .navbar_user_desktop--center {
         width: 80%;
         gap: 7%;
@@ -115,10 +155,10 @@
         justify-content: center;
         align-items: center;
     }
-}
+} */
 
-@media (max-width: 660px) {
-    .navbar_desktop_logo {
+/* @media (max-width: 660px) {
+    .navbar_desktop--logo {
         height: 80%;
     }
 
@@ -128,8 +168,9 @@
         padding: 0 1%;
     }
 
-    .navbar_desktop_language {
-        font-size: 11px;
+    .navbar_user_desktop--icon_calendar,
+    .navbar_desktop--icon_logout {
+        height: 25px;
     }
 }
 
@@ -143,12 +184,12 @@
         width: 70%;
     }
     
-    .navbar_desktop_logo {
+    .navbar_desktop--logo {
         height: 70%;
     }
-}
+} */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .navbar_user_desktop,
     .toggle_menu {
         display: none;
@@ -169,13 +210,16 @@
         width: 50%;
     }
 
+    .button_calendar, 
     .button_logout {
-        height: 40%;
+        height: fit-content;
         width: 30px;
+        padding: 0;
     }
 
-    .button_logout img {
-        height: 100%;
+    .button_calenadar .navbar_user_mobile--icon_calendar, 
+    .button_logout .navbar_mobile--icon_logout {
+        height: 30px;
     }
 
     .navbar_user_mobile--left {
@@ -196,16 +240,17 @@
         width: 75%;
     }
 
-    .navbar_mobile_greeting {
+    .navbar_mobile--greeting {
         font-size: small;
         text-align: center;
     }
 
-    .navbar_mobile_profile_icon {
+    .navbar_mobile--icon_profile {
         height: 50%;
+        cursor: pointer;
     }
 
-    .navbar_mobile_hamburger_icon {
+    .navbar_mobile--icon_hamburger {
         font-size: 24px; 
         cursor: pointer;
     }
@@ -228,10 +273,6 @@
 
     .modal_menu.open {
         display: block;
-    }
-
-    .navbar_mobile_language {
-        font-size: smaller;
     }
 
     .modal_menu ul {
