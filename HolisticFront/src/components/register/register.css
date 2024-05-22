@@ -9,9 +9,20 @@
     justify-content: space-around;
 }
 
+@keyframes rotacion {
+    from { 
+      transform: rotateY(0deg); 
+    }
+    to { 
+      transform: rotateY(360deg); 
+    }
+  }
+  
+  
 .login-icon {
     width: 72px;
     padding-right: 2%;
+    animation: rotacion 2s linear infinite;
 }
 
 .logo-and-text {
