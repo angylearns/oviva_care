@@ -67,6 +67,10 @@ input::placeholder {
     border: none;
 }
 
+.login-button:hover {
+    background-color: #D9ECEA;
+    color: #008F8B;
+}
 .icons-buttons-password-login {
     background-color: transparent;
     border: none;
