@@ -10,14 +10,6 @@ import { personHandle } from "../../handlers/personHandle";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-// const formatDate = (dateString) => {
-//     const date = new Date(dateString);
-//     const day = date.getDate();
-//     const month = date.getMonth() + 1;
-//     const year = date.getFullYear();
-//     return `${day < 10 ? '0' : ''}${day}/${month < 10 ? '0' : ''}${month}/${year}`;
-// };
-
 const formatDate = (dateString) => {
     const date = new Date(dateString);
     const day = date.getDate();
@@ -26,19 +18,10 @@ const formatDate = (dateString) => {
     return `${year}-${month < 10 ? '0' : ''}${month}-${day < 10 ? '0' : ''}${day}`;
 };
 
-
-// const formatDateToDB = (dateString) => {
-//     const parts = dateString.split('/');
-//     const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
-//     return formattedDate;
-// };
-
 const formatDateToDB = (dateString) => {
     const parts = dateString.split('-');
     return `${parts[0]}-${parts[1]}-${parts[2]}`;
 };
-
-
 
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
@@ -72,17 +55,10 @@ function AdminPerson() {
         setShowAlert2(false);
     };
 
-    // const handleChangeDate = (date, index) => {
-    //     setStartDate(date);
-    //     handleInputChange(date, index, "birth_date");
-    // };
-
     const handleChangeDate = (date, index) => {
         const formattedDate = date.toISOString().split('T')[0]; // Convertir a 'YYYY-MM-DD'
         handleInputChange(formattedDate, index, "birth_date");
     };
-    
-
 
     const handleConfirmAlert = async () => {
         if (indexToDelete !== null) {
@@ -113,8 +89,7 @@ function AdminPerson() {
             return '';
         }
         const parts = dateString.split('-');
-        // const parts = dateString.split('/');
-        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+        return `${parts[0]}-${parts[1]}-${parts[2]}`;
     };
 
     customersGlobal.sort((a, b) => {
@@ -145,24 +120,10 @@ function AdminPerson() {
             setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
         } else {
             const updatedCustomers = [...customersGlobal];
-
             setFormData({ ...formData, email: updatedCustomers[index].email });
             setEditableRows([...editableRows, index]);
         }
     };
-
-
-    // const handleSave = (index) => {
-    //     if (!validateDate(customersGlobal[index].birth_date)) {
-    //         setShowAlert2(true);
-    //     } else {
-    //         const fechaDB = formatDateToDB(customersGlobal[index].birth_date);
-    //         const updatedCustomer = { ...customersGlobal[index] };
-    //         updatedCustomer.birth_date = fechaDB;
-    //         personHandle.updatePerson(updatedCustomer);  
-    //         setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
-    //     }
-    // };
 
     const handleSave = (index) => {
         if (!validateDate(customersGlobal[index].birth_date)) {
@@ -173,9 +134,8 @@ function AdminPerson() {
             setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
         }
     };
-    
 
-     async function deletePerson(index) {
+    async function deletePerson(index) {
         try {
             await personHandle.deletePerson(customersGlobal[index]); 
             setUpdatePage((prevState) => !prevState);
@@ -194,7 +154,6 @@ function AdminPerson() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
 
     async function fetchUsers() {
         try {
@@ -232,19 +191,10 @@ function AdminPerson() {
         return null;
     };
 
-    // const validateDate = (date) => {
-    //     // const regex = /^(0?[1-9]|[12][0-9]|3[01])\/(0?[1-9]|1[012])\/\d{4}$/;
-    //     const regex = /^(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[012])-\d{4}$/;
-
-    //     return regex.test(date);
-    // }
-
     const validateDate = (date) => {
         const regex = /^\d{4}-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])$/;
         return regex.test(date);
-    }
-    
-
+    };
 
     return (
         <div className="mainContainer">
@@ -314,23 +264,18 @@ function AdminPerson() {
                                                 user.last_name
                                             )}
                                         </td>
-                   
                                         <td>
-    {editableRows.includes(index) ? (
-        <DatePicker
-            selected={new Date(customersGlobal[index]["birth_date"])}
-            onChange={(date) => handleChangeDate(date, index)}
-            dateFormat="yyyy-MM-dd"
-        />
-    ) : (
-        customersGlobal[index]["birth_date"]
-    )}
-</td>
-
-
-
-
-
+                                            {editableRows.includes(index) ? (
+                                                <DatePicker
+                                                    selected={new Date(customersGlobal[index]["birth_date"])}
+                                                    onChange={(date) => handleChangeDate(date, index)}
+                                                    // dateFormat="yyyy-MM-dd"
+                                                    dateFormat="dd-MM-yyyy"
+                                                />
+                                            ) : (
+                                                user.birth_date
+                                            )}
+                                        </td>
                                         <td>
                                             {editableRows.includes(index) ? (
                                                 <select
@@ -466,11 +411,11 @@ function AdminPerson() {
                     </div>
                 </div>
             )}
-             {showAlert2 && (
+            {showAlert2 && (
                 <div className="custom-alert">
                     <div className="custom-alert-content">
-                        <span>Fecha incorrecta</span><br />
-                        <button onClick={handleCloseAlert2}>ok</button>
+                        <span>Formato de fecha incorrecto.</span><br />
+                        <button onClick={handleCloseAlert2}>Cerrar</button>
                     </div>
                 </div>
             )}
