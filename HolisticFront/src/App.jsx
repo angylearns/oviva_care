@@ -9,6 +9,7 @@ import QuestionContact from './views/QuestionContact';
 import QaAdmin from './components/qaadmin/QaAdmin';
 import Calendar from './components/calendary/Calendary';
 import Article from './components/article/Article';
+import Symptoms from './components/symptoms/Symptoms'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
       {/*<QaAdmin/>*/} 
      {/*<Calendar/> */}
       <Article/>
+      <Symptoms/>
 
     </>
   )
