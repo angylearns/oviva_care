@@ -129,6 +129,7 @@ function Cuestionario() {
   ]);
 
   const [puntuacion, setPuntuacion] = useState(0);
+  const [mostrarResultado, setMostrarResultado] = useState(false);
 
   const manejarSeleccion = (preguntaIndex, respuestaIndex) => {
     const nuevasPreguntas = [...preguntas];
@@ -136,11 +137,9 @@ function Cuestionario() {
     setPreguntas(nuevasPreguntas);
   };
 
- const obtenerResultado = () => {
-    // Verificar si todas las preguntas han sido respondidas
+  const obtenerResultado = () => {
     const todasRespondidas = preguntas.every(pregunta => pregunta.seleccionada !== null);
 
-    // Si todas las preguntas han sido respondidas, calcular la puntuación y mostrar el resultado
     if (todasRespondidas) {
       let puntos = 0;
       preguntas.forEach(pregunta => {
@@ -149,19 +148,17 @@ function Cuestionario() {
         }
       });
       setPuntuacion(puntos);
+      setMostrarResultado(true);
     } else {
-      // Si no todas las preguntas han sido respondidas, mostrar una alerta o mensaje indicando al usuario que complete todas las preguntas
       alert("Por favor, revisa y responde todas las preguntas pendientes para obtener tu resultado.");
     }
   };
 
-
-
   return (
     <div>
       <h1 className="cuestionario">Cuestionario de autoevaluación del SOP</h1>
-      <div class="logo-container">
-        <img class="logoimag" src={logo} alt="Logo de cuestionario" />
+      <div className="logo-container">
+        <img className="logoimag" src={logo} alt="Logo de cuestionario" />
       </div>
 
       {preguntas.map((pregunta, preguntaIndex) => (
@@ -176,18 +173,14 @@ function Cuestionario() {
                 onChange={() => manejarSeleccion(preguntaIndex, respuestaIndex)}
               />
               <label className="abcd">{respuesta.texto}</label>
-
-
             </div>
           ))}
         </div>
       ))}
       <button onClick={obtenerResultado} className="boton-resultado">Obtener resultado</button>
-      {puntuacion !== null && (
+      {mostrarResultado && (
         <div className="puntuaciones">
-
           <h2 className="result">Resultado:</h2>
-
           <p className="punts">Puntuación: {puntuacion}</p>
 
           {puntuacion >= 0 && puntuacion <= 7 && (
