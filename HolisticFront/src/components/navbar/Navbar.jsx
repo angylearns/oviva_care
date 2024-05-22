@@ -7,25 +7,25 @@ import {
   isAdmin,
   TOKEN_COOKIE_NAME,
   decodeToken,
-  logOut
+  logOut,
 } from "../../utils/authUtils";
 import { useCookies } from "react-cookie";
+import Calendary from "../calendary/Calendary";
 
 function Navbar() {
   const [cookies, setCookie, removeCookie] = useCookies([TOKEN_COOKIE_NAME]);
-  
+
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated(cookies));
   const [isOpen, setIsOpen] = useState(false);
-  const [redirect, setRedirect] = useState(false);
+  // const [redirect, setRedirect] = useState(false);
 
   const isAdminUser = isAdmin(cookies);
   const token = decodeToken(cookies[TOKEN_COOKIE_NAME]);
-  
-  const toggleMenu = () => {
+
+  const toggleModal = () => {
     setIsOpen(!isOpen);
   };
-  
-  
+
   useEffect(() => {
     const authenticated = isAuthenticated(cookies);
     setIsLoggedIn(authenticated);
@@ -35,7 +35,6 @@ function Navbar() {
     logOut(removeCookie); // Llama a la función logOut para cerrar sesión
   };
 
-
   return (
     <Router>
       <nav className="navbar_user_desktop">
@@ -44,7 +43,7 @@ function Navbar() {
             <img
               src="/images/logo_words.png"
               alt="Oviva Logo"
-              className="navbar_desktop_logo"
+              className="navbar_desktop--logo"
             />
           </Link>
         </section>
@@ -58,19 +57,28 @@ function Navbar() {
         <section className="navbar_user_desktop--right">
           {" "}
           {isLoggedIn ? (
-            <section className="navbar_user_desktop--right-left">
+            <section className="navbar_user_desktop--right__left">
               <button className="button_calendar">
-                <img src="/images/icons/icon_calendar.svg" alt="Calendar icon" />
+                <img
+                  src="/images/icons/icon_calendar.svg"
+                  className="navbar_user_desktop--icon_calendar"
+                  alt="Calendar icon"
+                />
               </button>
-              <section className="navbar_desktop_greeting_and_logout">
+              <section className="navbar_desktop--greeting_and_logout">
                 {token && token.first_name && (
-                <section className="navbar_desktop_greeting">
-                  ¡Hola,
-                  <br />
-                  {token.first_name}!
-                </section>)}
+                  <section className="navbar_desktop--greeting">
+                    ¡Hola,
+                    <br />
+                    {token.first_name}!
+                  </section>
+                )}
                 <button onClick={handleLogout} className="button_logout">
-                  <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
+                  <img
+                    src="/images/icons/icon_logout.svg"
+                    className="navbar_desktop--icon_logout"
+                    alt="Logout icon"
+                  />
                 </button>
               </section>
             </section>
@@ -78,6 +86,7 @@ function Navbar() {
             <Link to="/profile" className="link_profile">
               <img
                 src="/images/icons/icon_profile_female.svg"
+                className="navbar_desktop--icon_profile"
                 alt="User icon"
               />
             </Link>
@@ -93,21 +102,25 @@ function Navbar() {
           {isLoggedIn ? (
             <React.Fragment>
               {token && token.first_name && (
-                <section className="navbar_mobile_greeting">
-                ¡Hola,
-                <br />
-                {token.first_name}!
-              </section>
+                <section className="navbar_mobile--greeting">
+                  ¡Hola,
+                  <br />
+                  {token.first_name}!
+                </section>
               )}
-              <button onClick={handleLogout} className="button_logout">
-                <img src="/images/icons/icon_logout.svg" alt="Logout icon" />
+              <button className="button_calendar">
+                <img
+                  src="/images/icons/icon_calendar.svg"
+                  className="navbar_user_mobile--icon_calendar"
+                  alt="Calendar icon"
+                />
               </button>
             </React.Fragment>
           ) : (
             <img
               src="/images/icons/icon_profile_female.svg"
               alt="User icon"
-              className="navbar_mobile_profile_icon"
+              className="navbar_mobile--icon_profile"
             />
           )}
           <input
@@ -115,12 +128,25 @@ function Navbar() {
             className="toggle_menu"
             id="toggle_menu"
             checked={isOpen}
-            onChange={toggleMenu}
+            onChange={toggleModal}
           />
-          <label htmlFor="toggle_menu" className="navbar_mobile_hamburger_icon">
+          <label
+            htmlFor="toggle_menu"
+            className="navbar_mobile--icon_hamburger"
+          >
             &#9776;
           </label>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className="button_logout">
+              <img
+                src="/images/icons/icon_logout.svg"
+                className="navbar_mobile--icon_logout"
+                alt="Logout icon"
+              />
+            </button>
+          ) : null}
         </section>
+
         <section className={`modal_menu ${isOpen ? "open" : ""}`}>
           <ul>
             <li>
@@ -143,6 +169,10 @@ function Navbar() {
               </li>
             )}
           </ul>
+        </section>
+
+        <section className={`modal_calendar ${isOpen ? "open" : ""}`}>
+          <Calendary />
         </section>
       </nav>
 
