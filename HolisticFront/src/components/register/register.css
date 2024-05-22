@@ -105,11 +105,6 @@
     transform: translate(-70px, 17px);
 }
 
-/* Opcional: Ajustar el posicionamiento de los botones si están dentro de un contenedor */
-/* .icons-buttons-password {
-    position: relative;
-} */
-
 .register-regbutton {
     width: 490px;
     height: 78px;
@@ -452,3 +447,4 @@ input::placeholder {
             width: 35px;
         }
     }
+}

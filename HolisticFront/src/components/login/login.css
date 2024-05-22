@@ -67,6 +67,20 @@ input::placeholder {
     border: none;
 }
 
+.icons-buttons-password-login {
+    background-color: transparent;
+    border: none;
+
+}
+
+.icon-open-eye-login,
+.icon-close-eye-login {
+    width: 45px;
+    background-color: transparent;
+    border: none;
+    transform: translate(230px, -54px);
+}
+
 .goregister-button {
     background-color: transparent;
     border: none;
@@ -122,6 +136,11 @@ input::placeholder {
     .goregister-button {
         font-size: 20px;
     }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(185px, -54px);
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -158,6 +177,11 @@ input::placeholder {
     .goregister-button {
         font-size: 18px;
     }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(165px, -54px);
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -183,6 +207,11 @@ input::placeholder {
     .goregister-button {
         font-size: 16px;
     }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(135px, -54px);
+    }
 }
 
 @media screen and (max-width: 430px) {
@@ -199,5 +228,10 @@ input::placeholder {
 
     .goregister-button {
         font-size: 16px;
+    }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(105px, -54px);
     }
 }
