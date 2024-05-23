@@ -129,9 +129,9 @@ const Recipe = () => {
           onSubmit={handleSubmit}
         >
           <div>
-            <h1>Upload Recipe</h1>
+            <h1>Añadir Receta</h1>
             <label>
-              Title:
+              Título:
               <input
                 type="text"
                 name="title"
@@ -160,7 +160,7 @@ const Recipe = () => {
             )}
             <br />
             <label>
-              Description:
+              Descripción:
               <textarea
                 name="description"
                 value={newRecipe.description}
@@ -170,7 +170,7 @@ const Recipe = () => {
             </label>
             <br />
             <label>
-              Category:
+              Categoría:
               <select
                 name="category"
                 value={newRecipe.category}
@@ -185,7 +185,7 @@ const Recipe = () => {
             </label>
             <br />
             <button className="button-add-recipe" type="submit">
-              {isEditing ? "Update Recipe" : "Add Recipe"}
+              {isEditing ? "Actualizar Receta" : "Añadir Receta"}
             </button>
           </div>
         </form>
@@ -208,13 +208,13 @@ const Recipe = () => {
                 className="btn-cardForm-edit"
                 onClick={() => handleEditClick(recipe.id_recipe)}
               >
-                Edit
+                Editar
               </button>
               <button
                 className="btn-cardForm-delete"
                 onClick={() => handleDelete(recipe.id_recipe)}
               >
-                Delete
+                Eliminar
               </button>
             </div>
           </div>

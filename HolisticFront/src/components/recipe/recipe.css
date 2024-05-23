@@ -5,7 +5,7 @@ h1 {
     font: bold;
     color: #000000;
     justify-content: center;
-    background-color: rgba(255, 255, 255, 0.5);;
+    
    
   }
   
@@ -52,24 +52,23 @@ h1 {
   }
   
   .Form-add-recipe {
-    align-items: center;
-    background-color: #ffffff; /* Verde claro */
-    flex-direction: column;
-    display: flex;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    padding: 25px;
-    max-width: 700px;
-    min-width: 300px;
-    align-self: center;
+    width: 40%;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    margin-bottom: 30px;
   }
   
   .Form-add-recipe input,
   .Form-add-recipe textarea,
   .Form-add-recipe select {
-  width: 100%; /* Ajustar el ancho de los elementos dentro del formulario */
-  margin-bottom: 10px; /* Agregar margen inferior entre los elementos */
-  padding: 8px; /* Ajustar el relleno de los elementos */
+  width: 100%; 
+  margin-bottom: 10px;
+  border-radius: 0 20px 0 30px;
+  height: 25px;
+  border: none;
+  box-shadow: 0 2px 4px rgb(105, 146, 141);
 }
 
   .recipe-list {
@@ -124,6 +123,7 @@ h1 {
     margin: 3px;
     padding: 6px;
     transition: background-color 0.5s;
+    border-radius: 0 20px 0 30px;
   }
   
   .btn-cardForm-edit:hover,
