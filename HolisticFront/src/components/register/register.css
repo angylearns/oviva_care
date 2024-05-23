@@ -37,7 +37,7 @@
 .groupfields2 {
     display: flex;
     flex-direction: column;
-    margin-right: 6%;
+    margin-right: 5%;
 }
 
 .field-regname,
