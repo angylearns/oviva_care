@@ -18,7 +18,21 @@ git clone (https://github.com/sandra-medina-luque/Holistic-Ovaries.git)
 ```bash
 
 ```
+##### For install all dependencies of Frontend, copy the next line
+ ```bash
+npm i
+```
 
+##### Make the server run
+```bash
+npm run dev
+```
+
+##### This will start the server __http://localhost:5173__ using Vite with React.
+</details>
+
+<details>
+  
 
 <details>
   
