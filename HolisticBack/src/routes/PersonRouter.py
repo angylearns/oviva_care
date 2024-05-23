@@ -14,11 +14,19 @@ def get_person():
     return jsonify([person.__dict__ for person in list_person])
     
 
-@mainPerson.route('/',methods=['POST'])
+@mainPerson.route('/post',methods=['POST','OPTIONS'])
 
 def post_person():
 
-        print (request.json)
+    if request.method == 'OPTIONS':
+        print("tutututututututututututuut")
+        response = jsonify({'message': 'Preflight request success'})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+        response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,PATCH,POST,DELETE,OPTIONS')
+        return response
+    else:
+        id_person = ""
         first_name = request.json["first_name"]
         last_name = request.json["last_name"]
         birth_date = request.json["birth_date"]
@@ -26,9 +34,7 @@ def post_person():
         diagnosed = request.json["diagnosed"]
         email = request.json["email"]
     
-       
         person= Person(None,first_name,last_name,birth_date,country,diagnosed,email)
-
 
         if PersonService.post_person(person):
             print('Consola:persona insertada: ', person)
@@ -36,12 +42,10 @@ def post_person():
     
         return 'Página: Ok'
 
-@mainPerson.route('/<int:id_person>', methods=['PUT'])
+@mainPerson.route('/put', methods=['PUT'])
 
-def put_person(id_person):
-    
-    
-    
+def put_person():
+    id_person = request.json["id_person"]
     first_name = request.json["first_name"]
     last_name = request.json["last_name"]
     birth_date = request.json["birth_date"]
@@ -49,19 +53,20 @@ def put_person(id_person):
     diagnosed = request.json["diagnosed"]
     email = request.json["email"]
     
-
     updatePerson= Person(id_person,first_name,last_name,birth_date,country,diagnosed,email)
 
-    
-   
     PersonService.put_person(id_person, updatePerson)
     print('Consola: persona actualizada: ')
     return 'Página: persona actualizada.'
    
        
-@mainPerson.route('/<int:id_person>', methods=['DELETE'])
-def delete_person(id_person):       
-    PersonService.delete_person(id_person)
+@mainPerson.route('/delete', methods=['DELETE'])
+def delete_person():       
+   
+    idPerson = request.json["id_person"]
+    PersonService.delete_person(idPerson)
     print('Consola: persona eliminada.')
     return 'Página: persona eliminada.'
+
+
 

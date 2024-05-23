@@ -1,0 +1,94 @@
+
+  
+  .postContainer {
+    overflow-x: auto;
+    width:fit-content;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    background-color:white;
+  }
+  
+  .inputF {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #00B6B9;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  .inputF:hover {
+    background-color: #00B6B9;
+  }
+  
+  .inputF:focus {
+    background-color: #00b6b92d;
+  }
+  
+  /* label {
+    margin: 2px;
+  }
+   */
+  .formContentA {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .groupForm1 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .smallDiv {
+    text-align: center;
+  }
+  
+  .labelStyle {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* .buttonAdd {
+    justify-self: center;
+  } */
+  
+  @media screen and (max-width: 600px) {
+    .formContentA {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
+  .buttonAdd{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .buttonAA {
+    background-color: white;
+    color: #00B6B9;
+    border: 1px solid #00B6B9;
+    /* padding: 8px 8px; */
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 3px;
+
+    /* justify-content: center; */
+    
+  }
+  
+  .buttonAA:hover {
+    background-color: #00B6B9;
+    color: white;
+  }
+  
