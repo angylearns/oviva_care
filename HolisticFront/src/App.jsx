@@ -27,26 +27,26 @@ function App() {
   return (
     <>
       {/* <Recipe/> */}
-      <VideoList/>
+      {/* <VideoList/> */}
       {/* <UsersVideos/> */}
       {/* <UsersRecipe/> */}
       <Navbar />
       {/* <Hero /> */}
-      <Register />
+      {/* <Register /> */}
       {/* <Login_user /> */}
-      {/* <Recipe/> */}
+      <Recipe/>
       <Footer />
-      <Cuestionario />
-      <Pretest />
+      {/* <Cuestionario /> */}
+      {/* <Pretest /> */}
       {/* <FormContact/> */}
        {/*<AdminPerson/>*/} 
       {/* <Question/> */}
       {/*<QuestionContact/>*/}
-      <QaAdmin/>
-     <Calendar/> 
-      <Article/>
-      <Symptoms/>
-      <Experts/>
+      {/* <QaAdmin/> */}
+     {/* <Calendar/>  */}
+      {/* <Article/> */}
+      {/* <Symptoms/> */}
+      {/* <Experts/> */}
 
     </>
   )

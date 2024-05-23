@@ -1,3 +1,5 @@
+
+
 h1 {
     display: flex;
     font: bold;
@@ -8,12 +10,24 @@ h1 {
   }
   
   .style {
-    background-color: rgba(255, 255, 255, 0.2) center/cover; 
-    background-image:url(../images/vegetables.jpg) ;
+    position: relative;
+    min-height: 100vh;
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
-    
+  }
+  
+  .style::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../images/vegetables.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2; /* Ajusta este valor entre 0 y 1 */
+    z-index: -1; /* Coloca la imagen detrás del contenido */
   }
   
   .navbar {
@@ -34,6 +48,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
   
   .Form-add-recipe {
@@ -65,7 +80,6 @@ h1 {
   }
   
   .recipe-card {
-    width: 300px;
     background-color: #ffffff; /* Verde claro */
     padding: 15px;
     margin: 10px;
@@ -74,8 +88,8 @@ h1 {
   }
   
   .recipe-image {
-    width: 150px;
-    height: 150px;
+    width: 300px;
+    height: 300px;
     align-items: center;
     display: flex;
     padding: 8px;

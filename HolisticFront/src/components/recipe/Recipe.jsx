@@ -101,6 +101,7 @@ const Recipe = () => {
   ];
 
   return (
+    <div className="frame">
     <div className="style">
       <div>
         <h1>Administrador de Recetas</h1>
@@ -230,6 +231,7 @@ const Recipe = () => {
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
