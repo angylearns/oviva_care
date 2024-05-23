@@ -9,7 +9,7 @@ const Article = () => {
 
       <div className="symmptoms-container">
         <div className='containertitle'>
-          <h2 className='titleblog'>Síntomas</h2>
+          <h2 className='titleblog'>SÍNTOMAS</h2>
         </div>
         <div className="divsymptoms">
           <img className="symptoms" src={symptoms} alt="symptoms" />

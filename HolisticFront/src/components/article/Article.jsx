@@ -80,10 +80,8 @@ const Article = () => {
             Tu cuerpo necesitará tiempo para recuperarse.
             Escuché historias de mujeres jóvenes con SOP que quedaron aterrorizadas por sus médicos.
             diciéndoles “No podrás quedar embarazada”.
-            Por suerte, investigué y con
-            cambios en mi estilo de vida que ya estaba implementando, después de dos meses de
-            ese incidente me vino la regla, y me tomó aproximadamente un año
-            para recuperar mi período.</li>
+            Por suerte, investigué y con cambios en mi estilo de vida que ya estaba implementando hacía más de un año. Después de dos meses de
+            ese incidente me vino la regla, y me tomó aproximadamente un año para recuperar mi período.</li>
         </ul>
       </div>
     </div>
