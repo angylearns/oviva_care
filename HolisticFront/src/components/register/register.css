@@ -1,0 +1,221 @@
+.fieldsblock {
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+    justify-content: space-around;
+}
+
+.field-regname {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.field-regcountry {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.field-regemail {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.field-regdiagnose {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    color: rgba(0, 143, 139, 0.50);
+}
+
+.field-regpassword {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.register-regbutton {
+    width: 490px;
+    height: 78px;
+    border-radius: 0 20px 0 30px;
+    margin-top: 48px;
+    background-color: #008F8B;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    border: none;
+}
+
+.text-regname {
+    font-size: 24px;
+    margin-right: 70%;
+}
+
+.text-regemail {
+    font-size: 24px;
+    margin-right: 55%;
+}
+
+.text-regdiagnose {
+    font-size: 24px;
+    margin-right: 53%;
+}
+
+.text-regcountry {
+    font-size: 24px;
+    margin-right: 78%;
+}
+
+.text-regpassword {
+    font-size: 24px;
+    margin-right: 68%;
+}
+
+input::placeholder {
+    color: rgba(0, 143, 139, 0.50);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gologin-button {
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    margin-top: 48px;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+@media screen and (max-width: 1350px) {
+
+    .fieldsblock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .field-regname,
+    .field-regcountry,
+    .field-regemail,
+    .field-regdiagnose,
+    .field-regpassword {
+        width: 450px;
+    }
+
+    .register-regbutton {
+        width: 300px;
+        height: 74px;
+    }
+
+    .login-icon {
+        width: 77px;
+    }
+
+    .main-text-register {
+        font-size: 20px;
+    }
+
+    .text-regname,
+    .text-regemail,
+    .text-regdiagnose,
+    .text-regcountry,
+    .text-regpassword {
+        font-size: 20px;
+    }
+    .text-regdiagnose {
+        margin-right: 51%;
+    }
+
+    .gologin-button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .field-regname,
+    .field-regcountry,
+    .field-regemail,
+    .field-regdiagnose,
+    .field-regpassword {
+        width: 380px;
+    }
+
+    .register-regbutton {
+        width: 283px;
+        height: 69px;
+    }
+
+    .text-regdiagnose {
+        margin-right: 45%;
+    }
+
+    .text-regemail {
+        margin-right: 51%;
+    }
+
+    .gologin-button {
+        font-size: 18px;
+    }
+
+    @media screen and (max-width: 450px) {
+
+  .field-regname,
+    .field-regcountry,
+    .field-regemail,
+    .field-regdiagnose,
+    .field-regpassword {
+        width: 327px;
+    }
+
+    .register-regbutton {
+        width: 263px;
+        height: 64px;
+    }
+
+    .text-regdiagnose {
+        margin-right: 38%;
+    }
+
+    .text-regemail {
+        margin-right: 45%;
+    }
+
+    .text-regpassword {
+        margin-right: 64%;
+    }
+
+    .gologin-button {
+        font-size: 16px;
+    }
+    }
+
+}

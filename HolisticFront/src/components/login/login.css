@@ -1,0 +1,165 @@
+.formulary {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.login-icon {
+    width: 176px;
+}
+
+.field-user {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+
+}
+
+.field-password {
+    border-radius: 0 20px 0 30px;
+    width: 587px;
+    height: 67px;
+    background-color: rgba(0, 143, 139, 0.25);
+    padding-left: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+input::placeholder {
+    color: rgba(0, 143, 139, 0.50);
+}
+
+.login-button {
+    width: 490px;
+    height: 78px;
+    border-radius: 0 20px 0 30px;
+    margin-top: 48px;
+    background-color: #008F8B;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    border: none;
+}
+
+.goregister-button {
+    background-color: transparent;
+    border: none;
+    margin-top: 48px;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.text-user {
+    font-size: 24px;
+    margin-right: 80%;
+
+
+}
+
+.text-password {
+    font-size: 24px;
+    margin-right: 75%;
+
+}
+
+@media screen and (max-width: 1350px) {
+
+    .field-user,
+    .field-password {
+        width: 450px;
+    }
+
+    .login-button {
+        width: 300px;
+        height: 74px;
+    }
+
+    .login-icon {
+        width: 77px;
+    }
+
+    .main-text-login {
+        font-size: 20px;
+    }
+
+    .text-user,
+    .text-password {
+        font-size: 20px;
+    }
+
+    .text-user {
+        margin-right: 75%;
+    }
+
+    .text-password {
+        margin-right: 70%;
+    }
+
+    .goregister-button {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .field-user,
+    .field-password {
+        width: 380px;
+    }
+
+    .login-button {
+        width: 283px;
+        height: 69px;
+    }
+
+    .main-text-login {
+        font-size: 20px;
+    }
+
+    .text-user,
+    .text-password {
+        font-size: 20px;
+    }
+
+    .text-user {
+       
+        margin-right: 75%;
+    }
+
+    .text-password {
+      
+        margin-right: 70%;
+    }
+
+    .goregister-button {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
+    .field-user,
+    .field-password {
+          width: 327px;
+      }
+  
+      .login-button {
+          width: 263px;
+          height: 64px;
+      }
+    
+      .text-user {
+          margin-right: 75%;
+      }
+  
+      .text-password {
+          margin-right: 66%;
+      }
+  
+      .goregister-button {
+          font-size: 16px;
+      }
+      }
+  
+  
