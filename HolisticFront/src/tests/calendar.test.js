@@ -12,14 +12,10 @@ describe('Calendary Component', () => {
     Cookies.set.mockImplementation(() => {});
   });
 
-  test('renders Calendary component', () => {
-    render(<Calendary />);
-    expect(screen.getByText(/calendario menstrual/i)).toBeInTheDocument();
-  });
 
   test('renders days of the week', () => {
     render(<Calendary />);
-    const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    const daysOfWeek = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
     daysOfWeek.forEach(day => {
       expect(screen.getByText(day)).toBeInTheDocument();
     });

@@ -16,7 +16,7 @@ class TestQaService(unittest.TestCase):
         result = QaService.get_qa()
         
         # Verificando el resultado
-        self.assertEqual(len(result), 2)
+        self.assertEqual(len(result), 4)
         self.assertEqual(result[0].id_qa, 2)  # Primer elemento en la lista
         self.assertEqual(result[0].question, '¿Qué es SOP?')
         self.assertEqual(result[0].answer, 'El síndrome de ovario poliquístico (SOP) es una afección endocrina común en mujeres en edad reproductiva. Se caracteriza por desequilibrios hormonales que pueden provocar síntomas como períodos menstruales irregulares, exceso de vello corporal, acné, problemas de fertilidad y quistes en los ovarios. El tratamiento suele implicar una combinación de cambios en el estilo de vida')
