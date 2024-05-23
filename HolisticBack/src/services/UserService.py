@@ -46,6 +46,7 @@ class UserService():
         try:
             connection=get_connection()
             with connection.cursor() as cursor:
+                
                 passwordunic = user.password
                 user_type = user.user_type
                 email=user.email

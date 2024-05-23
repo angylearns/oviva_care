@@ -10,6 +10,11 @@ import AdminPerson from './components/adminPerson/AdminPerson';
 import AddPerson from './components/adminPerson/AddPerson';
 import Question from './components/question/Question';
 import QuestionContact from './views/QuestionContact';
+import QaAdmin from './components/qaadmin/QaAdmin';
+import Calendar from './components/calendary/Calendary';
+import Article from './components/article/Article';
+import Symptoms from './components/symptoms/Symptoms';
+import Experts from './components/experts/Experts';
 
 import Cuestionario from './components/cuestionario/Cuestionario.jsx';
 import Pretest from './components/pretestcuestionario/pretest.jsx'
@@ -24,6 +29,16 @@ function App() {
       <Footer />
       <Cuestionario />
       <Pretest />
+      {/* <FormContact/> */}
+       {/*<AdminPerson/>*/} 
+      {/* <Question/> */}
+      {/*<QuestionContact/>*/}
+      <QaAdmin/>
+     <Calendar/> 
+      <Article/>
+      <Symptoms/>
+      <Experts/>
+
     </>
   )
 }

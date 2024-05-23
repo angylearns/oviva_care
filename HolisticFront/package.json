@@ -7,10 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^1.6.8",
+    "emailjs": "^4.0.3",
     "emailjs-com": "^3.2.0",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",

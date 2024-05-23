@@ -34,7 +34,8 @@ def post_person():
         diagnosed = request.json["diagnosed"]
         email = request.json["email"]
     
-        person= Person(None,first_name,last_name,birth_date,country,diagnosed,email)
+       
+        person= Person(0,first_name,last_name,birth_date,country,diagnosed,email)
 
         if PersonService.post_person(person):
             print('Consola:persona insertada: ', person)

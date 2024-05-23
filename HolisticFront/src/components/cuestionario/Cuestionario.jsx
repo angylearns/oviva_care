@@ -155,7 +155,7 @@ function Cuestionario() {
   };
 
   return (
-    <div>
+    <div className="frame">
       <h1 className="cuestionario">Cuestionario de autoevaluación del SOP</h1>
       <div className="logo-container">
         <img className="logoimag" src={logo} alt="Logo de cuestionario" />
