@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import './calendary.css';
 
-const daysOfWeek = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+const daysOfWeek = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
 
 const Calendar = () => {
   const [selectedDates, setSelectedDates] = useState(() => {
@@ -78,7 +78,7 @@ const Calendar = () => {
 
   return (
     <div className="calendar">
-      <h2 className="cal">Calendario Menstrual</h2>
+      {/* <h2 className="cal">Calendario Menstrual</h2> */}
       <div className="header">
         <button onClick={handlePreviousMonth}>&lt;</button>
         <div className="month-label">

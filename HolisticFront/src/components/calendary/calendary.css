@@ -1,6 +1,7 @@
 
 .calendar {
-    width: 900px;
+    /* width: 900px; */
+    width: 100%;
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
 }
@@ -33,6 +34,10 @@
     grid-template-columns: repeat(7, 1fr);
 }
 
+.day-names {
+  font-weight: 600;
+}
+
 .day-name,
 .date {
     padding: 15px;
@@ -57,10 +62,10 @@
 
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .calendar {
       width: 100%;
-      padding: 0 10px; 
+      /* padding: 0 10px;  */
     }
   
     .header {

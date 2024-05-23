@@ -39,6 +39,18 @@
     gap: 7%;
 }
 
+.navbar_user_desktop--center a,
+.modal_menu.open a,
+footer a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbar_user_desktop--center a:hover,
+footer a:hover {
+    font-style: italic;
+}
+
 .navbar_user_desktop--right {
     height: 100%;
     width: 20%;
@@ -81,24 +93,24 @@
     height: 30px;
 }
 
-.modal_calendar {
-    display: none;
-}
-
-.modal_calendar.open {
+.modal_calendar.calendar_desktop {
     display: none;
     position: absolute;
-    width: 120px; 
-    top: calc(100% - 10px);
-    right: 20px; 
+    width: 50vw;
+    top: 90px;
+    right: 10%;
     padding: 10px;
-    z-index: 1; 
+    z-index: 1;
     background: #00b6b9bf;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.3px);
     -webkit-backdrop-filter: blur(6.3px);
     border: 1px solid #00b6b959;
+}
+
+.modal_calendar.open.calendar_desktop {
+    display: block;
 }
 
 .link_profile {
@@ -128,6 +140,11 @@
         flex-direction: column;
         justify-content: center;
         gap: 5px;
+    }
+
+    .modal_calendar.calendar_desktop {
+        width: 75vw;
+        right: 10%;
     }
 }
 
@@ -260,7 +277,7 @@
         position: absolute;
         width: 120px; 
         top: calc(100% - 10px);
-        right: 20px; 
+        right: 70px; 
         padding: 10px;
         z-index: 1; 
         background: #00b6b9bf;
@@ -271,7 +288,24 @@
         border: 1px solid #00b6b959;
     }
 
-    .modal_menu.open {
+    .modal_calendar.calendar_mobile {
+        display: none;
+        position: absolute;
+        width: 92vw;
+        top: calc(100% - 10px);
+        right: 18px;
+        padding: 10px;
+        z-index: 1;
+        background: #00b6b9bf;
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.3px);
+        -webkit-backdrop-filter: blur(6.3px);
+        border: 1px solid #00b6b959;
+    }
+
+    .modal_menu.open,
+    .modal_calendar.calendar_mobile.open {
         display: block;
     }
 

@@ -7,7 +7,7 @@ import AddPerson from './components/adminPerson/AddPerson';
 import Question from './components/question/Question';
 import QuestionContact from './views/QuestionContact';
 import QaAdmin from './components/qaadmin/QaAdmin';
-import Calendar from './components/calendary/calendary';
+import Calendar from './components/calendary/Calendary';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
 import Login_user from './components/login/Login_user';
@@ -24,7 +24,7 @@ function App() {
       {/* <Question/> */}
       {/*<QuestionContact/>*/}
       {/*<QaAdmin/>*/} 
-      <Calendar/> 
+      {/* <Calendar/>  */}
       < Login_user />
       <Footer />
 

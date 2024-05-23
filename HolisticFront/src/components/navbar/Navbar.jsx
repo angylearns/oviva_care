@@ -16,23 +16,28 @@ function Navbar() {
   const [cookies, setCookie, removeCookie] = useCookies([TOKEN_COOKIE_NAME]);
 
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated(cookies));
-  const [isOpen, setIsOpen] = useState(false);
-  // const [redirect, setRedirect] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false); 
 
   const isAdminUser = isAdmin(cookies);
   const token = decodeToken(cookies[TOKEN_COOKIE_NAME]);
 
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
+  const toggleModalMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const toggleModalCalendar = () => {
+    console.log("Toggling calendar modal");
+    setIsCalendarOpen((prev) => !prev);
   };
 
   useEffect(() => {
     const authenticated = isAuthenticated(cookies);
     setIsLoggedIn(authenticated);
-  }, [cookies]); // Actualizar isLoggedIn cuando cambian las cookies
+  }, [cookies]);
 
   const handleLogout = () => {
-    logOut(removeCookie); // Llama a la función logOut para cerrar sesión
+    logOut(removeCookie);
   };
 
   return (
@@ -48,17 +53,16 @@ function Navbar() {
           </Link>
         </section>
         <section className="navbar_user_desktop--center">
-          <Link to="">Preguntas</Link>
-          <Link to="">Expertos</Link>
-          <Link to="">Blog</Link>
-          {isLoggedIn && <Link to="">Recetas</Link>}
-          {isLoggedIn && <Link to="">Videos</Link>}
+          <Link to="/preguntas">Preguntas</Link>
+          <Link to="/expertos">Expertos</Link>
+          <Link to="/blog">Blog</Link>
+          {isLoggedIn && <Link to="/recetas">Recetas</Link>}
+          {isLoggedIn && <Link to="/videos">Videos</Link>}
         </section>
         <section className="navbar_user_desktop--right">
-          {" "}
           {isLoggedIn ? (
             <section className="navbar_user_desktop--right__left">
-              <button className="button_calendar">
+              <button className="button_calendar" onClick={toggleModalCalendar}>
                 <img
                   src="/images/icons/icon_calendar.svg"
                   className="navbar_user_desktop--icon_calendar"
@@ -92,6 +96,10 @@ function Navbar() {
             </Link>
           )}
         </section>
+
+        <section className={`modal_calendar calendar_desktop ${isCalendarOpen ? "open" : ""}`}>
+          <Calendary />
+        </section>
       </nav>
 
       <nav className="navbar_user_mobile">
@@ -100,7 +108,7 @@ function Navbar() {
         </section>
         <section className="navbar_user_mobile--right">
           {isLoggedIn ? (
-            <React.Fragment>
+            <>
               {token && token.first_name && (
                 <section className="navbar_mobile--greeting">
                   ¡Hola,
@@ -108,14 +116,14 @@ function Navbar() {
                   {token.first_name}!
                 </section>
               )}
-              <button className="button_calendar">
+              <button className="button_calendar" onClick={toggleModalCalendar}>
                 <img
                   src="/images/icons/icon_calendar.svg"
                   className="navbar_user_mobile--icon_calendar"
                   alt="Calendar icon"
                 />
               </button>
-            </React.Fragment>
+            </>
           ) : (
             <img
               src="/images/icons/icon_profile_female.svg"
@@ -127,8 +135,8 @@ function Navbar() {
             type="checkbox"
             className="toggle_menu"
             id="toggle_menu"
-            checked={isOpen}
-            onChange={toggleModal}
+            checked={isMenuOpen}
+            onChange={toggleModalMenu}
           />
           <label
             htmlFor="toggle_menu"
@@ -147,7 +155,7 @@ function Navbar() {
           ) : null}
         </section>
 
-        <section className={`modal_menu ${isOpen ? "open" : ""}`}>
+        <section className={`modal_menu ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
               <Link to="/preguntas">Preguntas</Link>
@@ -171,7 +179,7 @@ function Navbar() {
           </ul>
         </section>
 
-        <section className={`modal_calendar ${isOpen ? "open" : ""}`}>
+        <section className={`modal_calendar calendar_mobile ${isCalendarOpen ? "open" : ""}`}>
           <Calendary />
         </section>
       </nav>
