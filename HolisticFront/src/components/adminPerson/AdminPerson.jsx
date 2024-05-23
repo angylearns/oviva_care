@@ -296,7 +296,7 @@ function AdminPerson() {
                                         <td>
                                             {editableRows.includes(index) ? (
                                                 <select
-                                                    className="field-regcountry"
+                                                    className="field-regcountryb"
                                                     defaultValue={customersGlobal[index]["country"]}
                                                     onChange={(e) => handleInputChange(e.target.value, index, "country")}
                                                 >
