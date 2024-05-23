@@ -12,7 +12,7 @@
 
 ### Clone the Repository
  ```bash
-git clone https://github.com/mariandrean/NewValue-.....
+git clone (https://github.com/sandra-medina-luque/Holistic-Ovaries.git)
 ```
 ##### To enter the repository folder
 ```bash
