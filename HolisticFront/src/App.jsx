@@ -10,10 +10,10 @@ function App() {
 
   return (
     <>
-      <Recipe/>
+      {/* <Recipe/> */}
       <VideoList/>
       {/* <UsersVideos/> */}
-      <UsersRecipe/>
+      {/* <UsersRecipe/> */}
     </>
   )
 }

@@ -5,7 +5,7 @@ const API_BASE_URL = 'http://127.0.0.1:5001';
 const videoService = {
   getAllVideos: async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/video`);
+      const response = await axios.get(`${API_BASE_URL}/video/`);
       return response.data;
     } catch (error) {
       console.error('Error fetching videos:', error);
