@@ -115,7 +115,7 @@ footer a:hover {
 
 .link_profile {
     height: 50%;
-    width: fit-content;
+    width: 30px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
