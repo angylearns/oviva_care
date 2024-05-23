@@ -39,9 +39,9 @@ function App() {
       <Cuestionario />
       <Pretest />
       {/* <FormContact/> */}
-       {/*<AdminPerson/>*/} 
+       <AdminPerson/> 
       {/* <Question/> */}
-      {/*<QuestionContact/>*/}
+      <QuestionContact/>
       <QaAdmin/>
      <Calendar/> 
       <Article/>

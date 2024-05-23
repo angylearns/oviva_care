@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./adminPerson.css";
-import abajo from '../../assets/abajo.png';
-import arriba from '../../assets/arriba.png';
-import basura from '../../assets/basura.png';
-import lapiz from '../../assets/lapiz.png';
+import abajo from '../../../public/image/abajo.png';
+import arriba from '../../../public/image/arriba.png';
+import basura from '../../../public/image/basura.png';
+import lapiz from '../../../public/image/lapiz.png';
 
 import { personHandle } from "../../handlers/personHandle";  
 import DatePicker from 'react-datepicker';

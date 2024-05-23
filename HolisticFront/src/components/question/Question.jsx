@@ -50,7 +50,7 @@ function FormContact() {
 >
   {question.question} 
   <img 
-    src='src/assets/flechaAbajo.png' 
+    src='public/image/flechaAbajo.png' 
     alt="Expandir" 
     className={`arrow ${rotatedQuestions[index] ? 'rotated' : ''}`} 
   />
