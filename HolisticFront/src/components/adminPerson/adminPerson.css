@@ -71,31 +71,32 @@
   transition: background-color 0.3s;
 }
 
-img {
-  width: 35px;
-  height: 35px;
-  border: 0;
-}
 
-input {
-  background-color: rgb(242, 242, 242);
+.inputT {
+  background-color: rgb(255, 255, 255);
   border: 1px solid #abc2d2;
   padding: 8px;
   border-radius: 5px;
   margin: 5px;
 }
 
-input:hover {
+.field-regcountry{
+  border: 1px solid #abc2d2;
+}
+
+
+
+.inputT:hover {
   background-color: white;
 }
 
-input:focus {
+.inputT:focus {
   background-color: rgb(255, 255, 209);
 }
 
-label {
+/* label {
   margin: 2px;
-}
+} */
 
 .formContentA {
   display: flex;
@@ -175,4 +176,52 @@ label {
 
 .headField:hover{
   background-color: #84dedf;;
+}
+
+/* transición suave*/
+/* adminPerson.css */
+
+.row-enter {
+  opacity: 0.01;
+  transform: translateY(-20px);
+}
+
+.row-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.row-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row-exit-active {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 500ms, transform 500ms;
+}
+
+.sortIcon{
+  width: 16px;
+  height: 16px;
+
+
+}
+
+
+.headField {
+  cursor: pointer;
+}
+
+/* .headField:hover {
+  background-color: lightgray; */
+
+.specialHeader {
+  background-color: rgb(149, 206, 175); 
+}
+
+.specialHeader:hover {
+  background-color: rgb(149, 206, 175); 
 }

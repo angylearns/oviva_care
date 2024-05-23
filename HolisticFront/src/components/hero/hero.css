@@ -1,0 +1,154 @@
+.hero-container {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8%;
+}
+
+.youtube-icon {
+    width: 404px;
+}
+
+.hero-youtube {
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    width: 50%;
+    margin-left: 10%;
+}
+
+.text-title {
+    font-size: 30px;
+}
+
+.hero-introduction {
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1250px) {
+
+    .text-title {
+        font-size: 25px;
+    }
+
+    .hero-introduction {
+        font-size: 16px;
+        padding-left: 8%;
+    }
+
+    .hero-text {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+
+    }
+
+    .hero-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: justify;
+        width: 55%;
+    }
+
+    .hero-introduction {
+        padding-left: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+
+        .youtube-icon {
+            width: 360px;
+        }
+        .hero-text {
+            width: 60%;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+
+        .youtube-icon {
+            width: 360px;
+        }
+        .hero-text {
+            width: 65%;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+
+        .youtube-icon {
+            width: 330px;
+        }
+
+        .hero-introduction {
+            font-size: 14px;
+        }
+        .hero-text {
+            width: 65%;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .youtube-icon {
+            width: 300px;
+        }
+
+        .hero-introduction {
+            font-size: 13px;
+        }
+
+        .text-title {
+            font-size: 20px;
+        }
+
+        .hero-text {
+            width: 65%;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+
+        .youtube-icon {
+            width: 270px;
+        }
+
+        .hero-introduction {
+            font-size: 11px;
+        }
+        .hero-text {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+
+        .youtube-icon {
+            width: 260px;
+        }
+
+        .hero-introduction {
+            font-size: 10px;
+        }
+    }
+}

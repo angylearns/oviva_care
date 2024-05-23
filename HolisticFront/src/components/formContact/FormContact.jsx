@@ -11,6 +11,19 @@ function FormContact() {
         emailjs.init('rr6KB5IASJYA2ls3i');
     }, []);
 
+    const [showAlert, setShowAlert] = useState(false);
+    const [showAlert2, setShowAlert2] = useState(false);
+
+
+    const handleCloseAlert = () => {
+        setShowAlert(false);
+      };
+      const handleCloseAlert2 = () => {
+        setShowAlert2(false);
+      };
+
+
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -18,7 +31,7 @@ function FormContact() {
 
 
         if (!emailRegex.test(email)) {
-             alert("Por favor, ingresa un correo electrónico válido.");
+            setShowAlert2(true);
             
         } else {
 
@@ -31,8 +44,7 @@ function FormContact() {
             emailjs.sendForm(serviceID, templateID, event.target)
                 .then(() => {
                     btn.value = 'Send Email';
-                     alert('Enviado!');
-                   
+                    setShowAlert(true);
                     
                 })
                 .catch((err) => {
@@ -71,12 +83,30 @@ function FormContact() {
                         <textarea id="emailjs_message" placeholder="Mensaje" className="inputField textAreaField" name="emailjs_message" maxLength="300"></textarea>
                     </div>
 
-                    <input type="submit" id="button" value="Send Email" />
+                    <input type="submit" id="button" className="inputSub"value="Send Email" />
                 </form>
 
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
             </div>
-          
+           {/* Ventana emergente de alerta */}
+      {showAlert && (
+        <div className="custom-alert">
+          <div className="custom-alert-content">
+            <span>Mensaje enviado</span><br></br>
+            <button onClick={handleCloseAlert}>Cerrar</button>
+          </div>
+        </div>
+      )}
+   {showAlert2 && (
+        <div className="custom-alert">
+          <div className="custom-alert-content">
+            <span>Por favor, ingresa un correo electrónico válido.</span><br></br>
+            <button onClick={handleCloseAlert2}>Cerrar</button>
+          </div>
+        </div>
+      )}
+
+
         </div>
         
     );

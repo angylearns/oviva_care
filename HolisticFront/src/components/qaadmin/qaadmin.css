@@ -15,17 +15,17 @@
     width: 100%;
   }
   
-  /* Estilos para las filas impares */
+  
   .tableOwerflow table tbody tr:nth-child(odd) {
     background-color: #d9ecea83;
   }
   
-  /* Estilos para las filas pares */
+  
   .tableOwerflow table tbody tr:nth-child(even) {
     background-color: #d9eceaf3;
   }
   
-  /* Estilos para la cabecera de la tabla */
+  
   .tableOwerflow table thead {
     background-color: #00B6B9;
     color: white;
@@ -72,11 +72,6 @@
     transition: background-color 0.3s;
   }
   
-  img {
-    width: 35px;
-    height: 35px;
-    border: 0;
-  }
   
   .qatext {
     font-family: 'Montserrat', sans-serif;

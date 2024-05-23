@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:5001';
+const API_URL = 'http://localhost:5001';
 const loginService = {
   
     //ESTE METODO HA PASADO A registerService
@@ -18,7 +18,6 @@ const loginService = {
         const data = await response.json();
         console.log('loginService postUser end');
         return data;
-
       } catch (error) {
         console.error('Error al iniciar sesión:', error);
         throw error;

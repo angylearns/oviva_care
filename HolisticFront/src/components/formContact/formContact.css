@@ -13,7 +13,6 @@
 
 .field input {
   display: block;
-  /* min-width: 250px; */
   line-height: 1.5;
   font-size: 16px;
   border-radius: 0 20px 0 30px;
@@ -23,7 +22,7 @@
   width: 90%;
 }
 
-input[type="submit"] {
+.inputSub {
   display: block;
   padding: 6px 30px;
   font-size: 14px;
@@ -52,13 +51,24 @@ input[type="submit"] {
   background-color: white;
 }
 
-.inputField:focus {
-  background-color: white;
+
+.inputField:valid {
+  background-color:  rgba(0, 143, 139, 0.25) !important;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+.inputField:focus {
+  background-color: white !important;
+}
+
+
+/* Estilo para el campo de texto con autocompletado */
+.inputField:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
+  transition: background-color 5000s ease-in-out 0s; /* Ajusta la transición */
+}
+
+.inputField:focus,
+.textareaField:focus{
   outline: none;
 }
 
@@ -67,6 +77,10 @@ select:focus {
   border-radius: 0 0px 0 30px;
   font-family: 'Montserrat', sans-serif;
   width: 90%;
+}
+
+.textAreaField:hover{
+  background-color: white !important;
 }
 
 .container-form {
@@ -88,4 +102,35 @@ select:focus {
   border-radius: 0 20px 0 30px;
   scroll-behavior: smooth;
   overflow-anchor: none;
+}
+
+/*......................*/
+.custom-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  border-radius: 0 20px 0 30px;
+}
+
+.custom-alert-content {
+  text-align: center;
+}
+
+.custom-alert button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #008F8B;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.custom-alert button:hover {
+  background-color:#03f3eb;
 }
