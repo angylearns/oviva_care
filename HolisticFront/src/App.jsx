@@ -16,13 +16,15 @@ function App() {
 
   return (
     <>
-    {/* <Register /> */}
+    <Navbar/>
+    <Register />
       <Login_user />
     
       <Recipe/>
       <VideoList/>
-      {/* <UsersVideos/> */}
+      <UsersVideos/>
       <UsersRecipe/>
+      <Footer/>
     </>
   )
 }
