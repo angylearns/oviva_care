@@ -13,7 +13,6 @@
 
 .field input {
   display: block;
-  /* min-width: 250px; */
   line-height: 1.5;
   font-size: 16px;
   border-radius: 0 20px 0 30px;
@@ -23,8 +22,7 @@
   width: 90%;
 }
 
-
-input[type="submit"] {
+.inputSub {
   display: block;
   padding: 6px 30px;
   font-size: 14px;
@@ -69,9 +67,8 @@ input[type="submit"] {
   transition: background-color 5000s ease-in-out 0s; /* Ajusta la transición */
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+.inputField:focus,
+.textareaField:focus{
   outline: none;
 }
 
@@ -115,8 +112,6 @@ select:focus {
   transform: translate(-50%, -50%);
   background-color: #ffffff;
   padding: 20px;
-  /* border: 2px solid #333;
-  border-radius: 5px; */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   z-index: 9999;
   border-radius: 0 20px 0 30px;

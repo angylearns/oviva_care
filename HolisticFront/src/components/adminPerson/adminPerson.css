@@ -71,13 +71,8 @@
   transition: background-color 0.3s;
 }
 
-img {
-  width: 35px;
-  height: 35px;
-  border: 0;
-}
 
-input {
+.inputT {
   background-color: rgb(255, 255, 255);
   border: 1px solid #abc2d2;
   padding: 8px;
@@ -85,21 +80,25 @@ input {
   margin: 5px;
 }
 
-select{
+.field-regcountry{
   border: 1px solid #abc2d2;
 }
 
-input:hover {
+/* select{
+  border: 1px solid #abc2d2;
+} */
+
+.inputT:hover {
   background-color: white;
 }
 
-input:focus {
+.inputT:focus {
   background-color: rgb(255, 255, 209);
 }
 
-label {
+/* label {
   margin: 2px;
-}
+} */
 
 .formContentA {
   display: flex;
@@ -209,6 +208,8 @@ label {
 .sortIcon{
   width: 16px;
   height: 16px;
+
+
 }
 
 

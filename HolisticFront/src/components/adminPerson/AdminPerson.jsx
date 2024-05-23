@@ -256,6 +256,7 @@ function AdminPerson() {
                                             {editableRows.includes(index) ? (
                                                 <input
                                                     type="text"
+                                                    className="inputT"
                                                     defaultValue={customersGlobal[index]["first_name"]}
                                                     onChange={(e) =>
                                                         handleInputChange(e.target.value, index, "first_name")
@@ -269,6 +270,7 @@ function AdminPerson() {
                                             {editableRows.includes(index) ? (
                                                 <input
                                                     type="text"
+                                                    className="inputT"
                                                     defaultValue={customersGlobal[index]["last_name"]}
                                                     onChange={(e) =>
                                                         handleInputChange(e.target.value, index, "last_name")
@@ -282,6 +284,7 @@ function AdminPerson() {
                                             {editableRows.includes(index) ? (
                                                 <DatePicker
                                                     selected={new Date(customersGlobal[index]["birth_date"])}
+                                                    className="inputT"
                                                     onChange={(date) => handleChangeDate(date, index)}
                                                     // dateFormat="yyyy-MM-dd"
                                                     dateFormat="dd-MM-yyyy"

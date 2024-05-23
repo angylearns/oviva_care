@@ -27,10 +27,10 @@
     background-color: #00b6b92d;
   }
   
-  label {
+  /* label {
     margin: 2px;
   }
-  
+   */
   .formContentA {
     display: flex;
     flex-direction: row;
