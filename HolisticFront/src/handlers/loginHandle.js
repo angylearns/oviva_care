@@ -1,5 +1,4 @@
 import loginService from "../services/loginService";
-<<<<<<< HEAD
 import { decodeToken } from "../utils/authUtils"; // Importamos la función para decodificar el token
 
 export const handleLogin = async ({ password, user_type, email }, setErrorMessage, setShowAlert, setSuccessMessage) => {
@@ -22,18 +21,3 @@ export const handleLogin = async ({ password, user_type, email }, setErrorMessag
         throw error;
     }
 };
-=======
-export const handleLogin = async ({ password, user_type, email }, setErrorMessage) => {
-    try {
-        console.log('handleLogin 1');
-        const users = await loginService.postUser(password, user_type, email);
-        console.log('handleLogin 2');
-        console.log(users);
-        return users;
-    } catch (error) {
-        console.error('Error al iniciar sesión:', error);
-        setErrorMessage('Ocurrió un error al iniciar sesión');
-        throw error;
-    }
-};
->>>>>>> feature/Maria2
