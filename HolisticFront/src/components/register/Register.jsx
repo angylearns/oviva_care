@@ -5,12 +5,15 @@ import { handleRegister } from "../../handlers/registerHandle";
 import login_icon from "../../../public/images/icons/login_icon.svg";
 import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
 import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
-
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function Register() {
     // maneja el estado del formulario, la validación y el envío del formulario.
     const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
     const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
+    const [birthDate, setBirthDate] = useState(null);
+
 
     const [showAlert, setShowAlert] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
@@ -33,8 +36,7 @@ function Register() {
         console.log('jsx ' + JSON.stringify(data));
         // Convertir la fecha ingresada por el usuario al formato YYYY-MM-DD
         if (data.birth_date) {
-            const birthDateParts = data.birth_date.split('-');
-            const convertedBirthDate = `${birthDateParts[2]}-${birthDateParts[1]}-${birthDateParts[0]}`;
+            const convertedBirthDate = birthDate.toISOString().split('T')[0];
             data.birth_date = convertedBirthDate;
         }
 
@@ -155,23 +157,40 @@ function Register() {
 
 
                     <p className="text-regbirthdate">Fecha Nacimiento</p>
-
-                    <input
+                    <DatePicker
                         className="field-regbirthdate"
-                        {...register("birth_date", {
-                            required: "Este campo es requerido",
-                            pattern: {
-                                value: /^\d{2}-\d{2}-\d{4}$/, // Permitir el formato DD-MM-YYYY
-                                message: "Formato de fecha no válido. Utilice el formato DD-MM-YYYY."
-                            }
-                        })}
-                        onChange={(e) => {
-                            // Guardar la fecha ingresada por el usuario en el estado local
-                            setValue("birth_date", e.target.value);
+                        selected={birthDate}
+                        onChange={(date) => {
+                            setBirthDate(date);
+                            setValue("birth_date", date); // Guardar la fecha seleccionada en react-hook-form
                         }}
-                        placeholder="Fecha nacimiento"
+                        dateFormat="dd-MM-yyyy"
+                        placeholderText="Fecha nacimiento"
+                        showYearDropdown
+                        showMonthDropdown
+                        dropdownMode="select"
                     />
                     {errors.birth_date && <p>{errors.birth_date.message}</p>}
+
+                    {/* <DatePicker
+                        className="field-regbirthdate"
+                        selected={value("birth_date")}
+                        onChange={(date) => setValue("birth_date", date)}
+                        dateFormat="dd-MM-yyyy" // Formato de fecha mostrado en el DatePicker
+                        placeholderText="Fecha nacimiento"
+                        
+                    />
+                    {errors.birth_date && <p>{errors.birth_date.message}</p>} */}
+
+                    {/* <DatePicker
+                        selected={new Date(customersGlobal[index]["birth_date"])}
+                        onChange={(date) => handleChangeDate(date, index)}
+                        // dateFormat="yyyy-MM-dd"
+                        dateFormat="dd-MM-yyyy"
+                    /> */}
+
+
+
 
 
                     <p className="text-regdiagnose">¿Estás diagnosticada?</p>
@@ -260,17 +279,17 @@ function Register() {
 
                 </div>
 
-                </div>
+            </div>
 
-                <div className="buttons">
-                    <button type="submit" className="register-regbutton">Registrar</button>
-                    {/* <Link to="/Login_user"> */}
-                    <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
-                    {/* </Link> */}
-                </div>
-                {/* Mostrar mensaje de error si está presente */}
-                {/* {errorMessage && <p>{errorMessage}</p>} */}
-            
+            <div className="buttons">
+                <button type="submit" className="register-regbutton">Registrar</button>
+                {/* <Link to="/Login_user"> */}
+                <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
+                {/* </Link> */}
+            </div>
+            {/* Mostrar mensaje de error si está presente */}
+            {/* {errorMessage && <p>{errorMessage}</p>} */}
+
         </form>
 
 
