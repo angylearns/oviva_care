@@ -1,4 +1,9 @@
 import './App.css'
+import VideoList from './components/video/VideoList';
+
+import UsersVideos from './components/video/UsersVideos';
+import UsersRecipe from './components/recipe/UsersRecipe';
+
 import Recipe from './components/recipe/Recipe';
 import Footer from './components/footer/Footer';
 import Navbar from './components/navbar/Navbar';
@@ -21,6 +26,10 @@ import Pretest from './components/pretestcuestionario/pretest.jsx'
 function App() {
   return (
     <>
+      {/* <Recipe/> */}
+      <VideoList/>
+      {/* <UsersVideos/> */}
+      {/* <UsersRecipe/> */}
       <Navbar />
       {/* <Hero /> */}
       <Register />
