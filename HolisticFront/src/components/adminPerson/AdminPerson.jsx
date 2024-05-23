@@ -23,6 +23,20 @@ const formatDateToDB = (dateString) => {
     return `${parts[0]}-${parts[1]}-${parts[2]}`;
 };
 
+function convertDate(fecha) {
+    // Dividir la fecha en año, mes y día
+    var partesFecha = fecha.split("-");
+    // Crear un nuevo objeto Date con los componentes de la fecha
+    var nuevaFecha = new Date(partesFecha[0], partesFecha[1] - 1, partesFecha[2]);
+    // Obtener el día, mes y año de la nueva fecha
+    var dia = nuevaFecha.getDate();
+    var mes = nuevaFecha.getMonth() + 1;
+    var año = nuevaFecha.getFullYear();
+    // Formatear la fecha como dd-mm-yyyy
+    var fechaFormateada = dia + "-" + mes + "-" + año;
+    return fechaFormateada;
+  }
+
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
     const [customersGlobal, setCustomersGlobal] = useState([]);
@@ -273,7 +287,7 @@ function AdminPerson() {
                                                     dateFormat="dd-MM-yyyy"
                                                 />
                                             ) : (
-                                                user.birth_date
+                                                convertDate(user.birth_date)
                                             )}
                                         </td>
                                         <td>
