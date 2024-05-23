@@ -13,38 +13,32 @@ const recipeService = {
     }
   },
 
-  addRecipe: async (newRecipe, fetchData) => {
+  addRecipe: async (newRecipe) => {
     try {
-        await axios.post(`${API_BASE_URL}/recipe/`, newRecipe);
-        alert('Receta Agregada Exitosamente');
-        fetchData();
-      } catch (error) {
-        console.error('Error al agregar la receta:', error);
-      }
+      await axios.post(`${API_BASE_URL}/recipe/`, newRecipe);
+    } catch (error) {
+      console.error('Error al agregar la receta:', error);
+      throw error;
+    }
   },
 
-  updateRecipe: async (recipeId, newRecipe, fetchData) => {
+  updateRecipe: async (recipeId, newRecipe) => {
     try {
-        await axios.put(`${API_BASE_URL}/recipe/${recipeId}`, newRecipe);
-      alert('Receta actualizada exitosamente');
-      fetchData();
+      await axios.put(`${API_BASE_URL}/recipe/${recipeId}`, newRecipe);
     } catch (error) {
       console.error('Error al actualizar receta:', error);
-    }
-      
-    },
-  
-
-  deleteRecipe: async (recipeId, fetchData) => {
-    try {
-      await axios.delete(`${API_BASE_URL}/recipe/${recipeId}`);
-      alert('Receta eliminada exitosamente');
-      fetchData();
-    } catch (error) {
-      console.error('Error al eliminar receta:', error);
+      throw error;
     }
   },
 
+  deleteRecipe: async (recipeId) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/recipe/${recipeId}`);
+    } catch (error) {
+      console.error('Error al eliminar receta:', error);
+      throw error;
+    }
+  },
 };
 
 export default recipeService;

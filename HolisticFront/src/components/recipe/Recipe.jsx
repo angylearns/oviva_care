@@ -8,7 +8,6 @@ import {
   deleteRecipe,
 } from "../../handlers/recipeHandle";
 
-
 const Recipe = () => {
   const [recipes, setRecipes] = useState([]);
   const [newRecipe, setNewRecipe] = useState({
@@ -21,7 +20,7 @@ const Recipe = () => {
 
   const [isEditing, setIsEditing] = useState(false);
   const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([]);
-  const [recipeToDelete, setRecipeToDelete] = useState(null); // Estado para almacenar la receta a eliminar
+  const [recipeToDelete, setRecipeToDelete] = useState(null);
   const formRef = useRef(null);
 
   useEffect(() => {
@@ -31,9 +30,7 @@ const Recipe = () => {
   const fetchData = async () => {
     try {
       const recipesData = await recipeService.getAllRecipes();
-      recipesData.sort((a, b) => {
-        return a.title.localeCompare(b.title);
-      });
+      recipesData.sort((a, b) => a.title.localeCompare(b.title));
       setRecipes(recipesData);
     } catch (error) {
       console.error("Error fetching recipes:", error);
@@ -65,22 +62,19 @@ const Recipe = () => {
     handleEdit(recipeId, recipes, setNewRecipe, setIsEditing);
   };
 
-  const handleDelete = async (recipeId) => {
-    // Establecer la receta a eliminar
+  const handleDelete = (recipeId) => {
     setRecipeToDelete(recipeId);
   };
 
   const confirmDelete = async () => {
-    // Eliminar la receta si el usuario confirma
     if (recipeToDelete) {
       await deleteRecipe(recipeToDelete, fetchData);
-      setRecipeToDelete(null); // Reiniciar el estado
+      setRecipeToDelete(null);
     }
   };
 
   const handleCancelDelete = () => {
-    // Cancelar la eliminación
-    setRecipeToDelete(null); // Reiniciar el estado
+    setRecipeToDelete(null);
   };
 
   const handleCheckboxChange = (categoria) => {
@@ -95,11 +89,8 @@ const Recipe = () => {
   };
 
   const filteredRecipes = recipes.filter((recipe) => {
-    if (categoriasSeleccionadas.length === 0) {
-      return true;
-    } else {
-      return categoriasSeleccionadas.includes(recipe.category);
-    }
+    if (categoriasSeleccionadas.length === 0) return true;
+    return categoriasSeleccionadas.includes(recipe.category);
   });
 
   const categorias = [
@@ -122,7 +113,8 @@ const Recipe = () => {
               type="checkbox"
               id={categoria}
               value={categoria}
-              onChange={(e) => handleCheckboxChange(e.target.value)}
+              checked={categoriasSeleccionadas.includes(categoria)}
+              onChange={() => handleCheckboxChange(categoria)}
             />
             <label htmlFor={categoria}>{categoria}</label>
           </div>
@@ -184,6 +176,7 @@ const Recipe = () => {
                 onChange={(e) => setNewRecipe({ ...newRecipe, category: e.target.value })}
                 required
               >
+                <option value="">Seleccionar categoría</option>
                 {categorias.map((categoria) => (
                   <option key={categoria} value={categoria}>{categoria}</option>
                 ))}
@@ -227,13 +220,12 @@ const Recipe = () => {
         ))}
       </div>
 
-      {/* Cuadro de diálogo de confirmación para eliminar */}
       {recipeToDelete && (
         <div className="confirmation-dialog">
           <p>¿Está seguro de que quiere eliminar esta receta?</p>
           <p>Todos los datos serán borrados y no podrá volver a recuperarla.</p>
           <div>
-            <button className= "button-delete" onClick={confirmDelete}>Sí, quiero borrarla</button>
+            <button className="button-delete" onClick={confirmDelete}>Sí, quiero borrarla</button>
             <button className="button-no-delete" onClick={handleCancelDelete}>No, quiero volver atrás</button>
           </div>
         </div>

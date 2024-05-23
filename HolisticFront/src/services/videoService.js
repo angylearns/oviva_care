@@ -13,35 +13,33 @@ const videoService = {
     }
   },
 
-  addVideo: async (newVideo, fetchData) => {
+  addVideo: async (newVideo) => {
     try {
       await axios.post(`${API_BASE_URL}/video/`, newVideo);
-      alert('Vídeo agregado con éxito');
-      fetchData();
     } catch (error) {
       console.error('Error al añadir el vídeo:', error);
+      throw error;
     }
   },
 
-  updateVideo: async (videoId, newVideo, fetchData) => {
+  updateVideo: async (videoId, newVideo) => {
     try {
       await axios.put(`${API_BASE_URL}/video/${videoId}`, newVideo);
-      alert('vídeo actualizado con éxito');
-      fetchData();
     } catch (error) {
       console.error('Error al actualizar el vídeo:', error);
-    
+      throw error;
     }
   },
 
-  deleteVideo: async (videoId, fetchData) => {
+  deleteVideo: async (videoId) => {
     try {
       await axios.delete(`${API_BASE_URL}/video/${videoId}`);
     } catch (error) {
       console.error('Error al eliminar el vídeo:', error);
-    
+      throw error;
     }
   },
 };
 
 export default videoService;
+

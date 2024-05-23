@@ -30,9 +30,7 @@ const VideoList = () => {
   const fetchData = async () => {
     try {
       const videosData = await videoService.getAllVideos();
-      videosData.sort((a, b) => {
-        return a.title.localeCompare(b.title);
-      });
+      videosData.sort((a, b) => a.title.localeCompare(b.title));
       setVideos(videosData);
     } catch (error) {
       console.error("Error fetching videos:", error);
@@ -83,15 +81,6 @@ const VideoList = () => {
       setSelectedCategories(selectedCategories.filter((c) => c !== category));
     } else {
       setSelectedCategories([...selectedCategories, category]);
-    }
-  };
-
-  const handleAddVideo = async () => {
-    try {
-      await addVideo(newVideo, fetchData);
-      setNewVideo({ id_video: "", title: "", link: "", category: "" });
-    } catch (error) {
-      console.error("Error adding video:", error);
     }
   };
 
@@ -200,4 +189,5 @@ const VideoList = () => {
 };
 
 export default VideoList;
+
 
