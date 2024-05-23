@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       {/* <Recipe/> */}
-      <VideoList/>
+      {/* <VideoList/> */}
       {/* <UsersVideos/> */}
       {/* <UsersRecipe/> */}
       <Navbar />
@@ -36,17 +36,17 @@ function App() {
       {/* <Login_user /> */}
       {/* <Recipe/> */}
       <Footer />
-      <Cuestionario />
-      <Pretest />
+      {/* <Cuestionario /> */}
+      {/* <Pretest /> */}
       {/* <FormContact/> */}
-       <AdminPerson/> 
+       {/* <AdminPerson/>  */}
       {/* <Question/> */}
-      <QuestionContact/>
-      <QaAdmin/>
-     <Calendar/> 
-      <Article/>
-      <Symptoms/>
-      <Experts/>
+      {/* <QuestionContact/> */}
+      {/* <QaAdmin/> */}
+     {/* <Calendar/>  */}
+      {/* <Article/> */}
+      {/* <Symptoms/> */}
+      {/* <Experts/> */}
 
     </>
   )
