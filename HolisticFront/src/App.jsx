@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Recipe from './components/recipe/Recipe';
 import Footer from './components/footer/Footer';
@@ -12,9 +11,9 @@ import AddPerson from './components/adminPerson/AddPerson';
 import Question from './components/question/Question';
 import QuestionContact from './views/QuestionContact';
 
+import Cuestionario from './components/cuestionario/Cuestionario.jsx';
+import Pretest from './components/pretestcuestionario/pretest.jsx'
 function App() {
-
-
   return (
     <>
       <Navbar />
@@ -23,6 +22,8 @@ function App() {
       {/* <Login_user /> */}
       {/* <Recipe/> */}
       <Footer />
+      <Cuestionario />
+      <Pretest />
     </>
   )
 }
