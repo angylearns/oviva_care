@@ -37,7 +37,7 @@ const Experts = () => {
                 <h2 className='titlexperts'> CONVIÉRTETE EN UN OVIVA EXPERTO</h2>
             </div>
 
-            <p className='textoviva'>¿Está interesado en contribuir y aparecer en el sitio web y el portal de negocios de OVIVI? ¡Ponte en contacto!</p>
+            <p className='textoviva'>¿Está interesado en contribuir y aparecer en el sitio web y el portal de negocios de OVIVA? ¡Ponte en contacto!</p>
 
         </div>
     );
