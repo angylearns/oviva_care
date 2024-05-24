@@ -1,6 +1,6 @@
 import FormContact from "../components/formContact/FormContact";
 import Question from "../components/question/Question";
-import './questionContact.css';
+import './fAQView.css';
 
 function QuestionContact() {
     return (

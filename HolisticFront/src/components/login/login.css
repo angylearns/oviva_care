@@ -74,15 +74,14 @@ input::placeholder {
 .icons-buttons-password-login {
     background-color: transparent;
     border: none;
-
+    position: relative;
+    transform: translate(230px, -54px);
 }
-
 .icon-open-eye-login,
 .icon-close-eye-login {
     width: 45px;
     background-color: transparent;
     border: none;
-    transform: translate(230px, -54px);
 }
 
 .goregister-button {
