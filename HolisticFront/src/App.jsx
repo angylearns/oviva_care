@@ -12,13 +12,14 @@ import AdminUserView from './views/AdminUserView.jsx';
 import AdminVideoView from './views/AdminVideoView.jsx';
 import AdminRecipeView from './views/AdminRecipeView.jsx';
 import AdminFAQView from './views/AdminFAQView.jsx';
+import HomeView from './views/HomeView.jsx';
 
 
 function App() {
   return (
     <>
 
-      <PoliticView/>
+      <HomeView/>
       
       </>
 
