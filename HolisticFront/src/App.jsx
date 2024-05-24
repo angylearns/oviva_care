@@ -13,6 +13,7 @@ import AdminVideoView from './views/AdminVideoView.jsx';
 import AdminRecipeView from './views/AdminRecipeView.jsx';
 import AdminFAQView from './views/AdminFAQView.jsx';
 import HomeView from './views/HomeView.jsx';
+import WhoIAmView from './views/WhoIAmView.jsx';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <>
 
       
-      <HomeView/>
+      <WhoIAmView/>
       
       </>
 
