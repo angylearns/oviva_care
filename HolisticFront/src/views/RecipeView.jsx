@@ -1,15 +1,15 @@
 import FormContact from "../components/formContact/FormContact";
 import Navbar from "../components/navbar/Navbar";
-import Article from "../components/article/Article";
+import UsersRecipe from "../components/recipe/UsersRecipe";
 import Footer from "../components/footer/Footer";
 
 
-function BlogView() {
+function RecipeView() {
     return (
         <>
 
             <Navbar />
-            <Article />
+            <UsersRecipe />
             <Footer/>
 
 
@@ -17,4 +17,4 @@ function BlogView() {
     );
 }
 
-export default BlogView;
+export default RecipeView;

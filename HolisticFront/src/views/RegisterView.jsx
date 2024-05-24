@@ -4,7 +4,7 @@ import Register from "../components/register/Register";
 import Footer from "../components/footer/Footer";
 
 
-function LoginView() {
+function RegisterView() {
     return (
         <>
 
@@ -17,4 +17,4 @@ function LoginView() {
     );
 }
 
-export default LoginView;
+export default RegisterView;

@@ -2,7 +2,7 @@ import FormContact from "../components/formContact/FormContact";
 import Question from "../components/question/Question";
 import './fAQView.css';
 
-function QuestionContact() {
+function FAQView() {
     return (
         <>
             <div className="containerGroup">
@@ -18,4 +18,4 @@ function QuestionContact() {
     );
 }
 
-export default QuestionContact;
+export default FAQView;

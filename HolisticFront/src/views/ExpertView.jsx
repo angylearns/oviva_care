@@ -1,15 +1,17 @@
 import FormContact from "../components/formContact/FormContact";
 import Navbar from "../components/navbar/Navbar";
-import Article from "../components/article/Article";
+import Experts from "../components/experts/Experts";
 import Footer from "../components/footer/Footer";
 
 
-function BlogView() {
+
+function ExpertView() {
     return (
         <>
 
             <Navbar />
-            <Article />
+            <Experts />
+            <FormContact />
             <Footer/>
 
 
@@ -17,4 +19,4 @@ function BlogView() {
     );
 }
 
-export default BlogView;
+export default ExpertView;
