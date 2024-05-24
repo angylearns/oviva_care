@@ -1,15 +1,15 @@
 
 import Navbar from "../components/navbar/Navbar";
-import Register from "../components/register/Register";
+import Recipe from "../components/recipe/Recipe";
 import Footer from "../components/footer/Footer";
 
 
-function RegisterView() {
+function AdminRecipeView() {
     return (
         <>
 
             <Navbar />
-            <Register />
+            <Recipe/>
             <Footer/>
 
 
@@ -17,4 +17,4 @@ function RegisterView() {
     );
 }
 
-export default RegisterView;
+export default AdminRecipeView;

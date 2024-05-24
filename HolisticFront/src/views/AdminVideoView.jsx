@@ -1,15 +1,15 @@
 
 import Navbar from "../components/navbar/Navbar";
-import Register from "../components/register/Register";
+import VideoList from "../components/video/VideoList";
 import Footer from "../components/footer/Footer";
 
 
-function RegisterView() {
+function AdminVideoView() {
     return (
         <>
 
             <Navbar />
-            <Register />
+            <VideoList/>
             <Footer/>
 
 
@@ -17,4 +17,4 @@ function RegisterView() {
     );
 }
 
-export default RegisterView;
+export default AdminVideoView;

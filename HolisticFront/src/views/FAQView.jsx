@@ -6,21 +6,20 @@ import './fAQView.css';
 
 function FAQView() {
     return (
-        <>
+        <div className="main-container">
             <Navbar />
             <div className='frame'>
-            <div className="containerGroup">
-                <div className="containerQuestion">
-                    <Question />
+                <div className="containerGroup">
+                    <div className="containerQuestion">
+                        <Question />
+                    </div>
+                    <div className="containerForm">
+                        <FormContact />
+                    </div>
                 </div>
-                <div className="containerForm">
-                    <FormContact />
-                </div>
-            </div>
             </div>
             <Footer />
-
-        </>
+        </div>
     );
 }
 

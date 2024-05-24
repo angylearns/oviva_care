@@ -8,6 +8,10 @@ import SportView from './views/SportView.jsx';
 import ExpertView from './views/ExpertView.jsx';
 import FAQView from './views/FAQView.jsx';
 import PoliticView from './views/PoliticView.jsx';
+import AdminUserView from './views/AdminUserView.jsx';
+import AdminVideoView from './views/AdminVideoView.jsx';
+import AdminRecipeView from './views/AdminRecipeView.jsx';
+import AdminFAQView from './views/AdminFAQView.jsx';
 
 
 function App() {

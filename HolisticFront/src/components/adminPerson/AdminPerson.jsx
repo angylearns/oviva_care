@@ -211,6 +211,7 @@ function AdminPerson() {
     };
 
     return (
+        <div className="frame">
         <div className="mainContainer">
             <div className="getContainer">
                 <div className="headerContent">
@@ -436,6 +437,7 @@ function AdminPerson() {
                     </div>
                 </div>
             )}
+        </div>
         </div>
     );
 }
