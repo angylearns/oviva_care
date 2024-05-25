@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../../public/ImagenCuestionario/logoOvaries.png";
-import './cuestionario.css';
+import './testQuestion.css';
 
 
 function Cuestionario() {

@@ -4,7 +4,7 @@ import React from "react";
 import logo from "../../../public/ImagenCuestionario/logoOvaries.png";
 import './pretest.css';
 
-function PretestCuestionario({ onStart }) {
+function Pretest({ onStart }) {
   return (
     < div className="frame">
     <div className="pretest-container">
@@ -35,5 +35,5 @@ function PretestCuestionario({ onStart }) {
   );
 }
 
-export default PretestCuestionario;
+export default Pretest;
 

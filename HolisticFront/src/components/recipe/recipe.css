@@ -14,6 +14,7 @@ h1 {
   min-height: 100vh;
   background-size: cover;
   background-position: center;
+  margin-top: -22px;
 }
 
 .style::before {
@@ -167,6 +168,13 @@ box-shadow: 0 2px 4px rgb(105, 146, 141);
 .button-delete:hover,
 .button-no-delete:hover {
 background-color: #f76560; /* Cambiado el color de fondo al hacer hover */
+}
+
+@media screen and (max-width: 450px) {
+  .style {
+    
+    margin-top: -14px;
+  }
 }
 
 
