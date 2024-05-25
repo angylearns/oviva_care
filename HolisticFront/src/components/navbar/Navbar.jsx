@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom"; // Solo importamos Link
 import "./navbar.css";
 import Navbar_admin from "./Navbar_admin";
 import {
@@ -14,7 +14,6 @@ import Calendary from "../calendary/Calendary";
 
 function Navbar() {
   const [cookies, setCookie, removeCookie] = useCookies([TOKEN_COOKIE_NAME]);
-
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated(cookies));
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false); 
@@ -23,12 +22,12 @@ function Navbar() {
   const token = decodeToken(cookies[TOKEN_COOKIE_NAME]);
 
   const toggleModalMenu = () => {
-    setIsMenuOpen((prev) => !prev);
+    setIsMenuOpen((prev) =>!prev);
   };
 
   const toggleModalCalendar = () => {
     console.log("Toggling calendar modal");
-    setIsCalendarOpen((prev) => !prev);
+    setIsCalendarOpen((prev) =>!prev);
   };
 
   useEffect(() => {
@@ -41,69 +40,68 @@ function Navbar() {
   };
 
   return (
-    <Router>
-      <nav className="navbar_user_desktop">
-        <section className="navbar_user_desktop--left">
-          <Link to="/" className="logo_link">
-            <img
-              src="/images/logo_words.png"
-              alt="Oviva Logo"
-              className="navbar_desktop--logo"
-            />
-          </Link>
-        </section>
-        <section className="navbar_user_desktop--center">
-          <Link to="/preguntas">Preguntas</Link>
-          <Link to="/expertos">Expertos</Link>
-          <Link to="/blog">Blog</Link>
-          {isLoggedIn && <Link to="/recetas">Recetas</Link>}
-          {isLoggedIn && <Link to="/videos">Videos</Link>}
-        </section>
-        <section className="navbar_user_desktop--right">
-          {isLoggedIn ? (
-            <section className="navbar_user_desktop--right__left">
-              <button className="button_calendar" onClick={toggleModalCalendar}>
+    <React.Fragment>
+    <nav className="navbar_user_desktop">
+      <section className="navbar_user_desktop--left">
+        <Link to="/" className="logo_link">
+          <img
+            src="/images/logo_words.png"
+            alt="Oviva Logo"
+            className="navbar_desktop--logo"
+          />
+        </Link>
+      </section>
+      <section className="navbar_user_desktop--center">
+        <Link to="/preguntas">Preguntas</Link>
+        <Link to="/expertos">Expertos</Link>
+        <Link to="/blog">Blog</Link>
+        {isLoggedIn && <Link to="/user/recipes">Recetas</Link>}
+        {isLoggedIn && <Link to="/videos">Videos</Link>}
+      </section>
+      <section className="navbar_user_desktop--right">
+        {isLoggedIn? (
+          <section className="navbar_user_desktop--right__left">
+            <button className="button_calendar" onClick={toggleModalCalendar}>
+              <img
+                src="/images/icons/icon_calendar.svg"
+                className="navbar_user_desktop--icon_calendar"
+                alt="Calendar icon"
+              />
+            </button>
+            <section className="navbar_desktop--greeting_and_logout">
+              {token && token.first_name && (
+                <section className="navbar_desktop--greeting">
+                  ¡Hola,<br />
+                  {token.first_name}!
+                </section>
+              )}
+              <button onClick={handleLogout} className="button_logout">
                 <img
-                  src="/images/icons/icon_calendar.svg"
-                  className="navbar_user_desktop--icon_calendar"
-                  alt="Calendar icon"
+                  src="/images/icons/icon_logout.svg"
+                  className="navbar_desktop--icon_logout"
+                  alt="Logout icon"
                 />
               </button>
-              <section className="navbar_desktop--greeting_and_logout">
-                {token && token.first_name && (
-                  <section className="navbar_desktop--greeting">
-                    ¡Hola,
-                    <br />
-                    {token.first_name}!
-                  </section>
-                )}
-                <button onClick={handleLogout} className="button_logout">
-                  <img
-                    src="/images/icons/icon_logout.svg"
-                    className="navbar_desktop--icon_logout"
-                    alt="Logout icon"
-                  />
-                </button>
-              </section>
             </section>
-          ) : (
-            <Link to="/profile" className="link_profile">
-              <img
-                src="/images/icons/icon_profile_female.svg"
-                className="navbar_desktop--icon_profile"
-                alt="User icon"
-              />
-            </Link>
-          )}
-        </section>
+          </section>
+        ) : (
+          <Link to="/profile" className="link_profile">
+            <img
+              src="/images/icons/icon_profile_female.svg"
+              className="navbar_desktop--icon_profile"
+              alt="User icon"
+            />
+          </Link>
+        )}
+      </section>
 
-        <section className={`modal_calendar calendar_desktop ${isCalendarOpen ? "open" : ""}`}>
-          <Calendary />
-        </section>
-      </nav>
+      <section className={`modal_calendar calendar_desktop ${isCalendarOpen? "open" : ""}`}>
+        <Calendary />
+      </section>
+    </nav>
 
-      <nav className="navbar_user_mobile">
-        <section className="navbar_user_mobile--left">
+    <nav className="navbar_user_mobile">
+    <section className="navbar_user_mobile--left">
           <img src="/images/logo_no_words.png" alt="Logo Oviva" />
         </section>
         <section className="navbar_user_mobile--right">
@@ -182,10 +180,10 @@ function Navbar() {
         <section className={`modal_calendar calendar_mobile ${isCalendarOpen ? "open" : ""}`}>
           <Calendary />
         </section>
-      </nav>
+    </nav>
 
-      {isAdminUser && <Navbar_admin />}
-    </Router>
+    {isAdminUser && <Navbar_admin />}
+    </React.Fragment>
   );
 }
 
