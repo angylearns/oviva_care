@@ -1,14 +1,13 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom'; // Importa Outlet desde react-router-dom
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/footer/Footer';
 
-const LayoutPublic = ({ children }) => {
+const LayoutPublic = () => {
   return (
-    <React.Fragment>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </React.Fragment>
+    <>
+        <Outlet />
+    </>
   );
 };
 

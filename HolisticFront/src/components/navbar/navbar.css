@@ -1,151 +1,151 @@
 .navbar_user_mobile {
-    display: none;
+  display: none;
 }
 
 .navbar_user_desktop {
-    background-color: #D9ECEA;
-    height: 10vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
+  background-color: #d9ecea;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .navbar_user_desktop--left {
-    height: 100%;
-    width: 20%;
-    margin-left: 5%;
+  height: 100%;
+  width: 20%;
+  margin-left: 5%;
 }
 
 .logo_link {
-    height: 100%;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: content-box;
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: content-box;
 }
 
 .navbar_desktop--logo {
-    height: 90%;
-    width: auto;
+  height: 90%;
+  width: auto;
 }
 
 .navbar_user_desktop--center {
-    height: 100%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7%;
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7%;
 }
 
 .navbar_user_desktop--center a,
 .modal_menu.open a,
 footer a {
-    color: #000000;
-    text-decoration: none;
+  color: #000000;
+  text-decoration: none;
 }
 
 .navbar_user_desktop--center a:hover,
 footer a:hover {
-    font-style: italic;
+  font-style: italic;
 }
 
 .navbar_user_desktop--right {
-    height: 100%;
-    width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-right: 5%;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-right: 5%;
 }
 
 .navbar_user_desktop--right__left {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 15%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15%;
 }
 
 .navbar_desktop--greeting {
-    font-size: 13px;
-    text-align: center;
-    width: fit-content;
+  font-size: 13px;
+  text-align: center;
+  width: fit-content;
 }
 
 .button_logout,
 .button_calendar {
-    height: fit-content;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+  height: fit-content;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .navbar_desktop--icon_logout {
-    height: 30px;
+  height: 30px;
 }
 
 .modal_calendar.calendar_desktop {
-    display: none;
-    position: absolute;
-    width: 50vw;
-    top: 90px;
-    right: 10%;
-    padding: 10px;
-    z-index: 1;
-    background: #00b6b9bf;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.3px);
-    -webkit-backdrop-filter: blur(6.3px);
-    border: 1px solid #00b6b959;
+  display: none;
+  position: absolute;
+  width: 50vw;
+  top: 90px;
+  right: 10%;
+  padding: 10px;
+  z-index: 1;
+  background: #00b6b9bf;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid #00b6b959;
 }
 
 .modal_calendar.open.calendar_desktop {
-    display: block;
+  display: block;
 }
 
-.link_profile {
-    height: 50%;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.link_profile--desktop {
+  height: 50%;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .navbar_user_desktop--icon_calendar {
-    height: 30px;
+  height: 30px;
 }
 
 .navbar_desktop--greeting_and_logout {
-    height: 100%;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25%;
+  height: 100%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25%;
 }
 
 @media (max-width: 1000px) {
-    .navbar_desktop--greeting_and_logout {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-    }
+  .navbar_desktop--greeting_and_logout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
 
-    .modal_calendar.calendar_desktop {
-        width: 75vw;
-        right: 10%;
-    }
+  .modal_calendar.calendar_desktop {
+    width: 75vw;
+    right: 10%;
+  }
 }
 
 /* @media (max-width: 800px) {
@@ -207,117 +207,125 @@ footer a:hover {
 } */
 
 @media (max-width: 768px) {
-    .navbar_user_desktop,
-    .toggle_menu {
-        display: none;
-    }
+  .navbar_user_desktop,
+  .toggle_menu {
+    display: none;
+  }
 
-    .navbar_user_mobile {
-        background-color: #D9ECEA;
-        height: 10vh;
-        width: 100%;
-        display: flex;
-        position: relative; 
-    }
-    
-    .navbar_user_mobile--left,
-    .navbar_user_mobile--right {
-        box-sizing: border-box;
-        align-items: center;
-        width: 50%;
-    }
+  .navbar_user_mobile {
+    background-color: #d9ecea;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+  }
 
-    .button_calendar, 
-    .button_logout {
-        height: fit-content;
-        width: 30px;
-        padding: 0;
-    }
+  .navbar_user_mobile--left,
+  .navbar_user_mobile--right {
+    box-sizing: border-box;
+    align-items: center;
+    width: 50%;
+  }
 
-    .button_calenadar .navbar_user_mobile--icon_calendar, 
-    .button_logout .navbar_mobile--icon_logout {
-        height: 30px;
-    }
+  .button_calendar,
+  .button_logout {
+    height: fit-content;
+    width: 30px;
+    padding: 0;
+  }
 
-    .navbar_user_mobile--left {
-        display: flex;
-        padding-left: 10%;
-        width: 25%;
-    }
+  .button_calenadar .navbar_user_mobile--icon_calendar,
+  .button_logout .navbar_mobile--icon_logout {
+    height: 30px;
+  }
 
-    .navbar_user_mobile--left img {
-        height: 70%;
-    }
-    
-    .navbar_user_mobile--right {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10%;
-        padding-right: 10%;
-        width: 75%;
-    }
+  .navbar_user_mobile--left {
+    display: flex;
+    padding-left: 10%;
+    width: 25%;
+  }
 
-    .navbar_mobile--greeting {
-        font-size: small;
-        text-align: center;
-    }
+  .navbar_user_mobile--left img {
+    height: 70%;
+  }
 
-    .navbar_mobile--icon_profile {
-        height: 50%;
-        cursor: pointer;
-    }
+  .navbar_user_mobile--right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10%;
+    padding-right: 10%;
+    width: 75%;
+  }
 
-    .navbar_mobile--icon_hamburger {
-        font-size: 24px; 
-        cursor: pointer;
-    }
+  .navbar_mobile--greeting {
+    font-size: small;
+    text-align: center;
+  }
 
-    .modal_menu {
-        display: none;
-        position: absolute;
-        width: 120px; 
-        top: calc(100% - 10px);
-        right: 70px; 
-        padding: 10px;
-        z-index: 1; 
-        background: #00b6b9bf;
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6.3px);
-        -webkit-backdrop-filter: blur(6.3px);
-        border: 1px solid #00b6b959;
-    }
+  .navbar_mobile--icon_profile {
+    height: 50%;
+    cursor: pointer;
+  }
 
-    .modal_calendar.calendar_mobile {
-        display: none;
-        position: absolute;
-        width: 92vw;
-        top: calc(100% - 10px);
-        right: 18px;
-        padding: 10px;
-        z-index: 1;
-        background: #00b6b9bf;
-        border-radius: 16px;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        backdrop-filter: blur(6.3px);
-        -webkit-backdrop-filter: blur(6.3px);
-        border: 1px solid #00b6b959;
-    }
+  .navbar_mobile--icon_hamburger {
+    font-size: 24px;
+    cursor: pointer;
+  }
 
-    .modal_menu.open,
-    .modal_calendar.calendar_mobile.open {
-        display: block;
-    }
+  .link_profile--mobile {
+    height: 100%;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 
-    .modal_menu ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+  .modal_menu {
+    display: none;
+    position: absolute;
+    width: 120px;
+    top: calc(100% - 10px);
+    right: 70px;
+    padding: 10px;
+    z-index: 1;
+    background: #00b6b9bf;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid #00b6b959;
+  }
 
-    .modal_menu li {
-        margin: 20px 0;
-        text-align: center;
-        color: #000000; 
-    }
+  .modal_calendar.calendar_mobile {
+    display: none;
+    position: absolute;
+    width: 92vw;
+    top: calc(100% - 10px);
+    right: 18px;
+    padding: 10px;
+    z-index: 1;
+    background: #00b6b9bf;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.3px);
+    -webkit-backdrop-filter: blur(6.3px);
+    border: 1px solid #00b6b959;
+  }
+
+  .modal_menu.open,
+  .modal_calendar.calendar_mobile.open {
+    display: block;
+  }
+
+  .modal_menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modal_menu li {
+    margin: 20px 0;
+    text-align: center;
+    color: #000000;
+  }
 }

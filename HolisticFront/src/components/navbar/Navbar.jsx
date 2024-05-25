@@ -52,11 +52,11 @@ function Navbar() {
         </Link>
       </section>
       <section className="navbar_user_desktop--center">
-        <Link to="/preguntas">Preguntas</Link>
-        <Link to="/expertos">Expertos</Link>
+        <Link to="/faq">Preguntas</Link>
+        <Link to="/experts">Expertos</Link>
         <Link to="/blog">Blog</Link>
         {isLoggedIn && <Link to="/user/recipes">Recetas</Link>}
-        {isLoggedIn && <Link to="/videos">Videos</Link>}
+        {isLoggedIn && <Link to="/user/exercise">Videos</Link>}
       </section>
       <section className="navbar_user_desktop--right">
         {isLoggedIn? (
@@ -85,7 +85,7 @@ function Navbar() {
             </section>
           </section>
         ) : (
-          <Link to="/profile" className="link_profile">
+          <Link to="/login" className="link_profile">
             <img
               src="/images/icons/icon_profile_female.svg"
               className="navbar_desktop--icon_profile"
@@ -123,11 +123,13 @@ function Navbar() {
               </button>
             </>
           ) : (
+            <Link to="/login" className="link_profile--mobile">
             <img
               src="/images/icons/icon_profile_female.svg"
               alt="User icon"
               className="navbar_mobile--icon_profile"
             />
+          </Link>
           )}
           <input
             type="checkbox"
@@ -156,22 +158,23 @@ function Navbar() {
         <section className={`modal_menu ${isMenuOpen ? "open" : ""}`}>
           <ul>
             <li>
-              <Link to="/preguntas">Preguntas</Link>
+              <Link to="/faq">Preguntas</Link>
             </li>
             <li>
-              <Link to="/expertos">Expertos</Link>
+              <Link to="/experts">Expertos</Link>
             </li>
             <li>
               <Link to="/blog">Blog</Link>
             </li>
             {isLoggedIn && (
               <li>
-                <Link to="/recetas">Recetas</Link>
+                <Link to="/user/recipes">Recetas</Link>
+                
               </li>
             )}
             {isLoggedIn && (
               <li>
-                <Link to="/videos">Videos</Link>
+                <Link to="/user/exercise">Videos</Link>
               </li>
             )}
           </ul>

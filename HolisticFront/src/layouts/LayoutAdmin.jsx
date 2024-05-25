@@ -1,17 +1,11 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-const LayoutAdmin = ({ children }) => {
+const LayoutAdmin = () => {
   return (
-    <React.Fragment>
-      {/* Título y mensaje de bienvenida para administradores */}
-      <header>
-        <h1>Bienvenido, Administrador</h1>
-        <p>Aquí encontrarás las herramientas y opciones para gestionar tu sitio.</p>
-      </header>
-
-      {/* Main content area */}
-      <main>{children}</main>
-    </React.Fragment>
+    <>
+        <Outlet />
+    </>
   );
 };
 

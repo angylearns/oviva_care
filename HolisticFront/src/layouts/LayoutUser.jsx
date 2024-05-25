@@ -1,12 +1,11 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-const LayoutUser = ({ children }) => {
+const LayoutUser = () => {
   return (
-    <React.Fragment>
-      <header>Header Privado</header>
-      <main>{children}</main>
-      <footer>Footer Privado</footer>
-    </React.Fragment>
+    <>
+        <Outlet />
+    </>
   );
 };
 

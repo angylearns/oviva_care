@@ -8,7 +8,7 @@ import RegisterView from '../views/RegisterView';
 import BlogView from '../views/BlogView';
 import ExpertView from '../views/ExpertView';
 import PoliticView from '../views/PoliticView';
-import WhoIAm from '../components/whoIAm/WhoIAm';
+import WhoIAmView from '../views/WhoIAmView';
 import RecipeView from '../views/RecipeView';
 import SportView from '../views/SportView';
 import AdminUserView from '../views/AdminUserView';
@@ -36,8 +36,8 @@ const RouterComponent = () => {
             <Route path="blog" element={<BlogView />} />
             <Route path="faq" element={<FAQView />} />
             <Route path="experts" element={<ExpertView />} />
+            <Route path="about" element={<WhoIAmView />} />
             <Route path="privacy_policy" element={<PoliticView />} />
-            <Route path="about" element={<WhoIAm />} />
           </Route>
           <Route path="/user/*" element={
             <AuthProvider>
