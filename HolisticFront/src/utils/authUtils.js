@@ -56,4 +56,6 @@ export const logOut = () => {
   Cookies.remove("first_name");
   Cookies.remove("id_person");
   Cookies.remove(TOKEN_COOKIE_NAME);
+  
+  window.location.href = "/";
 };
