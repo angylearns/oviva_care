@@ -48,7 +48,7 @@ La aplicación ofrece una amplia gama de funcionalidades, desde la realización 
 
 <summary><h2> Configuración local del proyecto⚙ </h2></summary>
 
-### Clone the Repository
+### Clonar el repositorio
  ```bash
 git clone https://github.com/sandra-medina-luque/Holistic-Ovaries.git
 ```
