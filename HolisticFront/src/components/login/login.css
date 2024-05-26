@@ -71,12 +71,13 @@ input::placeholder {
     background-color: #D9ECEA;
     color: #008F8B;
 }
+
 .icons-buttons-password-login {
     background-color: transparent;
     border: none;
-    position: relative;
     transform: translate(230px, -54px);
 }
+
 .icon-open-eye-login,
 .icon-close-eye-login {
     width: 45px;
@@ -142,7 +143,7 @@ input::placeholder {
 
     .icon-open-eye-login,
     .icon-close-eye-login {
-        transform: translate(185px, -54px);
+        transform: translate(-40px, -10px);
     }
 }
 
@@ -183,7 +184,7 @@ input::placeholder {
 
     .icon-open-eye-login,
     .icon-close-eye-login {
-        transform: translate(165px, -54px);
+        transform: translate(-80px, -10px);
     }
 }
 
@@ -213,7 +214,8 @@ input::placeholder {
 
     .icon-open-eye-login,
     .icon-close-eye-login {
-        transform: translate(135px, -54px);
+        /* transform: translate(135px, -54px); */
+        transform: translate(-100px, -10px);
     }
 }
 
@@ -235,6 +237,6 @@ input::placeholder {
 
     .icon-open-eye-login,
     .icon-close-eye-login {
-        transform: translate(105px, -54px);
+        transform: translate(-115px, -10px);
     }
 }
