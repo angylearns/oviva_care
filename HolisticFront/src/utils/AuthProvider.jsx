@@ -5,6 +5,14 @@ import { Outlet } from "react-router-dom";
 
 const AuthContext = createContext();
 
+const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+  return context;
+};
+
 const AuthProvider = () => {
     const [state, setState] = useState({
       isAuthenticated: false,
@@ -40,14 +48,6 @@ const AuthProvider = () => {
         <Outlet/>
       </AuthContext.Provider>
     );
-};
-
-const useAuth = () => {
-    const context = useContext(AuthContext);
-    if (!context) {
-      throw new Error("useAuth must be used within an AuthProvider");
-    }
-    return context;
 };
 
 export { AuthProvider, useAuth, AuthContext };

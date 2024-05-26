@@ -7,6 +7,7 @@ import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
 import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Link } from "react-router-dom";
 
 function Register() {
     // maneja el estado del formulario, la validación y el envío del formulario.
@@ -283,9 +284,9 @@ function Register() {
 
             <div className="buttons">
                 <button type="submit" className="register-regbutton">Registrar</button>
-                {/* <Link to="/Login_user"> */}
+                <Link to="/Login">
                 <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
-                {/* </Link> */}
+                </Link>
             </div>
             {/* Mostrar mensaje de error si está presente */}
             {/* {errorMessage && <p>{errorMessage}</p>} */}

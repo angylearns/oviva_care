@@ -7,6 +7,7 @@ import { saveTokenToCookies, TOKEN_COOKIE_NAME } from "../../utils/authUtils"; /
 import { useCookies } from "react-cookie";
 import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
 import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
+import { Link } from 'react-router-dom';
 
 
 
@@ -112,7 +113,8 @@ function Login_user() {
             <button type="submit" className="login-button">Ingresar</button>
             {/* {errorMessage && <p>{errorMessage}</p>}  */}
             {/* Muestra el mensaje de error si existe */}
-            <button className="goregister-button">¿No eres miembro?, regístrate</button>
+            <button className="goregister-button">
+                <Link to="/register">¿No eres miembro?, regístrate</Link></button>
 
         </form>
 
