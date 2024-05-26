@@ -14,6 +14,7 @@
  ```bash
 git clone https://github.com/sandra-medina-luque/Holistic-Ovaries.git
 ```
+<summary> <h3>For the Frontend, you have to follow the next steps: </h3></summary>
 ##### To enter the repository folder - FrontEnd
 ```bash
 cd .\Holistic-Ovaries\HolisticFront\
@@ -29,12 +30,12 @@ npm run dev
 ```
 
 ##### This will start the server __http://localhost:5173__ using Vite with React.
-</details>
 
-<details>
+
+
   
 
-<details>
+
 
 ##### To enter the repository folder - BackEnd
 ```bash
@@ -44,4 +45,4 @@ cd .\Holistic-Ovaries\HolisticBack\
 ```bash
 python index.py
 ```
-<summary> <h3>For the Frontend, you have to follow the next steps: </h3></summary>
+
