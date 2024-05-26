@@ -12,11 +12,11 @@
 
 ### Clone the Repository
  ```bash
-git clone (https://github.com/sandra-medina-luque/Holistic-Ovaries.git)
+git clone https://github.com/sandra-medina-luque/Holistic-Ovaries.git
 ```
-##### To enter the repository folder
+##### To enter the repository folder - FrontEnd
 ```bash
-
+cd .\Holistic-Ovaries\HolisticFront\
 ```
 ##### For install all dependencies of Frontend, copy the next line
  ```bash
@@ -35,5 +35,13 @@ npm run dev
   
 
 <details>
-  
+
+##### To enter the repository folder - BackEnd
+```bash
+cd .\Holistic-Ovaries\HolisticBack\
+```
+##### To enter the repository folder - FrontEnd
+```bash
+python index.py
+```
 <summary> <h3>For the Frontend, you have to follow the next steps: </h3></summary>
