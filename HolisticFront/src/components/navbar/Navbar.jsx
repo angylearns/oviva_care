@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Solo importamos Link
+import { Link } from "react-router-dom";
 import "./navbar.css";
 import Navbar_admin from "./Navbar_admin";
 import {
@@ -9,17 +9,17 @@ import {
   decodeToken,
   logOut,
 } from "../../utils/authUtils";
-import { useCookies } from "react-cookie";
+import Cookies from 'js-cookie'; // Importa js-cookie aquí
 import Calendary from "../calendary/Calendary";
 
 function Navbar() {
-  const [cookies, setCookie, removeCookie] = useCookies([TOKEN_COOKIE_NAME]);
-  const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated(cookies));
+  const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
+  console.log(isLoggedIn) 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false); 
 
-  const isAdminUser = isAdmin(cookies);
-  const token = decodeToken(cookies[TOKEN_COOKIE_NAME]);
+  const isAdminUser = isAdmin(); // Utiliza isAdmin sin dependencias
+  const token = decodeToken(Cookies.get(TOKEN_COOKIE_NAME)); 
 
   const toggleModalMenu = () => {
     setIsMenuOpen((prev) =>!prev);
@@ -31,12 +31,21 @@ function Navbar() {
   };
 
   useEffect(() => {
-    const authenticated = isAuthenticated(cookies);
-    setIsLoggedIn(authenticated);
-  }, [cookies]);
+    // Observa cambios en las cookies o tokens de autenticación
+    const intervalId = setInterval(() => {
+      const isLoggedIn = isAuthenticated();
+      setIsLoggedIn(isLoggedIn);
+    }, 1000); // Ejecuta cada segundo, ajusta el tiempo según sea necesario
+  
+    // Limpiar el intervalo al desmontar el componente
+    return () => clearInterval(intervalId);
+  }, []); // Dependencias vacías significa que este efecto se ejecuta solo al montar y desmontar
+  
 
   const handleLogout = () => {
-    logOut(removeCookie);
+    logOut(); // Asume que logOut elimina la cookie
+    Cookies.remove(TOKEN_COOKIE_NAME); // Elimina la cookie usando js-cookie
+    setIsLoggedIn(false);
   };
 
   return (
@@ -85,7 +94,7 @@ function Navbar() {
             </section>
           </section>
         ) : (
-          <Link to="/login" className="link_profile">
+          <Link to="/login" className="link_profile--desktop">
             <img
               src="/images/icons/icon_profile_female.svg"
               className="navbar_desktop--icon_profile"

@@ -1,4 +1,5 @@
 import { jwtDecode } from "jwt-decode";
+import Cookies from "js-cookie";
 
 export const TOKEN_COOKIE_NAME = "authToken";
 
@@ -18,8 +19,8 @@ export const saveTokenToCookies = (token, setCookie) => {
 };
 
 // Función para obtener el token de las cookies
-export const getTokenFromCookies = (cookies) => {
-  const token = cookies[TOKEN_COOKIE_NAME];
+export const getTokenFromCookies = () => {
+  const token = Cookies.get(TOKEN_COOKIE_NAME);
   return token;
 };
 
@@ -32,14 +33,14 @@ export const decodeToken = (token) => {
 };
 
 // Función para verificar si el usuario está autenticado
-export const isAuthenticated = (cookies) => {
-  const token = getTokenFromCookies(cookies);
-  return !!token;
+export const isAuthenticated = () => {
+  const token = getTokenFromCookies();
+  return!!token;
 };
 
 // Función para verificar si el usuario es un administrador
-export const isAdmin = (cookies) => {
-  const token = getTokenFromCookies(cookies);
+export const isAdmin = () => {
+  const token = getTokenFromCookies();
   if (token) {
     const decodedToken = decodeToken(token);
     return decodedToken.user_type === "Admin";
@@ -47,11 +48,12 @@ export const isAdmin = (cookies) => {
   return false;
 };
 
-export const logOut = (removeCookie) => {
+
+export const logOut = () => {
   // Eliminar todas las cookies relacionadas con la sesión del usuario
-  removeCookie("id_user", { path: "/" });
-  removeCookie("email", { path: "/" });
-  removeCookie("first_name", { path: "/" });
-  removeCookie("id_person", { path: "/" });
-  removeCookie(TOKEN_COOKIE_NAME, { path: "/" });
+  Cookies.remove("id_user");
+  Cookies.remove("email");
+  Cookies.remove("first_name");
+  Cookies.remove("id_person");
+  Cookies.remove(TOKEN_COOKIE_NAME);
 };

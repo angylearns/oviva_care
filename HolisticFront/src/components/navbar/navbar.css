@@ -114,8 +114,8 @@ footer a:hover {
 }
 
 .link_profile--desktop {
-  height: 50%;
-  width: 30px;
+  /* height: 50%; */
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
