@@ -9,9 +9,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 function Register() {
-    // maneja el estado del formulario, la validación y el envío del formulario.
     const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
-    const [errorMessage, setErrorMessage] = useState(""); // Estado para almacenar el mensaje de error
+    const [errorMessage, setErrorMessage] = useState(""); 
     const [birthDate, setBirthDate] = useState(null);
 
 
@@ -25,16 +24,8 @@ function Register() {
         setShowAlert(false);
     };
 
-    //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
-    // const onSubmit = data => {
-    //     console.log('jsx ' + JSON.stringify(data));
-    //     handleRegister(data, setErrorMessage);
-    // }
-
-    //Verifica que se está conectando con loginhandle (una vez que rellene los datos de loginhandle, verifica que los datos se conectan )
     const onSubmit = data => {
         console.log('jsx ' + JSON.stringify(data));
-        // Convertir la fecha ingresada por el usuario al formato YYYY-MM-DD
         if (data.birth_date) {
             const convertedBirthDate = birthDate.toISOString().split('T')[0];
             data.birth_date = convertedBirthDate;
@@ -43,13 +34,12 @@ function Register() {
         handleRegister(data, handleError, setShowAlert, setSuccessMessage)
 
             .then(() => {
-                reset(); // Esto limpiará todos los campos después del registro exitoso
-                //   alert('Enviado!');
+                reset(); 
                 setShowAlert(true);
             })
             .catch(error => {
-                setErrorMessage('Ocurrió un error al registrar la persona'); // Actualiza el mensaje de error
-                setShowAlert(true); // Muestra la ventana emergente de alerta
+                setErrorMessage('Ocurrió un error al registrar la persona'); 
+                setShowAlert(true); 
             });
     };
 
@@ -57,14 +47,14 @@ function Register() {
 
     return (
 
-        //  handleSubmit se pasa como manejador del evento onSubmit del formulario. Esto asegura que la validación se ejecute antes de que se envíe el formulario. 
+      
         <form className="formulary-all-reg" onSubmit={handleSubmit(onSubmit)}>
 
             {/* Ventana emergente de alerta */}
             {showAlert && (
                 <div className="register-alert">
                     <div className="register-alert-content">
-                        <span>{successMessage || errorMessage}</span> {/* Muestra el mensaje de éxito o de error */}
+                        <span>{successMessage || errorMessage}</span>
                         <button onClick={handleCloseAlert}>Cerrar</button>
                     </div>
                 </div>
@@ -153,8 +143,8 @@ function Register() {
 
                 </div>
 
-                <div className="groupfields2">
 
+                <div className="groupfields2">
 
                     <p className="text-regbirthdate">Fecha Nacimiento</p>
                     <DatePicker
@@ -162,7 +152,7 @@ function Register() {
                         selected={birthDate}
                         onChange={(date) => {
                             setBirthDate(date);
-                            setValue("birth_date", date); // Guardar la fecha seleccionada en react-hook-form
+                            setValue("birth_date", date); 
                         }}
                         dateFormat="dd-MM-yyyy"
                         placeholderText="Fecha nacimiento"
@@ -171,26 +161,6 @@ function Register() {
                         dropdownMode="select"
                     />
                     {errors.birth_date && <p>{errors.birth_date.message}</p>}
-
-                    {/* <DatePicker
-                        className="field-regbirthdate"
-                        selected={value("birth_date")}
-                        onChange={(date) => setValue("birth_date", date)}
-                        dateFormat="dd-MM-yyyy" // Formato de fecha mostrado en el DatePicker
-                        placeholderText="Fecha nacimiento"
-                        
-                    />
-                    {errors.birth_date && <p>{errors.birth_date.message}</p>} */}
-
-                    {/* <DatePicker
-                        selected={new Date(customersGlobal[index]["birth_date"])}
-                        onChange={(date) => handleChangeDate(date, index)}
-                        // dateFormat="yyyy-MM-dd"
-                        dateFormat="dd-MM-yyyy"
-                    /> */}
-
-
-
 
 
                     <p className="text-regdiagnose">¿Estás diagnosticada?</p>
@@ -287,8 +257,6 @@ function Register() {
                 <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
                 {/* </Link> */}
             </div>
-            {/* Mostrar mensaje de error si está presente */}
-            {/* {errorMessage && <p>{errorMessage}</p>} */}
 
         </form>
 

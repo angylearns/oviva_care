@@ -105,6 +105,7 @@
 .icons-buttons-password {
     background-color: transparent;
     border: none;
+    transform: translate(-70px, 17px);
 }
 
 /* Estilo para el botón de abrir ojo */
@@ -113,7 +114,7 @@
     width: 45px;
     background-color: transparent;
     border: none;
-    transform: translate(-70px, 17px);
+   
 }
 
 .register-regbutton {
