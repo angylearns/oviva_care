@@ -22,7 +22,7 @@
 .login-icon {
     width: 72px;
     padding-right: 2%;
-    animation: rotacion 2s linear infinite;
+    animation: rotacion 1s linear 1;
 }
 
 .logo-and-text {
