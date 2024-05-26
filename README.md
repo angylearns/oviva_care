@@ -4,6 +4,7 @@
 </br>
 
 <p>
+
 ## Descripción del Proyecto
 
 Oviva es una aplicación integral diseñada para mujeres con síndrome de ovario poliquístico (SOP). Este proyecto tiene como objetivo proporcionar una plataforma donde las usuarias puedan acceder a diversos recursos y herramientas que les ayuden a gestionar su condición y mejorar su calidad de vida. 
