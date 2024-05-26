@@ -15,7 +15,9 @@
 git clone https://github.com/sandra-medina-luque/Holistic-Ovaries.git
 ```
 <summary> <h3>For the Frontend, you have to follow the next steps: </h3></summary>
+
 <details> 
+ 
 ##### To enter the repository folder - FrontEnd
 ```bash
 cd .\Holistic-Ovaries\HolisticFront\
@@ -32,7 +34,9 @@ npm run dev
 
 </details>
 
-  
+<summary> <h3>For the Backend, you have to follow the next steps: </h3></summary>
+
+<details>   
 ##### To enter the repository folder - BackEnd
 ```bash
 cd .\Holistic-Ovaries\HolisticBack\
@@ -41,4 +45,4 @@ cd .\Holistic-Ovaries\HolisticBack\
 ```bash
 python index.py
 ```
-
+</details>
