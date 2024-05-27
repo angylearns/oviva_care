@@ -7,7 +7,7 @@ function Footer() {
         <footer>
             <React.Fragment>
                 <section className="footer_left">
-                    <img src="/images/logo_no_words.png" alt="Oviva Logo" className='footer_logo'/>
+                    <img src="/image/logo_no_words.png" alt="Oviva Logo" className='footer_logo'/>
                     <section>Oviva © 2024</section>
                 </section>
                 <section className="footer_center">
@@ -15,8 +15,8 @@ function Footer() {
                     <Link to="/privacy_policy"><section>Política de privacidad</section></Link>
                 </section>
                 <section className="footer_right">
-                    <Link to="https://www.facebook.com/groups/444935560693383" className='link_facebook'><img src="/images/icons/icon_facebook.svg" alt="Facebook logo"/></Link>
-                    <Link to="https://www.instagram.com/holisticovaries/" className='link_instagram'><img src="/images/icons/icon_instagram.svg" alt="Instagram logo" /></Link>
+                    <Link to="https://www.facebook.com/groups/444935560693383" className='link_facebook'><img src="/image/icons/icon_facebook.svg" alt="Facebook logo"/></Link>
+                    <Link to="https://www.instagram.com/holisticovaries/" className='link_instagram'><img src="/image/icons/icon_instagram.svg" alt="Instagram logo" /></Link>
                 </section>
             </React.Fragment>
         </footer>

@@ -54,7 +54,7 @@ function Navbar() {
       <section className="navbar_user_desktop--left">
         <Link to="/" className="logo_link">
           <img
-            src="/images/logo_words.png"
+            src="/image/logo_words.png"
             alt="Oviva Logo"
             className="navbar_desktop--logo"
           />
@@ -72,7 +72,7 @@ function Navbar() {
           <section className="navbar_user_desktop--right__left">
             <button className="button_calendar" onClick={toggleModalCalendar}>
               <img
-                src="/images/icons/icon_calendar.svg"
+                src="/image/icons/icon_calendar.svg"
                 className="navbar_user_desktop--icon_calendar"
                 alt="Calendar icon"
               />
@@ -86,7 +86,7 @@ function Navbar() {
               )}
               <button onClick={handleLogout} className="button_logout">
                 <img
-                  src="/images/icons/icon_logout.svg"
+                  src="/image/icons/icon_logout.svg"
                   className="navbar_desktop--icon_logout"
                   alt="Logout icon"
                 />
@@ -96,7 +96,7 @@ function Navbar() {
         ) : (
           <Link to="/login" className="link_profile--desktop">
             <img
-              src="/images/icons/icon_profile_female.svg"
+              src="/image/icons/icon_profile_female.svg"
               className="navbar_desktop--icon_profile"
               alt="User icon"
             />
@@ -111,7 +111,7 @@ function Navbar() {
 
     <nav className="navbar_user_mobile">
     <section className="navbar_user_mobile--left">
-          <img src="/images/logo_no_words.png" alt="Logo Oviva" />
+          <img src="/image/logo_no_words.png" alt="Logo Oviva" />
         </section>
         <section className="navbar_user_mobile--right">
           {isLoggedIn ? (
@@ -125,7 +125,7 @@ function Navbar() {
               )}
               <button className="button_calendar" onClick={toggleModalCalendar}>
                 <img
-                  src="/images/icons/icon_calendar.svg"
+                  src="/image/icons/icon_calendar.svg"
                   className="navbar_user_mobile--icon_calendar"
                   alt="Calendar icon"
                 />
@@ -134,7 +134,7 @@ function Navbar() {
           ) : (
             <Link to="/login" className="link_profile--mobile">
             <img
-              src="/images/icons/icon_profile_female.svg"
+              src="/image/icons/icon_profile_female.svg"
               alt="User icon"
               className="navbar_mobile--icon_profile"
             />
@@ -156,7 +156,7 @@ function Navbar() {
           {isLoggedIn ? (
             <button onClick={handleLogout} className="button_logout">
               <img
-                src="/images/icons/icon_logout.svg"
+                src="/image/icons/icon_logout.svg"
                 className="navbar_mobile--icon_logout"
                 alt="Logout icon"
               />

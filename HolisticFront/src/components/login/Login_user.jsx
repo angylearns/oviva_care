@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import '../login/login.css';
-import login_icon from "../../../public/images/icons/login_icon.svg";
+import login_icon from "../../../public/image/icons/login_icon.svg";
 import { handleLogin } from "../../handlers/loginHandle";
 import { saveTokenToCookies, TOKEN_COOKIE_NAME } from "../../utils/authUtils"; // Importar TOKEN_COOKIE_NAME
 import { useCookies } from "react-cookie";
-import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
-import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
+import icon_close_eye from "../../../public/image/icons/icon_close_eye.svg";
+import icon_open_eye from "../../../public/image/icons/icon_open_eye.svg";
 import { Link } from 'react-router-dom';
 
 
