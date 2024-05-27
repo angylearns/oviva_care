@@ -111,7 +111,9 @@ function Navbar() {
 
     <nav className="navbar_user_mobile">
     <section className="navbar_user_mobile--left">
-          <img src="/image/logo_no_words.png" alt="Logo Oviva" />
+          <Link to="/" className="logo_link">
+            <img src="/image/logo_no_words.png" alt="Logo Oviva" />
+          </Link>
         </section>
         <section className="navbar_user_mobile--right">
           {isLoggedIn ? (
