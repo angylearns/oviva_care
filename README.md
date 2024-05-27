@@ -128,7 +128,8 @@ Puedes obtener estos valores en:
 
 <summary> <h3>Script de la base de datos </h3></summary>
 <details>
-   ## Descargar archivo SQL
+
+## Descargar archivo SQL
 
 Puedes descargar el archivo SQL necesario para este proyecto haciendo clic en el siguiente enlace:
 
