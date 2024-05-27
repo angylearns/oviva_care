@@ -110,13 +110,17 @@ python index.py
    
 2.En el componente FormContact.jsx: cambia serviceID y emailjs.init.
 
-![Image Oviva](./HolisticFront/public/image/logo.png
-![Image Oviva](./HolisticFront/public/image/logo.png)
+![service id](./HolisticFront/public/image/serviceId.png)
+
+![init email](./HolisticFront/public/image/initEmail.png)
 
 Puedes obtener estos valores en:
 
-![Image Oviva](./HolisticFront/public/image/logo.png)
-![Image Oviva](./HolisticFront/public/image/logo.png)
+![service id](./HolisticFront/public/image/getServiceId.png)
+
+![public key](./HolisticFront/public/image/publicKey.png)
+
+![email templates](./HolisticFront/public/image/emailTemplates.png)
 
 3. En el apartado de notificaciones cambia el email y añade tu direcciñon. 
    
