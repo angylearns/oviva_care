@@ -14,7 +14,6 @@ import Calendary from "../calendary/Calendary";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
-  console.log(isLoggedIn) 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false); 
 
