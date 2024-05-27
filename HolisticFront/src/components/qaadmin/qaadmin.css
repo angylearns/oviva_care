@@ -1,8 +1,5 @@
-.frame{
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.contain{
+  margin: 1%;
 }
 
 .headerContent{
@@ -55,11 +52,12 @@
     border: none;
   }
   .getContainer {
-    max-height: 400px;
+    max-height: 800px;
   }
   
   .mainContainer {
     width: 100%;
+    
   }
   
   .postContainer {
