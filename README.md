@@ -107,7 +107,18 @@ python index.py
 <details>
 <br>
 1.Crea una cuenta gratuita en: https://www.emailjs.com/
+   
 2.En el componente FormContact.jsx: cambia serviceID y emailjs.init.
+
+![Image Oviva](./HolisticFront/public/image/logo.png
+![Image Oviva](./HolisticFront/public/image/logo.png)
+
+Puedes obtener estos valores en:
+
+![Image Oviva](./HolisticFront/public/image/logo.png)
+![Image Oviva](./HolisticFront/public/image/logo.png)
+
+3. En el apartado de notificaciones cambia el email y añade tu direcciñon. 
    
 </details>
 
