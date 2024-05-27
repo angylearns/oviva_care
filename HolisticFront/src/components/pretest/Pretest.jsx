@@ -33,7 +33,7 @@ function Pretest() {
       </p>
       
       <p className="descripcion2">
-        Recuerda acudir a tu médico aún así para poder ser diagnosticado.<br />
+        Recuerda acudir a tu médico aún así para poder ser diagnosticada.<br />
       </p>
       <button className="boton-iniciar" onClick={handleStart}>Iniciar test</button>
       {showMessage && (
