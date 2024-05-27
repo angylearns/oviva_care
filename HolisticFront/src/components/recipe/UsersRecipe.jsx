@@ -40,7 +40,7 @@ const UsersRecipe = () => {
 
   return (
     <div className="users-recipe">
-      <h1>Recetas de Usuarios</h1>
+      <h1>Recetas</h1>
       <div className="categories">
         {categorias.map((categoria) => (
           <div key={categoria} className="category">
