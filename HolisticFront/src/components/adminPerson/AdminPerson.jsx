@@ -211,7 +211,7 @@ function AdminPerson() {
     };
 
     return (
-        <div className="frame2">
+        
             <div className="mainContainer">
                 <div className="getContainer">
                     <div className="headerContent">
@@ -440,7 +440,7 @@ function AdminPerson() {
                     </div>
                 )}
             </div>
-        </div>
+        
     );
 }
 
