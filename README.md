@@ -135,6 +135,16 @@ Puedes descargar el archivo SQL necesario para este proyecto haciendo clic en el
 
 [Descargar archivo SQL](https://raw.githubusercontent.com/sandra-medina-luque/Holistic-Ovaries/main/HolisticFront/public/oviva-8.sql)
 
+Debes guardarlo con extension .sql y luego ya lo puedes importar con tu gestor de bases de datos para tener la BD del proyecto.
+
+Si usas xampp puedes hacerlo desde PhpMyAdmin siguiendo estos pasos:
+
+1. Accede a phpMyAdmin.
+2. Selecciona la base de datos (o crea una nueva).
+3. Haz clic en la pestaña "Importar".
+4. Selecciona el archivo `.sql` y configura las opciones (si es necesario).
+5. Haz clic en "Continuar" para iniciar la importación.
+6. Verifica que la importación fue exitosa y que los datos están correctos.
 
 </details>
 
