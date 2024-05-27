@@ -48,7 +48,7 @@ footer a {
 
 .navbar_user_desktop--center a:hover,
 footer a:hover {
-  font-style: italic;
+  font-weight: 600;
 }
 
 .navbar_user_desktop--right {
@@ -88,6 +88,15 @@ footer a:hover {
   justify-content: center;
   padding: 0;
 }
+
+.link_profile--desktop {
+  height: fit-content;
+}
+
+.navbar_desktop--icon_profile {
+  height: 35px;
+}
+
 
 .navbar_desktop--icon_logout {
   height: 30px;
