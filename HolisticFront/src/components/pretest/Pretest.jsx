@@ -1,10 +1,16 @@
 
 
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../public/ImagenCuestionario/logoOvaries.png";
 import './pretest.css';
 
-function Pretest({ onStart }) {
+function Pretest() {
+  const [showMessage, setShowMessage] = useState(false); 
+  const handleStart = () =>{
+    // crear alert que diga que si no eres miembro tienes que serlo - y aparecen dos botones (iniciar sesión y registrar)
+      setShowMessage(true);
+    };
+
   return (
     < div className="frame">
     <div className="pretest-container">
@@ -29,11 +35,19 @@ function Pretest({ onStart }) {
       <p className="descripcion2">
         Recuerda acudir a tu médico aún así para poder ser diagnosticado.<br />
       </p>
-      <button className="boton-iniciar" onClick={onStart}>Iniciar test</button>
+      <button className="boton-iniciar" onClick={handleStart}>Iniciar test</button>
+      {showMessage && (
+          <div className="message-popup">
+            <p>Para realizar el test tienes que ser miembro Oviva, a continuación puedes registrarte o iniciar sesión.</p>
+            <div className="button-group">
+              <button className="button-register" onClick={() => window.location.href = '/register'}>Regístrate</button>
+              <button className="button-login" onClick={() => window.location.href = '/login'}>Inicia sesión</button>
+            </div>
+          </div>
+        )}
     </div>
     </div>
   );
 }
 
 export default Pretest;
-
