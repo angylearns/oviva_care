@@ -1,6 +1,6 @@
 import React from 'react';
 import '../hero/hero.css';
-import youtube from "../../../public/images/icons/youtube.jpg";
+import youtube from "../../../public/image/icons/youtube.jpg";
 
 const Hero = () => {
 
