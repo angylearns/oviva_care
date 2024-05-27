@@ -1,85 +1,115 @@
-.frame{
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+.frame {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.pretest-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.glass-box {
+  background: rgba(149, 219, 227, 0.578);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(125, 118, 118, 0.1);
+  color: #04979f;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container {
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.titulo {
+  color: #0c0c0c;
+  margin-bottom: 40px;
+}
+
+.info-cuestionario {
+  background-color: #008f8b;
+  padding: 10px 20px; /* Ajuste para dispositivos móviles más pequeños */
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.descripcion,
+.descripcion2 {
+  margin-bottom: 15px;
+  color: #0c0c0c;
+  line-height: 1.5;
+}
+
+.boton-iniciar {
+  background-color: #008f8b;
+  color: white;
+  border: none;
+  padding: 10px 60px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 40px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.boton-iniciar:hover {
+  color: black;
+  background-color: #00b6b9;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.message-popup {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.button-register,
+.button-login {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.button-register:hover,
+.button-login:hover {
+  background: #0056b3;
+}
+
+@media only screen and (min-width: 400px) {
+  .info-cuestionario {
+    padding: 10px 40px; /* Ajuste para dispositivos móviles más grandes y tabletas */
   }
-  
-     .pretest-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-      font-family: Arial, sans-serif;
-    }
-    
-    .glass-box {
-      background: rgba(149, 219, 227, 0.578);
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 4px 6px rgba(125, 118, 118, 0.1);
-      color: #04979f;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-    
-    .logo-container {
-      margin-bottom: 20px;
-    }
-    
-    .logo {
-      width: 150px;
-      height: auto;
-    }
-    
-    .titulo {
-      color: #0c0c0c;
-      margin-bottom: 40px;
-    }
-    
-    .info-cuestionario {
-      background-color: #008F8B;
-      padding: 10px 20px; /* Ajuste para dispositivos móviles más pequeños */
-      border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-    
-    .descripcion,
-    .descripcion2 {
-      margin-bottom: 15px;
-      color: #0c0c0c;
-      line-height: 1.5;
-    }
-    
-    .boton-iniciar {
-      background-color: #008F8B;
-      color: white;
-      border: none;
-      padding: 10px 60px;
-      font-size: 16px;
-      margin-top: 20px;
-      cursor: pointer;
-      border-top-right-radius: 30px;
-      border-bottom-left-radius: 40px;
-      box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
-    }
-    
-    .boton-iniciar:hover {
-      color: black;
-      background-color: #00B6B9;
-      box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-    }
-    
-    @media only screen and (min-width: 400px) {
-      .info-cuestionario {
-        padding: 10px 40px; /* Ajuste para dispositivos móviles más grandes y tabletas */
-      }
-    }
-    
-  
-  
+}
