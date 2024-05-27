@@ -84,7 +84,7 @@ function FormContact() {
                         <textarea id="emailjs_message" placeholder="Mensaje" className="inputField textAreaField" name="emailjs_message" maxLength="300"></textarea>
                     </div>
 
-                    <input type="submit" id="button" className="inputSub"value="Send Email" />
+                    <input type="submit" id="button" className="inputSub"value="Enviar Email" />
                 </form>
 
                 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
