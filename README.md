@@ -149,11 +149,11 @@ Si usas xampp puedes hacerlo desde PhpMyAdmin siguiendo estos pasos:
 </details>
 
 ## Autores
-- [Angy Machado https://github.com/angylearns]
-- [Esty González https://github.com/EstyGlez]
-- [Lorena Rodríguez https://github.com/Lorena-Rodriguez]
-- [María Nadales https://github.com/MNblue]
-- [Ilda Fabiana Gaona https://github.com/ilfagaro]
-- [Helena Milla https://github.com/hacheproud]
-- [Sandra Medina https://github.com/sandra-medina-luque]
+- Angy Machado https://github.com/angylearns
+- Esty González https://github.com/EstyGlez
+- Lorena Rodríguez https://github.com/Lorena-Rodriguez
+- María Nadales https://github.com/MNblue
+- Ilda Fabiana Gaona https://github.com/ilfagaro
+- Helena Milla https://github.com/hacheproud
+- Sandra Medina https://github.com/sandra-medina-luque
 
