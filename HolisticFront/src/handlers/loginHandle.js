@@ -11,12 +11,12 @@ export const handleLogin = async ({ password, user_type, email }, setErrorMessag
         const decodedToken = decodeToken(token); // Decodificamos el token
         console.log('Token:', token);
         console.log('Decoded Token:', decodedToken);
-        setSuccessMessage('Se ha logueado correctamente'); // Establece el mensaje de éxito
+        setSuccessMessage('Ha iniciado sesión correctamente.'); // Establece el mensaje de éxito
         setShowAlert(true); // Muestra la ventana emergente de alerta
         return token; // Retornamos el token
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
-        setErrorMessage('No pudo loguearse, inténtelo de nuevo'); // Actualiza el mensaje de error
+        setErrorMessage('No pudo iniciar sesión, inténtelo de nuevo'); // Actualiza el mensaje de error
         setShowAlert(true); // Muestra la ventana emergente de alerta
         throw error;
     }

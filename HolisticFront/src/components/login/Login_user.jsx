@@ -24,6 +24,7 @@ function Login_user() {
 
     const handleCloseAlert = () => {
         setShowAlert(false);
+        window.location.href = "/";
     };
 
 
@@ -36,7 +37,7 @@ function Login_user() {
                 setShowAlert(true);
             })
             .catch(error => {
-                setErrorMessage('Ocurrió un error al registrar la persona'); // Actualiza el mensaje de error
+                setErrorMessage('Ocurrió un error al iniciar sesión.'); // Actualiza el mensaje de error
                 setShowAlert(true); // Muestra la ventana emergente de alerta
             });
     };
