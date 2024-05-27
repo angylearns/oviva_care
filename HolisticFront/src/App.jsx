@@ -16,36 +16,46 @@ import HomeView from './views/HomeView.jsx';
 import WhoIAmView from './views/WhoIAmView.jsx';
 
 
+
 function App() {
   return (
     <>
-<<<<<<< HEAD
-      <Recipe/>
-      <VideoList/>
-      <UsersVideos/>
-      <UsersRecipe/>
-      <Navbar />
+      {/* <Recipe/> */}
+      {/* <VideoList/> */}
+      {/* <UsersVideos/> */}
+      {/* <UsersRecipe/> */}
+      {/* <Navbar /> */}
       {/* <Hero /> */}
-      <Register />
+      {/* <Register /> */}
       {/* <Login_user /> */}
       {/* <Recipe/> */}
-      <Footer />
-      <Cuestionario />
-      <Pretest />
+      {/* <Footer /> */}
+      {/* <Cuestionario /> */}
+      {/* <Pretest /> */}
       {/* <FormContact/> */}
-       <AdminPerson/> 
+       {/* <AdminPerson/>  */}
       {/* <Question/> */}
-      <QuestionContact/>
-      <QaAdmin/>
-     <Calendar/> 
-      <Article/>
-      <Symptoms/>
-      <Experts/>
-=======
->>>>>>> 25c9c058a178d78a69aa6759d8f096e935f65817
+      {/* <QuestionContact/> */}
+      {/* <QaAdmin/> */}
+     {/* <Calendar/>  */}
+      {/* <Article/> */}
+      {/* <Symptoms/> */}
+      {/* <Experts/> */}
 
-      
+      <HomeView/>
       <RegisterView/>
+      <LoginView/>
+      <AdminUserView/>
+      <AdminRecipeView/>
+      <RecipeView/>
+      <AdminVideoView/>
+      <AdminFAQView/>
+      <SportView/>
+      <WhoIAmView/>
+      <FAQView/>
+      <BlogView/>
+      <ExpertView/>
+      <PoliticView/>
       
       </>
 
