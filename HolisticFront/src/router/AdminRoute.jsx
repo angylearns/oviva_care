@@ -6,7 +6,7 @@ import { isAdmin } from '../utils/authUtils';
 const AdminRoute = ({ children }) => {
   const isAdminUser = isAdmin();
   if (!isAdminUser) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/error" replace />;
   }
   return <>{children}</>;
 };
