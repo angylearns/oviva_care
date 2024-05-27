@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Error404View from '../views/Error404View';
 import HomeView from '../views/HomeView';
 import FAQView from '../views/FAQView';
 import LoginView from '../views/LoginView';
@@ -38,6 +39,7 @@ const RouterComponent = () => {
             <Route path="experts" element={<ExpertView />} />
             <Route path="about" element={<WhoIAmView />} />
             <Route path="privacy_policy" element={<PoliticView />} />
+            <Route path="error" element={<Error404View />} />
           </Route>
           <Route path="/user/*" element={
             <AuthProvider>
