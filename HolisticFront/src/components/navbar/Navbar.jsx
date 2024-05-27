@@ -61,6 +61,7 @@ function Navbar() {
         </Link>
       </section>
       <section className="navbar_user_desktop--center">
+        <Link to="/">Inicio</Link>
         <Link to="/faq">Preguntas</Link>
         <Link to="/experts">Expertos</Link>
         <Link to="/blog">Blog</Link>
@@ -166,6 +167,9 @@ function Navbar() {
 
         <section className={`modal_menu ${isMenuOpen ? "open" : ""}`}>
           <ul>
+            <li>
+              <Link to="/">Inicio</Link>
+            </li>
             <li>
               <Link to="/faq">Preguntas</Link>
             </li>
