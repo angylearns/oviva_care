@@ -32,6 +32,7 @@ const AuthProvider = () => {
         isAuthenticated: true,
         token: token,
       }));
+      <Navigate to="/" replace />
     };
 
     const logout = () => {
@@ -44,7 +45,7 @@ const AuthProvider = () => {
     };
 
     return (
-      <AuthContext.Provider value={{...state, login, logout}}>
+      <AuthContext.Provider value={{...state, login, logout, isAuthenticated, isAdmin}}>
         <Outlet/>
       </AuthContext.Provider>
     );

@@ -35,7 +35,11 @@ export const decodeToken = (token) => {
 // Función para verificar si el usuario está autenticado
 export const isAuthenticated = () => {
   const token = getTokenFromCookies();
-  return!!token;
+  // return!!token;
+  if (token) {
+    return true;
+  }
+  return false;
 };
 
 // Función para verificar si el usuario es un administrador
@@ -55,6 +59,7 @@ export const logOut = () => {
   Cookies.remove("email");
   Cookies.remove("first_name");
   Cookies.remove("id_person");
+  Cookies.remove("user_type");
   Cookies.remove(TOKEN_COOKIE_NAME);
   
   window.location.href = "/";
