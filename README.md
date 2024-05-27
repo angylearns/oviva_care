@@ -105,8 +105,9 @@ python index.py
 <summary> <h3>Configuración de mailing </h3></summary>
 
 <details>
-1.Sing up: https://www.emailjs.com/
-2.FormContact.jsx: Change serviceID and emailjs.init.
+<br>
+1.Crea una cuenta gratuita en: https://www.emailjs.com/
+2.En el componente FormContact.jsx: cambia serviceID y emailjs.init.
    
 </details>
 
