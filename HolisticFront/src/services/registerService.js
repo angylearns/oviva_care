@@ -37,7 +37,7 @@ const registerService = {
         console.log('registerService 1');
         console.log (first_name)
         try {
-          const response = await fetch(`${API_URL}/person/`, {
+          const response = await fetch(`${API_URL}/person/post`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
