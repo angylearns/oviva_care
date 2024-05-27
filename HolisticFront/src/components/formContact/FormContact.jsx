@@ -45,7 +45,7 @@ function FormContact() {
                 .then(() => {
                     btn.value = 'Send Email';
                     setShowAlert(true);
-                    
+                    window.location.reload();
                 })
                 .catch((err) => {
                     btn.value = 'Send Email';

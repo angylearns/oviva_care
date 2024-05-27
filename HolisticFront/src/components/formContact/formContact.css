@@ -144,5 +144,6 @@
 }
 
 .custom-alert button:hover {
-  background-color:#03f3eb;
+  background-color:#D9ECEA;
+  color: #008F8B;
 }
