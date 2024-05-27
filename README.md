@@ -126,6 +126,16 @@ Puedes obtener estos valores en:
    
 </details>
 
+<summary> <h3>Script de la base de datos </h3></summary>
+<details>
+   ## Descargar archivo SQL
+
+Puedes descargar el archivo SQL necesario para este proyecto haciendo clic en el siguiente enlace:
+
+[Descargar archivo SQL]([https://github.com/tu-usuario/tu-repositorio/raw/main/public/oviva-8.sql)
+
+</details>
+
 ## Autores
 - [Angy Machado https://github.com/angylearns]
 - [Esty González https://github.com/EstyGlez]
