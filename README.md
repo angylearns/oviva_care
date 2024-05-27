@@ -102,6 +102,13 @@ python index.py
 ```
 </details>
 
+<summary> <h3>Configuración de mailing </h3></summary>
+
+<details>
+1.Sing up: https://www.emailjs.com/
+2.FormContact.jsx: Change serviceID and emailjs.init.
+   
+</details>
 
 ## Autores
 - [Angy Machado https://github.com/angylearns]
