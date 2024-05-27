@@ -39,6 +39,10 @@
   box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
 }
 
+.inputSub:hover {
+  background-color:#03f3eb;
+}
+
 .inputField {
   padding: 3%;
   border-radius: 0 20px 0 30px;
