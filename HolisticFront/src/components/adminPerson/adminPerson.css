@@ -13,7 +13,8 @@
 
 .tableContainer {
   overflow-x: auto; 
-  width: 100%;
+  width: 98%;
+  height: 20%;
 }
 
 .tableOwerflow {
@@ -60,14 +61,18 @@
   border: none;
 }
 .getContainer {
-  max-height: 400px;
+  
   overflow-x: auto;
   width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
 }
 
 .mainContainer {
   width: 100%; 
-  
 }
 
 .postContainer {

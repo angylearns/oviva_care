@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { qaService } from '../../services/qaService'
 import "./addQa.css";
 
 function AddQa({ onClose }) {
 
-    const [customersGlobal, setCustomersGlobal] = useState([]);
-    const [updatePage, setUpdatePage] = useState();
-
     const [formData, setFormData] = useState({
-        id_qa: "",
         question: "",
         answer: ""
     });
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -28,6 +23,7 @@ function AddQa({ onClose }) {
 
         try {
             const newQa = await qaService.postQa(qa1);
+            onClose(); // Cerrar la ventana después de añadir la pregunta exitosamente
         } catch (error) {
             console.error("Error al insertar datos:", error);
         }
@@ -35,17 +31,8 @@ function AddQa({ onClose }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
-        postQa(formData);
-
-        setUpdatePage((prevState) => !prevState);
-        setFormData({
-            id_qa: "",
-            question: "",
-            answer: ""
-        });
+        await postQa(formData);
     };
-
 
     return (
         <div className="postContainer" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', padding: '20px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)' }} >
@@ -56,7 +43,6 @@ function AddQa({ onClose }) {
                         <div className="smallDiv">
                             <label className="labelStyle">Pregunta:</label>
                             <textarea
-                                
                                 name="question"
                                 value={formData.question}
                                 onChange={handleChange}
@@ -67,7 +53,6 @@ function AddQa({ onClose }) {
                         <div className="smallDiv">
                             <label className="labelStyle">Respuesta:</label>
                             <textarea
-                                
                                 name="answer"
                                 value={formData.answer}
                                 onChange={handleChange}
@@ -75,7 +60,6 @@ function AddQa({ onClose }) {
                                 className="inputF"
                             />
                         </div>
-                        
                         <div className="buttonAdd">
                             <button className="buttonAA" type="submit">
                                 Añadir Pregunta
@@ -85,7 +69,6 @@ function AddQa({ onClose }) {
                 </div>
             </form>
         </div>
-
     );
 }
 
