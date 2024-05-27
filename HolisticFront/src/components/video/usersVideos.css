@@ -1,5 +1,3 @@
-/* usersVideos.css */
-
 .users-videos {
   background-color: white;
   display: flex;
@@ -44,22 +42,22 @@
 }
 
 
-h1 {
+.title-video {
   font-size: 32px;
   margin-bottom: 20px;
 }
 
-h3 {
+.second-title {
   font-size: 20px;
   margin: 10px 0;
 }
 
-p {
+.style-text {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-button {
+.style-button-see {
   background-color: #008F8B;
   color: rgb(255, 255, 255);
   border: none;
@@ -68,21 +66,21 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.style-button-see:hover {
   background-color: #D9ECEA;
   color: #008F8B;
 }
 
 @media screen and (max-width: 1250px) {
-  h1 {
+  .title-video {
       font-size: 28px;
   }
 
-  h3 {
+  .second-title {
       font-size: 18px;
   }
 
-  p {
+  .style-text {
       font-size: 14px;
   }
 
@@ -111,15 +109,15 @@ button:hover {
       width: 90%;
   }
 
-  h1 {
+  .title-video {
       font-size: 24px;
   }
 
-  h3 {
+  .second-title {
       font-size: 16px;
   }
 
-  p {
+  .style-text {
       font-size: 13px;
   }
 }
@@ -135,15 +133,15 @@ button:hover {
 }
 
 @media screen and (max-width: 500px) {
-  h1 {
+  .title-video {
       font-size: 20px;
   }
 
-  h3 {
+  .second-title {
       font-size: 14px;
   }
 
-  p {
+  .style-text {
       font-size: 12px;
   }
 }

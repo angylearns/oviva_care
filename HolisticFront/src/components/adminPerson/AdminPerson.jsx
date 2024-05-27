@@ -6,7 +6,7 @@ import arriba from '../../../public/image/arriba.png';
 import basura from '../../../public/image/basura.png';
 import lapiz from '../../../public/image/lapiz.png';
 
-import { personHandle } from "../../handlers/personHandle";  
+import { personHandle } from "../../handlers/personHandle";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -35,7 +35,7 @@ function convertDate(fecha) {
     // Formatear la fecha como dd-mm-yyyy
     var fechaFormateada = dia + "-" + mes + "-" + año;
     return fechaFormateada;
-  }
+}
 
 function AdminPerson() {
     const [editMode, setEditMode] = useState(false);
@@ -91,10 +91,10 @@ function AdminPerson() {
     const handleSort = (field) => {
         if (sortBy.field === field) {
             setSortBy({ field, order: sortBy.order === "asc" ? "desc" : "asc" });
-            setFirstOrder(false); 
+            setFirstOrder(false);
         } else {
             setSortBy({ field, order: "asc" });
-            setFirstOrder(field === "id_person"); 
+            setFirstOrder(field === "id_person");
         }
     };
 
@@ -144,14 +144,14 @@ function AdminPerson() {
             setShowAlert2(true);
         } else {
             const updatedCustomer = { ...customersGlobal[index] };
-            personHandle.updatePerson(updatedCustomer);  
+            personHandle.updatePerson(updatedCustomer);
             setEditableRows(editableRows.filter((rowIndex) => rowIndex !== index));
         }
     };
 
     async function deletePerson(index) {
         try {
-            await personHandle.deletePerson(customersGlobal[index]); 
+            await personHandle.deletePerson(customersGlobal[index]);
             setUpdatePage((prevState) => !prevState);
         } catch (error) {
             console.error("Error al eliminar persona:", error);
@@ -171,7 +171,7 @@ function AdminPerson() {
 
     async function fetchUsers() {
         try {
-            const allPersons = await personHandle.getAllPersons();  
+            const allPersons = await personHandle.getAllPersons();
             const modifiedPersons = allPersons.map((person) => ({
                 ...person,
                 birth_date: formatDate(person.birth_date),
@@ -211,233 +211,235 @@ function AdminPerson() {
     };
 
     return (
-        <div className="frame">
-        <div className="mainContainer">
-            <div className="getContainer">
-                <div className="headerContent">
-                    <div>
-                        <h2>Lista de usuarios registrados</h2>
+        <div className="frame2">
+            <div className="mainContainer">
+                <div className="getContainer">
+                    <div className="headerContent">
+                        <div>
+                            <h2>Lista de usuarios registrados</h2>
+                        </div>
                     </div>
-                </div>
-                <div className="tableOwerflow">
-                    <table className="tableData">
-                        <thead>
-                            <tr>
-                                <th onClick={() => handleSort("id_person")} className="headField">
-                                    ID {renderSortIcon("id_person")}
-                                </th>
-                                <th onClick={() => handleSort("first_name")} className="headField">
-                                    Nombre {renderSortIcon("first_name")}
-                                </th>
-                                <th onClick={() => handleSort("last_name")} className="headField">
-                                    Apellidos {renderSortIcon("last_name")}
-                                </th>
-                                <th onClick={() => handleSort("birth_date")} className="headField">
-                                    Fecha de Nacimiento {renderSortIcon("birth_date")}
-                                </th>
-                                <th onClick={() => handleSort("country")} className="headField">
-                                    País {renderSortIcon("country")}
-                                </th>
-                                <th onClick={() => handleSort("diagnosed")} className="headField">
-                                    Diagnosticado {renderSortIcon("diagnosed")}
-                                </th>
-                                <th onClick={() => handleSort("email")} className="headField">
-                                    Email {renderSortIcon("email")}
-                                </th>
-                                <th className="headField specialHeader"><img src={lapiz} className="sortIcon" /></th>
-                                <th className="headField specialHeader"><img src={basura} className="sortIcon" /></th>
-                            </tr>
-                        </thead>
-                        <TransitionGroup component="tbody">
-                            {customersGlobal.map((user, index) => (
-                                <CSSTransition key={user.id_person} timeout={500} classNames="row">
+                    <div className="tableContainer">
+                        <div className="tableOwerflow">
+                            <table className="tableData">
+                                <thead>
                                     <tr>
-                                        <td>{user.id_person}</td>
-                                        <td>
-                                            {editableRows.includes(index) ? (
-                                                <input
-                                                    type="text"
-                                                    className="inputT"
-                                                    defaultValue={customersGlobal[index]["first_name"]}
-                                                    onChange={(e) =>
-                                                        handleInputChange(e.target.value, index, "first_name")
-                                                    }
-                                                />
-                                            ) : (
-                                                user.first_name
-                                            )}
-                                        </td>
-                                        <td>
-                                            {editableRows.includes(index) ? (
-                                                <input
-                                                    type="text"
-                                                    className="inputT"
-                                                    defaultValue={customersGlobal[index]["last_name"]}
-                                                    onChange={(e) =>
-                                                        handleInputChange(e.target.value, index, "last_name")
-                                                    }
-                                                />
-                                            ) : (
-                                                user.last_name
-                                            )}
-                                        </td>
-                                        <td>
-                                            {editableRows.includes(index) ? (
-                                                <DatePicker
-                                                    selected={new Date(customersGlobal[index]["birth_date"])}
-                                                    className="inputT"
-                                                    onChange={(date) => handleChangeDate(date, index)}
-                                                    // dateFormat="yyyy-MM-dd"
-                                                    dateFormat="dd-MM-yyyy"
-                                                />
-                                            ) : (
-                                                convertDate(user.birth_date)
-                                            )}
-                                        </td>
-                                        <td>
-                                            {editableRows.includes(index) ? (
-                                                <select
-                                                    className="field-regcountryb"
-                                                    defaultValue={customersGlobal[index]["country"]}
-                                                    onChange={(e) => handleInputChange(e.target.value, index, "country")}
-                                                >
-                                                    <option >Elige una opción</option>
-                                                    <option >Albania</option>
-                                                    <option >Alemania</option>
-                                                    <option >Andorra</option>
-                                                    <option >Armenia</option>
-                                                    <option >Austria</option>
-                                                    <option >Azerbaiyán</option>
-                                                    <option >Argentina</option>
-                                                    <option >Bélgica</option>
-                                                    <option >Bolivia</option>
-                                                    <option >Bosnia y Herzegovina</option>
-                                                    <option >Brasil</option>
-                                                    <option >Bulgaria</option>
-                                                    <option >Bielorrusia</option>
-                                                    <option >Chile</option>
-                                                    <option >Colombia</option>
-                                                    <option >Chipre</option>
-                                                    <option >Croacia</option>
-                                                    <option >Dinamarca</option>
-                                                    <option >Ecuador</option>
-                                                    <option >Eslovaquia</option>
-                                                    <option >Eslovenia</option>
-                                                    <option >España</option>
-                                                    <option >Estonia</option>
-                                                    <option >Finlandia</option>
-                                                    <option >Francia</option>
-                                                    <option >Guyana</option>
-                                                    <option >Grecia</option>
-                                                    <option >Hungría</option>
-                                                    <option >Irlanda</option>
-                                                    <option >Islandia</option>
-                                                    <option >Italia</option>
-                                                    <option >Kosovo</option>
-                                                    <option >Letonia</option>
-                                                    <option >Liechtenstein</option>
-                                                    <option >Lituania</option>
-                                                    <option >Luxemburgo</option>
-                                                    <option >Malta</option>
-                                                    <option >Moldavia</option>
-                                                    <option >Mónaco</option>
-                                                    <option >Montenegro</option>
-                                                    <option >Noruega</option>
-                                                    <option >Países Bajos</option>
-                                                    <option >Paraguay</option>
-                                                    <option >Perú</option>
-                                                    <option >Polonia</option>
-                                                    <option >Portugal</option>
-                                                    <option >República Checa</option>
-                                                    <option >Inglaterra</option>
-                                                    <option >Irlanda del Norte</option>
-                                                    <option >Escocia</option>
-                                                    <option >Gales</option>
-                                                    <option >Rumanía</option>
-                                                    <option >Rusia</option>
-                                                    <option >San Marino</option>
-                                                    <option >Suecia</option>
-                                                    <option >Suiza</option>
-                                                    <option >Surinam</option>
-                                                    <option >Turquía</option>
-                                                    <option >Ucrania</option>
-                                                    <option >Uruguay</option>
-                                                    <option >Vaticano</option>
-                                                    <option >Venezuela</option>
-                                                </select>
-                                            ) : (
-                                                customersGlobal[index]["country"]
-                                            )}
-                                        </td>
-
-                                        <td>
-                                            {editableRows.includes(index) ? (
-                                                <select
-                                                    value={customersGlobal[index]["diagnosed"] ? "1" : "0"}
-                                                    onChange={(e) =>
-                                                        handleInputChange(e.target.value, index, "diagnosed")
-                                                    }
-                                                >
-                                                    <option value="1">Si</option>
-                                                    <option value="0">No</option>
-                                                </select>
-                                            ) : (
-                                                customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
-                                            )}
-                                        </td>
-                                        <td>
-                                            {user.email}
-                                        </td>
-                                        <td>
-                                            {editableRows.includes(index) ? (
-                                                <button
-                                                    className="button1"
-                                                    onClick={() => handleSave(index)}
-                                                >
-                                                    <span className="txtEditSave">Guardar</span>
-                                                </button>
-                                            ) : (
-                                                <button
-                                                    className="button1"
-                                                    onClick={() => handleEdit(index)}
-                                                >
-                                                    <span className="txtEditSave">Editar</span>
-                                                </button>
-                                            )}
-                                        </td>
-                                        <td>
-                                            <button
-                                                className="button1"
-                                                onClick={() => handleDelete(index)}
-                                            >
-                                                <span className="txtDelete">Eliminar</span>
-                                            </button>
-                                        </td>
+                                        <th onClick={() => handleSort("id_person")} className="headField">
+                                            ID {renderSortIcon("id_person")}
+                                        </th>
+                                        <th onClick={() => handleSort("first_name")} className="headField">
+                                            Nombre {renderSortIcon("first_name")}
+                                        </th>
+                                        <th onClick={() => handleSort("last_name")} className="headField">
+                                            Apellidos {renderSortIcon("last_name")}
+                                        </th>
+                                        <th onClick={() => handleSort("birth_date")} className="headField">
+                                            Fecha de Nacimiento {renderSortIcon("birth_date")}
+                                        </th>
+                                        <th onClick={() => handleSort("country")} className="headField">
+                                            País {renderSortIcon("country")}
+                                        </th>
+                                        <th onClick={() => handleSort("diagnosed")} className="headField">
+                                            Diagnosticado {renderSortIcon("diagnosed")}
+                                        </th>
+                                        <th onClick={() => handleSort("email")} className="headField">
+                                            Email {renderSortIcon("email")}
+                                        </th>
+                                        <th className="headField specialHeader"><img src={lapiz} className="sortIcon" /></th>
+                                        <th className="headField specialHeader"><img src={basura} className="sortIcon" /></th>
                                     </tr>
-                                </CSSTransition>
-                            ))}
-                        </TransitionGroup>
-                    </table>
+                                </thead>
+                                <TransitionGroup component="tbody">
+                                    {customersGlobal.map((user, index) => (
+                                        <CSSTransition key={user.id_person} timeout={500} classNames="row">
+                                            <tr>
+                                                <td>{user.id_person}</td>
+                                                <td>
+                                                    {editableRows.includes(index) ? (
+                                                        <input
+                                                            type="text"
+                                                            className="inputT"
+                                                            defaultValue={customersGlobal[index]["first_name"]}
+                                                            onChange={(e) =>
+                                                                handleInputChange(e.target.value, index, "first_name")
+                                                            }
+                                                        />
+                                                    ) : (
+                                                        user.first_name
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    {editableRows.includes(index) ? (
+                                                        <input
+                                                            type="text"
+                                                            className="inputT"
+                                                            defaultValue={customersGlobal[index]["last_name"]}
+                                                            onChange={(e) =>
+                                                                handleInputChange(e.target.value, index, "last_name")
+                                                            }
+                                                        />
+                                                    ) : (
+                                                        user.last_name
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    {editableRows.includes(index) ? (
+                                                        <DatePicker
+                                                            selected={new Date(customersGlobal[index]["birth_date"])}
+                                                            className="inputT"
+                                                            onChange={(date) => handleChangeDate(date, index)}
+                                                            // dateFormat="yyyy-MM-dd"
+                                                            dateFormat="dd-MM-yyyy"
+                                                        />
+                                                    ) : (
+                                                        convertDate(user.birth_date)
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    {editableRows.includes(index) ? (
+                                                        <select
+                                                            className="field-regcountryb"
+                                                            defaultValue={customersGlobal[index]["country"]}
+                                                            onChange={(e) => handleInputChange(e.target.value, index, "country")}
+                                                        >
+                                                            <option >Elige una opción</option>
+                                                            <option >Albania</option>
+                                                            <option >Alemania</option>
+                                                            <option >Andorra</option>
+                                                            <option >Armenia</option>
+                                                            <option >Austria</option>
+                                                            <option >Azerbaiyán</option>
+                                                            <option >Argentina</option>
+                                                            <option >Bélgica</option>
+                                                            <option >Bolivia</option>
+                                                            <option >Bosnia y Herzegovina</option>
+                                                            <option >Brasil</option>
+                                                            <option >Bulgaria</option>
+                                                            <option >Bielorrusia</option>
+                                                            <option >Chile</option>
+                                                            <option >Colombia</option>
+                                                            <option >Chipre</option>
+                                                            <option >Croacia</option>
+                                                            <option >Dinamarca</option>
+                                                            <option >Ecuador</option>
+                                                            <option >Eslovaquia</option>
+                                                            <option >Eslovenia</option>
+                                                            <option >España</option>
+                                                            <option >Estonia</option>
+                                                            <option >Finlandia</option>
+                                                            <option >Francia</option>
+                                                            <option >Guyana</option>
+                                                            <option >Grecia</option>
+                                                            <option >Hungría</option>
+                                                            <option >Irlanda</option>
+                                                            <option >Islandia</option>
+                                                            <option >Italia</option>
+                                                            <option >Kosovo</option>
+                                                            <option >Letonia</option>
+                                                            <option >Liechtenstein</option>
+                                                            <option >Lituania</option>
+                                                            <option >Luxemburgo</option>
+                                                            <option >Malta</option>
+                                                            <option >Moldavia</option>
+                                                            <option >Mónaco</option>
+                                                            <option >Montenegro</option>
+                                                            <option >Noruega</option>
+                                                            <option >Países Bajos</option>
+                                                            <option >Paraguay</option>
+                                                            <option >Perú</option>
+                                                            <option >Polonia</option>
+                                                            <option >Portugal</option>
+                                                            <option >República Checa</option>
+                                                            <option >Inglaterra</option>
+                                                            <option >Irlanda del Norte</option>
+                                                            <option >Escocia</option>
+                                                            <option >Gales</option>
+                                                            <option >Rumanía</option>
+                                                            <option >Rusia</option>
+                                                            <option >San Marino</option>
+                                                            <option >Suecia</option>
+                                                            <option >Suiza</option>
+                                                            <option >Surinam</option>
+                                                            <option >Turquía</option>
+                                                            <option >Ucrania</option>
+                                                            <option >Uruguay</option>
+                                                            <option >Vaticano</option>
+                                                            <option >Venezuela</option>
+                                                        </select>
+                                                    ) : (
+                                                        customersGlobal[index]["country"]
+                                                    )}
+                                                </td>
+
+                                                <td>
+                                                    {editableRows.includes(index) ? (
+                                                        <select
+                                                            value={customersGlobal[index]["diagnosed"] ? "1" : "0"}
+                                                            onChange={(e) =>
+                                                                handleInputChange(e.target.value, index, "diagnosed")
+                                                            }
+                                                        >
+                                                            <option value="1">Si</option>
+                                                            <option value="0">No</option>
+                                                        </select>
+                                                    ) : (
+                                                        customersGlobal[index]["diagnosed"] === 1 ? "Si" : "No"
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    {user.email}
+                                                </td>
+                                                <td>
+                                                    {editableRows.includes(index) ? (
+                                                        <button
+                                                            className="button1"
+                                                            onClick={() => handleSave(index)}
+                                                        >
+                                                            <span className="txtEditSave">Guardar</span>
+                                                        </button>
+                                                    ) : (
+                                                        <button
+                                                            className="button1"
+                                                            onClick={() => handleEdit(index)}
+                                                        >
+                                                            <span className="txtEditSave">Editar</span>
+                                                        </button>
+                                                    )}
+                                                </td>
+                                                <td>
+                                                    <button
+                                                        className="button1"
+                                                        onClick={() => handleDelete(index)}
+                                                    >
+                                                        <span className="txtDelete">Eliminar</span>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </CSSTransition>
+                                    ))}
+                                </TransitionGroup>
+                            </table>
+                        </div>
+                    </div>
                 </div>
+                {showAlert && (
+                    <div className="custom-alert">
+                        <div className="custom-alert-content">
+                            <span>¿Seguro deseas eliminar?</span><br />
+                            <button onClick={handleCloseAlert}>No</button>
+                            <button onClick={handleConfirmAlert}>Sí</button>
+                        </div>
+                    </div>
+                )}
+                {showAlert2 && (
+                    <div className="custom-alert">
+                        <div className="custom-alert-content">
+                            <span>Formato de fecha incorrecto.</span><br />
+                            <button onClick={handleCloseAlert2}>Cerrar</button>
+                        </div>
+                    </div>
+                )}
             </div>
-            {showAlert && (
-                <div className="custom-alert">
-                    <div className="custom-alert-content">
-                        <span>¿Seguro deseas eliminar?</span><br />
-                        <button onClick={handleCloseAlert}>No</button>
-                        <button onClick={handleConfirmAlert}>Sí</button>
-                    </div>
-                </div>
-            )}
-            {showAlert2 && (
-                <div className="custom-alert">
-                    <div className="custom-alert-content">
-                        <span>Formato de fecha incorrecto.</span><br />
-                        <button onClick={handleCloseAlert2}>Cerrar</button>
-                    </div>
-                </div>
-            )}
-        </div>
         </div>
     );
 }

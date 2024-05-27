@@ -103,7 +103,7 @@ const Recipe = () => {
   return (
     <div className="style">
       <div>
-        <h1>Administrador de Recetas</h1>
+        <h1 className="title-recipe">Administrador de Recetas</h1>
       </div>
 
       <div className="navbar">
@@ -128,7 +128,7 @@ const Recipe = () => {
           onSubmit={handleSubmit}
         >
           <div>
-            <h1>Añadir Receta</h1>
+            <h1 className="title-add-recipe">Añadir Receta</h1>
             <label>
               Title:
               <input
