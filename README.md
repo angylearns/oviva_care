@@ -133,7 +133,8 @@ Puedes obtener estos valores en:
 
 Puedes descargar el archivo SQL necesario para este proyecto haciendo clic en el siguiente enlace:
 
-[Descargar archivo SQL]([https://github.com/tu-usuario/tu-repositorio/raw/main/public/oviva-8.sql)
+[Descargar archivo SQL]([https://github.com/sandra-medina-luque/Holistic-Ovaries/tree/main/HolisticFront/public/oviva-8.sql)
+
 
 </details>
 
