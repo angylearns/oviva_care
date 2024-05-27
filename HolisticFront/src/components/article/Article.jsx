@@ -42,7 +42,7 @@ const Article = () => {
       </div>
       <img className="imagblog" src={food4} alt="food4" />
         <ul>
-          <li className='textblog'>Se ha observado que los hábitos alimentarios anormales en mujeres con SOP poliquístico podrían verse influidos no sólo por el síndrome en sí, sino también por la inducción de depresión y deterioro en una menor calidad de vida (Asdaq et al., 2020).</li>
+          <li className='textblog'>Se ha observado que los hábitos alimentarios anormales en mujeres con SOP podrían verse influidos no sólo por el síndrome en sí, sino también por la inducción de depresión y deterioro en una menor calidad de vida (Asdaq et al., 2020).</li>
           <li className='textblog'>El trastorno por atracón aumenta el peso corporal, por lo que se encontró una correlación significativa entre trastorno por atracón y síndrome de ovario poliquístico (Asdaq et al., 2020).</li>
           <li className='textblog'>Además, el trastorno por atracón y el síndrome de ovario poliquístico están asociados con la diabetes mellitus, obesidad e hipertensión (Lee et al., 2018, Asdaq et al., 2020).</li>
           <li className='textblog'>La mujer con síndrome de ovario poliquístico sufre de:
@@ -79,9 +79,9 @@ const Article = () => {
             Si está planeando un embarazo, será prudente suspender un tratamiento hormonal.
             Tu cuerpo necesitará tiempo para recuperarse.
             Escuché historias de mujeres jóvenes con SOP que quedaron aterrorizadas por sus médicos.
-            diciéndoles “No podrás quedar embarazada”.
-            Por suerte, investigué y con cambios en mi estilo de vida que ya estaba implementando hacía más de un año. Después de dos meses de
-            ese incidente me vino la regla, y me tomó aproximadamente un año para recuperar mi período.</li>
+            diciéndoles: “No podrás quedar embarazada”.
+            Por suerte, investigué y con cambios en mi estilo de vida que ya estaba implementando, después de dos meses de
+            ese incidente me vino la regla, y me tomó aproximadamente un año para recuperar mis ciclos menstruales..</li>
         </ul>
       </div>
     </div>

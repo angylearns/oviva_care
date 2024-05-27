@@ -125,6 +125,7 @@ function QaAdmin() {
 
 
     return (
+        <div className="frame">
         <div className="mainContainer" >
             <div className="getContainer">
                 <div className="headerContent">
@@ -212,6 +213,7 @@ function QaAdmin() {
                 </div>
             </div>
 
+        </div>
         </div>
     );
 }

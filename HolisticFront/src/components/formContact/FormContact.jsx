@@ -56,6 +56,7 @@ function FormContact() {
     };
 
     return (
+      <div className='frame'>
         <div className="container-form">
             <div>
             <h2>Contacto</h2>
@@ -108,7 +109,7 @@ function FormContact() {
 
 
         </div>
-        
+        </div>
     );
 }
 

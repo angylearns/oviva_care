@@ -1,7 +1,19 @@
+.frame{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 .headerContent{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.tableContainer {
+  overflow-x: auto; 
+  width: 100%;
 }
 
 .tableOwerflow {
@@ -9,6 +21,7 @@
   width: 100%;
   border: 0;
 }
+
 
 .tableData{
   width: 100%;
@@ -48,10 +61,13 @@
 }
 .getContainer {
   max-height: 400px;
+  overflow-x: auto;
+  width:100%;
 }
 
 .mainContainer {
-  width: 100%;
+  width: 100%; 
+  
 }
 
 .postContainer {

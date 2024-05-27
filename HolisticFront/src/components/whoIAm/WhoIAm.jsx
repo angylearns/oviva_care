@@ -1,8 +1,9 @@
-import './quienSoy.css';
+import './whoIAm.css';
 
 
-function QuienSoy() {	
+function WhoIAm() {	
     return (
+        <div className='frame'>
         <section>
             <h1>¿Quién soy?</h1>
 
@@ -36,7 +37,8 @@ function QuienSoy() {
                 <p>Now I am able to manage my PCOS, but it wasn't always that way...</p> */}
             </section>
         </section>
+    </div>
     );
 }
 
-export default QuienSoy;
+export default WhoIAm;
