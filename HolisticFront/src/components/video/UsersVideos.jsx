@@ -77,7 +77,7 @@ const UsersVideos = () => {
 
   return (
     <div className="users-videos">
-      <h1>Vídeos</h1>
+      <h1 className='title-video'>Vídeos</h1>
       <div className="categories">
         {categories.map((category) => (
           <div key={category} className="category">
@@ -94,11 +94,11 @@ const UsersVideos = () => {
       <div className="videos">
         {filteredVideos.map((video) => (
           <div key={video.id} className="video-card">
-            <h3>{video.title}</h3>
+            <h3 className='second-title'>{video.title}</h3>
             <img src={video.thumbnail} alt={video.title} className="video-thumbnail" />
-            <p>{video.description}</p>
+            <p className='style-text'>{video.description}</p>
             <a href={video.link} target="_blank" rel="noopener noreferrer">
-              <button>Ver Video</button>
+              <button className='style-button-see'>Ver Video</button>
             </a>
           </div>
         ))}

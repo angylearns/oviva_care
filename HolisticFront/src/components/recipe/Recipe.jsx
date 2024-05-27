@@ -103,7 +103,7 @@ const Recipe = () => {
   return (
     <div className="style">
       <div>
-        <h1>Administrador de Recetas</h1>
+        <h1 className="title-recipe">Administrador de Recetas</h1>
       </div>
 
       <div className="navbar">
@@ -128,7 +128,7 @@ const Recipe = () => {
           onSubmit={handleSubmit}
         >
           <div>
-            <h1>Upload Recipe</h1>
+            <h1 className="title-add-recipe">Añadir Receta</h1>
             <label>
               Title:
               <input
@@ -184,7 +184,7 @@ const Recipe = () => {
             </label>
             <br />
             <button className="button-add-recipe" type="submit">
-              {isEditing ? "Update Recipe" : "Add Recipe"}
+              {isEditing ? "Editar Receta" : "Añadir Receta"}
             </button>
           </div>
         </form>
@@ -207,13 +207,13 @@ const Recipe = () => {
                 className="btn-cardForm-edit"
                 onClick={() => handleEditClick(recipe.id_recipe)}
               >
-                Edit
+                Editar
               </button>
               <button
                 className="btn-cardForm-delete"
                 onClick={() => handleDelete(recipe.id_recipe)}
               >
-                Delete
+                Eliminar
               </button>
             </div>
           </div>

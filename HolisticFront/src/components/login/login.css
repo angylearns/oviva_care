@@ -3,23 +3,28 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
+    background-color: white;
+}
+
+.loginlogo-and-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 5%;
+    width: 400px;
 }
 
 .login-icon {
     width: 176px;
 }
 
-.field-user {
-    border-radius: 0 20px 0 30px;
-    width: 587px;
-    height: 67px;
-    background-color: rgba(0, 143, 139, 0.25);
-    padding-left: 10px;
-    border: none;
-    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-
+.main-text-login {
+    padding-left: 5%;
 }
 
+.field-user,
 .field-password {
     border-radius: 0 20px 0 30px;
     width: 587px;
@@ -28,6 +33,24 @@
     padding-left: 10px;
     border: none;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+}
+
+.field-user:hover,
+.field-password:hover {
+    background-color: white !important;
+}
+
+.field-user:valid,
+.field-password:valid {
+    background-color: rgba(0, 143, 139, 0.25) !important;
+}
+
+.field-user,
+.field-password {
+    -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
+    box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    /* Propiedad estándar */
+    transition: background-color 5000s ease-in-out 0s;
 }
 
 input::placeholder {
@@ -44,24 +67,41 @@ input::placeholder {
     border: none;
 }
 
+.login-button:hover {
+    background-color: #D9ECEA;
+    color: #008F8B;
+}
+
+.icons-buttons-password-login {
+    background-color: transparent;
+    border: none;
+    transform: translate(230px, -54px);
+}
+
+.icon-open-eye-login,
+.icon-close-eye-login {
+    width: 45px;
+    background-color: transparent;
+    border: none;
+}
+
 .goregister-button {
     background-color: transparent;
     border: none;
     margin-top: 48px;
     color: rgba(0, 0, 0, 0.50);
+    font-size: 18px;
+    margin-bottom: 5%;
 }
 
 .text-user {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 80%;
-
-
 }
 
 .text-password {
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 75%;
-
 }
 
 @media screen and (max-width: 1350px) {
@@ -100,9 +140,15 @@ input::placeholder {
     .goregister-button {
         font-size: 20px;
     }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(-40px, -10px);
+    }
 }
 
 @media screen and (max-width: 540px) {
+
     .field-user,
     .field-password {
         width: 380px;
@@ -123,17 +169,22 @@ input::placeholder {
     }
 
     .text-user {
-       
+
         margin-right: 75%;
     }
 
     .text-password {
-      
+
         margin-right: 70%;
     }
 
     .goregister-button {
         font-size: 18px;
+    }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(-80px, -10px);
     }
 }
 
@@ -141,25 +192,51 @@ input::placeholder {
 
     .field-user,
     .field-password {
-          width: 327px;
-      }
-  
-      .login-button {
-          width: 263px;
-          height: 64px;
-      }
-    
-      .text-user {
-          margin-right: 75%;
-      }
-  
-      .text-password {
-          margin-right: 66%;
-      }
-  
-      .goregister-button {
-          font-size: 16px;
-      }
-      }
-  
-  
+        width: 327px;
+    }
+
+    .login-button {
+        width: 263px;
+        height: 64px;
+    }
+
+    .text-user {
+        margin-right: 75%;
+    }
+
+    .text-password {
+        margin-right: 66%;
+    }
+
+    .goregister-button {
+        font-size: 16px;
+    }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        /* transform: translate(135px, -54px); */
+        transform: translate(-100px, -10px);
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .field-user,
+    .field-password {
+        width: 280px;
+    }
+
+    .text-user,
+    .text-password {
+        font-size: 14px;
+    }
+
+    .goregister-button {
+        font-size: 16px;
+    }
+
+    .icon-open-eye-login,
+    .icon-close-eye-login {
+        transform: translate(-115px, -10px);
+    }
+}

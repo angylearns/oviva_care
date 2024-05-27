@@ -1,0 +1,90 @@
+
+.calendar {
+    /* width: 900px; */
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cal {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 143, 139, 1);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.month-label {
+    font-size: 2em;
+    text-transform: uppercase;
+    
+}
+
+.day-names,
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.day-names {
+  font-weight: 600;
+}
+
+.day-name,
+.date {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.date {
+    cursor: pointer;
+}
+
+.date.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+
+.date.selected {
+    background-color: #84dedf;
+    color: white;
+    border-radius: 70%;
+    width: 40%;
+
+}
+
+@media (max-width: 768px) {
+    .calendar {
+      width: 100%;
+      /* padding: 0 10px;  */
+    }
+  
+    .header {
+      flex-direction: column; 
+      text-align: center;
+    }
+  
+    .month-label {
+      font-size: 1.5em; 
+      margin-bottom: 10px;
+    }
+  
+    .day-name, .date {
+      padding: 10px; 
+      font-size: 0.80em; 
+    }
+  
+    .date.selected {
+      border-radius: 10%; 
+    }
+  }
+  

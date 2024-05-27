@@ -1,0 +1,76 @@
+.frame{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  @media only screen and (min-width: 300px) {
+  
+       body {
+      color: black;
+      background-color: white;
+      font-family: Arial, sans-serif;
+      margin: 1%;
+      padding: 1%;
+    }
+      .abcd {
+        text-align: left;
+        display: block;
+        margin-bottom: 15px;
+        margin-left: 20px;
+        margin-top: -17px;
+      }
+    
+      input[type="radio"] {
+        margin-left: 0px;
+        display: block; 
+      }
+    
+      .punts {
+        background-color: white; 
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+    
+      .cuestionario {
+        color: #0c0c0c;
+        text-align: center;
+      }
+    
+      .questions {
+        color: #e0ebeb;
+        background-color: #008F8B;
+        padding: 10px;
+        text-align: left;
+      }
+    
+      .puntuaciones {
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 40px;
+        padding: 10px 60px;
+        margin-top: 30px;
+        background-color: #92f1ea;
+      }
+    
+      .boton-resultado {
+        background-color: #008F8B;
+        color: white;
+        border: none;
+        padding: 10px 40px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 0px;
+        margin-top: 20px;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 40px;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+      }
+    
+      .boton-resultado:hover {
+        color: black;
+        background-color: #00B6B9; 
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3); 
+      }
+    }
+    
