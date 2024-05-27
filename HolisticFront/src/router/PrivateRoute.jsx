@@ -4,7 +4,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { isAuthenticated } from '../utils/authUtils';
 
 const PrivateRoute = ({children}) => {
-  const { isAuthenticatedUser } = isAuthenticated();
+  const isAuthenticatedUser = isAuthenticated();
   console.log(isAuthenticated);
   if (!isAuthenticatedUser) {
     return <Navigate to="/login" replace />;
