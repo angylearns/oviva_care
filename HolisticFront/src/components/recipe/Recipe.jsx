@@ -103,7 +103,7 @@ const Recipe = () => {
   return (
     <div className="style">
       <div>
-        <h1>Administrador de Recetas</h1>
+        <h1 className="titleH1">Administrador de Recetas</h1>
       </div>
 
       <div className="navbar">

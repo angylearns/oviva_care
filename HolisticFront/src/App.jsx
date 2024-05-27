@@ -26,10 +26,10 @@ import Pretest from './components/pretestcuestionario/pretest.jsx'
 function App() {
   return (
     <>
-      {/* <Recipe/> */}
+      <Recipe/>
       <VideoList/>
-      {/* <UsersVideos/> */}
-      {/* <UsersRecipe/> */}
+      <UsersVideos/>
+      <UsersRecipe/>
       <Navbar />
       {/* <Hero /> */}
       <Register />
