@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nombre+de+la+Fuente');
+
 
 .frame{
   max-width: 1280px;
@@ -73,10 +73,10 @@
 }
 
 
-/* Estilo para el campo de texto con autocompletado */
+
 .inputField:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
-  transition: background-color 5000s ease-in-out 0s; /* Ajusta la transición */
+  transition: background-color 5000s ease-in-out 0s; 
 }
 
 .inputField:focus,
@@ -87,7 +87,6 @@
 .textAreaField {
   height: 150px;
   border-radius: 0 0px 0 30px;
-  font-family: 'Montserrat', sans-serif;
   width: 90%;
 }
 
@@ -99,7 +98,7 @@
   padding: 2%;
   width: 100%;
   border-radius: 15px;
-  font-family: 'Montserrat', sans-serif;
+ 
 }
 
 
