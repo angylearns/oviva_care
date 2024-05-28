@@ -16,23 +16,7 @@ const registerService = {
             console.error('captura error de registerService.addUser '+ error);
           throw new Error('Ocurrió un error al guardar el usuario en base de datos. '+error);
         }
-    }
-    //,
-    // getLastUserId: async () => {
-    //     try {
-    //       const response = await fetch(`${API_URL}/email/id_user`);
-    //       if (!response.ok) {
-    //         throw new Error('Error al obtener el último ID de usuario');
-    //       }
-    //       const data = await response.json();
-    //       console.log(data.id_user)
-    //       return data.id_user;
-    //     } catch (error) {
-    //       console.error(error);
-    //       throw new Error('Ocurrió un error al obtener el último ID de usuario');
-    //     }
-    // }
-    ,
+    },
     addPerson: async (first_name, last_name, birth_date,country, diagnosed, email) => {
         console.log('registerService 1');
         console.log (first_name)
@@ -56,9 +40,6 @@ const registerService = {
           throw error;
         }
       },
-
-
-
 }
 
 export default registerService;

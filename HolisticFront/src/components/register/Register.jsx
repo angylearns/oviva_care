@@ -52,7 +52,6 @@ function Register() {
       
         <form className="formulary-all-reg" onSubmit={handleSubmit(onSubmit)}>
 
-            {/* Ventana emergente de alerta */}
             {showAlert && (
                 <div className="register-alert">
                     <div className="register-alert-content">

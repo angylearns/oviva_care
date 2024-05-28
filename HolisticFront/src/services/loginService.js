@@ -1,7 +1,6 @@
 const API_URL = 'http://localhost:5001';
 const loginService = {
   
-    //ESTE METODO HA PASADO A registerService
     postUser: async ( password, user_type, email) => {
       try {
         console.log('loginService postUser 1');
