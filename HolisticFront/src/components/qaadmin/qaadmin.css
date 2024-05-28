@@ -1,8 +1,5 @@
-.frame{
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.contain{
+  margin: 1%;
 }
 
 .headerContent{
@@ -54,12 +51,10 @@
   .tableOwerflow table, .tableOwerflow table th, .tableOwerflow table td {
     border: none;
   }
-  .getContainer {
-    max-height: 400px;
-  }
   
   .mainContainer {
     width: 100%;
+    
   }
   
   .postContainer {
@@ -81,7 +76,7 @@
   
   
   .qatext {
-    font-family: 'Montserrat', sans-serif;
+    
     background-color: rgb(242, 242, 242);
     border: 1px solid #abc2d2;
     padding: 8px;
@@ -132,10 +127,7 @@
     margin-bottom: 5px;
   }
   
-  .headField{
 
-    font-family: 'Montserrat', sans-serif;
-  }
   
   @media screen and (max-width: 600px) {
     .formContentA {
@@ -146,7 +138,7 @@
   }
   
   .buttonAA {
-    font-family: 'Montserrat', sans-serif;
+   
     background-color: white;
     color: #00B6B9;
     border: 1px solid #00B6B9;
@@ -169,11 +161,11 @@
   
   .txtEditSave{
     color:#00B6B9;
-    font-family: 'Montserrat', sans-serif;
+   
   }
   .txtDelete{
     color:rgb(210, 38, 38);
-    font-family: 'Montserrat', sans-serif;
+    
   }
   
   .centerBtn{

@@ -197,8 +197,7 @@ const Recipe = () => {
             <img
               src={recipe.image}
               alt={recipe.title}
-              width={300}
-              height={300}
+              className="recipe-image"           
             ></img>
             <p>Description: {recipe.description}</p>
             <p>Category: {recipe.category}</p>

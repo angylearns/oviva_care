@@ -7,7 +7,7 @@ const PrivateRoute = ({children}) => {
   const isAuthenticatedUser = isAuthenticated();
   console.log(isAuthenticated);
   if (!isAuthenticatedUser) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/error" replace />;
   }
   return <>{children}</>;
 };

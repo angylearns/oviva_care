@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import '../login/login.css';
-import login_icon from "../../../public/images/icons/login_icon.svg";
+import login_icon from "../../../public/image/icons/login_icon.svg";
 import { handleLogin } from "../../handlers/loginHandle";
-import { saveTokenToCookies, TOKEN_COOKIE_NAME } from "../../utils/authUtils"; // Importar TOKEN_COOKIE_NAME
+import { saveTokenToCookies, TOKEN_COOKIE_NAME } from "../../utils/authUtils"; 
 import { useCookies } from "react-cookie";
-import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
-import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
+import icon_close_eye from "../../../public/image/icons/icon_close_eye.svg";
+import icon_open_eye from "../../../public/image/icons/icon_open_eye.svg";
 import { Link } from 'react-router-dom';
 
 
 
 function Login_user() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const [errorMessage, setErrorMessage] = useState(''); // Define el estado para el mensaje de error
-    const [cookies, setCookie] = useCookies([TOKEN_COOKIE_NAME]); // Uso de useCookies
+    const [errorMessage, setErrorMessage] = useState(''); 
+    const [cookies, setCookie] = useCookies([TOKEN_COOKIE_NAME]); 
 
     const [showAlert, setShowAlert] = useState(false);
     const [successMessage, setSuccessMessage] = useState("");
@@ -24,20 +24,20 @@ function Login_user() {
 
     const handleCloseAlert = () => {
         setShowAlert(false);
+        window.location.href = "/";
     };
 
 
     const onSubmit = data => {
         handleLogin(data, handleError, setShowAlert, setSuccessMessage)
             .then((token) => {
-                saveTokenToCookies(token, setCookie); // Pasar setCookie como argumento
-                // Si el login es exitoso, puedes redirigir al usuario a otra página o cambiar el estado de la aplicación
+                saveTokenToCookies(token, setCookie); 
                 reset();
                 setShowAlert(true);
             })
             .catch(error => {
-                setErrorMessage('Ocurrió un error al registrar la persona'); // Actualiza el mensaje de error
-                setShowAlert(true); // Muestra la ventana emergente de alerta
+                setErrorMessage('Ocurrió un error al iniciar sesión.'); 
+                setShowAlert(true); 
             });
     };
 
@@ -49,11 +49,10 @@ function Login_user() {
 
         <form className="formulary" onSubmit={handleSubmit(onSubmit)}>
 
-            {/* Ventana emergente de alerta */}
             {showAlert && (
                 <div className="register-alert">
                     <div className="register-alert-content">
-                        <span>{successMessage || errorMessage}</span> {/* Muestra el mensaje de éxito o de error */}
+                        <span>{successMessage || errorMessage}</span> 
                         <button onClick={handleCloseAlert}>Cerrar</button>
                     </div>
                 </div>
@@ -111,10 +110,9 @@ function Login_user() {
                 {showPassword ? <img className="icon-close-eye-login" src={icon_close_eye} /> : <img className="icon-open-eye-login" src={icon_open_eye} />}
             </button>
             <button type="submit" className="login-button">Ingresar</button>
-            {/* {errorMessage && <p>{errorMessage}</p>}  */}
-            {/* Muestra el mensaje de error si existe */}
             <button className="goregister-button">
-                <Link to="/register">¿No eres miembro?, regístrate</Link></button>
+                <Link to="/register" className="goregister-button-link">¿No eres miembro? Regístrate.</Link>
+            </button>
 
         </form>
 

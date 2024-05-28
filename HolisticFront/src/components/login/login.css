@@ -65,6 +65,7 @@ input::placeholder {
     background-color: #008F8B;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
     border: none;
+    font-size: large;
 }
 
 .login-button:hover {
@@ -92,6 +93,11 @@ input::placeholder {
     color: rgba(0, 0, 0, 0.50);
     font-size: 18px;
     margin-bottom: 5%;
+}
+
+.goregister-button-link {
+    text-decoration: none;
+    color: #000;
 }
 
 .text-user {
@@ -214,7 +220,6 @@ input::placeholder {
 
     .icon-open-eye-login,
     .icon-close-eye-login {
-        /* transform: translate(135px, -54px); */
         transform: translate(-100px, -10px);
     }
 }

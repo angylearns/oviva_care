@@ -19,6 +19,12 @@
     min-width: 50%;
     border-radius: 0 20px 0 30px;
     padding: 1px 15px;
+    text-decoration: none;
+    color: #000;
+}
+
+.option_admin:hover {
+    font-weight: 600;
 }
 
 .option_admin--img {

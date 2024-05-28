@@ -1,6 +1,6 @@
 from src.database.db_mysql import get_connection
 from src.models.personModel import Person
-# from werkzeug.security import generate_password_hash
+
 
 class PersonService():
 

@@ -50,7 +50,6 @@ footer {
 
 .footer_right img {
     height: 50%;
-    /* para cambiarles el color se tiene que cambiar en el .svg directamente, porque con css, a un .svg dentro de una etiqueta img es complejo */
 }
 
 @media (max-width: 800px) {

@@ -10,15 +10,16 @@
 }
 
 @keyframes rotacion {
-    from { 
-      transform: rotateY(0deg); 
+    from {
+        transform: rotateY(0deg);
     }
-    to { 
-      transform: rotateY(360deg); 
+
+    to {
+        transform: rotateY(360deg);
     }
-  }
-  
-  
+}
+
+
 .login-icon {
     width: 72px;
     padding-right: 2%;
@@ -98,7 +99,6 @@
 .field-regpassword {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
-    /* Propiedad estándar */
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -108,13 +108,11 @@
     transform: translate(-70px, 17px);
 }
 
-/* Estilo para el botón de abrir ojo */
 .icon-open-eye,
 .icon-close-eye {
     width: 45px;
     background-color: transparent;
     border: none;
-   
 }
 
 .register-regbutton {
@@ -125,6 +123,7 @@
     background-color: #008F8B;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
     border: none;
+    font-size: large;
 }
 
 .register-regbutton:hover {
@@ -187,8 +186,13 @@ input::placeholder {
     background-color: transparent;
     border: none;
     margin-top: 48px;
-    color: rgba(0, 0, 0, 0.50);
+    color: #000;
     margin-bottom: 5%;
+    text-decoration: none;
+}
+
+.gologin-button:hover {
+    cursor: pointer;
 }
 
 .register-alert {
@@ -198,8 +202,6 @@ input::placeholder {
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     padding: 20px;
-    /* border: 2px solid #333;
-    border-radius: 5px; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 9999;
     border-radius: 0 20px 0 30px;
@@ -220,11 +222,17 @@ input::placeholder {
 }
 
 .register-alert button:hover {
-    background-color: #03f3eb;
+    background-color: #D9ECEA;
+    color: #008F8B;
 }
 
 
+@media screen and (max-width: 1376px) {
 
+    .icons-buttons-password {
+        transform: translate(519px, -50px);
+    }
+}
 
 @media screen and (max-width: 1350px) {
 
@@ -233,6 +241,15 @@ input::placeholder {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    .icons-buttons-password {
+        transform: translate(-100px, 13px);
+    }
+
+    .groupfields2 {
+        margin-right: 4%;
+        margin-bottom: 2%;
     }
 }
 
@@ -285,7 +302,23 @@ input::placeholder {
     }
 
     .groupfields2 {
-        margin-right: 7%;
+        margin-right: 8%;
+        margin-bottom: 2%;
+    }
+
+    .icons-buttons-password {
+        transform: translate(-80px, 10px);
+    }
+}
+
+@media screen and (max-width: 561px) {
+
+    .icons-buttons-password {
+        transform: translate(370px, -60px);
+    }
+    .groupfields2 {
+        margin-right: 11%;
+        margin-bottom: 2%;
     }
 }
 
@@ -342,121 +375,136 @@ input::placeholder {
     }
 
     .groupfields2 {
-        margin-right: 9%;
+        margin-right: 15%;
     }
 
-    @media screen and (max-width: 450px) {
+    .icons-buttons-password {
+        transform: translate(-100px, 10px);
+    }
 
-        .field-regname,
-        .field-regcountry,
-        .field-regemail,
-        .field-regdiagnose,
-        .field-regpassword,
-        .field-regbirthdate,
-        .field-reglastname {
-            width: 327px;
-        }
-
-        .main-text-register {
-            font-size: 16px;
-        }
-
-        .text-regname,
-        .text-reglastname,
-        .text-regemail,
-        .text-regpassword,
-        .text-regbirthdate,
-        .text-regdiagnose,
-        .text-regcountry {
-            font-size: 14px;
-        }
-
-        .field-regdiagnose,
-        .field-regcountry {
-            width: 337px;
-        }
-
-        .register-regbutton {
-            width: 263px;
-            height: 64px;
-        }
-
-        .text-regdiagnose {
-            margin-right: 38%;
-        }
-
-        .text-regemail {
-            margin-right: 45%;
-        }
-
-        .text-regpassword {
-            margin-right: 64%;
-        }
-
-        .gologin-button {
-            font-size: 16px;
-        }
-
-        .groupfields2 {
-            margin-right: 10%;
+    @media screen and (max-width: 488px) {
+        .icons-buttons-password {
+            transform: translate(300px, -60px);
         }
     }
 
-    @media screen and (max-width: 430px) {
+}
 
-        .field-regname,
-        .field-regcountry,
-        .field-regemail,
-        .field-regdiagnose,
-        .field-regpassword,
-        .field-regbirthdate,
-        .field-reglastname {
-            width: 300px;
-        }
+@media screen and (max-width: 450px) {
 
-        .field-regdiagnose,
-        .field-regcountry {
-            width: 310px;
-        }
+    .field-regname,
+    .field-regcountry,
+    .field-regemail,
+    .field-regdiagnose,
+    .field-regpassword,
+    .field-regbirthdate,
+    .field-reglastname {
+        width: 327px;
+    }
 
-        .register-regbutton {
-            width: 263px;
-            height: 64px;
-        }
+    .main-text-register {
+        font-size: 16px;
+    }
 
-        .text-regname,
-        .text-reglastname,
-        .text-regemail,
-        .text-regpassword,
-        .text-regbirthdate,
-        .text-regdiagnose,
-        .text-regcountry {
-            font-size: 14px;
-        }
+    .text-regname,
+    .text-reglastname,
+    .text-regemail,
+    .text-regpassword,
+    .text-regbirthdate,
+    .text-regdiagnose,
+    .text-regcountry {
+        font-size: 14px;
+    }
 
-        .text-regdiagnose {
-            margin-right: 38%;
-        }
+    .field-regdiagnose,
+    .field-regcountry {
+        width: 337px;
+    }
 
-        .text-regemail {
-            margin-right: 45%;
-        }
+    .register-regbutton {
+        width: 263px;
+        height: 64px;
+    }
 
-        .text-regpassword {
-            margin-right: 64%;
-        }
+    .text-regdiagnose {
+        margin-right: 38%;
+    }
 
-        .gologin-button {
-            font-size: 16px;
-        }
+    .text-regemail {
+        margin-right: 45%;
+    }
 
-        .groupfields2 {
-            margin-right: 11%;
-        }
+    .text-regpassword {
+        margin-right: 64%;
+    }
 
-        .icon-open-eye,
-        .icon-close-eye {
-            width: 35px;
-        }
+    .gologin-button {
+        font-size: 16px;
+    }
+
+    .groupfields2 {
+        margin-right: 17%;
+    }
+
+    .icons-buttons-password {
+        transform: translate(-100px, 10px);
+    }
+}
+
+@media screen and (max-width: 430px) {
+
+    .field-regname,
+    .field-regcountry,
+    .field-regemail,
+    .field-regdiagnose,
+    .field-regpassword,
+    .field-regbirthdate,
+    .field-reglastname {
+        width: 300px;
+    }
+
+    .field-regdiagnose,
+    .field-regcountry {
+        width: 310px;
+    }
+
+    .register-regbutton {
+        width: 263px;
+        height: 64px;
+    }
+
+    .text-regname,
+    .text-reglastname,
+    .text-regemail,
+    .text-regpassword,
+    .text-regbirthdate,
+    .text-regdiagnose,
+    .text-regcountry {
+        font-size: 14px;
+    }
+
+    .text-regdiagnose {
+        margin-right: 38%;
+    }
+
+    .text-regemail {
+        margin-right: 45%;
+    }
+
+    .text-regpassword {
+        margin-right: 64%;
+    }
+
+    .gologin-button {
+        font-size: 16px;
+    }
+
+    .groupfields2 {
+        margin-right: 11%;
+    }
+
+    .icon-open-eye,
+    .icon-close-eye {
+        width: 35px;
     }
 }

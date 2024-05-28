@@ -2,9 +2,9 @@ import React, { useState, } from "react";
 import { useForm } from 'react-hook-form';
 import '../register/register.css';
 import { handleRegister } from "../../handlers/registerHandle";
-import login_icon from "../../../public/images/icons/login_icon.svg";
-import icon_close_eye from "../../../public/images/icons/icon_close_eye.svg";
-import icon_open_eye from "../../../public/images/icons/icon_open_eye.svg";
+import login_icon from "../../../public/image/icons/login_icon.svg";
+import icon_close_eye from "../../../public/image/icons/icon_close_eye.svg";
+import icon_open_eye from "../../../public/image/icons/icon_open_eye.svg";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Link } from "react-router-dom";
@@ -23,10 +23,10 @@ function Register() {
 
     const handleCloseAlert = () => {
         setShowAlert(false);
+        window.location.href = "/";
     };
 
     const onSubmit = data => {
-        console.log('jsx ' + JSON.stringify(data));
         if (data.birth_date) {
             const convertedBirthDate = birthDate.toISOString().split('T')[0];
             data.birth_date = convertedBirthDate;
@@ -51,7 +51,6 @@ function Register() {
       
         <form className="formulary-all-reg" onSubmit={handleSubmit(onSubmit)}>
 
-            {/* Ventana emergente de alerta */}
             {showAlert && (
                 <div className="register-alert">
                     <div className="register-alert-content">
@@ -254,8 +253,8 @@ function Register() {
 
             <div className="buttons">
                 <button type="submit" className="register-regbutton">Registrar</button>
-                <Link to="/Login">
-                <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
+                <Link to="/login">
+                <button className="gologin-button">¿Ya eres miembro? Inicia sesión.</button>
                 </Link>
             </div>
 

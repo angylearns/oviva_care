@@ -102,9 +102,9 @@ function Cuestionario() {
     {
       pregunta: "11. ¿Cómo describirías tu sueño?",
       respuestas: [
-        { texto: "a) Sufro frecuentemente alteraciones del sueño.", correcta: true, puntaje: 3 },
-        { texto: "b) Tengo alteraciones ocasionales del sueño.", correcta: true, puntaje: 1 },
-        { texto: "c) Duermo bien y me siento descansado por la mañana.", correcta: false, puntaje: 0 }
+        { texto: "a) Sufro frecuentemente alteraciones del sueño", correcta: true, puntaje: 3 },
+        { texto: "b) Tengo alteraciones ocasionales del sueño", correcta: true, puntaje: 1 },
+        { texto: "c) Duermo bien y me siento descansado por la mañana", correcta: false, puntaje: 0 }
       ],
       seleccionada: null
     },

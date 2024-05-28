@@ -9,16 +9,15 @@ import {
   decodeToken,
   logOut,
 } from "../../utils/authUtils";
-import Cookies from 'js-cookie'; // Importa js-cookie aquí
+import Cookies from 'js-cookie';
 import Calendary from "../calendary/Calendary";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
-  console.log(isLoggedIn) 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false); 
 
-  const isAdminUser = isAdmin(); // Utiliza isAdmin sin dependencias
+  const isAdminUser = isAdmin();
   const token = decodeToken(Cookies.get(TOKEN_COOKIE_NAME)); 
 
   const toggleModalMenu = () => {
@@ -26,25 +25,22 @@ function Navbar() {
   };
 
   const toggleModalCalendar = () => {
-    console.log("Toggling calendar modal");
     setIsCalendarOpen((prev) =>!prev);
   };
 
   useEffect(() => {
-    // Observa cambios en las cookies o tokens de autenticación
     const intervalId = setInterval(() => {
       const isLoggedIn = isAuthenticated();
       setIsLoggedIn(isLoggedIn);
-    }, 1000); // Ejecuta cada segundo, ajusta el tiempo según sea necesario
+    }, 1000);
   
-    // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(intervalId);
-  }, []); // Dependencias vacías significa que este efecto se ejecuta solo al montar y desmontar
+  }, []);
   
 
   const handleLogout = () => {
-    logOut(); // Asume que logOut elimina la cookie
-    Cookies.remove(TOKEN_COOKIE_NAME); // Elimina la cookie usando js-cookie
+    logOut();
+    Cookies.remove(TOKEN_COOKIE_NAME); 
     setIsLoggedIn(false);
   };
 
@@ -54,13 +50,14 @@ function Navbar() {
       <section className="navbar_user_desktop--left">
         <Link to="/" className="logo_link">
           <img
-            src="/images/logo_words.png"
+            src="/image/logo_words.png"
             alt="Oviva Logo"
             className="navbar_desktop--logo"
           />
         </Link>
       </section>
       <section className="navbar_user_desktop--center">
+        <Link to="/">Inicio</Link>
         <Link to="/faq">Preguntas</Link>
         <Link to="/experts">Expertos</Link>
         <Link to="/blog">Blog</Link>
@@ -72,7 +69,7 @@ function Navbar() {
           <section className="navbar_user_desktop--right__left">
             <button className="button_calendar" onClick={toggleModalCalendar}>
               <img
-                src="/images/icons/icon_calendar.svg"
+                src="/image/icons/icon_calendar.svg"
                 className="navbar_user_desktop--icon_calendar"
                 alt="Calendar icon"
               />
@@ -86,7 +83,7 @@ function Navbar() {
               )}
               <button onClick={handleLogout} className="button_logout">
                 <img
-                  src="/images/icons/icon_logout.svg"
+                  src="/image/icons/icon_logout.svg"
                   className="navbar_desktop--icon_logout"
                   alt="Logout icon"
                 />
@@ -96,7 +93,7 @@ function Navbar() {
         ) : (
           <Link to="/login" className="link_profile--desktop">
             <img
-              src="/images/icons/icon_profile_female.svg"
+              src="/image/icons/icon_profile_female.svg"
               className="navbar_desktop--icon_profile"
               alt="User icon"
             />
@@ -111,7 +108,9 @@ function Navbar() {
 
     <nav className="navbar_user_mobile">
     <section className="navbar_user_mobile--left">
-          <img src="/images/logo_no_words.png" alt="Logo Oviva" />
+          <Link to="/" className="logo_link">
+            <img src="/image/logo_no_words.png" alt="Logo Oviva" />
+          </Link>
         </section>
         <section className="navbar_user_mobile--right">
           {isLoggedIn ? (
@@ -125,7 +124,7 @@ function Navbar() {
               )}
               <button className="button_calendar" onClick={toggleModalCalendar}>
                 <img
-                  src="/images/icons/icon_calendar.svg"
+                  src="/image/icons/icon_calendar.svg"
                   className="navbar_user_mobile--icon_calendar"
                   alt="Calendar icon"
                 />
@@ -134,7 +133,7 @@ function Navbar() {
           ) : (
             <Link to="/login" className="link_profile--mobile">
             <img
-              src="/images/icons/icon_profile_female.svg"
+              src="/image/icons/icon_profile_female.svg"
               alt="User icon"
               className="navbar_mobile--icon_profile"
             />
@@ -156,7 +155,7 @@ function Navbar() {
           {isLoggedIn ? (
             <button onClick={handleLogout} className="button_logout">
               <img
-                src="/images/icons/icon_logout.svg"
+                src="/image/icons/icon_logout.svg"
                 className="navbar_mobile--icon_logout"
                 alt="Logout icon"
               />
@@ -166,6 +165,9 @@ function Navbar() {
 
         <section className={`modal_menu ${isMenuOpen ? "open" : ""}`}>
           <ul>
+            <li>
+              <Link to="/">Inicio</Link>
+            </li>
             <li>
               <Link to="/faq">Preguntas</Link>
             </li>

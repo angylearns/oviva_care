@@ -9,7 +9,9 @@ function AdminFAQView() {
         <>
             <div className="main-container">
                 <Navbar />
+                <div className="content">
                 <QaAdmin />
+                </div>
                 <Footer />
 
 

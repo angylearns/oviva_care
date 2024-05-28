@@ -14,13 +14,11 @@
 }
 
 .titlexperts {
-    font-family: 'Montserrat', sans-serif;
     color: white;
 
 }
 
 .title {
-    font-family: 'Montserrat', sans-serif;
     color: white;
 
 }
@@ -37,7 +35,6 @@
     -webkit-box-shadow: -10px 0px 13px -7px #7a7a7a, 10px 0px 13px -7px #7a7a7a, 5px -29px 3px 18px rgba(198, 198, 198, 0);
     box-shadow: -10px 0px 13px -7px #7a7a7a, 10px 0px 13px -7px #7a7a7a, 5px -29px 3px 18px rgba(198, 198, 198, 0);
     border-radius: 0 20px 0 30px;
-    font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
     background-color: rgba(217, 236, 234, 1);
     margin-left: -120px;
@@ -53,11 +50,11 @@
 
 .textexperts {
     text-align: left;
-    font-family: 'Montserrat', sans-serif;
+    
 }
 
 .textoviva{
-    font-family: 'Montserrat', sans-serif;
+    
     font-size: 30px;
     line-height: 1.5;
 

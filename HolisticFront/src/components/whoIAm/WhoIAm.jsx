@@ -1,6 +1,5 @@
 import './whoIAm.css';
 
-
 function WhoIAm() {	
     return (
         <div className='frame'>
@@ -21,20 +20,6 @@ function WhoIAm() {
                 <p>Finalmente entendí que si quería cambios duraderos tenía que cambiar mi mentalidad. Y déjame decirte que no es fácil, ¡pero es posible! Créeme, el trabajo merece la pena. Porque ahora soy una mujer llena de vida, confianza y alegría. Y quiero compartirlo contigo.</p>
 
                 <p>Ahora puedo controlar mi SOP, pero no siempre fue así...</p>
-
-                {/* <p>I was a woman who struggled with hormonal issues, insulin resistance, lack of periods, acne, weight gain, excessive hair loss, lack of sleep, extreme fatigue, chronic stress and anxiety.</p>
-
-                <p>I was confused, tired and so disappointed!</p>
-
-                <p>It took me so long to finally be diagnosed with PCOS and the only advice I've got was to lose weight and to take a contraceptive pill for the rest of my life. I was a woman who didn't know how to improve my physical health, emotional state and low mood.</p>
-
-                <p>But I didn't want to live that way. I wanted to be a woman full of energy, feel beautiful and to be happy again! So I went on this journey to solve my problems, because I believe that we have the power to transform our lives.</p>
-
-                <p>I made so many mistakes, I went from one extreme to another. From restrictive eating to binge- eating, from vegan to keto diet, from no movement at all to extreme workouts. Nothing seemed to work... Until I found the right balance and connection between my emotions and my body.</p>
-
-                <p>I finally understood that if I want long lasting changes I have to change my mindset. And let me tell you girl, it is not easy, but it is possible! Trust me it is worth the work. Because now I am a women full of life, confidence and joy! And I want to share this with you!</p>
-
-                <p>Now I am able to manage my PCOS, but it wasn't always that way...</p> */}
             </section>
         </section>
     </div>

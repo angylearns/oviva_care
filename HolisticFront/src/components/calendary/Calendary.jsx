@@ -50,13 +50,13 @@ const Calendar = () => {
       const monthDates = prevSelectedDates[monthKey] || [];
       const dateIndex = monthDates.findIndex(d => d.toDateString() === date.toDateString());
       if (dateIndex !== -1) {
-        // Deseleccionar el día
+        
         return {
           ...prevSelectedDates,
           [monthKey]: monthDates.filter((_, index) => index !== dateIndex)
         };
       } else {
-        // Seleccionar el día
+        
         return {
           ...prevSelectedDates,
           [monthKey]: [...monthDates, date]
@@ -78,7 +78,6 @@ const Calendar = () => {
 
   return (
     <div className="calendar">
-      {/* <h2 className="cal">Calendario Menstrual</h2> */}
       <div className="header">
         <button onClick={handlePreviousMonth}>&lt;</button>
         <div className="month-label">

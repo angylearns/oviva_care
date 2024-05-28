@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nombre+de+la+Fuente');
-
-.frame{
+.frame {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,6 +37,11 @@
   box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
 }
 
+.inputSub:hover {
+  background-color: #D9ECEA;
+  color: #008F8B;
+}
+
 .inputField {
   padding: 3%;
   border-radius: 0 20px 0 30px;
@@ -60,7 +63,7 @@
 
 
 .inputField:valid {
-  background-color:  rgba(0, 143, 139, 0.25) !important;
+  background-color: rgba(0, 143, 139, 0.25) !important;
 }
 
 .inputField:focus {
@@ -68,25 +71,24 @@
 }
 
 
-/* Estilo para el campo de texto con autocompletado */
+
 .inputField:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
-  transition: background-color 5000s ease-in-out 0s; /* Ajusta la transición */
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .inputField:focus,
-.textareaField:focus{
+.textareaField:focus {
   outline: none;
 }
 
 .textAreaField {
   height: 150px;
   border-radius: 0 0px 0 30px;
-  font-family: 'Montserrat', sans-serif;
   width: 90%;
 }
 
-.textAreaField:hover{
+.textAreaField:hover {
   background-color: white !important;
 }
 
@@ -94,7 +96,7 @@
   padding: 2%;
   width: 100%;
   border-radius: 15px;
-  font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -111,7 +113,7 @@
   overflow-anchor: none;
 }
 
-/*......................*/
+
 .custom-alert {
   position: fixed;
   top: 50%;
@@ -139,5 +141,6 @@
 }
 
 .custom-alert button:hover {
-  background-color:#03f3eb;
+  background-color: #D9ECEA;
+  color: #008F8B;
 }
