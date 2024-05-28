@@ -9,7 +9,7 @@ import {
   decodeToken,
   logOut,
 } from "../../utils/authUtils";
-import Cookies from 'js-cookie'; // Importa js-cookie aquí
+import Cookies from 'js-cookie';
 import Calendary from "../calendary/Calendary";
 
 function Navbar() {
@@ -17,7 +17,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isCalendarOpen, setIsCalendarOpen] = useState(false); 
 
-  const isAdminUser = isAdmin(); // Utiliza isAdmin sin dependencias
+  const isAdminUser = isAdmin();
   const token = decodeToken(Cookies.get(TOKEN_COOKIE_NAME)); 
 
   const toggleModalMenu = () => {
@@ -25,25 +25,22 @@ function Navbar() {
   };
 
   const toggleModalCalendar = () => {
-    console.log("Toggling calendar modal");
     setIsCalendarOpen((prev) =>!prev);
   };
 
   useEffect(() => {
-    // Observa cambios en las cookies o tokens de autenticación
     const intervalId = setInterval(() => {
       const isLoggedIn = isAuthenticated();
       setIsLoggedIn(isLoggedIn);
-    }, 1000); // Ejecuta cada segundo, ajusta el tiempo según sea necesario
+    }, 1000);
   
-    // Limpiar el intervalo al desmontar el componente
     return () => clearInterval(intervalId);
-  }, []); // Dependencias vacías significa que este efecto se ejecuta solo al montar y desmontar
+  }, []);
   
 
   const handleLogout = () => {
-    logOut(); // Asume que logOut elimina la cookie
-    // Cookies.remove(TOKEN_COOKIE_NAME); 
+    logOut();
+    Cookies.remove(TOKEN_COOKIE_NAME); 
     setIsLoggedIn(false);
   };
 
