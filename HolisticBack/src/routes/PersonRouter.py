@@ -19,7 +19,7 @@ def get_person():
 def post_person():
 
     if request.method == 'OPTIONS':
-        print("tutututututututututututuut")
+        
         response = jsonify({'message': 'Preflight request success'})
         response.headers.add('Access-Control-Allow-Origin', '*')
         response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
