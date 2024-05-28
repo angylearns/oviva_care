@@ -38,6 +38,19 @@ const RouterComponent = () => {
             <Route path="experts" element={<ExpertView />} />
             <Route path="about" element={<WhoIAmView />} />
             <Route path="privacy_policy" element={<PoliticView />} />
+
+
+
+
+
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <Route path="/cuestionario" component={Cuestionario} />
+        <Route path="/" component={Pretest} />
+     
+            
+
+            
           </Route>
           <Route path="/user/*" element={
             <AuthProvider>
