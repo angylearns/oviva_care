@@ -24,7 +24,7 @@ describe('Calendary Component', () => {
     render(<Calendary />);
     const nextButton = screen.getByText('>');
     fireEvent.click(nextButton);
-    // El código de la prueba del mes actual ha sido eliminado
+    
   });
 
   test('navigates to the previous month', () => {
