@@ -51,9 +51,6 @@
   .tableOwerflow table, .tableOwerflow table th, .tableOwerflow table td {
     border: none;
   }
-  .getContainer2 {
-    max-height: 800px;
-  }
   
   .mainContainer {
     width: 100%;
