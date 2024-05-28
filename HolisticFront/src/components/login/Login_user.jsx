@@ -115,7 +115,8 @@ function Login_user() {
             {/* {errorMessage && <p>{errorMessage}</p>}  */}
             {/* Muestra el mensaje de error si existe */}
             <button className="goregister-button">
-                <Link to="/register">¿No eres miembro?, regístrate</Link></button>
+                <Link to="/register" className="goregister-button-link">¿No eres miembro? Regístrate.</Link>
+            </button>
 
         </form>
 

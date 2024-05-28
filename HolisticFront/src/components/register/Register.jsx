@@ -255,8 +255,8 @@ function Register() {
 
             <div className="buttons">
                 <button type="submit" className="register-regbutton">Registrar</button>
-                <Link to="/Login">
-                <button className="gologin-button">¿Ya eres miembro?, inicia sesión</button>
+                <Link to="/login">
+                <button className="gologin-button">¿Ya eres miembro? Inicia sesión.</button>
                 </Link>
             </div>
 

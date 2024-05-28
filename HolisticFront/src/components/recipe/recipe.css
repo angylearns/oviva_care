@@ -104,7 +104,6 @@ box-shadow: 0 2px 4px rgb(105, 146, 141);
 
 
 .recipe-info {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 8px;

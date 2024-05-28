@@ -125,6 +125,7 @@
     background-color: #008F8B;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
     border: none;
+    font-size: large;
 }
 
 .register-regbutton:hover {
@@ -187,8 +188,13 @@ input::placeholder {
     background-color: transparent;
     border: none;
     margin-top: 48px;
-    color: rgba(0, 0, 0, 0.50);
+    color: #000;
     margin-bottom: 5%;
+    text-decoration: none;
+}
+
+.gologin-button:hover {
+    cursor: pointer;
 }
 
 .register-alert {

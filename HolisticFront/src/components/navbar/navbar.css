@@ -110,7 +110,7 @@ footer a:hover {
   right: 10%;
   padding: 10px;
   z-index: 1;
-  background: #00b6b9bf;
+  background: #d9eceaba;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.3px);
@@ -313,7 +313,7 @@ footer a:hover {
     right: 18px;
     padding: 10px;
     z-index: 1;
-    background: #00b6b9bf;
+    background: #d9eceae3;
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.3px);

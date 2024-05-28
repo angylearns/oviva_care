@@ -43,7 +43,7 @@ function Navbar() {
 
   const handleLogout = () => {
     logOut(); // Asume que logOut elimina la cookie
-    Cookies.remove(TOKEN_COOKIE_NAME); // Elimina la cookie usando js-cookie
+    // Cookies.remove(TOKEN_COOKIE_NAME); 
     setIsLoggedIn(false);
   };
 
