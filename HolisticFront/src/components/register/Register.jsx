@@ -27,7 +27,6 @@ function Register() {
     };
 
     const onSubmit = data => {
-        console.log('jsx ' + JSON.stringify(data));
         if (data.birth_date) {
             const convertedBirthDate = birthDate.toISOString().split('T')[0];
             data.birth_date = convertedBirthDate;
