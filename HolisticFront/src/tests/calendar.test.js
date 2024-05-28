@@ -12,7 +12,6 @@ describe('Calendary Component', () => {
     Cookies.set.mockImplementation(() => {});
   });
 
-
   test('renders days of the week', () => {
     render(<Calendary />);
     const daysOfWeek = ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
@@ -39,16 +38,16 @@ describe('Calendary Component', () => {
 
   test('selects a date', () => {
     render(<Calendary />);
-    const today = new Date().getDate();
-    const todayButton = screen.getByText(today);
+    const today = new Date();
+    const todayButton = screen.getAllByText(today.getDate()).find(el => el.className.includes('date'));
     fireEvent.click(todayButton);
     expect(todayButton).toHaveClass('selected');
   });
 
   test('deselects a date', () => {
     render(<Calendary />);
-    const today = new Date().getDate();
-    const todayButton = screen.getByText(today);
+    const today = new Date();
+    const todayButton = screen.getAllByText(today.getDate()).find(el => el.className.includes('date'));
     fireEvent.click(todayButton); 
     fireEvent.click(todayButton); 
     expect(todayButton).not.toHaveClass('selected');
