@@ -7,7 +7,7 @@ import './pretest.css';
 function Pretest() {
   const [showMessage, setShowMessage] = useState(false); 
   const handleStart = () =>{
-    // crear alert que diga que si no eres miembro tienes que serlo - y aparecen dos botones (iniciar sesión y registrar)
+    
       setShowMessage(true);
     };
 
