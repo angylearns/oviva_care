@@ -12,7 +12,6 @@
   justify-content: center;
   padding: 20px;
   text-align: center;
-  
 }
 
 .glass-box {
@@ -43,7 +42,7 @@
 
 .info-cuestionario {
   background-color: #008f8b;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   border-radius: 10px;
   margin-bottom: 20px;
   font-size: 16px;
@@ -86,14 +85,16 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
+
 .button-group {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
+
 .button-register,
 .button-login {
-  background: #007bff;
+  background: #008f8b;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -102,14 +103,18 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+  border-radius: 0 20px 0 30px;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
 }
+
 .button-register:hover,
 .button-login:hover {
-  background: #0056b3;
+  color: black;
+  background-color: #00b6b9;
 }
 
 @media only screen and (min-width: 400px) {
   .info-cuestionario {
-    padding: 10px 40px; 
+    padding: 10px 40px;
   }
 }
