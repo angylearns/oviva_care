@@ -45,11 +45,10 @@ export const qaService = {
 
     async DeleteQa(qa) {
         try {
-            let qa2 = JSON.stringify(qa)
-            let response = await apiClient.delete("/qa/delete", { data: qa });
+            const response = await apiClient.delete(`/qa/delete`, { data: { id_qa: qa.id_qa } });
             return response.data;
         } catch (error) {
-            console.error("Error al eliminar datosssssssss:", error);
+            console.error("Error al eliminar datos:", error);
             throw error;
         }
     }
