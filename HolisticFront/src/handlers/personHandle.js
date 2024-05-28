@@ -45,8 +45,8 @@ export const personHandle = {
 
     async deletePerson(person) {
         try {
-            await userService.deleteUser(person.email); // Elimina primero el usuario
-            const deletedPerson = await personService.DeletePerson(person); // Elimina la persona
+            await userService.deleteUser(person.email);
+            const deletedPerson = await personService.DeletePerson(person);
             return deletedPerson;
         } catch (error) {
             console.error("Error al eliminar persona:", error);

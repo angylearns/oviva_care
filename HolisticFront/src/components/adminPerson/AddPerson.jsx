@@ -43,7 +43,6 @@ function AddPerson({ onClose }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData);
         postPerson(formData);
 
         setUpdatePage((prevState) => !prevState);
