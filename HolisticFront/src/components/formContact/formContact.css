@@ -1,6 +1,4 @@
-
-
-.frame{
+.frame {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -40,8 +38,8 @@
 }
 
 .inputSub:hover {
-  background-color:#D9ECEA;
-  color:#008F8B;
+  background-color: #D9ECEA;
+  color: #008F8B;
 }
 
 .inputField {
@@ -65,7 +63,7 @@
 
 
 .inputField:valid {
-  background-color:  rgba(0, 143, 139, 0.25) !important;
+  background-color: rgba(0, 143, 139, 0.25) !important;
 }
 
 .inputField:focus {
@@ -76,11 +74,11 @@
 
 .inputField:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
-  transition: background-color 5000s ease-in-out 0s; 
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .inputField:focus,
-.textareaField:focus{
+.textareaField:focus {
   outline: none;
 }
 
@@ -90,7 +88,7 @@
   width: 90%;
 }
 
-.textAreaField:hover{
+.textAreaField:hover {
   background-color: white !important;
 }
 
@@ -98,7 +96,7 @@
   padding: 2%;
   width: 100%;
   border-radius: 15px;
- 
+
 }
 
 
@@ -115,7 +113,7 @@
   overflow-anchor: none;
 }
 
-/*......................*/
+
 .custom-alert {
   position: fixed;
   top: 50%;
@@ -143,6 +141,6 @@
 }
 
 .custom-alert button:hover {
-  background-color:#D9ECEA;
+  background-color: #D9ECEA;
   color: #008F8B;
 }

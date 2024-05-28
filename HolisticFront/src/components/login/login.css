@@ -220,7 +220,6 @@ input::placeholder {
 
     .icon-open-eye-login,
     .icon-close-eye-login {
-        /* transform: translate(135px, -54px); */
         transform: translate(-100px, -10px);
     }
 }

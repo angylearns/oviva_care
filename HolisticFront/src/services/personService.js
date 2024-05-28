@@ -49,7 +49,7 @@ export const personService = {
             let response = await apiClient.delete("/person/delete", { data: person });
             return response.data;
         } catch (error) {
-            console.error("Error al eliminar datosssssssss:", error);
+            console.error("Error al eliminar datos:", error);
             throw error;
         }
     }
