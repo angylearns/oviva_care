@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import './App.css'
+import React from 'react';
+import RouterComponent from './router/Router'; 
+import './App.css';
 
 function App() {
-
-
   return (
-    <>
-      
-    </>
-  )
+    <RouterComponent />
+  );
 }
 
-export default App
+export default App;

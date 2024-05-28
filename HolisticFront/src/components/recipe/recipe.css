@@ -1,0 +1,187 @@
+
+
+.title-recipe {
+  display: flex;
+  font: bold;
+  color: #000000;
+  justify-content: center;
+  
+ 
+}
+
+.title-add-recipe {
+  display: flex;
+  font: bold;
+  color: #000000;
+  justify-content: center;
+  
+}
+
+.style {
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  margin-top: -22px;
+}
+
+.style::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../images/vegetables.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2; /* Ajusta este valor entre 0 y 1 */
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:rgba(255, 255, 255, 0.5);
+  padding: 2px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 25px;
+}
+.navbar-item {
+  margin:  10px; 
+  font-size: medium;
+}
+.add-recipe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.Form-add-recipe {
+  width: 40%;
+  background-color: rgba(0, 143, 139, 0.25);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+  margin-bottom: 30px;
+}
+
+.Form-add-recipe input,
+.Form-add-recipe textarea,
+.Form-add-recipe select {
+width: 100%; 
+margin-bottom: 10px;
+border-radius: 0 20px 0 30px;
+height: 25px;
+border: none;
+box-shadow: 0 2px 4px rgb(105, 146, 141);
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.recipe-card {
+  background-color: #ffffff; /* Verde claro */
+  padding: 15px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.recipe-image {
+  align-items: center;
+  display: flex;
+}
+
+
+
+.recipe-info {
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.btn-cardForm-edit,
+.btn-cardForm-delete {
+  border-radius: 5px;
+  background-color: #008F8B; /* Verde */
+  color: #000000;
+  border: none;
+  width: 100px;
+  margin: 3px;
+  padding: 6px;
+  transition: background-color 0.5s;
+  border-radius: 0 20px 0 30px;
+}
+
+
+
+.btn-cardForm-edit:hover,
+.btn-cardForm-delete:hover,
+.button-add-recipe {
+  background-color: #D9ECEA; 
+  color: #008F8B;
+}
+
+.button-add-recipe {
+  border-radius: 5px;
+  background-color: #008F8B;
+  color: #000000;
+  border: none;
+  width: 100px;
+  margin: 3px;
+  padding: 6px;
+  transition: background-color 0.5s;
+  border-radius: 0 20px 0 30px;
+}
+
+.confirmation-dialog{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+
+}
+
+.button-delete{
+  border-radius: 5px;
+  background-color: rgb(224, 47, 47);
+  width: 100px;
+  margin: 3px;
+  padding: 6px;
+  transition: background-color 0.5s;
+
+}
+
+.button-no-delete{
+  border-radius: 5px;
+  background-color: rgb(224, 47, 47);
+  width: 100px;
+  margin: 3px;
+  padding: 6px;
+  transition: background-color 0.5s;
+
+
+}
+
+.button-delete:hover,
+.button-no-delete:hover {
+background-color: #f76560; /* Cambiado el color de fondo al hacer hover */
+}
+
+@media screen and (max-width: 450px) {
+  .style {
+    
+    margin-top: -14px;
+  }
+}
+
+

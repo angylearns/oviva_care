@@ -1,0 +1,147 @@
+.users-videos {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category {
+  margin: 0 10px;
+}
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.video-card {
+  /* background-color: #f9f9f9; */
+  padding: 30px;
+  /* border-radius: 8px; */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+  width: 350px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+  /* border-radius: 8px; */
+  margin-bottom: 15px;
+}
+
+
+.title-video {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.second-title {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.style-text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.style-button-see {
+  background-color: #008F8B;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 0 20px 0 30px;
+  cursor: pointer;
+}
+
+.style-button-see:hover {
+  background-color: #D9ECEA;
+  color: #008F8B;
+}
+
+@media screen and (max-width: 1250px) {
+  .title-video {
+      font-size: 28px;
+  }
+
+  .second-title {
+      font-size: 18px;
+  }
+
+  .style-text {
+      font-size: 14px;
+  }
+
+  .video-card {
+      width: 260px;
+  }
+
+  .categories {
+      flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .videos {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .video-card {
+      width: 80%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .video-card {
+      width: 90%;
+  }
+
+  .title-video {
+      font-size: 24px;
+  }
+
+  .second-title {
+      font-size: 16px;
+  }
+
+  .style-text {
+      font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .video-card {
+      width: 100%;
+  }
+
+  button {
+      padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .title-video {
+      font-size: 20px;
+  }
+
+  .second-title {
+      font-size: 14px;
+  }
+
+  .style-text {
+      font-size: 12px;
+  }
+}
