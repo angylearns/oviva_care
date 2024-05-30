@@ -313,9 +313,6 @@ input::placeholder {
 
 @media screen and (max-width: 561px) {
 
-    .icons-buttons-password {
-        transform: translate(370px, -60px);
-    }
     .groupfields2 {
         margin-right: 11%;
         margin-bottom: 2%;
@@ -388,6 +385,13 @@ input::placeholder {
         }
     }
 
+}
+
+@media screen and (max-width: 488px) {
+
+    .icons-buttons-password {
+        transform: translate(-100px, 10px);
+    }
 }
 
 @media screen and (max-width: 450px) {
@@ -507,4 +511,5 @@ input::placeholder {
     .icon-close-eye {
         width: 35px;
     }
+
 }
