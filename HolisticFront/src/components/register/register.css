@@ -99,6 +99,7 @@
 .field-regpassword {
     -webkit-box-shadow: 0 0 0 1000px rgba(0, 143, 139, 0.25) inset;
     box-shadow: 0 2px 4px rgba(62, 66, 66, 0.6);
+    /* Propiedad estándar */
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -108,6 +109,7 @@
     transform: translate(-70px, 17px);
 }
 
+/* Estilo para el botón de abrir ojo */
 .icon-open-eye,
 .icon-close-eye {
     width: 45px;
@@ -202,6 +204,8 @@ input::placeholder {
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     padding: 20px;
+    /* border: 2px solid #333;
+    border-radius: 5px; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     z-index: 9999;
     border-radius: 0 20px 0 30px;
@@ -313,6 +317,9 @@ input::placeholder {
 
 @media screen and (max-width: 561px) {
 
+    .icons-buttons-password {
+        transform: translate(370px, -60px);
+    }
     .groupfields2 {
         margin-right: 11%;
         margin-bottom: 2%;
@@ -385,13 +392,6 @@ input::placeholder {
         }
     }
 
-}
-
-@media screen and (max-width: 488px) {
-
-    .icons-buttons-password {
-        transform: translate(-100px, 10px);
-    }
 }
 
 @media screen and (max-width: 450px) {
@@ -511,5 +511,4 @@ input::placeholder {
     .icon-close-eye {
         width: 35px;
     }
-
 }
