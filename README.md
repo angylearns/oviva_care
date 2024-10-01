@@ -1,5 +1,5 @@
 # Oviva
-![Image Oviva](./HolisticFront/public/image/logo.png)
+ ![Oviva](https://github.com/user-attachments/assets/99e4fce2-5995-4339-9c8f-fcd60db482f3)
 ***
 </br>
 
@@ -21,7 +21,8 @@ La aplicación ofrece una amplia gama de funcionalidades, desde la realización 
    - Inserta, modifica, elimina y consulta información de recetas, vídeos y preguntas frecuentes.
 
 2. **Cliente:**
-   - **No registrados:** 
+   - **No registrados:**
+
      - Explora contenido multimedia de la página de manera limitada.
      - Envío de emails, consulta de preguntas frecuentes, visita al blog y a los expertos.
    - **Registrados:** 
